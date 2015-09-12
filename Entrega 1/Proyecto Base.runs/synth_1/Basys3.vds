@@ -1,0 +1,334 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Fri Sep 11 21:20:23 2015
+# Process ID: 5144
+# Log file: C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.runs/synth_1/Basys3.vds
+# Journal file: C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source Basys3.tcl -notrace
+Command: synth_design -top Basys3 -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:12 . Memory (MB): peak = 243.766 ; gain = 67.781
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-1565] actual for formal port word2 is neither a static name nor a globally static expression [C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/SUS16b.vhd:55]
+INFO: [Synth 8-638] synthesizing module 'Basys3' [C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/Basys3.vhd:15]
+INFO: [Synth 8-3491] module 'SUS16b' declared at 'C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/SUS16b.vhd:34' bound to instance 'inst_SUS16b' of component 'SUS16b' [C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/Basys3.vhd:94]
+INFO: [Synth 8-638] synthesizing module 'SUS16b' [C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/SUS16b.vhd:40]
+INFO: [Synth 8-3491] module 'ADD16b' declared at 'C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/ADD16b.vhd:34' bound to instance 'ADD' of component 'ADD16b' [C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/SUS16b.vhd:53]
+INFO: [Synth 8-638] synthesizing module 'ADD16b' [C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/ADD16b.vhd:42]
+INFO: [Synth 8-3491] module 'FA' declared at 'C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/FA.vhd:34' bound to instance 'FAbit0' of component 'FA' [C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/ADD16b.vhd:73]
+INFO: [Synth 8-638] synthesizing module 'FA' [C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/FA.vhd:44]
+INFO: [Synth 8-3491] module 'HA' declared at 'C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/HA.vhd:34' bound to instance 'inst_HA' of component 'HA' [C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/FA.vhd:62]
+INFO: [Synth 8-638] synthesizing module 'HA' [C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/HA.vhd:41]
+INFO: [Synth 8-256] done synthesizing module 'HA' (1#1) [C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/HA.vhd:41]
+INFO: [Synth 8-3491] module 'HA' declared at 'C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/HA.vhd:34' bound to instance 'inst_HA2' of component 'HA' [C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/FA.vhd:69]
+INFO: [Synth 8-256] done synthesizing module 'FA' (2#1) [C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/FA.vhd:44]
+INFO: [Synth 8-3491] module 'FA' declared at 'C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/FA.vhd:34' bound to instance 'FAbit1' of component 'FA' [C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/ADD16b.vhd:81]
+INFO: [Synth 8-3491] module 'FA' declared at 'C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/FA.vhd:34' bound to instance 'FAbit2' of component 'FA' [C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/ADD16b.vhd:89]
+INFO: [Synth 8-3491] module 'FA' declared at 'C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/FA.vhd:34' bound to instance 'FAbit3' of component 'FA' [C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/ADD16b.vhd:97]
+INFO: [Synth 8-3491] module 'FA' declared at 'C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/FA.vhd:34' bound to instance 'FAbit4' of component 'FA' [C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/ADD16b.vhd:106]
+INFO: [Synth 8-3491] module 'FA' declared at 'C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/FA.vhd:34' bound to instance 'FAbit5' of component 'FA' [C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/ADD16b.vhd:115]
+INFO: [Synth 8-3491] module 'FA' declared at 'C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/FA.vhd:34' bound to instance 'FAbit6' of component 'FA' [C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/ADD16b.vhd:123]
+INFO: [Synth 8-3491] module 'FA' declared at 'C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/FA.vhd:34' bound to instance 'FAbit7' of component 'FA' [C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/ADD16b.vhd:131]
+INFO: [Synth 8-3491] module 'FA' declared at 'C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/FA.vhd:34' bound to instance 'FAbit8' of component 'FA' [C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/ADD16b.vhd:139]
+INFO: [Synth 8-3491] module 'FA' declared at 'C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/FA.vhd:34' bound to instance 'FAbit9' of component 'FA' [C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/ADD16b.vhd:147]
+INFO: [Synth 8-3491] module 'FA' declared at 'C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/FA.vhd:34' bound to instance 'FAbit10' of component 'FA' [C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/ADD16b.vhd:155]
+INFO: [Synth 8-3491] module 'FA' declared at 'C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/FA.vhd:34' bound to instance 'FAbit11' of component 'FA' [C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/ADD16b.vhd:163]
+INFO: [Synth 8-3491] module 'FA' declared at 'C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/FA.vhd:34' bound to instance 'FAbit12' of component 'FA' [C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/ADD16b.vhd:171]
+INFO: [Synth 8-3491] module 'FA' declared at 'C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/FA.vhd:34' bound to instance 'FAbit13' of component 'FA' [C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/ADD16b.vhd:179]
+INFO: [Synth 8-3491] module 'FA' declared at 'C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/FA.vhd:34' bound to instance 'FAbit14' of component 'FA' [C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/ADD16b.vhd:187]
+INFO: [Synth 8-3491] module 'FA' declared at 'C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/FA.vhd:34' bound to instance 'FAbit15' of component 'FA' [C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/ADD16b.vhd:195]
+INFO: [Synth 8-256] done synthesizing module 'ADD16b' (3#1) [C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/ADD16b.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'SUS16b' (4#1) [C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/SUS16b.vhd:40]
+INFO: [Synth 8-3491] module 'Clock_Divider' declared at 'C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/Clock_Divider.vhd:5' bound to instance 'inst_Clock_Divider' of component 'Clock_Divider' [C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/Basys3.vhd:101]
+INFO: [Synth 8-638] synthesizing module 'Clock_Divider' [C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/Clock_Divider.vhd:12]
+INFO: [Synth 8-256] done synthesizing module 'Clock_Divider' (5#1) [C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/Clock_Divider.vhd:12]
+INFO: [Synth 8-3491] module 'Led_Driver' declared at 'C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/Led_Driver.vhd:5' bound to instance 'inst_Led_Driver' of component 'Led_Driver' [C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/Basys3.vhd:108]
+INFO: [Synth 8-638] synthesizing module 'Led_Driver' [C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/Led_Driver.vhd:17]
+INFO: [Synth 8-256] done synthesizing module 'Led_Driver' (6#1) [C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/Led_Driver.vhd:17]
+INFO: [Synth 8-256] done synthesizing module 'Basys3' (7#1) [C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/sources_1/new/Basys3.vhd:15]
+WARNING: [Synth 8-3331] design Basys3 has unconnected port sw[2]
+WARNING: [Synth 8-3331] design Basys3 has unconnected port sw[1]
+WARNING: [Synth 8-3331] design Basys3 has unconnected port sw[0]
+WARNING: [Synth 8-3331] design Basys3 has unconnected port btn[4]
+WARNING: [Synth 8-3331] design Basys3 has unconnected port btn[3]
+WARNING: [Synth 8-3331] design Basys3 has unconnected port btn[2]
+WARNING: [Synth 8-3331] design Basys3 has unconnected port btn[1]
+WARNING: [Synth 8-3331] design Basys3 has unconnected port btn[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:14 . Memory (MB): peak = 277.957 ; gain = 101.973
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:14 . Memory (MB): peak = 277.957 ; gain = 101.973
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/constrs_1/new/Basys3.xdc]
+Finished Parsing XDC File [C:/Users/Nacosta/Documents/DEV/Arqui/Proyecto Base/Proyecto Base.srcs/constrs_1/new/Basys3.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 571.488 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:22 ; elapsed = 00:00:28 . Memory (MB): peak = 571.488 ; gain = 395.504
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:22 ; elapsed = 00:00:28 . Memory (MB): peak = 571.488 ; gain = 395.504
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:28 . Memory (MB): peak = 571.488 ; gain = 395.504
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:22 ; elapsed = 00:00:29 . Memory (MB): peak = 571.488 ; gain = 395.504
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 33    
++---Registers : 
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   3 Input     27 Bit        Muxes := 1     
+	  16 Input      8 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module HA 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
+Module Clock_Divider 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   3 Input     27 Bit        Muxes := 1     
+Module Led_Driver 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	                4 Bit    Registers := 1     
++---Muxes : 
+	  16 Input      8 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 120 (col length:60)
+BRAMs: 150 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:22 ; elapsed = 00:00:29 . Memory (MB): peak = 571.488 ; gain = 395.504
+---------------------------------------------------------------------------------
+Start Cross Boundary Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3331] design Basys3 has unconnected port sw[2]
+WARNING: [Synth 8-3331] design Basys3 has unconnected port sw[1]
+WARNING: [Synth 8-3331] design Basys3 has unconnected port sw[0]
+WARNING: [Synth 8-3331] design Basys3 has unconnected port btn[4]
+WARNING: [Synth 8-3331] design Basys3 has unconnected port btn[3]
+WARNING: [Synth 8-3331] design Basys3 has unconnected port btn[2]
+WARNING: [Synth 8-3331] design Basys3 has unconnected port btn[1]
+WARNING: [Synth 8-3331] design Basys3 has unconnected port btn[0]
+WARNING: [Synth 8-3331] design Basys3 has unconnected port clk_up
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:29 . Memory (MB): peak = 571.488 ; gain = 395.504
+---------------------------------------------------------------------------------
+Finished Parallel Reinference  : Time (s): cpu = 00:00:22 ; elapsed = 00:00:29 . Memory (MB): peak = 571.488 ; gain = 395.504
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:29 . Memory (MB): peak = 571.488 ; gain = 395.504
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:22 ; elapsed = 00:00:29 . Memory (MB): peak = 571.488 ; gain = 395.504
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:22 ; elapsed = 00:00:29 . Memory (MB): peak = 571.488 ; gain = 395.504
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:44 ; elapsed = 00:00:51 . Memory (MB): peak = 571.488 ; gain = 395.504
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:44 ; elapsed = 00:00:51 . Memory (MB): peak = 571.488 ; gain = 395.504
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:44 ; elapsed = 00:00:51 . Memory (MB): peak = 571.488 ; gain = 395.504
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:44 ; elapsed = 00:00:52 . Memory (MB): peak = 571.488 ; gain = 395.504
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:44 ; elapsed = 00:00:52 . Memory (MB): peak = 571.488 ; gain = 395.504
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:44 ; elapsed = 00:00:52 . Memory (MB): peak = 571.488 ; gain = 395.504
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports : Time (s): cpu = 00:00:44 ; elapsed = 00:00:52 . Memory (MB): peak = 571.488 ; gain = 395.504
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:44 ; elapsed = 00:00:52 . Memory (MB): peak = 571.488 ; gain = 395.504
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |     7|
+|3     |LUT1   |    28|
+|4     |LUT2   |     6|
+|5     |LUT3   |     3|
+|6     |LUT4   |     3|
+|7     |LUT5   |     1|
+|8     |LUT6   |     5|
+|9     |FDRE   |    31|
+|10    |IBUF   |     1|
+|11    |OBUF   |    12|
++------+-------+------+
+
+Report Instance Areas: 
++------+------------------+-----------+------+
+|      |Instance          |Module     |Cells |
++------+------------------+-----------+------+
+|1     |top               |           |    98|
+|2     |  inst_Led_Driver |Led_Driver |    84|
++------+------------------+-----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:44 ; elapsed = 00:00:52 . Memory (MB): peak = 571.488 ; gain = 395.504
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 9 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:28 ; elapsed = 00:00:35 . Memory (MB): peak = 571.488 ; gain = 87.266
+Synthesis Optimization Complete : Time (s): cpu = 00:00:45 ; elapsed = 00:00:52 . Memory (MB): peak = 571.488 ; gain = 395.504
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 8 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+47 Infos, 18 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:43 ; elapsed = 00:00:47 . Memory (MB): peak = 571.488 ; gain = 381.059
+report_utilization: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.269 . Memory (MB): peak = 571.488 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Fri Sep 11 21:21:19 2015...
