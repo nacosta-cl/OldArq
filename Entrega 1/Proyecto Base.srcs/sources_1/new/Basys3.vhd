@@ -1,3 +1,12 @@
+--ALU básica
+--v1.1
+--IIC2343 - Arquitectura de computadores
+--Integrantes
+--  Nicolás Acosta Huenulef
+--  Sebastian Carraedo
+--  Benjamin Rigonesi
+--  Jorge Trincado
+--Entidad raiz
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
@@ -110,7 +119,7 @@ inst_regB: Reg port map(
         dataout  => num2
      );
          
---ALU op. Siempre conectado
+--ALU op. Siempre conectado. Operacion de salida elegida mediante un mux
 inst_ALU: ALU port map
 (
     numA => num1,

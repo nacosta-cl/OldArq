@@ -82,7 +82,7 @@ signal opR6 : STD_LOGIC_VECTOR (15 downto 0);
 signal opR7 : STD_LOGIC_VECTOR (15 downto 0);
 
 begin
-
+--Mux de seleccion de los cables
 with sel select
     res <=  opR0 when "000",
             opR1 when "001",
@@ -93,6 +93,8 @@ with sel select
             opR6 when "110",
             opR7 when "111",
             "0000000000000000" when others;
+            
+--Operadores modulares
 inst_ADD: ADD16b port map
 (
     word1 => numA,
@@ -141,5 +143,5 @@ inst_sh16bR: ShiftR16b port map
     inShiftR => numA,
     outShiftR => opR7
 );
-
+--Fin operadores
 end Behavioral;
