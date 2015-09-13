@@ -35,15 +35,15 @@ component AND16b
     end component;
     
 component XOR16b is
-    Port ( aXOR : in STD_LOGIC_VECTOR (15 downto 0);
-       bXOR : in STD_LOGIC_VECTOR (15 downto 0);
-       oXOR : out STD_LOGIC_VECTOR (15 downto 0));
+    Port (  aXOR : in STD_LOGIC_VECTOR (15 downto 0);
+            bXOR : in STD_LOGIC_VECTOR (15 downto 0);
+            oXOR : out STD_LOGIC_VECTOR (15 downto 0));
     end component;
 
 component OR16b is
-    Port ( aOR : in STD_LOGIC_VECTOR (15 downto 0);
-       bOR : in STD_LOGIC_VECTOR (15 downto 0);
-       oOr : out STD_LOGIC_VECTOR (15 downto 0));
+    Port (  aOR : in STD_LOGIC_VECTOR (15 downto 0);
+            bOR : in STD_LOGIC_VECTOR (15 downto 0);
+            oOR : out STD_LOGIC_VECTOR (15 downto 0));
     end component;
 
 component NOT16b is
@@ -60,19 +60,86 @@ component ShiftR16b is
     Port ( inShiftR : in STD_LOGIC_VECTOR (15 downto 0);
        outShiftR : out STD_LOGIC_VECTOR (15 downto 0));
     end component;
+
+component Reg is
+    Port ( clock    : in  std_logic;
+           load     : in  std_logic;
+           up       : in  std_logic;
+           down     : in  std_logic;
+           datain   : in  std_logic_vector (15 downto 0);
+           dataout  : out std_logic_vector (15 downto 0));
+    end component;
+
+--Cables de conexion
+
+signal opR0 : STD_LOGIC_VECTOR (15 downto 0);
+signal opR1 : STD_LOGIC_VECTOR (15 downto 0);
+signal opR2 : STD_LOGIC_VECTOR (15 downto 0);
+signal opR3 : STD_LOGIC_VECTOR (15 downto 0);
+signal opR4 : STD_LOGIC_VECTOR (15 downto 0);
+signal opR5 : STD_LOGIC_VECTOR (15 downto 0);
+signal opR6 : STD_LOGIC_VECTOR (15 downto 0);
+signal opR7 : STD_LOGIC_VECTOR (15 downto 0);
+
 begin
-    
-inst_ADD: ADD16b Port map
+
+with sel select
+    res <=  opR0 when "000",
+            opR1 when "001",
+            opR2 when "010",
+            opR3 when "011",
+            opR4 when "100",
+            opR5 when "101",
+            opR6 when "110",
+            opR7 when "111",
+            "0000000000000000" when others;
+inst_ADD: ADD16b port map
 (
-    word1 =>
-)
-inst_SUS:
-inst_AND:
-inst_OR:
-inst_XOR:
-inst_NOT:
-inst_sh16bL:
-inst_sh16bR:
-    
+    word1 => numA,
+    word2 => numB,
+    sCin => ci,
+    sCout => co,
+    sSum => opR0
+);
+inst_SUS: SUS16b port map
+(
+    rWord1 => numA,
+    rWord2 => numB,
+    rest => opR1
+);
+
+inst_AND: AND16b port map
+(
+    aAnd => numA,
+    bAnd => numB,
+    oAnd => opR2
+);
+inst_OR: OR16b port map
+(
+    aOR => numA,
+    bOR => numB,
+    oOR => opR3
+);
+inst_XOR: XOR16b port map
+(
+    aXOR => numA,
+    bXOR => numB,
+    oXOR => opR4
+);
+inst_NOT: NOT16b port map
+(
+    inNot => numA,
+    outNot => opR5
+);
+inst_sh16bL: ShiftL16b port map
+(
+    inShiftL => numA,
+    outShiftL => opR6
+);
+inst_sh16bR: ShiftR16b port map
+(
+    inShiftR => numA,
+    outShiftR => opR7
+);
 
 end Behavioral;

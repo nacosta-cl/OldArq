@@ -3,7 +3,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity Basys3 is
     Port (
-        sw          : in   std_logic_vector (2 downto 0);
+        sw          : in   std_logic_vector (15 downto 0);
         btn         : in   std_logic_vector (4 downto 0);  -- 0 Center, 1 Up, 2 Left, 3 Right, 4 Down
         clk         : in   std_logic;
         clk_up      : in   std_logic;
@@ -31,6 +31,14 @@ component Led_Driver
             an          : out  std_logic_vector (3 downto 0)
            );
     end component;
+component ALU
+    Port ( numA        : in  std_logic_vector (15 downto 0);
+       numB        : in  std_logic_vector (15 downto 0);
+       sel      : in  std_logic_vector (2 downto 0);
+       ci       : in  std_logic;
+       co       : out std_logic;
+       res   : out std_logic_vector (15 downto 0));
+    end component;
 
 signal exNum1 : STD_LOGIC_VECTOR (15 downto 0);
 signal exNum2 : STD_LOGIC_VECTOR (15 downto 0);
@@ -54,20 +62,15 @@ dis_b <= res(11 downto 8);
 dis_c <= res(7 downto 4);
 dis_d <= res(3 downto 0);
 
---inst_ADD16b: ADD16b port map
---    (
---        word1 => exNum1,
---        word2 => exNum2,
---        sCin  => '0',
---        sSum  => res
---    );
+--dis_a(0) <= sw(0);
+--dis_b(0) <= sw(1);
+--dis_c(0) <= sw(2);
+--dis_d(0) <= sw(3);
 
-inst_AND16b: AND16b port map
-    (
-        aAnd =>exNum1,
-        bAnd =>exNum2,
-        oAnd =>res
-    );
+--dis_a <= sw(3 downto 0);
+--dis_b <= sw(7 downto 4);
+--dis_c <= sw(11 downto 8);
+--dis_d <= sw(15 downto 12);
 
 inst_Clock_Divider: Clock_Divider port map(
         clk         =>clk,
@@ -85,6 +88,14 @@ inst_Led_Driver: Led_Driver port map(
         seg => seg,
         an => an
 	);
-
+inst_ALU: ALU port map
+(
+    numA => exnum1,
+    numB => exnum2,
+    sel => sw(2 downto 0),
+    ci => '0',
+    co => atob,
+    res => res
+);
     
 end Behavioral;

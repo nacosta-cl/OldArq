@@ -1,0 +1,67 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Sat Sep 12 21:03:57 2015
+# Process ID: 15444
+# Log file: C:/Users/Nacosta/Documents/DEV/Arqui/Entrega 1/vivado.log
+# Journal file: C:/Users/Nacosta/Documents/DEV/Arqui/Entrega 1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/Nacosta/Documents/DEV/Arqui/Entrega 1/Proyecto Base.xpr}
+INFO: [Project 1-313] Project file moved from 'C:/Users/Benjamin/Desktop/Entrega 1' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2015.2/data/ip'.
+open_project: Time (s): cpu = 00:00:23 ; elapsed = 00:00:11 . Memory (MB): peak = 752.297 ; gain = 184.527
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Sat Sep 12 21:10:01 2015] Launched synth_1...
+Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/Entrega 1/Proyecto Base.runs/synth_1/runme.log
+[Sat Sep 12 21:10:01 2015] Launched impl_1...
+Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/Entrega 1/Proyecto Base.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Sat Sep 12 21:11:21 2015] Launched synth_1...
+Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/Entrega 1/Proyecto Base.runs/synth_1/runme.log
+[Sat Sep 12 21:11:21 2015] Launched impl_1...
+Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/Entrega 1/Proyecto Base.runs/impl_1/runme.log
+open_hw
+connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2015.2
+  **** Build date : Jun 26 2015-16:56:39
+    ** Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+
+
+ERROR: [Labtoolstcl 44-26] No hardware targets exist on the server [localhost:3121]
+Check to make sure the cable targets connected to this machine are properly connected
+and powered up, then use the disconnect_hw_server and connect_hw_server commands
+to re-register the hardware targets.
+disconnect_hw_server localhost:3121
+connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+ERROR: [Labtoolstcl 44-26] No hardware targets exist on the server [localhost:3121]
+Check to make sure the cable targets connected to this machine are properly connected
+and powered up, then use the disconnect_hw_server and connect_hw_server commands
+to re-register the hardware targets.
+disconnect_hw_server localhost:3121
+connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+ERROR: [Labtoolstcl 44-26] No hardware targets exist on the server [localhost:3121]
+Check to make sure the cable targets connected to this machine are properly connected
+and powered up, then use the disconnect_hw_server and connect_hw_server commands
+to re-register the hardware targets.
+disconnect_hw_server localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+ERROR: [Labtoolstcl 44-26] No hardware targets exist on the server [TCP:localhost:3121]
+Check to make sure the cable targets connected to this machine are properly connected
+and powered up, then use the disconnect_hw_server and connect_hw_server commands
+to re-register the hardware targets.
+exit
+INFO: [Common 17-206] Exiting Vivado at Sat Sep 12 21:16:13 2015...

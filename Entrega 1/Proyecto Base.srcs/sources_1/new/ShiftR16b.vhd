@@ -40,7 +40,7 @@ architecture Behavioral of ShiftR16b is
 
 begin
 
-    outShiftR(15 downto 1) <= inShiftR(14 downto 0);
-    outShiftR(0) <= 0;
+    outShiftR(14 downto 0) <= inShiftR(15 downto 1);
+    outShiftR(15) <= '0';
 
 end Behavioral;

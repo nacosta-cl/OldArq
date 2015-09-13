@@ -1,0 +1,2295 @@
+/*
+
+Vivado v2015.2 (64-bit)
+SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+Process ID: 16764
+
+Current time: 	9/12/15 10:04:59 PM CLST
+Time zone: 	Chile Time (America/Santiago)
+
+OS: Windows 8
+Version: 6.2
+Architecture: amd64
+Available processors (cores): 4
+
+Screen size: 1366x768
+Screen resolution (DPI): 96
+Available screens: 1
+Default font: family=Tahoma,name=Tahoma,style=plain,size=11
+
+Java version: 	1.8.0_25 64-bit
+Java home: 	C:/Xilinx/Vivado/2015.2/tps/win64/jre
+
+User name: 	Nacosta
+User directory: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1
+User country: 	CL
+User language: 	es
+User locale: 	es_CL
+
+Vivado preferences path: C:/Users/Nacosta/AppData/Roaming/Xilinx/Vivado/2015.2/vivado.ini
+Vivado layouts directory: C:/Users/Nacosta/AppData/Roaming/Xilinx/Vivado/2015.2/layouts/application
+
+GUI allocated memory:	150 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 350 MB
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// cp:P (cl:JFrame):  Open Project : addNotify
+// Opening Vivado Project: C:\Users\Nacosta\Documents\DEV\Arqui\ArquiProyectos\Entrega 1\Proyecto Base.xpr. Version: Vivado v2015.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.xpr} 
+// [GUI Memory]: 41 MB (+40523kb) [00:00:10]
+// [Engine Memory]: 344 MB (+209013kb) [00:00:10]
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 366 MB. GUI used memory: 24 MB. Current time: 9/12/15 10:05:01 PM CLST
+// Tcl Message: open_project {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.xpr} 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'C:/Users/Nacosta/Documents/DEV/Arqui/Entrega 1' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 376 MB (+15475kb) [00:00:16]
+// [Engine Memory]: 419 MB (+25836kb) [00:00:17]
+// [GUI Memory]: 50 MB (+7360kb) [00:00:21]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2015.2/data/ip'. 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// [Engine Memory]: 440 MB (+96kb) [00:00:23]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// [GUI Memory]: 53 MB (+623kb) [00:00:25]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Project name: Proyecto Base; location: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1; part: xc7a35tcpg236-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:28 ; elapsed = 00:00:16 . Memory (MB): peak = 728.648 ; gain = 165.340 
+dismissDialog("Open Project"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// [GUI Memory]: 56 MB (+130kb) [00:03:56]
+// [GUI Memory]: 59 MB (+424kb) [00:04:31]
+// PAPropertyPanels.initPanels (Basys3.vhd) elapsed time: 0.2s
+// Elapsed time: 348 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd)]", 2, true); // A:k (H:JPanel, cl:JFrame) - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files]", 1); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, ALU.vhd]", 2, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, ALU.vhd]", 2, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, ALU.vhd]", 2, false, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click
+selectTab((HResource) null, (HResource) null, "Messages", 1); // FrameContainer:JideTabbedPane (ContainerContainer:JideSplitPane, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, open_project {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.xpr}. , [Project 1-313] Project file moved from 'C:/Users/Nacosta/Documents/DEV/Arqui/Entrega 1' since last save.. ]", 2, false); // ae:k (JViewport:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 80, 194); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 128, 119); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 117, 111); // bj:J (JPanel:JComponent, cl:JFrame)
+// [GUI Memory]: 63 MB (+903kb) [00:06:55]
+// Elapsed time: 167 seconds
+selectCodeEditor("ALU.vhd", 156, 158); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 58, 189); // bj:J (JPanel:JComponent, cl:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 470 MB. GUI used memory: 32 MB. Current time: 9/12/15 10:14:12 PM CLST
+// [Engine Memory]: 471 MB (+9289kb) [00:09:25]
+selectCodeEditor("ALU.vhd", 4, 254); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 11 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SUS16b - Behavioral (SUS16b.vhd)]", 4, true); // A:k (H:JPanel, cl:JFrame) - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SUS16b - Behavioral (SUS16b.vhd)]", 4); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SUS16b - Behavioral (SUS16b.vhd), ADD - ADD16b - Behavioral (ADD16b.vhd)]", 5, true); // A:k (H:JPanel, cl:JFrame) - Node
+selectCodeEditor("ADD16b.vhd", 160, 81); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ADD16b.vhd", 166, 176); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ADD16b.vhd", 'c'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU.vhd", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 49 seconds
+selectCodeEditor("ALU.vhd", 58, 160); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 325, 159); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'c'); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 74, 182); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 15 seconds
+selectCodeEditor("ALU.vhd", 59, 168); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 63, 163); // bj:J (JPanel:JComponent, cl:JFrame)
+// [GUI Memory]: 73 MB (+7130kb) [00:12:41]
+// Elapsed time: 115 seconds
+selectCodeEditor("ALU.vhd", 578, 185); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 371, 152); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 77, 98); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 85, 98); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 86 seconds
+selectCodeEditor("ALU.vhd", 195, 130); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 30, 129); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'c'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 179, 159); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 176, 149); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 16 seconds
+selectCodeEditor("ALU.vhd", 116, 212); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 231, 257); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+// [GUI Memory]: 77 MB (+686kb) [00:17:09]
+// [GUI Memory]: 82 MB (+687kb) [00:17:59]
+// HMemoryUtils.trashcanNow. Engine heap size: 493 MB. GUI used memory: 33 MB. Current time: 9/12/15 10:23:22 PM CLST
+// Elapsed time: 368 seconds
+selectCodeEditor("ALU.vhd", 413, 216); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("ALU.vhd", 243, 225); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 172, 121); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 178, 121); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 25 seconds
+selectCodeEditor("ALU.vhd", 337, 53); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 123, 40); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 333, 39); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 341, 40); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 332, 36); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'c'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 326, 47); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 10 seconds
+selectCodeEditor("ALU.vhd", 48, 133); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 99, 130); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 23 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ADD16b.vhd", 2); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU.vhd", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectCodeEditor("ALU.vhd", 22, 182); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 119, 167); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 62 seconds
+selectCodeEditor("ALU.vhd", 98, 248); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 39 seconds
+selectCodeEditor("ALU.vhd", 132, 174); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 168, 129); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 26 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU.vhd", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+floatFrame(PAResourceOtoP.PAViews_CODE, "ALU.vhd *"); // ap:DockableFrame (FrameContainer:JideTabbedPane, cl:JFrame)
+// PAResourceOtoP.PAViews_CODE: Code: float view
+maximizeFrame(PAResourceOtoP.PAViews_CODE, "ALU.vhd *"); // ap:DockableFrame (FrameContainer:JideTabbedPane, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("ALU.vhd", 229, 508); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("ALU.vhd", 237, 496); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+// Elapsed time: 1279 seconds
+selectCodeEditor("ALU.vhd", 71, 504); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("ALU.vhd", 76, 518); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 493 MB. GUI used memory: 38 MB. Current time: 9/12/15 10:53:22 PM CLST
+// Elapsed time: 242 seconds
+selectCodeEditor("ALU.vhd", 125, 422); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("ALU.vhd", 165, 331); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("ALU.vhd", 159, 340); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("ALU.vhd", 129, 349); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("ALU.vhd", 105, 368); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("ALU.vhd", 106, 387); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+// Elapsed time: 11 seconds
+selectCodeEditor("ALU.vhd", 118, 373); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("ALU.vhd", 100, 388); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+// Elapsed time: 92 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, OR16b - Behavioral (OR16b.vhd)]", 24, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, OR16b - Behavioral (OR16b.vhd)]", 24, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, OR16b - Behavioral (OR16b.vhd)]", 24, false, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click
+selectCodeEditor("OR16b.vhd", 58, 173); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("OR16b.vhd", 94, 140); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("OR16b.vhd", 97, 133); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 59, 318); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("ALU.vhd", 44, 298); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("ALU.vhd", 51, 299); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("ALU.vhd", 48, 309); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("ALU.vhd", 70, 287); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("ALU.vhd", 75, 284); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("ALU.vhd", 72, 329); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("ALU.vhd", 77, 332); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("ALU.vhd", 45, 351); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("ALU.vhd", 52, 346); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("ALU.vhd", 48, 367); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("ALU.vhd", 79, 430); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("ALU.vhd", 157, 455); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("ALU.vhd", 146, 461); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+// Elapsed time: 18 seconds
+selectCodeEditor("ALU.vhd", 83, 546); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("ALU.vhd", 85, 537); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+// Elapsed time: 37 seconds
+selectCodeEditor("ALU.vhd", 67, 546); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+// Elapsed time: 20 seconds
+selectCodeEditor("ALU.vhd", 75, 384); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'c'); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("ALU.vhd", 45, 541); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("ALU.vhd", 120, 575); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+// Elapsed time: 14 seconds
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 56 seconds
+selectCodeEditor("ALU.vhd", 298, 423); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 26 seconds
+selectCodeEditor("ALU.vhd", 293, 355, false, false, false, true, false); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame) - Popup Trigger
+selectCodeEditor("ALU.vhd", 228, 381, false, false, false, true, false); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame) - Popup Trigger
+selectCodeEditor("ALU.vhd", 53, 319); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+// Elapsed time: 19 seconds
+selectCodeEditor("ALU.vhd", 164, 569); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // w:JideButton (CommandBar:DockableBar, FrameFloatingContainer:ResizableFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+dockFrame(PAResourceOtoP.PAViews_CODE, "ALU.vhd *"); // ap:DockableFrame (FrameContainer:JideTabbedPane, FrameFloatingContainer:ResizableFrame)
+maximizeFrame(PAResourceOtoP.PAViews_CODE, "ALU.vhd *"); // ap:DockableFrame (FrameContainer:JideTabbedPane, FrameFloatingContainer:ResizableFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU.vhd", 2); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "OR16b.vhd", 2); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("OR16b.vhd", 226, 102); // bj:J (JPanel:JComponent, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "OR16b.vhd", 3); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectCodeEditor("ALU.vhd", 401, 170); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 394, 166); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'c'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, ALU.vhd]", 2, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, ALU.vhd]", 2, false, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click
+selectCodeEditor("ALU.vhd", 355, 166); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 309, 142); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 15 seconds
+selectCodeEditor("ALU.vhd", 52, 198); // bj:J (JPanel:JComponent, cl:JFrame)
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// cp:P (cl:JFrame):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+dismissDialog("Resetting Runs"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// cp:P (cl:JFrame):  Generate Bitstream : addNotify
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sat Sep 12 23:02:47 2015] Launched synth_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/synth_1/runme.log [Sat Sep 12 23:02:48 2015] Launched impl_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // cp:P (cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd)]", 3, true); // A:k (H:JPanel, cl:JFrame) - Node
+// Elapsed time: 12 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd)]", 3); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, ALU.vhd]", 2, false); // A:k (H:JPanel, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU.vhd", 0); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+// TclEventType: RUN_FAILED
+// Q:ap (cl:JFrame): Synthesis Failed: addNotify
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, Q:ap)
+dismissDialog("Synthesis Failed"); // Q:ap (cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Analysis Results, sources_1, [HDL 9-806] Syntax error near ;. [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.srcs/sources_1/new/ALU.vhd:110]. ]", 8, true); // ae:k (JViewport:JComponent, cl:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Analysis Results, sources_1, [HDL 9-806] Syntax error near ;. [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.srcs/sources_1/new/ALU.vhd:110]. ]", 8, true); // ae:k (JViewport:JComponent, cl:JFrame) - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\Nacosta\Documents\DEV\Arqui\ArquiProyectos\Entrega 1\Proyecto Base.srcs\sources_1\new\ALU.vhd;-;;-;16;-;line;-;110;-;;-;16;-;"); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Analysis Results, sources_1, [HDL 9-806] Syntax error near ;. [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.srcs/sources_1/new/ALU.vhd:110]. ]", 8, true, false, false, false, false, true); // ae:k (JViewport:JComponent, cl:JFrame) - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd)]", 3, true); // A:k (H:JPanel, cl:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd)]", 3, true, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click - Node
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Basys3.vhd", 4); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU.vhd", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Basys3.vhd", 2); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU.vhd", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Basys3.vhd", 2); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectCodeEditor("ALU.vhd", 130, 146); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 127, 25); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 117, 138); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 122, 140); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 126, 149); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 51, 139); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 72, 150); // bj:J (JPanel:JComponent, cl:JFrame)
+// [GUI Memory]: 88 MB (+1717kb) [00:59:09]
+// Elapsed time: 19 seconds
+selectCodeEditor("ALU.vhd", 99, 158); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 15 seconds
+selectCodeEditor("ALU.vhd", 109, 108); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 50 seconds
+selectCodeEditor("ALU.vhd", 210, 248); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 16 seconds
+selectCodeEditor("ALU.vhd", 339, 193); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 90, 110); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 80 seconds
+selectCodeEditor("ALU.vhd", 67, 24); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'c'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 87, 64); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 87, 133); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 87, 144); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 130, 150); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 21 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU.vhd", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Basys3.vhd", 2); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ALU - Behavioral (ALU.vhd)]", 2); // A:k (H:JPanel, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU.vhd", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 57, 222); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 44 seconds
+selectCodeEditor("Basys3.vhd", 93, 166, false, false, false, true, false); // bj:J (JPanel:JComponent, cl:JFrame) - Popup Trigger
+selectCodeEditor("Basys3.vhd", 79, 163); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 37 seconds
+selectCodeEditor("Basys3.vhd", 124, 198, false, false, false, true, false); // bj:J (JPanel:JComponent, cl:JFrame) - Popup Trigger
+selectCodeEditor("Basys3.vhd", 112, 195); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 112, 195, false, false, false, true, false); // bj:J (JPanel:JComponent, cl:JFrame) - Popup Trigger
+// Elapsed time: 22 seconds
+selectCodeEditor("Basys3.vhd", 88, 193); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 18 seconds
+selectCodeEditor("Basys3.vhd", 170, 204, false, false, false, true, false); // bj:J (JPanel:JComponent, cl:JFrame) - Popup Trigger
+selectCodeEditor("Basys3.vhd", 117, 210); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 116, 210, false, false, false, true, false); // bj:J (JPanel:JComponent, cl:JFrame) - Popup Trigger
+selectCodeEditor("Basys3.vhd", 54, 181); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 18 seconds
+selectCodeEditor("Basys3.vhd", 74, 177); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 85, 167); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 13 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Basys3.vhd", 2); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 493 MB. GUI used memory: 42 MB. Current time: 9/12/15 11:23:22 PM CLST
+// Elapsed time: 836 seconds
+selectCodeEditor("ALU.vhd", 142, 243); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 383, 150); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 377, 186); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 26 seconds
+selectCodeEditor("ALU.vhd", 392, 166); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'c'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU.vhd", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 150, 198); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "Basys3.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Basys3.vhd", 2); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU.vhd", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+// Elapsed time: 53 seconds
+selectCodeEditor("Basys3.vhd", 96, 213); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 607 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Basys3.vhd", 0); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 298, 100); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 311, 100); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 320, 100); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 336, 123); // bj:J (JPanel:JComponent, cl:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd)]", 1); // A:k (H:JPanel, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 41, 107); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 185 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd), inst_Clock_Divider - Clock_Divider - Behavioral (Clock_Divider.vhd)]", 3, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd), inst_Clock_Divider - Clock_Divider - Behavioral (Clock_Divider.vhd)]", 3, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd), inst_Clock_Divider - Clock_Divider - Behavioral (Clock_Divider.vhd)]", 3, false, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd), inst_Led_Driver - Led_Driver - Behavioral (Led_Driver.vhd)]", 4, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd), inst_Led_Driver - Led_Driver - Behavioral (Led_Driver.vhd)]", 4, false, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Led_Driver.vhd", 2); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU.vhd", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+// Elapsed time: 11 seconds
+selectCodeEditor("Basys3.vhd", 141, 124); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 142, 118); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 37 seconds
+selectCodeEditor("Basys3.vhd", 157, 99); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 148, 112); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 14 seconds
+selectCodeEditor("Basys3.vhd", 69, 177); // bj:J (JPanel:JComponent, cl:JFrame)
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// aR:ah (cl:JFrame): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a:JButton (JPanel:JComponent, aR:ah)
+// cp:P (cl:JFrame):  Save Constraints : addNotify
+// cp:P (cl:JFrame):  Resetting Runs : addNotify
+// TclEventType: DG_GRAPH_STALE
+dismissDialog("Save Project"); // aR:ah (cl:JFrame)
+// TclEventType: RUN_MODIFY
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: RUN_MODIFY
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// 'bQ' command handler elapsed time: 3 seconds
+dismissDialog("Resetting Runs"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// cp:P (cl:JFrame):  Generate Bitstream : addNotify
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sat Sep 12 23:41:13 2015] Launched synth_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/synth_1/runme.log [Sat Sep 12 23:41:13 2015] Launched impl_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Analysis Results, sources_1, [HDL 9-806] Syntax error near ,. [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.srcs/sources_1/new/Basys3.vhd:88]. ]", 9, true); // ae:k (JViewport:JComponent, cl:JFrame) - Node
+selectCodeEditor("Basys3.vhd", 69, 178); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 61, 179); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 172, 121); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 61, 181); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 65, 175); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: RUN_FAILED
+// Q:ap (cl:JFrame): Synthesis Failed: addNotify
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, Q:ap)
+dismissDialog("Synthesis Failed"); // Q:ap (cl:JFrame)
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// aR:ah (cl:JFrame): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a:JButton (JPanel:JComponent, aR:ah)
+// cp:P (cl:JFrame):  Save Constraints : addNotify
+// cp:P (cl:JFrame):  Resetting Runs : addNotify
+dismissDialog("Save Project"); // aR:ah (cl:JFrame)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: RUN_RESET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// 'bQ' command handler elapsed time: 3 seconds
+dismissDialog("Resetting Runs"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream 
+// cp:P (cl:JFrame):  Generate Bitstream : addNotify
+// TclEventType: RUN_LAUNCH
+// [GUI Memory]: 93 MB (+429kb) [01:36:55]
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sat Sep 12 23:41:45 2015] Launched synth_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/synth_1/runme.log [Sat Sep 12 23:41:45 2015] Launched impl_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("Basys3.vhd", 74, 211); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 110, 199); // bj:J (JPanel:JComponent, cl:JFrame)
+selectButton(PAResourceQtoS.StateMonitor_CANCEL, "Cancel"); // a:JButton (r:JPanel, cl:JFrame)
+// cp:P (cl:JFrame):  Resetting Runs : addNotify
+selectButton("PAResourceQtoS.StateMonitor_YOU_ABOUT_TO_CANCEL_YOUR_RUNNING_Delete Files", "Delete Files"); // JButton:AbstractButton (JPanel:JComponent, T:JDialog)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+dismissDialog("Resetting Runs"); // cp:P (cl:JFrame)
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// aR:ah (cl:JFrame): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a:JButton (JPanel:JComponent, aR:ah)
+// cp:P (cl:JFrame):  Save Constraints : addNotify
+// cp:P (cl:JFrame):  Resetting Runs : addNotify
+dismissDialog("Save Project"); // aR:ah (cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+dismissDialog("Resetting Runs"); // cp:P (cl:JFrame)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// cp:P (cl:JFrame):  Generate Bitstream : addNotify
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sat Sep 12 23:42:07 2015] Launched synth_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/synth_1/runme.log [Sat Sep 12 23:42:07 2015] Launched impl_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: RUN_FAILED
+// Q:ap (cl:JFrame): Synthesis Failed: addNotify
+// Elapsed time: 65 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, Q:ap)
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, Q:ap)
+dismissDialog("Synthesis Failed"); // Q:ap (cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, open_project {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.xpr}. , [IP_Flow 19-234] Refreshing IP repositories. ]", 3, false); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-2810] unit behavioral ignored due to previous errors [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.srcs/sources_1/new/ShiftR16b.vhd:39]. ]", 15, false); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-2774] type std_ulogic does not match with the integer literal [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.srcs/sources_1/new/ShiftR16b.vhd:44]. ]", 14, false); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-2774] type std_ulogic does not match with the integer literal [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.srcs/sources_1/new/ShiftR16b.vhd:44]. ]", 14, false); // ae:k (JViewport:JComponent, cl:JFrame)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\Nacosta\Documents\DEV\Arqui\ArquiProyectos\Entrega 1\Proyecto Base.srcs\sources_1\new\ShiftR16b.vhd;-;;-;16;-;line;-;44;-;;-;16;-;"); // ae:k (JViewport:JComponent, cl:JFrame)
+selectCodeEditor("ShiftR16b.vhd", 151, 223); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ShiftR16b.vhd", 152, 215); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ShiftR16b.vhd", 146, 215); // bj:J (JPanel:JComponent, cl:JFrame)
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// aR:ah (cl:JFrame): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a:JButton (JPanel:JComponent, aR:ah)
+// cp:P (cl:JFrame):  Save Constraints : addNotify
+// cp:P (cl:JFrame):  Resetting Runs : addNotify
+dismissDialog("Save Project"); // aR:ah (cl:JFrame)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+dismissDialog("Resetting Runs"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// cp:P (cl:JFrame):  Generate Bitstream : addNotify
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sat Sep 12 23:43:41 2015] Launched synth_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/synth_1/runme.log [Sat Sep 12 23:43:41 2015] Launched impl_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: RUN_FAILED
+// Q:ap (cl:JFrame): Synthesis Failed: addNotify
+// Elapsed time: 28 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, Q:ap)
+dismissDialog("Synthesis Failed"); // Q:ap (cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-2774] type std_ulogic does not match with the integer literal [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.srcs/sources_1/new/ShiftL16b.vhd:44]. ]", 14, false); // ae:k (JViewport:JComponent, cl:JFrame)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\Nacosta\Documents\DEV\Arqui\ArquiProyectos\Entrega 1\Proyecto Base.srcs\sources_1\new\ShiftL16b.vhd;-;;-;16;-;line;-;44;-;;-;16;-;"); // ae:k (JViewport:JComponent, cl:JFrame)
+selectCodeEditor("ShiftL16b.vhd", 177, 234); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ShiftL16b.vhd", 179, 223); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ShiftL16b.vhd", 185, 210); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ShiftL16b.vhd", 147, 211); // bj:J (JPanel:JComponent, cl:JFrame)
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// aR:ah (cl:JFrame): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a:JButton (JPanel:JComponent, aR:ah)
+// cp:P (cl:JFrame):  Save Constraints : addNotify
+// cp:P (cl:JFrame):  Resetting Runs : addNotify
+dismissDialog("Save Project"); // aR:ah (cl:JFrame)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+dismissDialog("Resetting Runs"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// cp:P (cl:JFrame):  Generate Bitstream : addNotify
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sat Sep 12 23:44:30 2015] Launched synth_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/synth_1/runme.log [Sat Sep 12 23:44:30 2015] Launched impl_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ShiftL16b.vhd", 4); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "OR16b.vhd", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 119, 244); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: RUN_FAILED
+// Q:ap (cl:JFrame): Synthesis Failed: addNotify
+// Elapsed time: 54 seconds
+selectCheckBox(RDIResource.MessageWithOptionDialog_DONT_SHOW_THIS_DIALOG_AGAIN, "Don't show this dialog again", true); // h:JCheckBox (JPanel:JComponent, Q:ap): TRUE
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, Q:ap)
+dismissDialog("Synthesis Failed"); // Q:ap (cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-2778] type error near ci ; expected type std_logic_vector [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.srcs/sources_1/new/ALU.vhd:89]. ]", 16, false); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-944] 0 definitions of operator <= match here [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.srcs/sources_1/new/ALU.vhd:77]. ]", 15, true); // ae:k (JViewport:JComponent, cl:JFrame) - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\Nacosta\Documents\DEV\Arqui\ArquiProyectos\Entrega 1\Proyecto Base.srcs\sources_1\new\ALU.vhd;-;;-;16;-;line;-;77;-;;-;16;-;"); // ae:k (JViewport:JComponent, cl:JFrame)
+// Elapsed time: 17 seconds
+selectCodeEditor("ALU.vhd", 221, 170, false, false, false, true, false); // bj:J (JPanel:JComponent, cl:JFrame) - Popup Trigger
+selectCodeEditor("ALU.vhd", 188, 231); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 53, 183); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 84, 112); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 78, 80); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 92, 126); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 97, 126); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 58, 133); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 11 seconds
+selectCodeEditor("ALU.vhd", 95, 185); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 48 seconds
+selectCodeEditor("ALU.vhd", 56, 128); // bj:J (JPanel:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-944] 0 definitions of operator <= match here [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.srcs/sources_1/new/ALU.vhd:77]. ]", 15, true); // ae:k (JViewport:JComponent, cl:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-1779] cannot read from 'out' object res ; use 'buffer' or 'inout' [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.srcs/sources_1/new/ALU.vhd:77]. ]", 14, true); // ae:k (JViewport:JComponent, cl:JFrame) - Node
+selectCodeEditor("ALU.vhd", 106, 167); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 13 seconds
+selectCodeEditor("ALU.vhd", 77, 187); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 98, 182); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 175, 177); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 183, 177); // bj:J (JPanel:JComponent, cl:JFrame)
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// aR:ah (cl:JFrame): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a:JButton (JPanel:JComponent, aR:ah)
+// cp:P (cl:JFrame):  Save Constraints : addNotify
+// cp:P (cl:JFrame):  Resetting Runs : addNotify
+dismissDialog("Save Project"); // aR:ah (cl:JFrame)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+dismissDialog("Resetting Runs"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream 
+// cp:P (cl:JFrame):  Generate Bitstream : addNotify
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sat Sep 12 23:48:04 2015] Launched synth_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/synth_1/runme.log [Sat Sep 12 23:48:04 2015] Launched impl_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, open_project {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.xpr}. , [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2015.2/data/ip'.. ]", 5, false); // ae:k (JViewport:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 79, 159); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: RUN_FAILED
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU.vhd", 3); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ADD16b.vhd", 2); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+// Q:ap (cl:JFrame): Synthesis Failed: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, Q:ap)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Synthesis Failed"); // Q:ap (cl:JFrame)
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-944] 0 definitions of operator <= match here [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.srcs/sources_1/new/ALU.vhd:77]. ]", 2); // ae:k (JViewport:JComponent, cl:JFrame)
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-1779] cannot read from 'out' object res ; use 'buffer' or 'inout' [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.srcs/sources_1/new/ALU.vhd:77]. ]", 1); // ae:k (JViewport:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 67, 125); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 28 seconds
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// aR:ah (cl:JFrame): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a:JButton (JPanel:JComponent, aR:ah)
+// cp:P (cl:JFrame):  Save Constraints : addNotify
+// cp:P (cl:JFrame):  Resetting Runs : addNotify
+dismissDialog("Save Project"); // aR:ah (cl:JFrame)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+dismissDialog("Resetting Runs"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("ALU.vhd", 93, 199); // bj:J (JPanel:JComponent, cl:JFrame)
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream 
+// cp:P (cl:JFrame):  Generate Bitstream : addNotify
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sat Sep 12 23:49:14 2015] Launched synth_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/synth_1/runme.log [Sat Sep 12 23:49:14 2015] Launched impl_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/impl_1/runme.log 
+selectCodeEditor("ALU.vhd", 151, 91); // bj:J (JPanel:JComponent, cl:JFrame)
+dismissDialog("Generate Bitstream"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("ALU.vhd", 70, 113); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 106, 114); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 107, 115); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 78, 112); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 74, 110); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 74, 110); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 28, 111); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: RUN_FAILED
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey(null, null, 'z');
+// Q:ap (cl:JFrame): Synthesis Failed: addNotify
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, Q:ap)
+dismissDialog("Synthesis Failed"); // Q:ap (cl:JFrame)
+selectCodeEditor("ALU.vhd", 67, 112); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 28, 113); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 76, 110); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 81, 111); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 75, 113); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 31, 107); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'c'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 106, 113); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 105, 125); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 105, 136); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 107, 159); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 105, 184); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 104, 206); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 102, 196); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 98, 237); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 101, 233); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 103, 232); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 204, 247); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 77, 249); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 20 seconds
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// aR:ah (cl:JFrame): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a:JButton (JPanel:JComponent, aR:ah)
+// cp:P (cl:JFrame):  Save Constraints : addNotify
+// cp:P (cl:JFrame):  Resetting Runs : addNotify
+dismissDialog("Save Project"); // aR:ah (cl:JFrame)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+dismissDialog("Resetting Runs"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// cp:P (cl:JFrame):  Generate Bitstream : addNotify
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sat Sep 12 23:50:33 2015] Launched synth_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/synth_1/runme.log [Sat Sep 12 23:50:33 2015] Launched impl_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 16 seconds
+selectCodeEditor("ALU.vhd", 122, 186); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: RUN_FAILED
+// Q:ap (cl:JFrame): Synthesis Failed: addNotify
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, Q:ap)
+dismissDialog("Synthesis Failed"); // Q:ap (cl:JFrame)
+// Elapsed time: 119 seconds
+selectCodeEditor("ALU.vhd", 78, 109); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+// [GUI Memory]: 97 MB (+249kb) [01:48:14]
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("ALU.vhd", 85, 135); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+// [GUI Memory]: 104 MB (+1258kb) [01:48:37]
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("ALU.vhd", 83, 170); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 91, 189); // bj:J (JPanel:JComponent, cl:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 493 MB. GUI used memory: 43 MB. Current time: 9/12/15 11:53:31 PM CLST
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("ALU.vhd", 124, 137); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 146, 142); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 152, 151); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 70, 136); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 73, 134); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 39 seconds
+selectCodeEditor("ALU.vhd", 121, 163); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 11 seconds
+selectCodeEditor("ALU.vhd", 207, 207); // bj:J (JPanel:JComponent, cl:JFrame)
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// aR:ah (cl:JFrame): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a:JButton (JPanel:JComponent, aR:ah)
+// cp:P (cl:JFrame):  Save Constraints : addNotify
+// cp:P (cl:JFrame):  Resetting Runs : addNotify
+dismissDialog("Save Project"); // aR:ah (cl:JFrame)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: RUN_RESET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+dismissDialog("Resetting Runs"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// cp:P (cl:JFrame):  Generate Bitstream : addNotify
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sat Sep 12 23:54:38 2015] Launched synth_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/synth_1/runme.log [Sat Sep 12 23:54:38 2015] Launched impl_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: RUN_FAILED
+// Q:ap (cl:JFrame): Synthesis Failed: addNotify
+// Elapsed time: 28 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, Q:ap)
+dismissDialog("Synthesis Failed"); // Q:ap (cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-2772] type std_logic does not match with a string literal [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.srcs/sources_1/new/Basys3.vhd:87]. ]", 1, false); // ae:k (JViewport:JComponent, cl:JFrame)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\Nacosta\Documents\DEV\Arqui\ArquiProyectos\Entrega 1\Proyecto Base.srcs\sources_1\new\Basys3.vhd;-;;-;16;-;line;-;87;-;;-;16;-;"); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis]", 0, true); // ae:k (JViewport:JComponent, cl:JFrame) - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\Nacosta\Documents\DEV\Arqui\ArquiProyectos\Entrega 1\Proyecto Base.srcs\sources_1\new\Basys3.vhd;-;;-;16;-;line;-;87;-;;-;16;-;"); // ae:k (JViewport:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 89, 216); // bj:J (JPanel:JComponent, cl:JFrame)
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// aR:ah (cl:JFrame): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a:JButton (JPanel:JComponent, aR:ah)
+// cp:P (cl:JFrame):  Save Constraints : addNotify
+// cp:P (cl:JFrame):  Resetting Runs : addNotify
+dismissDialog("Save Project"); // aR:ah (cl:JFrame)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+dismissDialog("Resetting Runs"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream 
+// cp:P (cl:JFrame):  Generate Bitstream : addNotify
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sat Sep 12 23:55:27 2015] Launched synth_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/synth_1/runme.log [Sat Sep 12 23:55:27 2015] Launched impl_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 18 seconds
+selectCodeEditor("Basys3.vhd", 121, 224); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: RUN_FAILED
+// Q:ap (cl:JFrame): Synthesis Failed: addNotify
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, Q:ap)
+dismissDialog("Synthesis Failed"); // Q:ap (cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-549] port width mismatch for port 'sel': port width = 3, actual width = 4 [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.srcs/sources_1/new/Basys3.vhd:86]. ]", 1, false); // ae:k (JViewport:JComponent, cl:JFrame)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\Nacosta\Documents\DEV\Arqui\ArquiProyectos\Entrega 1\Proyecto Base.srcs\sources_1\new\Basys3.vhd;-;;-;16;-;line;-;86;-;;-;16;-;"); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis]", 0, true); // ae:k (JViewport:JComponent, cl:JFrame) - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\Nacosta\Documents\DEV\Arqui\ArquiProyectos\Entrega 1\Proyecto Base.srcs\sources_1\new\Basys3.vhd;-;;-;16;-;line;-;86;-;;-;16;-;"); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Basys3.vhd", 2); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectCodeEditor("ALU.vhd", 312, 112); // bj:J (JPanel:JComponent, cl:JFrame)
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// aR:ah (cl:JFrame): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a:JButton (JPanel:JComponent, aR:ah)
+// cp:P (cl:JFrame):  Save Constraints : addNotify
+// cp:P (cl:JFrame):  Resetting Runs : addNotify
+dismissDialog("Save Project"); // aR:ah (cl:JFrame)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: RUN_RESET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// 'bQ' command handler elapsed time: 3 seconds
+dismissDialog("Resetting Runs"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// cp:P (cl:JFrame):  Generate Bitstream : addNotify
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sat Sep 12 23:56:16 2015] Launched synth_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/synth_1/runme.log [Sat Sep 12 23:56:16 2015] Launched impl_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: RUN_FAILED
+// Q:ap (cl:JFrame): Synthesis Failed: addNotify
+// Elapsed time: 22 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, Q:ap)
+dismissDialog("Synthesis Failed"); // Q:ap (cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-549] port width mismatch for port 'sel': port width = 4, actual width = 3 [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.srcs/sources_1/new/Basys3.vhd:82]. ]", 1, false); // ae:k (JViewport:JComponent, cl:JFrame)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\Nacosta\Documents\DEV\Arqui\ArquiProyectos\Entrega 1\Proyecto Base.srcs\sources_1\new\Basys3.vhd;-;;-;16;-;line;-;82;-;;-;16;-;"); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-549] port width mismatch for port 'sel': port width = 4, actual width = 3 [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.srcs/sources_1/new/Basys3.vhd:82]. ]", 1, false, false, false, false, false, true); // ae:k (JViewport:JComponent, cl:JFrame) - Double Click
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-549] port width mismatch for port 'sel': port width = 4, actual width = 3 [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.srcs/sources_1/new/Basys3.vhd:82]. ]", 1, false); // ae:k (JViewport:JComponent, cl:JFrame)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\Nacosta\Documents\DEV\Arqui\ArquiProyectos\Entrega 1\Proyecto Base.srcs\sources_1\new\Basys3.vhd;-;;-;16;-;line;-;82;-;;-;16;-;"); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Basys3.vhd", 2); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU.vhd", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 80, 151); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 55 seconds
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// cp:P (cl:JFrame):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+dismissDialog("Resetting Runs"); // cp:P (cl:JFrame)
+selectCodeEditor("Basys3.vhd", 107, 132); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// cp:P (cl:JFrame):  Generate Bitstream : addNotify
+// TclEventType: DG_UPDATE_GRAPH
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sat Sep 12 23:57:56 2015] Launched synth_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/synth_1/runme.log [Sat Sep 12 23:57:56 2015] Launched impl_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // cp:P (cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Basys3.vhd", 2); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU.vhd", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Basys3.vhd", 2); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU.vhd", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+// TclEventType: RUN_FAILED
+// Q:ap (cl:JFrame): Synthesis Failed: addNotify
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, Q:ap)
+dismissDialog("Synthesis Failed"); // Q:ap (cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-549] port width mismatch for port 'sel': port width = 4, actual width = 3 [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.srcs/sources_1/new/Basys3.vhd:82]. ]", 1, false); // ae:k (JViewport:JComponent, cl:JFrame)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\Nacosta\Documents\DEV\Arqui\ArquiProyectos\Entrega 1\Proyecto Base.srcs\sources_1\new\Basys3.vhd;-;;-;16;-;line;-;82;-;;-;16;-;"); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-549] port width mismatch for port 'sel': port width = 4, actual width = 3 [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.srcs/sources_1/new/Basys3.vhd:82]. ]", 1, false); // ae:k (JViewport:JComponent, cl:JFrame)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\Nacosta\Documents\DEV\Arqui\ArquiProyectos\Entrega 1\Proyecto Base.srcs\sources_1\new\Basys3.vhd;-;;-;16;-;line;-;82;-;;-;16;-;"); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-549] port width mismatch for port 'sel': port width = 4, actual width = 3 [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.srcs/sources_1/new/Basys3.vhd:82]. ]", 1, false, false, false, false, false, true); // ae:k (JViewport:JComponent, cl:JFrame) - Double Click
+selectCodeEditor("Basys3.vhd", 83, 116); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 63, 150); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 71, 68); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 132, 189); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 117, 145); // bj:J (JPanel:JComponent, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Basys3.vhd", 3); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ADD16b.vhd", 2); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// aR:ah (cl:JFrame): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a:JButton (JPanel:JComponent, aR:ah)
+// cp:P (cl:JFrame):  Save Constraints : addNotify
+// cp:P (cl:JFrame):  Resetting Runs : addNotify
+dismissDialog("Save Project"); // aR:ah (cl:JFrame)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// 'bQ' command handler elapsed time: 3 seconds
+dismissDialog("Resetting Runs"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// cp:P (cl:JFrame):  Generate Bitstream : addNotify
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sat Sep 12 23:58:55 2015] Launched synth_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/synth_1/runme.log [Sat Sep 12 23:58:55 2015] Launched impl_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: RUN_FAILED
+// Q:ap (cl:JFrame): Synthesis Failed: addNotify
+// Elapsed time: 21 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, Q:ap)
+dismissDialog("Synthesis Failed"); // Q:ap (cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU.vhd", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 89, 148); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 115, 145); // bj:J (JPanel:JComponent, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Basys3.vhd", 2); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectCodeEditor("ALU.vhd", 314, 112); // bj:J (JPanel:JComponent, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU.vhd", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Basys3.vhd", 2); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectCodeEditor("ALU.vhd", 167, 231); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 11 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU.vhd", 0); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 2); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 101, 141); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 91, 146); // bj:J (JPanel:JComponent, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Basys3.vhd", 2); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_FILE, "Open Recent File"); // X:JMenu (JPopupMenu:JComponent, cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // X:JMenu (JPopupMenu:JComponent, cl:JFrame)
+selectMenuItem(RDIResourceCommand.RDICommands_SAVE_ALL_FILES, "Save All Files..."); // ab:JMenuItem (JPopupMenu:JComponent, cl:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+// Run Command: RDIResourceCommand.RDICommands_SAVE_ALL_FILES
+// n:ap (cl:JFrame): Save Text Editor Changes: addNotify
+selectButton(RDIResource.ConfirmSaveTextEditsDialog_YES, "Yes"); // a:JButton (JPanel:JComponent, n:ap)
+// TclEventType: DG_GRAPH_STALE
+dismissDialog("Save Text Editor Changes"); // n:ap (cl:JFrame)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// cp:P (cl:JFrame):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+dismissDialog("Resetting Runs"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// cp:P (cl:JFrame):  Generate Bitstream : addNotify
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream 
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sun Sep 13 00:00:13 2015] Launched synth_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/synth_1/runme.log [Sun Sep 13 00:00:13 2015] Launched impl_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // cp:P (cl:JFrame)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// Q:ap (cl:JFrame): Bitstream Generation Completed: addNotify
+// Elapsed time: 234 seconds
+selectRadioButton(PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER, "Open Hardware Manager"); // a:JRadioButton (JPanel:JComponent, Q:ap)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, Q:ap)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// TclEventType: LOAD_FEATURE
+// TclEventType: HW_SESSION_OPEN
+// Tcl Message: open_hw 
+dismissDialog("Bitstream Generation Completed"); // Q:ap (cl:JFrame)
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // i:l (JPanel:JComponent, cl:JFrame)
+selectMenu(PAResourceOtoP.ProgramDebugTab_OPEN_RECENTLY_OPENED_TARGET, "Recent Targets"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenu(PAResourceOtoP.ProgramDebugTab_OPEN_RECENTLY_OPENED_TARGET, "Recent Targets"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenuItem((HResource) null, "localhost:3121,xilinx_tcf/Digilent/210183637323A,PARAM.FREQUENCY:15000000"); // ab:JMenuItem (JPopupMenu:JComponent, cl:JFrame)
+// cp:P (cl:JFrame):  Open Hardware Target : addNotify
+// Tcl Message: connect_hw_server -url localhost:3121 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 
+// Tcl Message: INFO: [Labtools 27-2222] Launching hw_server... 
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:  ****** Xilinx hw_server v2015.2   **** Build date : Jun 26 2015-16:56:39     ** Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.   
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: current_hw_target [get_hw_targets */xilinx_tcf/Digilent/210183637323A] 
+// TclEventType: HW_TARGET_CHANGE
+// Tcl Message: set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Digilent/210183637323A] 
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: open_hw_target 
+// Tcl Message: INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183637323A 
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/impl_1/Basys3.bit} [lindex [get_hw_devices] 0] 
+// Tcl Message: current_hw_device [lindex [get_hw_devices] 0] 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+// [Engine Memory]: 496 MB (+1615kb) [01:59:36]
+dismissDialog("Open Hardware Target"); // cp:P (cl:JFrame)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // i:l (JPanel:JComponent, cl:JFrame)
+selectMenuItem((HResource) null, "xc7a35t_0"); // ab:JMenuItem (ai:JPopupMenu, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// aC:ag (cl:JFrame): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a:JButton (JPanel:JComponent, aC:ag)
+// cp:P (cl:JFrame):  Program Device : addNotify
+dismissDialog("Program Device"); // aC:ag (cl:JFrame)
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROBES.FILE {} [lindex [get_hw_devices] 0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/impl_1/Basys3.bit} [lindex [get_hw_devices] 0] 
+// Tcl Message: program_hw_devices [lindex [get_hw_devices] 0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+// 'x' command handler elapsed time: 4 seconds
+dismissDialog("Program Device"); // cp:P (cl:JFrame)
+// Elapsed time: 12 seconds
+selectCodeEditor("ADD16b.vhd", 121, 142); // bj:J (JPanel:JComponent, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Basys3.vhd", 3); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+// Elapsed time: 15 seconds
+selectCodeEditor("Basys3.vhd", 105, 148); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 112, 144); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 11 seconds
+selectButton(PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION, "run_implementation"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// aR:ah (cl:JFrame): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a:JButton (JPanel:JComponent, aR:ah)
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a:JButton (JPanel:JComponent, aR:ah)
+// cp:P (cl:JFrame):  Save Constraints : addNotify
+// 'bQ' command handler elapsed time: 3 seconds
+// TclEventType: DG_GRAPH_STALE
+dismissDialog("Save Project"); // aR:ah (cl:JFrame)
+dismissDialog("Save Constraints"); // cp:P (cl:JFrame)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run impl_1 -prev_step  
+// cp:P (cl:JFrame):  Generate Bitstream : addNotify
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sun Sep 13 00:05:22 2015] Launched impl_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 25 seconds
+selectCodeEditor("Basys3.vhd", 57, 250, false, false, false, true, false); // bj:J (JPanel:JComponent, cl:JFrame) - Popup Trigger
+// Elapsed time: 12 seconds
+selectCodeEditor("Basys3.vhd", 25, 187); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: RUN_COMPLETED
+// Q:ap (cl:JFrame): Bitstream Generation Completed: addNotify
+// Elapsed time: 28 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, Q:ap)
+dismissDialog("Bitstream Generation Completed"); // Q:ap (cl:JFrame)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // i:l (JPanel:JComponent, cl:JFrame)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // i:l (JPanel:JComponent, cl:JFrame)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // i:l (JPanel:JComponent, cl:JFrame)
+selectMenuItem((HResource) null, "xc7a35t_0"); // ab:JMenuItem (ai:JPopupMenu, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// aC:ag (cl:JFrame): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a:JButton (JPanel:JComponent, aC:ag)
+// cp:P (cl:JFrame):  Program Device : addNotify
+dismissDialog("Program Device"); // aC:ag (cl:JFrame)
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROBES.FILE {} [lindex [get_hw_devices] 0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/impl_1/Basys3.bit} [lindex [get_hw_devices] 0] 
+// Tcl Message: program_hw_devices [lindex [get_hw_devices] 0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+// 'x' command handler elapsed time: 4 seconds
+dismissDialog("Program Device"); // cp:P (cl:JFrame)
+// Elapsed time: 12 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ADD16b.vhd", 0); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Basys3.vhd", 3); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 2, 106); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 51 seconds
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// aR:ah (cl:JFrame): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a:JButton (JPanel:JComponent, aR:ah)
+// cp:P (cl:JFrame):  Save Constraints : addNotify
+// cp:P (cl:JFrame):  Resetting Runs : addNotify
+dismissDialog("Save Project"); // aR:ah (cl:JFrame)
+// TclEventType: RUN_MODIFY
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: RUN_RESET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: RUN_RESET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// 'bQ' command handler elapsed time: 3 seconds
+dismissDialog("Resetting Runs"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// cp:P (cl:JFrame):  Generate Bitstream : addNotify
+// TclEventType: DG_UPDATE_GRAPH
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sun Sep 13 00:08:00 2015] Launched synth_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/synth_1/runme.log [Sun Sep 13 00:08:00 2015] Launched impl_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: RUN_FAILED
+// Q:ap (cl:JFrame): Synthesis Failed: addNotify
+// Elapsed time: 30 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, Q:ap)
+dismissDialog("Synthesis Failed"); // Q:ap (cl:JFrame)
+selectTab((HResource) null, (HResource) null, "Messages", 1); // FrameContainer:JideTabbedPane (ContainerContainer:JideSplitPane, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-2234] indexed name is not a std_logic_vector [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.srcs/sources_1/new/Basys3.vhd:65]. ]", 1, true); // ae:k (JViewport:JComponent, cl:JFrame) - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\Nacosta\Documents\DEV\Arqui\ArquiProyectos\Entrega 1\Proyecto Base.srcs\sources_1\new\Basys3.vhd;-;;-;16;-;line;-;65;-;;-;16;-;"); // ae:k (JViewport:JComponent, cl:JFrame)
+// PAPropertyPanels.initPanels (Basys3.vhd) elapsed time: 0.2s
+selectCodeEditor("Basys3.vhd", 72, 201); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 85, 194); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 111, 203); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+// Elapsed time: 20 seconds
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// aR:ah (cl:JFrame): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a:JButton (JPanel:JComponent, aR:ah)
+// cp:P (cl:JFrame):  Save Constraints : addNotify
+// cp:P (cl:JFrame):  Resetting Runs : addNotify
+dismissDialog("Save Project"); // aR:ah (cl:JFrame)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// HMemoryUtils.trashcanNow. Engine heap size: 513 MB. GUI used memory: 51 MB. Current time: 9/13/15 12:09:18 AM CLST
+// TclEventType: RUN_MODIFY
+// 'bQ' command handler elapsed time: 5 seconds
+dismissDialog("Resetting Runs"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream 
+// cp:P (cl:JFrame):  Generate Bitstream : addNotify
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sun Sep 13 00:09:23 2015] Launched synth_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/synth_1/runme.log [Sun Sep 13 00:09:24 2015] Launched impl_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/impl_1/runme.log 
+// TclEventType: DG_UPDATE_GRAPH
+dismissDialog("Generate Bitstream"); // cp:P (cl:JFrame)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: RUN_FAILED
+// Q:ap (cl:JFrame): Synthesis Failed: addNotify
+// Elapsed time: 609 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, Q:ap)
+dismissDialog("Synthesis Failed"); // Q:ap (cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-97] array index 3 out of range [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.srcs/sources_1/new/Basys3.vhd:68]. ]", 1, false); // ae:k (JViewport:JComponent, cl:JFrame)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\Nacosta\Documents\DEV\Arqui\ArquiProyectos\Entrega 1\Proyecto Base.srcs\sources_1\new\Basys3.vhd;-;;-;16;-;line;-;68;-;;-;16;-;"); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis]", 0, true); // ae:k (JViewport:JComponent, cl:JFrame) - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\Nacosta\Documents\DEV\Arqui\ArquiProyectos\Entrega 1\Proyecto Base.srcs\sources_1\new\Basys3.vhd;-;;-;16;-;line;-;68;-;;-;16;-;"); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-97] array index 3 out of range [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.srcs/sources_1/new/Basys3.vhd:68]. ]", 1, false, false, false, false, false, true); // ae:k (JViewport:JComponent, cl:JFrame) - Double Click
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-97] array index 3 out of range [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.srcs/sources_1/new/Basys3.vhd:68]. ]", 1, false); // ae:k (JViewport:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 116, 195); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 114, 201); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 127, 197); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 4, 201); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 323, 90); // bj:J (JPanel:JComponent, cl:JFrame)
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// aR:ah (cl:JFrame): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a:JButton (JPanel:JComponent, aR:ah)
+// cp:P (cl:JFrame):  Save Constraints : addNotify
+// cp:P (cl:JFrame):  Resetting Runs : addNotify
+dismissDialog("Save Project"); // aR:ah (cl:JFrame)
+// TclEventType: RUN_MODIFY
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: RUN_RESET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: RUN_RESET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// 'bQ' command handler elapsed time: 3 seconds
+dismissDialog("Resetting Runs"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// cp:P (cl:JFrame):  Generate Bitstream : addNotify
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sun Sep 13 00:20:07 2015] Launched synth_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/synth_1/runme.log [Sun Sep 13 00:20:07 2015] Launched impl_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: RUN_FAILED
+// Q:ap (cl:JFrame): Synthesis Failed: addNotify
+// Elapsed time: 247 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, Q:ap)
+dismissDialog("Synthesis Failed"); // Q:ap (cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-549] port width mismatch for port 'sel': port width = 3, actual width = 4 [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.srcs/sources_1/new/Basys3.vhd:89]. ]", 1, false); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-549] port width mismatch for port 'sel': port width = 3, actual width = 4 [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.srcs/sources_1/new/Basys3.vhd:89]. ]", 1, false); // ae:k (JViewport:JComponent, cl:JFrame)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\Nacosta\Documents\DEV\Arqui\ArquiProyectos\Entrega 1\Proyecto Base.srcs\sources_1\new\Basys3.vhd;-;;-;16;-;line;-;89;-;;-;16;-;"); // ae:k (JViewport:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 100, 236); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 18 seconds
+selectCodeEditor("Basys3.vhd", 48, 186); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 56, 184); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 38 seconds
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// aR:ah (cl:JFrame): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a:JButton (JPanel:JComponent, aR:ah)
+// cp:P (cl:JFrame):  Save Constraints : addNotify
+// cp:P (cl:JFrame):  Resetting Runs : addNotify
+dismissDialog("Save Project"); // aR:ah (cl:JFrame)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: RUN_RESET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// 'bQ' command handler elapsed time: 3 seconds
+dismissDialog("Resetting Runs"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("Basys3.vhd", 161, 160); // bj:J (JPanel:JComponent, cl:JFrame)
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream 
+// cp:P (cl:JFrame):  Generate Bitstream : addNotify
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sun Sep 13 00:25:33 2015] Launched synth_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/synth_1/runme.log [Sun Sep 13 00:25:33 2015] Launched impl_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 40 seconds
+selectCodeEditor("Basys3.vhd", 264, 145); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 15 seconds
+selectCodeEditor("Basys3.vhd", 110, 133); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 136, 173); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "Basys3.vhd", 'c'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 147, 176); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "Basys3.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 113, 103); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_FAILED
+// Q:ap (cl:JFrame): Bitstream Generation Failed: addNotify
+// Elapsed time: 252 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, Q:ap)
+dismissDialog("Bitstream Generation Failed"); // Q:ap (cl:JFrame)
+// Elapsed time: 35 seconds
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Write Bitstream, [DRC 23-20] Rule violation (NSTD-1) Unspecified I/O Standard - 1 out of 23 logical ports use I/O standard (IOSTANDARD) value 'DEFAULT', instead of a user assigned specific value. This may cause I/O contention or incompatibility with the board power or connectivity affecting performance, signal integrity or in extreme cases cause damage to the device or the components to which it is connected. To correct this violation, specify all I/O standards. This design will fail to generate a bitstream unless all logical ports have a user specified I/O standard value defined. To allow bitstream creation with unspecified I/O standard values (not recommended), use this command: set_property SEVERITY {Warning} [get_drc_checks NSTD-1].  NOTE: When using the Vivado Runs infrastructure (e.g. launch_runs Tcl command), add this command to a .tcl file and add that file as a pre-hook for write_bitstream step for the implementation run. Problem ports: sw[3].. ]", 2, true); // ae:k (JViewport:JComponent, cl:JFrame) - Node
+selectCodeEditor("Basys3.vhd", 127, 136); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 83 seconds
+selectCodeEditor("Basys3.vhd", 40, 86); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 112, 159); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 325, 90); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 326, 90); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 13 seconds
+selectCodeEditor("Basys3.vhd", 1, 155); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 86 seconds
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// aR:ah (cl:JFrame): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a:JButton (JPanel:JComponent, aR:ah)
+// cp:P (cl:JFrame):  Save Constraints : addNotify
+// TclEventType: DG_GRAPH_STALE
+dismissDialog("Save Project"); // aR:ah (cl:JFrame)
+dismissDialog("Save Constraints"); // cp:P (cl:JFrame)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_MODIFY
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// cp:P (cl:JFrame):  Generate Bitstream : addNotify
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run impl_1 -prev_step  
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sun Sep 13 00:34:47 2015] Launched impl_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: RUN_FAILED
+// Q:ap (cl:JFrame): Bitstream Generation Failed: addNotify
+// Elapsed time: 220 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, Q:ap)
+dismissDialog("Bitstream Generation Failed"); // Q:ap (cl:JFrame)
+selectCodeEditor("Basys3.vhd", 331, 95); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 13 seconds
+selectCodeEditor("Basys3.vhd", 0, 231); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 3, 217); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 49, 195); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 53, 197, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+selectCodeEditor("Basys3.vhd", 73, 212); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 69, 233); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 70, 248); // bj:J (JPanel:JComponent, cl:JFrame)
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// aR:ah (cl:JFrame): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a:JButton (JPanel:JComponent, aR:ah)
+// cp:P (cl:JFrame):  Save Constraints : addNotify
+// cp:P (cl:JFrame):  Resetting Runs : addNotify
+dismissDialog("Save Project"); // aR:ah (cl:JFrame)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: RUN_RESET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// 'bQ' command handler elapsed time: 3 seconds
+dismissDialog("Resetting Runs"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// cp:P (cl:JFrame):  Generate Bitstream : addNotify
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sun Sep 13 00:39:07 2015] Launched synth_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/synth_1/runme.log [Sun Sep 13 00:39:07 2015] Launched impl_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/impl_1/runme.log 
+// TclEventType: DG_UPDATE_GRAPH
+dismissDialog("Generate Bitstream"); // cp:P (cl:JFrame)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// HMemoryUtils.trashcanNow. Engine heap size: 513 MB. GUI used memory: 51 MB. Current time: 9/13/15 12:39:18 AM CLST
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_FAILED
+// Q:ap (cl:JFrame): Bitstream Generation Failed: addNotify
+// Elapsed time: 363 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, Q:ap)
+dismissDialog("Bitstream Generation Failed"); // Q:ap (cl:JFrame)
+selectCodeEditor("Basys3.vhd", 320, 96); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 24 seconds
+selectCodeEditor("Basys3.vhd", 697, 175); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 321, 96); // bj:J (JPanel:JComponent, cl:JFrame)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // i:l (JPanel:JComponent, cl:JFrame)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // i:l (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 132, 83); // bj:J (JPanel:JComponent, cl:JFrame)
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// aR:ah (cl:JFrame): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a:JButton (JPanel:JComponent, aR:ah)
+// cp:P (cl:JFrame):  Save Constraints : addNotify
+// TclEventType: DG_GRAPH_STALE
+dismissDialog("Save Project"); // aR:ah (cl:JFrame)
+dismissDialog("Save Constraints"); // cp:P (cl:JFrame)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_MODIFY
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run impl_1 -prev_step  
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// cp:P (cl:JFrame):  Generate Bitstream : addNotify
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sun Sep 13 00:45:58 2015] Launched impl_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: RUN_FAILED
+// Q:ap (cl:JFrame): Bitstream Generation Failed: addNotify
+// Elapsed time: 45 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, Q:ap)
+// Elapsed time: 30 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, Q:ap)
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, Q:ap)
+dismissDialog("Bitstream Generation Failed"); // Q:ap (cl:JFrame)
+selectCodeEditor("Basys3.vhd", 80, 245); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 83, 111); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 191, 107); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 196, 110); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 2, 102); // bj:J (JPanel:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Write Bitstream, [DRC 23-20] Rule violation (NSTD-1) Unspecified I/O Standard - 1 out of 23 logical ports use I/O standard (IOSTANDARD) value 'DEFAULT', instead of a user assigned specific value. This may cause I/O contention or incompatibility with the board power or connectivity affecting performance, signal integrity or in extreme cases cause damage to the device or the components to which it is connected. To correct this violation, specify all I/O standards. This design will fail to generate a bitstream unless all logical ports have a user specified I/O standard value defined. To allow bitstream creation with unspecified I/O standard values (not recommended), use this command: set_property SEVERITY {Warning} [get_drc_checks NSTD-1].  NOTE: When using the Vivado Runs infrastructure (e.g. launch_runs Tcl command), add this command to a .tcl file and add that file as a pre-hook for write_bitstream step for the implementation run. Problem ports: sw[3].. ]", 2, true); // ae:k (JViewport:JComponent, cl:JFrame) - Node
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// aR:ah (cl:JFrame): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a:JButton (JPanel:JComponent, aR:ah)
+// cp:P (cl:JFrame):  Save Constraints : addNotify
+// cp:P (cl:JFrame):  Resetting Runs : addNotify
+dismissDialog("Save Project"); // aR:ah (cl:JFrame)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: RUN_RESET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+dismissDialog("Resetting Runs"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("Basys3.vhd", 61, 187); // bj:J (JPanel:JComponent, cl:JFrame)
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream 
+// cp:P (cl:JFrame):  Generate Bitstream : addNotify
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sun Sep 13 00:47:37 2015] Launched synth_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/synth_1/runme.log [Sun Sep 13 00:47:37 2015] Launched impl_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/impl_1/runme.log 
+selectCodeEditor("Basys3.vhd", 318, 219); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+dismissDialog("Generate Bitstream"); // cp:P (cl:JFrame)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Tcl Message: ERROR: [Labtools 27-3175] Target jsn-Basys3-210183637323A is no longer available. Please use disconnect_hw_server to close the current server connection. Check cable connectivity and that the target board is powered up. Restart the hw_server application running on host localhost, port 3121 and then use connect_hw_server to re-establish connection to target. 
+// Tcl Message: close_hw_target 
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_SYSMON_DELETE
+// TclEventType: HW_TARGET_UPDATE
+// Tcl Message: INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Digilent/210183637323A 
+// Elapsed time: 43 seconds
+selectCodeEditor("Basys3.vhd", 425, 39, false, false, false, true, false); // bj:J (JPanel:JComponent, cl:JFrame) - Popup Trigger
+selectCodeEditor("Basys3.vhd", 362, 47); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 362, 47, false, false, false, true, false); // bj:J (JPanel:JComponent, cl:JFrame) - Popup Trigger
+selectCodeEditor("Basys3.vhd", 249, 52); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: RUN_COMPLETED
+// Elapsed time: 12 seconds
+selectCodeEditor("Basys3.vhd", 249, 52, false, false, false, true, false); // bj:J (JPanel:JComponent, cl:JFrame) - Popup Trigger
+selectCodeEditor("Basys3.vhd", 149, 65); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 25 seconds
+selectCodeEditor("Basys3.vhd", 28, 248); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 28, 248, false, false, false, true, false); // bj:J (JPanel:JComponent, cl:JFrame) - Popup Trigger
+selectCodeEditor("Basys3.vhd", 17, 243); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 69, 196); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 41, 208); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 10 seconds
+selectCodeEditor("Basys3.vhd", 41, 208, false, false, false, true, false); // bj:J (JPanel:JComponent, cl:JFrame) - Popup Trigger
+selectCodeEditor("Basys3.vhd", 24, 210); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 24, 210, false, false, false, true, false); // bj:J (JPanel:JComponent, cl:JFrame) - Popup Trigger
+selectCodeEditor("Basys3.vhd", 12, 211); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 26 seconds
+selectCodeEditor("Basys3.vhd", 116, 257); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCheckBox(PAResourceItoN.MsgView_ERROR_MESSAGES, (String) null, false); // h:JCheckBox (JPanel:JComponent, cl:JFrame): FALSE
+// Elapsed time: 26 seconds
+selectCodeEditor("Basys3.vhd", 184, 41); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 300, 45); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "Basys3.vhd", 'c'); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: RUN_COMPLETED
+// Q:ap (cl:JFrame): Bitstream Generation Completed: addNotify
+// Elapsed time: 62 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, Q:ap)
+dismissDialog("Bitstream Generation Completed"); // Q:ap (cl:JFrame)
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // i:l (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 343, 45); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 320, 43); // bj:J (JPanel:JComponent, cl:JFrame)
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// aR:ah (cl:JFrame): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a:JButton (JPanel:JComponent, aR:ah)
+// cp:P (cl:JFrame):  Save Constraints : addNotify
+// TclEventType: DG_GRAPH_STALE
+dismissDialog("Save Project"); // aR:ah (cl:JFrame)
+dismissDialog("Save Constraints"); // cp:P (cl:JFrame)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_MODIFY
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// cp:P (cl:JFrame):  Generate Bitstream : addNotify
+// Tcl Message: reset_run impl_1 -prev_step  
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sun Sep 13 00:52:08 2015] Launched impl_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: RUN_COMPLETED
+// Q:ap (cl:JFrame): Bitstream Generation Completed: addNotify
+// Elapsed time: 69 seconds
+dismissDialog("Bitstream Generation Completed"); // Q:ap (cl:JFrame)
+selectCodeEditor("Basys3.vhd", 66, 155); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 21, 146); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 17, 146); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 18, 193); // bj:J (JPanel:JComponent, cl:JFrame)
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// aR:ah (cl:JFrame): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a:JButton (JPanel:JComponent, aR:ah)
+// cp:P (cl:JFrame):  Save Constraints : addNotify
+// cp:P (cl:JFrame):  Resetting Runs : addNotify
+dismissDialog("Save Project"); // aR:ah (cl:JFrame)
+// TclEventType: RUN_MODIFY
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: RUN_RESET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: RUN_RESET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// 'bQ' command handler elapsed time: 3 seconds
+// [Engine Memory]: 525 MB (+3898kb) [02:48:45]
+dismissDialog("Resetting Runs"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// cp:P (cl:JFrame):  Generate Bitstream : addNotify
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sun Sep 13 00:53:37 2015] Launched synth_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/synth_1/runme.log [Sun Sep 13 00:53:37 2015] Launched impl_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 139 seconds
+selectCodeEditor("Basys3.vhd", 275, 124); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 11 seconds
+selectCodeEditor("Basys3.vhd", 345, 100); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 258, 170); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 11 seconds
+selectCodeEditor("Basys3.vhd", 118, 258); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 244, 219); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 204, 122); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: RUN_COMPLETED
+// Q:ap (cl:JFrame): Bitstream Generation Completed: addNotify
+// Elapsed time: 39 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, Q:ap)
+dismissDialog("Bitstream Generation Completed"); // Q:ap (cl:JFrame)
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // i:l (JPanel:JComponent, cl:JFrame)
+selectMenu(PAResourceOtoP.ProgramDebugTab_CLOSED_TARGETS, "Closed Targets"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenu(PAResourceOtoP.ProgramDebugTab_OPEN_RECENTLY_OPENED_TARGET, "Recent Targets"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenuItem((HResource) null, "localhost:3121,xilinx_tcf/Digilent/210183637323A,PARAM.FREQUENCY:15000000"); // ab:JMenuItem (JPopupMenu:JComponent, cl:JFrame)
+// cp:P (cl:JFrame):  Open Hardware Target : addNotify
+// TclEventType: HW_OBJECT_DELETE
+// TclEventType: HW_SERVER_CLOSE
+// Tcl Message: disconnect_hw_server localhost:3121 
+// Tcl Message: connect_hw_server -url localhost:3121 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: current_hw_target [get_hw_targets */xilinx_tcf/Digilent/210183637323A] 
+// TclEventType: HW_TARGET_CHANGE
+// Tcl Message: set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Digilent/210183637323A] 
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: open_hw_target 
+// Tcl Message: INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183637323A 
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/impl_1/Basys3.bit} [lindex [get_hw_devices] 0] 
+// Tcl Message: current_hw_device [lindex [get_hw_devices] 0] 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+// Elapsed time: 12 seconds
+dismissDialog("Open Hardware Target"); // cp:P (cl:JFrame)
+// Elapsed time: 14 seconds
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // i:l (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 159, 181); // bj:J (JPanel:JComponent, cl:JFrame)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // i:l (JPanel:JComponent, cl:JFrame)
+selectMenuItem((HResource) null, "xc7a35t_0"); // ab:JMenuItem (ai:JPopupMenu, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// aC:ag (cl:JFrame): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a:JButton (JPanel:JComponent, aC:ag)
+// cp:P (cl:JFrame):  Program Device : addNotify
+dismissDialog("Program Device"); // aC:ag (cl:JFrame)
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROBES.FILE {} [lindex [get_hw_devices] 0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/impl_1/Basys3.bit} [lindex [get_hw_devices] 0] 
+// Tcl Message: program_hw_devices [lindex [get_hw_devices] 0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+// 'x' command handler elapsed time: 3 seconds
+dismissDialog("Program Device"); // cp:P (cl:JFrame)
+// Elapsed time: 245 seconds
+selectCodeEditor("Basys3.vhd", 154, 247); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 101 seconds
+selectCodeEditor("Basys3.vhd", 79, 134); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 9, 130); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 13, 134); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 4, 95); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 20 seconds
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// aR:ah (cl:JFrame): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a:JButton (JPanel:JComponent, aR:ah)
+// cp:P (cl:JFrame):  Save Constraints : addNotify
+// TclEventType: DG_GRAPH_STALE
+dismissDialog("Save Project"); // aR:ah (cl:JFrame)
+dismissDialog("Save Constraints"); // cp:P (cl:JFrame)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_MODIFY
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run impl_1 -prev_step  
+// cp:P (cl:JFrame):  Generate Bitstream : addNotify
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sun Sep 13 01:04:18 2015] Launched impl_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: RUN_COMPLETED
+// Q:ap (cl:JFrame): Bitstream Generation Completed: addNotify
+// Elapsed time: 80 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, Q:ap)
+dismissDialog("Bitstream Generation Completed"); // Q:ap (cl:JFrame)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // i:l (JPanel:JComponent, cl:JFrame)
+selectMenuItem((HResource) null, "xc7a35t_0"); // ab:JMenuItem (ai:JPopupMenu, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// aC:ag (cl:JFrame): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a:JButton (JPanel:JComponent, aC:ag)
+// cp:P (cl:JFrame):  Program Device : addNotify
+dismissDialog("Program Device"); // aC:ag (cl:JFrame)
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROBES.FILE {} [lindex [get_hw_devices] 0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/impl_1/Basys3.bit} [lindex [get_hw_devices] 0] 
+// Tcl Message: program_hw_devices [lindex [get_hw_devices] 0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+// 'x' command handler elapsed time: 3 seconds
+dismissDialog("Program Device"); // cp:P (cl:JFrame)
+// Elapsed time: 12 seconds
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// cp:P (cl:JFrame):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+dismissDialog("Resetting Runs"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream 
+// cp:P (cl:JFrame):  Generate Bitstream : addNotify
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sun Sep 13 01:06:04 2015] Launched synth_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/synth_1/runme.log [Sun Sep 13 01:06:04 2015] Launched impl_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // cp:P (cl:JFrame)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_FAILED
+// Q:ap (cl:JFrame): Bitstream Generation Failed: addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 528 MB. GUI used memory: 50 MB. Current time: 9/13/15 1:09:18 AM CLST
+// Elapsed time: 215 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, Q:ap)
+dismissDialog("Bitstream Generation Failed"); // Q:ap (cl:JFrame)
+selectCheckBox(PAResourceItoN.MsgView_ERROR_MESSAGES, (String) null, true); // h:JCheckBox (JPanel:JComponent, cl:JFrame): TRUE
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Write Bitstream, [DRC 23-20] Rule violation (NSTD-1) Unspecified I/O Standard - 1 out of 23 logical ports use I/O standard (IOSTANDARD) value 'DEFAULT', instead of a user assigned specific value. This may cause I/O contention or incompatibility with the board power or connectivity affecting performance, signal integrity or in extreme cases cause damage to the device or the components to which it is connected. To correct this violation, specify all I/O standards. This design will fail to generate a bitstream unless all logical ports have a user specified I/O standard value defined. To allow bitstream creation with unspecified I/O standard values (not recommended), use this command: set_property SEVERITY {Warning} [get_drc_checks NSTD-1].  NOTE: When using the Vivado Runs infrastructure (e.g. launch_runs Tcl command), add this command to a .tcl file and add that file as a pre-hook for write_bitstream step for the implementation run. Problem ports: sw[3].. ]", 2, true); // ae:k (JViewport:JComponent, cl:JFrame) - Node
+selectCodeEditor("Basys3.vhd", 83, 149); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 112, 148); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 113, 171); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 52, 176); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 59, 177); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 54, 180); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 39, 180); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 45, 165); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 42, 145); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 33, 147); // bj:J (JPanel:JComponent, cl:JFrame)
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// aR:ah (cl:JFrame): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a:JButton (JPanel:JComponent, aR:ah)
+// cp:P (cl:JFrame):  Save Constraints : addNotify
+// TclEventType: DG_GRAPH_STALE
+dismissDialog("Save Project"); // aR:ah (cl:JFrame)
+dismissDialog("Save Constraints"); // cp:P (cl:JFrame)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_MODIFY
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// cp:P (cl:JFrame):  Generate Bitstream : addNotify
+// Tcl Message: reset_run impl_1 -prev_step  
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sun Sep 13 01:10:10 2015] Launched impl_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: RUN_FAILED
+// Q:ap (cl:JFrame): Bitstream Generation Failed: addNotify
+// Elapsed time: 38 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, Q:ap)
+dismissDialog("Bitstream Generation Failed"); // Q:ap (cl:JFrame)
+selectCodeEditor("Basys3.vhd", 63, 176); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 54, 184); // bj:J (JPanel:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Write Bitstream, [DRC 23-20] Rule violation (NSTD-1) Unspecified I/O Standard - 1 out of 23 logical ports use I/O standard (IOSTANDARD) value 'DEFAULT', instead of a user assigned specific value. This may cause I/O contention or incompatibility with the board power or connectivity affecting performance, signal integrity or in extreme cases cause damage to the device or the components to which it is connected. To correct this violation, specify all I/O standards. This design will fail to generate a bitstream unless all logical ports have a user specified I/O standard value defined. To allow bitstream creation with unspecified I/O standard values (not recommended), use this command: set_property SEVERITY {Warning} [get_drc_checks NSTD-1].  NOTE: When using the Vivado Runs infrastructure (e.g. launch_runs Tcl command), add this command to a .tcl file and add that file as a pre-hook for write_bitstream step for the implementation run. Problem ports: sw[3].. ]", 2, true); // ae:k (JViewport:JComponent, cl:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Write Bitstream, [DRC 23-20] Rule violation (NSTD-1) Unspecified I/O Standard - 1 out of 23 logical ports use I/O standard (IOSTANDARD) value 'DEFAULT', instead of a user assigned specific value. This may cause I/O contention or incompatibility with the board power or connectivity affecting performance, signal integrity or in extreme cases cause damage to the device or the components to which it is connected. To correct this violation, specify all I/O standards. This design will fail to generate a bitstream unless all logical ports have a user specified I/O standard value defined. To allow bitstream creation with unspecified I/O standard values (not recommended), use this command: set_property SEVERITY {Warning} [get_drc_checks NSTD-1].  NOTE: When using the Vivado Runs infrastructure (e.g. launch_runs Tcl command), add this command to a .tcl file and add that file as a pre-hook for write_bitstream step for the implementation run. Problem ports: sw[3].. ]", 2, true, false, false, false, false, true); // ae:k (JViewport:JComponent, cl:JFrame) - Double Click - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Write Bitstream, [DRC 23-20] Rule violation (NSTD-1) Unspecified I/O Standard - 1 out of 23 logical ports use I/O standard (IOSTANDARD) value 'DEFAULT', instead of a user assigned specific value. This may cause I/O contention or incompatibility with the board power or connectivity affecting performance, signal integrity or in extreme cases cause damage to the device or the components to which it is connected. To correct this violation, specify all I/O standards. This design will fail to generate a bitstream unless all logical ports have a user specified I/O standard value defined. To allow bitstream creation with unspecified I/O standard values (not recommended), use this command: set_property SEVERITY {Warning} [get_drc_checks NSTD-1].  NOTE: When using the Vivado Runs infrastructure (e.g. launch_runs Tcl command), add this command to a .tcl file and add that file as a pre-hook for write_bitstream step for the implementation run. Problem ports: sw[3].. ]", 2, true); // ae:k (JViewport:JComponent, cl:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, (String) null, 3, false); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, (String) null, 3, false, false, false, false, false, true); // ae:k (JViewport:JComponent, cl:JFrame) - Double Click
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Write Bitstream, [Vivado 12-1345] Error(s) found during DRC. Bitgen not run.. ]", 4, false); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, (String) null, 3, false); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Write Bitstream, [DRC 23-20] Rule violation (NSTD-1) Unspecified I/O Standard - 1 out of 23 logical ports use I/O standard (IOSTANDARD) value 'DEFAULT', instead of a user assigned specific value. This may cause I/O contention or incompatibility with the board power or connectivity affecting performance, signal integrity or in extreme cases cause damage to the device or the components to which it is connected. To correct this violation, specify all I/O standards. This design will fail to generate a bitstream unless all logical ports have a user specified I/O standard value defined. To allow bitstream creation with unspecified I/O standard values (not recommended), use this command: set_property SEVERITY {Warning} [get_drc_checks NSTD-1].  NOTE: When using the Vivado Runs infrastructure (e.g. launch_runs Tcl command), add this command to a .tcl file and add that file as a pre-hook for write_bitstream step for the implementation run. Problem ports: sw[3].. ]", 2, true); // ae:k (JViewport:JComponent, cl:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Write Bitstream]", 1, true); // ae:k (JViewport:JComponent, cl:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation]", 0, true); // ae:k (JViewport:JComponent, cl:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Write Bitstream]", 1, true); // ae:k (JViewport:JComponent, cl:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Write Bitstream, [DRC 23-20] Rule violation (NSTD-1) Unspecified I/O Standard - 1 out of 23 logical ports use I/O standard (IOSTANDARD) value 'DEFAULT', instead of a user assigned specific value. This may cause I/O contention or incompatibility with the board power or connectivity affecting performance, signal integrity or in extreme cases cause damage to the device or the components to which it is connected. To correct this violation, specify all I/O standards. This design will fail to generate a bitstream unless all logical ports have a user specified I/O standard value defined. To allow bitstream creation with unspecified I/O standard values (not recommended), use this command: set_property SEVERITY {Warning} [get_drc_checks NSTD-1].  NOTE: When using the Vivado Runs infrastructure (e.g. launch_runs Tcl command), add this command to a .tcl file and add that file as a pre-hook for write_bitstream step for the implementation run. Problem ports: sw[3].. ]", 2, true); // ae:k (JViewport:JComponent, cl:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, (String) null, 3, false); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Write Bitstream, [DRC 23-20] Rule violation (NSTD-1) Unspecified I/O Standard - 1 out of 23 logical ports use I/O standard (IOSTANDARD) value 'DEFAULT', instead of a user assigned specific value. This may cause I/O contention or incompatibility with the board power or connectivity affecting performance, signal integrity or in extreme cases cause damage to the device or the components to which it is connected. To correct this violation, specify all I/O standards. This design will fail to generate a bitstream unless all logical ports have a user specified I/O standard value defined. To allow bitstream creation with unspecified I/O standard values (not recommended), use this command: set_property SEVERITY {Warning} [get_drc_checks NSTD-1].  NOTE: When using the Vivado Runs infrastructure (e.g. launch_runs Tcl command), add this command to a .tcl file and add that file as a pre-hook for write_bitstream step for the implementation run. Problem ports: sw[3].. ]", 2, true); // ae:k (JViewport:JComponent, cl:JFrame) - Node
+// Elapsed time: 13 seconds
+selectCodeEditor("Basys3.vhd", 137, 208); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 64, 189); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 6, 175); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 25 seconds
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// aR:ah (cl:JFrame): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a:JButton (JPanel:JComponent, aR:ah)
+// cp:P (cl:JFrame):  Save Constraints : addNotify
+// cp:P (cl:JFrame):  Resetting Runs : addNotify
+dismissDialog("Save Project"); // aR:ah (cl:JFrame)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: RUN_RESET
+// TclEventType: DG_GRAPH_STALE
+// Tcl Message: reset_run synth_1 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+dismissDialog("Resetting Runs"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream 
+// cp:P (cl:JFrame):  Generate Bitstream : addNotify
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sun Sep 13 01:11:52 2015] Launched synth_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/synth_1/runme.log [Sun Sep 13 01:11:52 2015] Launched impl_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 174 seconds
+selectCodeEditor("Basys3.vhd", 217, 160); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 201, 182); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: RUN_COMPLETED
+// Q:ap (cl:JFrame): Bitstream Generation Completed: addNotify
+// Elapsed time: 110 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, Q:ap)
+dismissDialog("Bitstream Generation Completed"); // Q:ap (cl:JFrame)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // i:l (JPanel:JComponent, cl:JFrame)
+selectMenuItem((HResource) null, "xc7a35t_0"); // ab:JMenuItem (ai:JPopupMenu, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// aC:ag (cl:JFrame): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a:JButton (JPanel:JComponent, aC:ag)
+// cp:P (cl:JFrame):  Program Device : addNotify
+dismissDialog("Program Device"); // aC:ag (cl:JFrame)
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROBES.FILE {} [lindex [get_hw_devices] 0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/impl_1/Basys3.bit} [lindex [get_hw_devices] 0] 
+// Tcl Message: program_hw_devices [lindex [get_hw_devices] 0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+dismissDialog("Program Device"); // cp:P (cl:JFrame)
+// Elapsed time: 96 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU.vhd", 2); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+// Elapsed time: 126 seconds
+selectCodeEditor("ALU.vhd", 154, 100); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 91 seconds
+selectCodeEditor("ALU.vhd", 118, 115); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 24 seconds
+selectCodeEditor("ALU.vhd", 70, 60); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 263 seconds
+selectCodeEditor("ALU.vhd", 419, 98); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 63 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_FILE, "Open Recent File"); // X:JMenu (JPopupMenu:JComponent, cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // X:JMenu (JPopupMenu:JComponent, cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // X:JMenu (JPopupMenu:JComponent, cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_FILE, "Open Recent File"); // X:JMenu (JPopupMenu:JComponent, cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_FILE, "Open Recent File"); // X:JMenu (JPopupMenu:JComponent, cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_FILE, "Open Recent File"); // X:JMenu (JPopupMenu:JComponent, cl:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+selectCodeEditor("ALU.vhd", 126, 164); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 125 seconds
+selectCodeEditor("ALU.vhd", 145, 255); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 145, 255); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 145, 255, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+selectCodeEditor("ALU.vhd", 145, 255); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 145, 255); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 145, 255); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 145, 255); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 145, 255); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 145, 255); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 52 seconds
+selectCodeEditor("ALU.vhd", 224, 182); // bj:J (JPanel:JComponent, cl:JFrame)
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // F:b
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // F:b
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // F:b
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU.vhd", 3); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ShiftR16b.vhd", 4); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectCodeEditor("ShiftL16b.vhd", 225, 215); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ShiftL16b.vhd", 'c'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ShiftL16b.vhd", 3); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectCodeEditor("ShiftR16b.vhd", 202, 226); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ShiftR16b.vhd", 201, 210); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ShiftR16b.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ShiftR16b.vhd", 58, 247); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ShiftR16b.vhd", 90, 244); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ShiftR16b.vhd", 172, 214); // bj:J (JPanel:JComponent, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ShiftR16b.vhd", 4); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectCodeEditor("ShiftL16b.vhd", 220, 222); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ShiftL16b.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ShiftL16b.vhd", 210, 215); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ShiftL16b.vhd", 89, 247); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ShiftL16b.vhd", 267, 238); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ShiftL16b.vhd", 86, 267); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ShiftL16b.vhd", 93, 263); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ShiftL16b.vhd", 18, 206); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ShiftL16b.vhd", 0, 217); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ShiftL16b.vhd", 5, 197); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ShiftL16b.vhd", 2, 197, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+selectCodeEditor("ShiftL16b.vhd", 2, 194); // bj:J (JPanel:JComponent, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ShiftL16b.vhd", 3); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectCodeEditor("ShiftR16b.vhd", 26, 181); // bj:J (JPanel:JComponent, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ShiftR16b.vhd", 4); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectCodeEditor("ShiftL16b.vhd", 14, 234); // bj:J (JPanel:JComponent, cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_FILE, "Open Recent File"); // X:JMenu (JPopupMenu:JComponent, cl:JFrame)
+selectMenuItem(RDIResourceCommand.RDICommands_SAVE_ALL_FILES, "Save All Files..."); // ab:JMenuItem (JPopupMenu:JComponent, cl:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+// Run Command: RDIResourceCommand.RDICommands_SAVE_ALL_FILES
+// n:ap (cl:JFrame): Save Text Editor Changes: addNotify
+selectButton(RDIResource.ConfirmSaveTextEditsDialog_YES, "Yes"); // a:JButton (JPanel:JComponent, n:ap)
+// TclEventType: DG_GRAPH_STALE
+dismissDialog("Save Text Editor Changes"); // n:ap (cl:JFrame)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// cp:P (cl:JFrame):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+dismissDialog("Resetting Runs"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// cp:P (cl:JFrame):  Generate Bitstream : addNotify
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream 
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sun Sep 13 01:32:39 2015] Launched synth_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/synth_1/runme.log [Sun Sep 13 01:32:39 2015] Launched impl_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // cp:P (cl:JFrame)
+// Elapsed time: 38 seconds
+selectCodeEditor("ShiftL16b.vhd", 191, 225); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ShiftL16b.vhd", 197, 218); // bj:J (JPanel:JComponent, cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_FILE, "Open Recent File"); // X:JMenu (JPopupMenu:JComponent, cl:JFrame)
+selectMenuItem(RDIResourceCommand.RDICommands_SAVE_FILE, "Save File"); // ab:JMenuItem (JPopupMenu:JComponent, cl:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 95 seconds
+selectCodeEditor("ShiftL16b.vhd", 136, 122); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ShiftL16b.vhd", 173, 144); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ShiftL16b.vhd", 125, 145); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ShiftL16b.vhd", 2, 35); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ShiftL16b.vhd", 7, 25); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ShiftL16b.vhd", 151, 256); // bj:J (JPanel:JComponent, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ShiftL16b.vhd", 3); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ShiftR16b.vhd", 4); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+// Elapsed time: 25 seconds
+selectCodeEditor("ShiftL16b.vhd", 179, 172); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: RUN_COMPLETED
+// Q:ap (cl:JFrame): Bitstream Generation Completed: addNotify
+// Elapsed time: 143 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, Q:ap)
+dismissDialog("Bitstream Generation Completed"); // Q:ap (cl:JFrame)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // i:l (JPanel:JComponent, cl:JFrame)
+selectMenuItem((HResource) null, "xc7a35t_0"); // ab:JMenuItem (ai:JPopupMenu, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// aC:ag (cl:JFrame): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a:JButton (JPanel:JComponent, aC:ag)
+// cp:P (cl:JFrame):  Program Device : addNotify
+dismissDialog("Program Device"); // aC:ag (cl:JFrame)
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROBES.FILE {} [lindex [get_hw_devices] 0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/impl_1/Basys3.bit} [lindex [get_hw_devices] 0] 
+// Tcl Message: program_hw_devices [lindex [get_hw_devices] 0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+// 'x' command handler elapsed time: 3 seconds
+dismissDialog("Program Device"); // cp:P (cl:JFrame)
+selectCodeEditor("ShiftL16b.vhd", 209, 262); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ShiftL16b.vhd", 209, 262); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ShiftL16b.vhd", 209, 262); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 35 seconds
+selectCodeEditor("ShiftL16b.vhd", 61, 183); // bj:J (JPanel:JComponent, cl:JFrame)
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // F:b
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // F:b
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU.vhd", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "OR16b.vhd", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // F:b
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // F:b
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Reg - Behavioral (Reg.vhd)]", 13, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Reg - Behavioral (Reg.vhd)]", 13, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Reg - Behavioral (Reg.vhd)]", 13, false, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd), inst_ALU - ALU - Behavioral (ALU.vhd)]", 4); // A:k (H:JPanel, cl:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 530 MB. GUI used memory: 48 MB. Current time: 9/13/15 1:39:18 AM CLST
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd)]", 1, true); // A:k (H:JPanel, cl:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd)]", 1, true, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click - Node
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Basys3.vhd", 2); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 100, 82); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 17 seconds
+selectCodeEditor("Basys3.vhd", 313, 167); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 313, 167); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 35 seconds
+selectCodeEditor("Basys3.vhd", 219, 65); // bj:J (JPanel:JComponent, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Basys3.vhd", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+// Elapsed time: 83 seconds
+selectCodeEditor("ALU.vhd", 67, 206); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 31, 236); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 59 seconds
+selectCodeEditor("ALU.vhd", 64, 183); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 17 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager]", 0, true); // w:Y (v:H, cl:JFrame) - Node
+// Run Command: PAResourceCommand.PACommandNames_GOTO_PROJECT_MANAGER
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager]", 0, true, false, false, false, false, true); // w:Y (v:H, cl:JFrame) - Double Click - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd)]", 1); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Reg - Behavioral (Reg.vhd)]", 5, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Reg - Behavioral (Reg.vhd)]", 5, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Reg - Behavioral (Reg.vhd)]", 5, false, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Reg.vhd", 2); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectCodeEditor("Reg.vhd", 95, 201); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Reg.vhd", 123, 186); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Reg.vhd", 504, 203); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Reg.vhd", 485, 177); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "Reg.vhd", 'c'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Reg.vhd", 2); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectCodeEditor("ALU.vhd", 205, 127); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 144, 176); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 147, 132); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 158, 139); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 31 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_PROJECT, "Open Recent Project"); // X:JMenu (JPopupMenu:JComponent, cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_FILE, "Open Recent File"); // X:JMenu (JPopupMenu:JComponent, cl:JFrame)
+selectMenuItem(RDIResourceCommand.RDICommands_SAVE_ALL_FILES, "Save All Files..."); // ab:JMenuItem (JPopupMenu:JComponent, cl:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+// Run Command: RDIResourceCommand.RDICommands_SAVE_ALL_FILES
+// n:ap (cl:JFrame): Save Text Editor Changes: addNotify
+selectButton(RDIResource.ConfirmSaveTextEditsDialog_YES, "Yes"); // a:JButton (JPanel:JComponent, n:ap)
+// TclEventType: DG_GRAPH_STALE
+dismissDialog("Save Text Editor Changes"); // n:ap (cl:JFrame)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH

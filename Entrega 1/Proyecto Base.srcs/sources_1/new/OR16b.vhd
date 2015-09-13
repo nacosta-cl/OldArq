@@ -34,7 +34,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity OR16b is
     Port ( aOR : in STD_LOGIC_VECTOR (15 downto 0);
            bOR : in STD_LOGIC_VECTOR (15 downto 0);
-           oOr : out STD_LOGIC_VECTOR (15 downto 0));
+           oOR : out STD_LOGIC_VECTOR (15 downto 0));
 end OR16b;
 
 architecture Behavioral of OR16b is
