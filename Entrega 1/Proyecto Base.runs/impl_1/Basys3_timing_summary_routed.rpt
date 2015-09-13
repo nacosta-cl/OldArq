@@ -1,7 +1,7 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2015.2 (win64) Build 1266856 Fri Jun 26 16:35:25 MDT 2015
-| Date         : Fri Sep 11 21:23:07 2015
+| Date         : Sat Sep 12 21:22:20 2015
 | Host         : NB-Nacosta running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -warn_on_violation -max_paths 10 -file Basys3_timing_summary_routed.rpt -rpx Basys3_timing_summary_routed.rpx
 | Design       : Basys3
@@ -79,7 +79,7 @@ Table of Contents
 
 6. checking no_output_delay
 ---------------------------
- There are 9 ports with no output delay specified. (HIGH)
+ There are 10 ports with no output delay specified. (HIGH)
 
  There are 0 ports with no output delay but user has a false path constraint
 
@@ -124,7 +124,7 @@ Table of Contents
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-      5.733        0.000                      0                   66        0.263        0.000                      0                   66        4.500        0.000                       0                    32  
+      5.506        0.000                      0                   66        0.265        0.000                      0                   66        4.500        0.000                       0                    32  
 
 
 All user specified timing constraints are met.
@@ -147,7 +147,7 @@ sys_clk_pin  {0.000 5.000}      10.000          100.000
 
 Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
 -----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-sys_clk_pin         5.733        0.000                      0                   66        0.263        0.000                      0                   66        4.500        0.000                       0                    32  
+sys_clk_pin         5.506        0.000                      0                   66        0.265        0.000                      0                   66        4.500        0.000                       0                    32  
 
 
 ------------------------------------------------------------------------------------------------
@@ -178,28 +178,28 @@ Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing 
 From Clock:  sys_clk_pin
   To Clock:  sys_clk_pin
 
-Setup :            0  Failing Endpoints,  Worst Slack        5.733ns,  Total Violation        0.000ns
-Hold  :            0  Failing Endpoints,  Worst Slack        0.263ns,  Total Violation        0.000ns
+Setup :            0  Failing Endpoints,  Worst Slack        5.506ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.265ns,  Total Violation        0.000ns
 PW    :            0  Failing Endpoints,  Worst Slack        4.500ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             5.733ns  (required time - arrival time)
-  Source:                 inst_Led_Driver/clock_divide_counter_reg[2]/C
+Slack (MET) :             5.506ns  (required time - arrival time)
+  Source:                 inst_Led_Driver/clock_divide_counter_reg[4]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            inst_Led_Driver/clock_divide_counter_reg[0]/R
+  Destination:            inst_Led_Driver/clock_divide_counter_reg[24]/R
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        3.707ns  (logic 0.766ns (20.663%)  route 2.941ns (79.337%))
+  Data Path Delay:        3.898ns  (logic 0.766ns (19.649%)  route 3.132ns (80.351%))
   Logic Levels:           2  (LUT5=1 LUT6=1)
-  Clock Path Skew:        0.000ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.848ns = ( 14.848 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.145ns
-    Clock Pessimism Removal (CPR):    0.297ns
+  Clock Path Skew:        -0.036ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.846ns = ( 14.846 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.142ns
+    Clock Pessimism Removal (CPR):    0.260ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
@@ -215,15 +215,428 @@ Slack (MET) :             5.733ns  (required time - arrival time)
     W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
                          net (fo=1, routed)           1.967     3.425    clk_IBUF
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
-                         net (fo=31, routed)          1.624     5.145    inst_Led_Driver/clk
-    SLICE_X64Y21         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[2]/C
+                         net (fo=31, routed)          1.621     5.142    inst_Led_Driver/clk
+    SLICE_X64Y22         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[4]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X64Y21         FDRE (Prop_fdre_C_Q)         0.518     5.663 f  inst_Led_Driver/clock_divide_counter_reg[2]/Q
-                         net (fo=2, routed)           1.311     6.974    inst_Led_Driver/clock_divide_counter_reg[2]
-    SLICE_X65Y24         LUT6 (Prop_lut6_I4_O)        0.124     7.098 r  inst_Led_Driver/clock_divide_counter[0]_i_4/O
-                         net (fo=2, routed)           0.612     7.710    inst_Led_Driver/clock_divide_counter[0]_i_4_n_0
-    SLICE_X65Y25         LUT5 (Prop_lut5_I1_O)        0.124     7.834 r  inst_Led_Driver/clock_divide_counter[0]_i_1/O
-                         net (fo=31, routed)          1.018     8.852    inst_Led_Driver/eqOp
+    SLICE_X64Y22         FDRE (Prop_fdre_C_Q)         0.518     5.660 f  inst_Led_Driver/clock_divide_counter_reg[4]/Q
+                         net (fo=2, routed)           1.185     6.846    inst_Led_Driver/clock_divide_counter_reg[4]
+    SLICE_X65Y26         LUT6 (Prop_lut6_I2_O)        0.124     6.970 r  inst_Led_Driver/clock_divide_counter[0]_i_5/O
+                         net (fo=2, routed)           0.839     7.809    inst_Led_Driver/clock_divide_counter[0]_i_5_n_0
+    SLICE_X65Y24         LUT5 (Prop_lut5_I2_O)        0.124     7.933 r  inst_Led_Driver/clock_divide_counter[0]_i_1/O
+                         net (fo=31, routed)          1.108     9.041    inst_Led_Driver/eqOp
+    SLICE_X64Y27         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[24]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=31, routed)          1.505    14.846    inst_Led_Driver/clk
+    SLICE_X64Y27         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[24]/C
+                         clock pessimism              0.260    15.106    
+                         clock uncertainty           -0.035    15.071    
+    SLICE_X64Y27         FDRE (Setup_fdre_C_R)       -0.524    14.547    inst_Led_Driver/clock_divide_counter_reg[24]
+  -------------------------------------------------------------------
+                         required time                         14.547    
+                         arrival time                          -9.041    
+  -------------------------------------------------------------------
+                         slack                                  5.506    
+
+Slack (MET) :             5.506ns  (required time - arrival time)
+  Source:                 inst_Led_Driver/clock_divide_counter_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            inst_Led_Driver/clock_divide_counter_reg[25]/R
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        3.898ns  (logic 0.766ns (19.649%)  route 3.132ns (80.351%))
+  Logic Levels:           2  (LUT5=1 LUT6=1)
+  Clock Path Skew:        -0.036ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.846ns = ( 14.846 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.142ns
+    Clock Pessimism Removal (CPR):    0.260ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=31, routed)          1.621     5.142    inst_Led_Driver/clk
+    SLICE_X64Y22         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X64Y22         FDRE (Prop_fdre_C_Q)         0.518     5.660 f  inst_Led_Driver/clock_divide_counter_reg[4]/Q
+                         net (fo=2, routed)           1.185     6.846    inst_Led_Driver/clock_divide_counter_reg[4]
+    SLICE_X65Y26         LUT6 (Prop_lut6_I2_O)        0.124     6.970 r  inst_Led_Driver/clock_divide_counter[0]_i_5/O
+                         net (fo=2, routed)           0.839     7.809    inst_Led_Driver/clock_divide_counter[0]_i_5_n_0
+    SLICE_X65Y24         LUT5 (Prop_lut5_I2_O)        0.124     7.933 r  inst_Led_Driver/clock_divide_counter[0]_i_1/O
+                         net (fo=31, routed)          1.108     9.041    inst_Led_Driver/eqOp
+    SLICE_X64Y27         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[25]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=31, routed)          1.505    14.846    inst_Led_Driver/clk
+    SLICE_X64Y27         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[25]/C
+                         clock pessimism              0.260    15.106    
+                         clock uncertainty           -0.035    15.071    
+    SLICE_X64Y27         FDRE (Setup_fdre_C_R)       -0.524    14.547    inst_Led_Driver/clock_divide_counter_reg[25]
+  -------------------------------------------------------------------
+                         required time                         14.547    
+                         arrival time                          -9.041    
+  -------------------------------------------------------------------
+                         slack                                  5.506    
+
+Slack (MET) :             5.506ns  (required time - arrival time)
+  Source:                 inst_Led_Driver/clock_divide_counter_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            inst_Led_Driver/clock_divide_counter_reg[26]/R
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        3.898ns  (logic 0.766ns (19.649%)  route 3.132ns (80.351%))
+  Logic Levels:           2  (LUT5=1 LUT6=1)
+  Clock Path Skew:        -0.036ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.846ns = ( 14.846 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.142ns
+    Clock Pessimism Removal (CPR):    0.260ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=31, routed)          1.621     5.142    inst_Led_Driver/clk
+    SLICE_X64Y22         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X64Y22         FDRE (Prop_fdre_C_Q)         0.518     5.660 f  inst_Led_Driver/clock_divide_counter_reg[4]/Q
+                         net (fo=2, routed)           1.185     6.846    inst_Led_Driver/clock_divide_counter_reg[4]
+    SLICE_X65Y26         LUT6 (Prop_lut6_I2_O)        0.124     6.970 r  inst_Led_Driver/clock_divide_counter[0]_i_5/O
+                         net (fo=2, routed)           0.839     7.809    inst_Led_Driver/clock_divide_counter[0]_i_5_n_0
+    SLICE_X65Y24         LUT5 (Prop_lut5_I2_O)        0.124     7.933 r  inst_Led_Driver/clock_divide_counter[0]_i_1/O
+                         net (fo=31, routed)          1.108     9.041    inst_Led_Driver/eqOp
+    SLICE_X64Y27         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[26]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=31, routed)          1.505    14.846    inst_Led_Driver/clk
+    SLICE_X64Y27         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[26]/C
+                         clock pessimism              0.260    15.106    
+                         clock uncertainty           -0.035    15.071    
+    SLICE_X64Y27         FDRE (Setup_fdre_C_R)       -0.524    14.547    inst_Led_Driver/clock_divide_counter_reg[26]
+  -------------------------------------------------------------------
+                         required time                         14.547    
+                         arrival time                          -9.041    
+  -------------------------------------------------------------------
+                         slack                                  5.506    
+
+Slack (MET) :             5.645ns  (required time - arrival time)
+  Source:                 inst_Led_Driver/clock_divide_counter_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            inst_Led_Driver/clock_divide_counter_reg[16]/R
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        3.756ns  (logic 0.766ns (20.392%)  route 2.990ns (79.608%))
+  Logic Levels:           2  (LUT5=1 LUT6=1)
+  Clock Path Skew:        -0.039ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.843ns = ( 14.843 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.142ns
+    Clock Pessimism Removal (CPR):    0.260ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=31, routed)          1.621     5.142    inst_Led_Driver/clk
+    SLICE_X64Y22         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X64Y22         FDRE (Prop_fdre_C_Q)         0.518     5.660 f  inst_Led_Driver/clock_divide_counter_reg[4]/Q
+                         net (fo=2, routed)           1.185     6.846    inst_Led_Driver/clock_divide_counter_reg[4]
+    SLICE_X65Y26         LUT6 (Prop_lut6_I2_O)        0.124     6.970 r  inst_Led_Driver/clock_divide_counter[0]_i_5/O
+                         net (fo=2, routed)           0.839     7.809    inst_Led_Driver/clock_divide_counter[0]_i_5_n_0
+    SLICE_X65Y24         LUT5 (Prop_lut5_I2_O)        0.124     7.933 r  inst_Led_Driver/clock_divide_counter[0]_i_1/O
+                         net (fo=31, routed)          0.966     8.899    inst_Led_Driver/eqOp
+    SLICE_X64Y25         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[16]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=31, routed)          1.502    14.843    inst_Led_Driver/clk
+    SLICE_X64Y25         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[16]/C
+                         clock pessimism              0.260    15.103    
+                         clock uncertainty           -0.035    15.068    
+    SLICE_X64Y25         FDRE (Setup_fdre_C_R)       -0.524    14.544    inst_Led_Driver/clock_divide_counter_reg[16]
+  -------------------------------------------------------------------
+                         required time                         14.544    
+                         arrival time                          -8.899    
+  -------------------------------------------------------------------
+                         slack                                  5.645    
+
+Slack (MET) :             5.645ns  (required time - arrival time)
+  Source:                 inst_Led_Driver/clock_divide_counter_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            inst_Led_Driver/clock_divide_counter_reg[17]/R
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        3.756ns  (logic 0.766ns (20.392%)  route 2.990ns (79.608%))
+  Logic Levels:           2  (LUT5=1 LUT6=1)
+  Clock Path Skew:        -0.039ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.843ns = ( 14.843 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.142ns
+    Clock Pessimism Removal (CPR):    0.260ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=31, routed)          1.621     5.142    inst_Led_Driver/clk
+    SLICE_X64Y22         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X64Y22         FDRE (Prop_fdre_C_Q)         0.518     5.660 f  inst_Led_Driver/clock_divide_counter_reg[4]/Q
+                         net (fo=2, routed)           1.185     6.846    inst_Led_Driver/clock_divide_counter_reg[4]
+    SLICE_X65Y26         LUT6 (Prop_lut6_I2_O)        0.124     6.970 r  inst_Led_Driver/clock_divide_counter[0]_i_5/O
+                         net (fo=2, routed)           0.839     7.809    inst_Led_Driver/clock_divide_counter[0]_i_5_n_0
+    SLICE_X65Y24         LUT5 (Prop_lut5_I2_O)        0.124     7.933 r  inst_Led_Driver/clock_divide_counter[0]_i_1/O
+                         net (fo=31, routed)          0.966     8.899    inst_Led_Driver/eqOp
+    SLICE_X64Y25         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[17]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=31, routed)          1.502    14.843    inst_Led_Driver/clk
+    SLICE_X64Y25         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[17]/C
+                         clock pessimism              0.260    15.103    
+                         clock uncertainty           -0.035    15.068    
+    SLICE_X64Y25         FDRE (Setup_fdre_C_R)       -0.524    14.544    inst_Led_Driver/clock_divide_counter_reg[17]
+  -------------------------------------------------------------------
+                         required time                         14.544    
+                         arrival time                          -8.899    
+  -------------------------------------------------------------------
+                         slack                                  5.645    
+
+Slack (MET) :             5.645ns  (required time - arrival time)
+  Source:                 inst_Led_Driver/clock_divide_counter_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            inst_Led_Driver/clock_divide_counter_reg[18]/R
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        3.756ns  (logic 0.766ns (20.392%)  route 2.990ns (79.608%))
+  Logic Levels:           2  (LUT5=1 LUT6=1)
+  Clock Path Skew:        -0.039ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.843ns = ( 14.843 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.142ns
+    Clock Pessimism Removal (CPR):    0.260ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=31, routed)          1.621     5.142    inst_Led_Driver/clk
+    SLICE_X64Y22         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X64Y22         FDRE (Prop_fdre_C_Q)         0.518     5.660 f  inst_Led_Driver/clock_divide_counter_reg[4]/Q
+                         net (fo=2, routed)           1.185     6.846    inst_Led_Driver/clock_divide_counter_reg[4]
+    SLICE_X65Y26         LUT6 (Prop_lut6_I2_O)        0.124     6.970 r  inst_Led_Driver/clock_divide_counter[0]_i_5/O
+                         net (fo=2, routed)           0.839     7.809    inst_Led_Driver/clock_divide_counter[0]_i_5_n_0
+    SLICE_X65Y24         LUT5 (Prop_lut5_I2_O)        0.124     7.933 r  inst_Led_Driver/clock_divide_counter[0]_i_1/O
+                         net (fo=31, routed)          0.966     8.899    inst_Led_Driver/eqOp
+    SLICE_X64Y25         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[18]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=31, routed)          1.502    14.843    inst_Led_Driver/clk
+    SLICE_X64Y25         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[18]/C
+                         clock pessimism              0.260    15.103    
+                         clock uncertainty           -0.035    15.068    
+    SLICE_X64Y25         FDRE (Setup_fdre_C_R)       -0.524    14.544    inst_Led_Driver/clock_divide_counter_reg[18]
+  -------------------------------------------------------------------
+                         required time                         14.544    
+                         arrival time                          -8.899    
+  -------------------------------------------------------------------
+                         slack                                  5.645    
+
+Slack (MET) :             5.645ns  (required time - arrival time)
+  Source:                 inst_Led_Driver/clock_divide_counter_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            inst_Led_Driver/clock_divide_counter_reg[19]/R
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        3.756ns  (logic 0.766ns (20.392%)  route 2.990ns (79.608%))
+  Logic Levels:           2  (LUT5=1 LUT6=1)
+  Clock Path Skew:        -0.039ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.843ns = ( 14.843 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.142ns
+    Clock Pessimism Removal (CPR):    0.260ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=31, routed)          1.621     5.142    inst_Led_Driver/clk
+    SLICE_X64Y22         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X64Y22         FDRE (Prop_fdre_C_Q)         0.518     5.660 f  inst_Led_Driver/clock_divide_counter_reg[4]/Q
+                         net (fo=2, routed)           1.185     6.846    inst_Led_Driver/clock_divide_counter_reg[4]
+    SLICE_X65Y26         LUT6 (Prop_lut6_I2_O)        0.124     6.970 r  inst_Led_Driver/clock_divide_counter[0]_i_5/O
+                         net (fo=2, routed)           0.839     7.809    inst_Led_Driver/clock_divide_counter[0]_i_5_n_0
+    SLICE_X65Y24         LUT5 (Prop_lut5_I2_O)        0.124     7.933 r  inst_Led_Driver/clock_divide_counter[0]_i_1/O
+                         net (fo=31, routed)          0.966     8.899    inst_Led_Driver/eqOp
+    SLICE_X64Y25         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[19]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=31, routed)          1.502    14.843    inst_Led_Driver/clk
+    SLICE_X64Y25         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[19]/C
+                         clock pessimism              0.260    15.103    
+                         clock uncertainty           -0.035    15.068    
+    SLICE_X64Y25         FDRE (Setup_fdre_C_R)       -0.524    14.544    inst_Led_Driver/clock_divide_counter_reg[19]
+  -------------------------------------------------------------------
+                         required time                         14.544    
+                         arrival time                          -8.899    
+  -------------------------------------------------------------------
+                         slack                                  5.645    
+
+Slack (MET) :             5.665ns  (required time - arrival time)
+  Source:                 inst_Led_Driver/clock_divide_counter_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            inst_Led_Driver/clock_divide_counter_reg[0]/R
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        3.755ns  (logic 0.766ns (20.398%)  route 2.989ns (79.602%))
+  Logic Levels:           2  (LUT5=1 LUT6=1)
+  Clock Path Skew:        -0.020ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.848ns = ( 14.848 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.142ns
+    Clock Pessimism Removal (CPR):    0.274ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=31, routed)          1.621     5.142    inst_Led_Driver/clk
+    SLICE_X64Y22         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X64Y22         FDRE (Prop_fdre_C_Q)         0.518     5.660 f  inst_Led_Driver/clock_divide_counter_reg[4]/Q
+                         net (fo=2, routed)           1.185     6.846    inst_Led_Driver/clock_divide_counter_reg[4]
+    SLICE_X65Y26         LUT6 (Prop_lut6_I2_O)        0.124     6.970 r  inst_Led_Driver/clock_divide_counter[0]_i_5/O
+                         net (fo=2, routed)           0.839     7.809    inst_Led_Driver/clock_divide_counter[0]_i_5_n_0
+    SLICE_X65Y24         LUT5 (Prop_lut5_I2_O)        0.124     7.933 r  inst_Led_Driver/clock_divide_counter[0]_i_1/O
+                         net (fo=31, routed)          0.964     8.897    inst_Led_Driver/eqOp
     SLICE_X64Y21         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[0]/R
   -------------------------------------------------------------------    -------------------
 
@@ -236,29 +649,29 @@ Slack (MET) :             5.733ns  (required time - arrival time)
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
                          net (fo=31, routed)          1.507    14.848    inst_Led_Driver/clk
     SLICE_X64Y21         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[0]/C
-                         clock pessimism              0.297    15.145    
-                         clock uncertainty           -0.035    15.110    
-    SLICE_X64Y21         FDRE (Setup_fdre_C_R)       -0.524    14.586    inst_Led_Driver/clock_divide_counter_reg[0]
+                         clock pessimism              0.274    15.122    
+                         clock uncertainty           -0.035    15.087    
+    SLICE_X64Y21         FDRE (Setup_fdre_C_R)       -0.524    14.563    inst_Led_Driver/clock_divide_counter_reg[0]
   -------------------------------------------------------------------
-                         required time                         14.586    
-                         arrival time                          -8.852    
+                         required time                         14.563    
+                         arrival time                          -8.897    
   -------------------------------------------------------------------
-                         slack                                  5.733    
+                         slack                                  5.665    
 
-Slack (MET) :             5.733ns  (required time - arrival time)
-  Source:                 inst_Led_Driver/clock_divide_counter_reg[2]/C
+Slack (MET) :             5.665ns  (required time - arrival time)
+  Source:                 inst_Led_Driver/clock_divide_counter_reg[4]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Destination:            inst_Led_Driver/clock_divide_counter_reg[1]/R
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        3.707ns  (logic 0.766ns (20.663%)  route 2.941ns (79.337%))
+  Data Path Delay:        3.755ns  (logic 0.766ns (20.398%)  route 2.989ns (79.602%))
   Logic Levels:           2  (LUT5=1 LUT6=1)
-  Clock Path Skew:        0.000ns (DCD - SCD + CPR)
+  Clock Path Skew:        -0.020ns (DCD - SCD + CPR)
     Destination Clock Delay (DCD):    4.848ns = ( 14.848 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.145ns
-    Clock Pessimism Removal (CPR):    0.297ns
+    Source Clock Delay      (SCD):    5.142ns
+    Clock Pessimism Removal (CPR):    0.274ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
@@ -274,15 +687,15 @@ Slack (MET) :             5.733ns  (required time - arrival time)
     W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
                          net (fo=1, routed)           1.967     3.425    clk_IBUF
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
-                         net (fo=31, routed)          1.624     5.145    inst_Led_Driver/clk
-    SLICE_X64Y21         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[2]/C
+                         net (fo=31, routed)          1.621     5.142    inst_Led_Driver/clk
+    SLICE_X64Y22         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[4]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X64Y21         FDRE (Prop_fdre_C_Q)         0.518     5.663 f  inst_Led_Driver/clock_divide_counter_reg[2]/Q
-                         net (fo=2, routed)           1.311     6.974    inst_Led_Driver/clock_divide_counter_reg[2]
-    SLICE_X65Y24         LUT6 (Prop_lut6_I4_O)        0.124     7.098 r  inst_Led_Driver/clock_divide_counter[0]_i_4/O
-                         net (fo=2, routed)           0.612     7.710    inst_Led_Driver/clock_divide_counter[0]_i_4_n_0
-    SLICE_X65Y25         LUT5 (Prop_lut5_I1_O)        0.124     7.834 r  inst_Led_Driver/clock_divide_counter[0]_i_1/O
-                         net (fo=31, routed)          1.018     8.852    inst_Led_Driver/eqOp
+    SLICE_X64Y22         FDRE (Prop_fdre_C_Q)         0.518     5.660 f  inst_Led_Driver/clock_divide_counter_reg[4]/Q
+                         net (fo=2, routed)           1.185     6.846    inst_Led_Driver/clock_divide_counter_reg[4]
+    SLICE_X65Y26         LUT6 (Prop_lut6_I2_O)        0.124     6.970 r  inst_Led_Driver/clock_divide_counter[0]_i_5/O
+                         net (fo=2, routed)           0.839     7.809    inst_Led_Driver/clock_divide_counter[0]_i_5_n_0
+    SLICE_X65Y24         LUT5 (Prop_lut5_I2_O)        0.124     7.933 r  inst_Led_Driver/clock_divide_counter[0]_i_1/O
+                         net (fo=31, routed)          0.964     8.897    inst_Led_Driver/eqOp
     SLICE_X64Y21         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[1]/R
   -------------------------------------------------------------------    -------------------
 
@@ -295,29 +708,29 @@ Slack (MET) :             5.733ns  (required time - arrival time)
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
                          net (fo=31, routed)          1.507    14.848    inst_Led_Driver/clk
     SLICE_X64Y21         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[1]/C
-                         clock pessimism              0.297    15.145    
-                         clock uncertainty           -0.035    15.110    
-    SLICE_X64Y21         FDRE (Setup_fdre_C_R)       -0.524    14.586    inst_Led_Driver/clock_divide_counter_reg[1]
+                         clock pessimism              0.274    15.122    
+                         clock uncertainty           -0.035    15.087    
+    SLICE_X64Y21         FDRE (Setup_fdre_C_R)       -0.524    14.563    inst_Led_Driver/clock_divide_counter_reg[1]
   -------------------------------------------------------------------
-                         required time                         14.586    
-                         arrival time                          -8.852    
+                         required time                         14.563    
+                         arrival time                          -8.897    
   -------------------------------------------------------------------
-                         slack                                  5.733    
+                         slack                                  5.665    
 
-Slack (MET) :             5.733ns  (required time - arrival time)
-  Source:                 inst_Led_Driver/clock_divide_counter_reg[2]/C
+Slack (MET) :             5.665ns  (required time - arrival time)
+  Source:                 inst_Led_Driver/clock_divide_counter_reg[4]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Destination:            inst_Led_Driver/clock_divide_counter_reg[2]/R
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        3.707ns  (logic 0.766ns (20.663%)  route 2.941ns (79.337%))
+  Data Path Delay:        3.755ns  (logic 0.766ns (20.398%)  route 2.989ns (79.602%))
   Logic Levels:           2  (LUT5=1 LUT6=1)
-  Clock Path Skew:        0.000ns (DCD - SCD + CPR)
+  Clock Path Skew:        -0.020ns (DCD - SCD + CPR)
     Destination Clock Delay (DCD):    4.848ns = ( 14.848 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.145ns
-    Clock Pessimism Removal (CPR):    0.297ns
+    Source Clock Delay      (SCD):    5.142ns
+    Clock Pessimism Removal (CPR):    0.274ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
@@ -333,15 +746,15 @@ Slack (MET) :             5.733ns  (required time - arrival time)
     W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
                          net (fo=1, routed)           1.967     3.425    clk_IBUF
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
-                         net (fo=31, routed)          1.624     5.145    inst_Led_Driver/clk
-    SLICE_X64Y21         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[2]/C
+                         net (fo=31, routed)          1.621     5.142    inst_Led_Driver/clk
+    SLICE_X64Y22         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[4]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X64Y21         FDRE (Prop_fdre_C_Q)         0.518     5.663 f  inst_Led_Driver/clock_divide_counter_reg[2]/Q
-                         net (fo=2, routed)           1.311     6.974    inst_Led_Driver/clock_divide_counter_reg[2]
-    SLICE_X65Y24         LUT6 (Prop_lut6_I4_O)        0.124     7.098 r  inst_Led_Driver/clock_divide_counter[0]_i_4/O
-                         net (fo=2, routed)           0.612     7.710    inst_Led_Driver/clock_divide_counter[0]_i_4_n_0
-    SLICE_X65Y25         LUT5 (Prop_lut5_I1_O)        0.124     7.834 r  inst_Led_Driver/clock_divide_counter[0]_i_1/O
-                         net (fo=31, routed)          1.018     8.852    inst_Led_Driver/eqOp
+    SLICE_X64Y22         FDRE (Prop_fdre_C_Q)         0.518     5.660 f  inst_Led_Driver/clock_divide_counter_reg[4]/Q
+                         net (fo=2, routed)           1.185     6.846    inst_Led_Driver/clock_divide_counter_reg[4]
+    SLICE_X65Y26         LUT6 (Prop_lut6_I2_O)        0.124     6.970 r  inst_Led_Driver/clock_divide_counter[0]_i_5/O
+                         net (fo=2, routed)           0.839     7.809    inst_Led_Driver/clock_divide_counter[0]_i_5_n_0
+    SLICE_X65Y24         LUT5 (Prop_lut5_I2_O)        0.124     7.933 r  inst_Led_Driver/clock_divide_counter[0]_i_1/O
+                         net (fo=31, routed)          0.964     8.897    inst_Led_Driver/eqOp
     SLICE_X64Y21         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[2]/R
   -------------------------------------------------------------------    -------------------
 
@@ -354,427 +767,14 @@ Slack (MET) :             5.733ns  (required time - arrival time)
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
                          net (fo=31, routed)          1.507    14.848    inst_Led_Driver/clk
     SLICE_X64Y21         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[2]/C
-                         clock pessimism              0.297    15.145    
-                         clock uncertainty           -0.035    15.110    
-    SLICE_X64Y21         FDRE (Setup_fdre_C_R)       -0.524    14.586    inst_Led_Driver/clock_divide_counter_reg[2]
+                         clock pessimism              0.274    15.122    
+                         clock uncertainty           -0.035    15.087    
+    SLICE_X64Y21         FDRE (Setup_fdre_C_R)       -0.524    14.563    inst_Led_Driver/clock_divide_counter_reg[2]
   -------------------------------------------------------------------
-                         required time                         14.586    
-                         arrival time                          -8.852    
+                         required time                         14.563    
+                         arrival time                          -8.897    
   -------------------------------------------------------------------
-                         slack                                  5.733    
-
-Slack (MET) :             5.733ns  (required time - arrival time)
-  Source:                 inst_Led_Driver/clock_divide_counter_reg[2]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            inst_Led_Driver/clock_divide_counter_reg[3]/R
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        3.707ns  (logic 0.766ns (20.663%)  route 2.941ns (79.337%))
-  Logic Levels:           2  (LUT5=1 LUT6=1)
-  Clock Path Skew:        0.000ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.848ns = ( 14.848 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.145ns
-    Clock Pessimism Removal (CPR):    0.297ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.967     3.425    clk_IBUF
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
-                         net (fo=31, routed)          1.624     5.145    inst_Led_Driver/clk
-    SLICE_X64Y21         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[2]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X64Y21         FDRE (Prop_fdre_C_Q)         0.518     5.663 f  inst_Led_Driver/clock_divide_counter_reg[2]/Q
-                         net (fo=2, routed)           1.311     6.974    inst_Led_Driver/clock_divide_counter_reg[2]
-    SLICE_X65Y24         LUT6 (Prop_lut6_I4_O)        0.124     7.098 r  inst_Led_Driver/clock_divide_counter[0]_i_4/O
-                         net (fo=2, routed)           0.612     7.710    inst_Led_Driver/clock_divide_counter[0]_i_4_n_0
-    SLICE_X65Y25         LUT5 (Prop_lut5_I1_O)        0.124     7.834 r  inst_Led_Driver/clock_divide_counter[0]_i_1/O
-                         net (fo=31, routed)          1.018     8.852    inst_Led_Driver/eqOp
-    SLICE_X64Y21         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[3]/R
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                     10.000    10.000 r  
-    W5                                                0.000    10.000 r  clk (IN)
-                         net (fo=0)                   0.000    10.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.862    13.250    clk_IBUF
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
-                         net (fo=31, routed)          1.507    14.848    inst_Led_Driver/clk
-    SLICE_X64Y21         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[3]/C
-                         clock pessimism              0.297    15.145    
-                         clock uncertainty           -0.035    15.110    
-    SLICE_X64Y21         FDRE (Setup_fdre_C_R)       -0.524    14.586    inst_Led_Driver/clock_divide_counter_reg[3]
-  -------------------------------------------------------------------
-                         required time                         14.586    
-                         arrival time                          -8.852    
-  -------------------------------------------------------------------
-                         slack                                  5.733    
-
-Slack (MET) :             5.849ns  (required time - arrival time)
-  Source:                 inst_Led_Driver/clock_divide_counter_reg[2]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            inst_Led_Driver/clock_divide_counter_reg[4]/R
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        3.566ns  (logic 0.766ns (21.479%)  route 2.800ns (78.521%))
-  Logic Levels:           2  (LUT5=1 LUT6=1)
-  Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.846ns = ( 14.846 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.145ns
-    Clock Pessimism Removal (CPR):    0.274ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.967     3.425    clk_IBUF
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
-                         net (fo=31, routed)          1.624     5.145    inst_Led_Driver/clk
-    SLICE_X64Y21         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[2]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X64Y21         FDRE (Prop_fdre_C_Q)         0.518     5.663 f  inst_Led_Driver/clock_divide_counter_reg[2]/Q
-                         net (fo=2, routed)           1.311     6.974    inst_Led_Driver/clock_divide_counter_reg[2]
-    SLICE_X65Y24         LUT6 (Prop_lut6_I4_O)        0.124     7.098 r  inst_Led_Driver/clock_divide_counter[0]_i_4/O
-                         net (fo=2, routed)           0.612     7.710    inst_Led_Driver/clock_divide_counter[0]_i_4_n_0
-    SLICE_X65Y25         LUT5 (Prop_lut5_I1_O)        0.124     7.834 r  inst_Led_Driver/clock_divide_counter[0]_i_1/O
-                         net (fo=31, routed)          0.877     8.712    inst_Led_Driver/eqOp
-    SLICE_X64Y22         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[4]/R
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                     10.000    10.000 r  
-    W5                                                0.000    10.000 r  clk (IN)
-                         net (fo=0)                   0.000    10.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.862    13.250    clk_IBUF
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
-                         net (fo=31, routed)          1.505    14.846    inst_Led_Driver/clk
-    SLICE_X64Y22         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[4]/C
-                         clock pessimism              0.274    15.120    
-                         clock uncertainty           -0.035    15.085    
-    SLICE_X64Y22         FDRE (Setup_fdre_C_R)       -0.524    14.561    inst_Led_Driver/clock_divide_counter_reg[4]
-  -------------------------------------------------------------------
-                         required time                         14.561    
-                         arrival time                          -8.712    
-  -------------------------------------------------------------------
-                         slack                                  5.849    
-
-Slack (MET) :             5.849ns  (required time - arrival time)
-  Source:                 inst_Led_Driver/clock_divide_counter_reg[2]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            inst_Led_Driver/clock_divide_counter_reg[5]/R
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        3.566ns  (logic 0.766ns (21.479%)  route 2.800ns (78.521%))
-  Logic Levels:           2  (LUT5=1 LUT6=1)
-  Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.846ns = ( 14.846 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.145ns
-    Clock Pessimism Removal (CPR):    0.274ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.967     3.425    clk_IBUF
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
-                         net (fo=31, routed)          1.624     5.145    inst_Led_Driver/clk
-    SLICE_X64Y21         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[2]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X64Y21         FDRE (Prop_fdre_C_Q)         0.518     5.663 f  inst_Led_Driver/clock_divide_counter_reg[2]/Q
-                         net (fo=2, routed)           1.311     6.974    inst_Led_Driver/clock_divide_counter_reg[2]
-    SLICE_X65Y24         LUT6 (Prop_lut6_I4_O)        0.124     7.098 r  inst_Led_Driver/clock_divide_counter[0]_i_4/O
-                         net (fo=2, routed)           0.612     7.710    inst_Led_Driver/clock_divide_counter[0]_i_4_n_0
-    SLICE_X65Y25         LUT5 (Prop_lut5_I1_O)        0.124     7.834 r  inst_Led_Driver/clock_divide_counter[0]_i_1/O
-                         net (fo=31, routed)          0.877     8.712    inst_Led_Driver/eqOp
-    SLICE_X64Y22         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[5]/R
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                     10.000    10.000 r  
-    W5                                                0.000    10.000 r  clk (IN)
-                         net (fo=0)                   0.000    10.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.862    13.250    clk_IBUF
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
-                         net (fo=31, routed)          1.505    14.846    inst_Led_Driver/clk
-    SLICE_X64Y22         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[5]/C
-                         clock pessimism              0.274    15.120    
-                         clock uncertainty           -0.035    15.085    
-    SLICE_X64Y22         FDRE (Setup_fdre_C_R)       -0.524    14.561    inst_Led_Driver/clock_divide_counter_reg[5]
-  -------------------------------------------------------------------
-                         required time                         14.561    
-                         arrival time                          -8.712    
-  -------------------------------------------------------------------
-                         slack                                  5.849    
-
-Slack (MET) :             5.849ns  (required time - arrival time)
-  Source:                 inst_Led_Driver/clock_divide_counter_reg[2]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            inst_Led_Driver/clock_divide_counter_reg[6]/R
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        3.566ns  (logic 0.766ns (21.479%)  route 2.800ns (78.521%))
-  Logic Levels:           2  (LUT5=1 LUT6=1)
-  Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.846ns = ( 14.846 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.145ns
-    Clock Pessimism Removal (CPR):    0.274ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.967     3.425    clk_IBUF
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
-                         net (fo=31, routed)          1.624     5.145    inst_Led_Driver/clk
-    SLICE_X64Y21         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[2]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X64Y21         FDRE (Prop_fdre_C_Q)         0.518     5.663 f  inst_Led_Driver/clock_divide_counter_reg[2]/Q
-                         net (fo=2, routed)           1.311     6.974    inst_Led_Driver/clock_divide_counter_reg[2]
-    SLICE_X65Y24         LUT6 (Prop_lut6_I4_O)        0.124     7.098 r  inst_Led_Driver/clock_divide_counter[0]_i_4/O
-                         net (fo=2, routed)           0.612     7.710    inst_Led_Driver/clock_divide_counter[0]_i_4_n_0
-    SLICE_X65Y25         LUT5 (Prop_lut5_I1_O)        0.124     7.834 r  inst_Led_Driver/clock_divide_counter[0]_i_1/O
-                         net (fo=31, routed)          0.877     8.712    inst_Led_Driver/eqOp
-    SLICE_X64Y22         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[6]/R
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                     10.000    10.000 r  
-    W5                                                0.000    10.000 r  clk (IN)
-                         net (fo=0)                   0.000    10.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.862    13.250    clk_IBUF
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
-                         net (fo=31, routed)          1.505    14.846    inst_Led_Driver/clk
-    SLICE_X64Y22         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[6]/C
-                         clock pessimism              0.274    15.120    
-                         clock uncertainty           -0.035    15.085    
-    SLICE_X64Y22         FDRE (Setup_fdre_C_R)       -0.524    14.561    inst_Led_Driver/clock_divide_counter_reg[6]
-  -------------------------------------------------------------------
-                         required time                         14.561    
-                         arrival time                          -8.712    
-  -------------------------------------------------------------------
-                         slack                                  5.849    
-
-Slack (MET) :             5.849ns  (required time - arrival time)
-  Source:                 inst_Led_Driver/clock_divide_counter_reg[2]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            inst_Led_Driver/clock_divide_counter_reg[7]/R
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        3.566ns  (logic 0.766ns (21.479%)  route 2.800ns (78.521%))
-  Logic Levels:           2  (LUT5=1 LUT6=1)
-  Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.846ns = ( 14.846 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.145ns
-    Clock Pessimism Removal (CPR):    0.274ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.967     3.425    clk_IBUF
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
-                         net (fo=31, routed)          1.624     5.145    inst_Led_Driver/clk
-    SLICE_X64Y21         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[2]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X64Y21         FDRE (Prop_fdre_C_Q)         0.518     5.663 f  inst_Led_Driver/clock_divide_counter_reg[2]/Q
-                         net (fo=2, routed)           1.311     6.974    inst_Led_Driver/clock_divide_counter_reg[2]
-    SLICE_X65Y24         LUT6 (Prop_lut6_I4_O)        0.124     7.098 r  inst_Led_Driver/clock_divide_counter[0]_i_4/O
-                         net (fo=2, routed)           0.612     7.710    inst_Led_Driver/clock_divide_counter[0]_i_4_n_0
-    SLICE_X65Y25         LUT5 (Prop_lut5_I1_O)        0.124     7.834 r  inst_Led_Driver/clock_divide_counter[0]_i_1/O
-                         net (fo=31, routed)          0.877     8.712    inst_Led_Driver/eqOp
-    SLICE_X64Y22         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[7]/R
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                     10.000    10.000 r  
-    W5                                                0.000    10.000 r  clk (IN)
-                         net (fo=0)                   0.000    10.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.862    13.250    clk_IBUF
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
-                         net (fo=31, routed)          1.505    14.846    inst_Led_Driver/clk
-    SLICE_X64Y22         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[7]/C
-                         clock pessimism              0.274    15.120    
-                         clock uncertainty           -0.035    15.085    
-    SLICE_X64Y22         FDRE (Setup_fdre_C_R)       -0.524    14.561    inst_Led_Driver/clock_divide_counter_reg[7]
-  -------------------------------------------------------------------
-                         required time                         14.561    
-                         arrival time                          -8.712    
-  -------------------------------------------------------------------
-                         slack                                  5.849    
-
-Slack (MET) :             5.903ns  (required time - arrival time)
-  Source:                 inst_Led_Driver/clock_divide_counter_reg[2]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            inst_Led_Driver/segment_var_reg[2]/R
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        3.604ns  (logic 0.766ns (21.251%)  route 2.838ns (78.749%))
-  Logic Levels:           2  (LUT6=2)
-  Clock Path Skew:        -0.028ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.843ns = ( 14.843 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.145ns
-    Clock Pessimism Removal (CPR):    0.274ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.967     3.425    clk_IBUF
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
-                         net (fo=31, routed)          1.624     5.145    inst_Led_Driver/clk
-    SLICE_X64Y21         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[2]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X64Y21         FDRE (Prop_fdre_C_Q)         0.518     5.663 f  inst_Led_Driver/clock_divide_counter_reg[2]/Q
-                         net (fo=2, routed)           1.311     6.974    inst_Led_Driver/clock_divide_counter_reg[2]
-    SLICE_X65Y24         LUT6 (Prop_lut6_I4_O)        0.124     7.098 r  inst_Led_Driver/clock_divide_counter[0]_i_4/O
-                         net (fo=2, routed)           0.835     7.933    inst_Led_Driver/clock_divide_counter[0]_i_4_n_0
-    SLICE_X65Y25         LUT6 (Prop_lut6_I3_O)        0.124     8.057 r  inst_Led_Driver/segment_var[3]_i_1/O
-                         net (fo=4, routed)           0.693     8.750    inst_Led_Driver/segment_var[3]_i_1_n_0
-    SLICE_X63Y24         FDRE                                         r  inst_Led_Driver/segment_var_reg[2]/R
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                     10.000    10.000 r  
-    W5                                                0.000    10.000 r  clk (IN)
-                         net (fo=0)                   0.000    10.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.862    13.250    clk_IBUF
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
-                         net (fo=31, routed)          1.502    14.843    inst_Led_Driver/clk
-    SLICE_X63Y24         FDRE                                         r  inst_Led_Driver/segment_var_reg[2]/C
-                         clock pessimism              0.274    15.117    
-                         clock uncertainty           -0.035    15.082    
-    SLICE_X63Y24         FDRE (Setup_fdre_C_R)       -0.429    14.653    inst_Led_Driver/segment_var_reg[2]
-  -------------------------------------------------------------------
-                         required time                         14.653    
-                         arrival time                          -8.750    
-  -------------------------------------------------------------------
-                         slack                                  5.903    
-
-Slack (MET) :             5.999ns  (required time - arrival time)
-  Source:                 inst_Led_Driver/clock_divide_counter_reg[2]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            inst_Led_Driver/clock_divide_counter_reg[10]/R
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        3.416ns  (logic 0.766ns (22.427%)  route 2.650ns (77.573%))
-  Logic Levels:           2  (LUT5=1 LUT6=1)
-  Clock Path Skew:        -0.026ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.845ns = ( 14.845 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.145ns
-    Clock Pessimism Removal (CPR):    0.274ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.967     3.425    clk_IBUF
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
-                         net (fo=31, routed)          1.624     5.145    inst_Led_Driver/clk
-    SLICE_X64Y21         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[2]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X64Y21         FDRE (Prop_fdre_C_Q)         0.518     5.663 f  inst_Led_Driver/clock_divide_counter_reg[2]/Q
-                         net (fo=2, routed)           1.311     6.974    inst_Led_Driver/clock_divide_counter_reg[2]
-    SLICE_X65Y24         LUT6 (Prop_lut6_I4_O)        0.124     7.098 r  inst_Led_Driver/clock_divide_counter[0]_i_4/O
-                         net (fo=2, routed)           0.612     7.710    inst_Led_Driver/clock_divide_counter[0]_i_4_n_0
-    SLICE_X65Y25         LUT5 (Prop_lut5_I1_O)        0.124     7.834 r  inst_Led_Driver/clock_divide_counter[0]_i_1/O
-                         net (fo=31, routed)          0.727     8.561    inst_Led_Driver/eqOp
-    SLICE_X64Y23         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[10]/R
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                     10.000    10.000 r  
-    W5                                                0.000    10.000 r  clk (IN)
-                         net (fo=0)                   0.000    10.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.862    13.250    clk_IBUF
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
-                         net (fo=31, routed)          1.504    14.845    inst_Led_Driver/clk
-    SLICE_X64Y23         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[10]/C
-                         clock pessimism              0.274    15.119    
-                         clock uncertainty           -0.035    15.084    
-    SLICE_X64Y23         FDRE (Setup_fdre_C_R)       -0.524    14.560    inst_Led_Driver/clock_divide_counter_reg[10]
-  -------------------------------------------------------------------
-                         required time                         14.560    
-                         arrival time                          -8.561    
-  -------------------------------------------------------------------
-                         slack                                  5.999    
+                         slack                                  5.665    
 
 
 
@@ -782,61 +782,10 @@ Slack (MET) :             5.999ns  (required time - arrival time)
 
 Min Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.263ns  (arrival time - required time)
-  Source:                 inst_Led_Driver/segment_var_reg[2]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            inst_Led_Driver/segment_var_reg[2]/D
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.354ns  (logic 0.186ns (52.498%)  route 0.168ns (47.502%))
-  Logic Levels:           1  (LUT3=1)
-  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.977ns
-    Source Clock Delay      (SCD):    1.465ns
-    Clock Pessimism Removal (CPR):    0.512ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.631     0.858    clk_IBUF
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
-                         net (fo=31, routed)          0.582     1.465    inst_Led_Driver/clk
-    SLICE_X63Y24         FDRE                                         r  inst_Led_Driver/segment_var_reg[2]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X63Y24         FDRE (Prop_fdre_C_Q)         0.141     1.606 r  inst_Led_Driver/segment_var_reg[2]/Q
-                         net (fo=6, routed)           0.168     1.774    inst_Led_Driver/segment_var_reg__0[2]
-    SLICE_X63Y24         LUT3 (Prop_lut3_I0_O)        0.045     1.819 r  inst_Led_Driver/segment_var[2]_i_1/O
-                         net (fo=1, routed)           0.000     1.819    inst_Led_Driver/plusOp[2]
-    SLICE_X63Y24         FDRE                                         r  inst_Led_Driver/segment_var_reg[2]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.685     1.099    clk_IBUF
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
-                         net (fo=31, routed)          0.850     1.977    inst_Led_Driver/clk
-    SLICE_X63Y24         FDRE                                         r  inst_Led_Driver/segment_var_reg[2]/C
-                         clock pessimism             -0.512     1.465    
-    SLICE_X63Y24         FDRE (Hold_fdre_C_D)         0.091     1.556    inst_Led_Driver/segment_var_reg[2]
-  -------------------------------------------------------------------
-                         required time                         -1.556    
-                         arrival time                           1.819    
-  -------------------------------------------------------------------
-                         slack                                  0.263    
-
 Slack (MET) :             0.265ns  (arrival time - required time)
-  Source:                 inst_Led_Driver/clock_divide_counter_reg[18]/C
+  Source:                 inst_Led_Driver/clock_divide_counter_reg[22]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            inst_Led_Driver/clock_divide_counter_reg[18]/D
+  Destination:            inst_Led_Driver/clock_divide_counter_reg[22]/D
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Hold (Min at Fast Process Corner)
@@ -844,8 +793,8 @@ Slack (MET) :             0.265ns  (arrival time - required time)
   Data Path Delay:        0.399ns  (logic 0.274ns (68.589%)  route 0.125ns (31.411%))
   Logic Levels:           1  (CARRY4=1)
   Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.977ns
-    Source Clock Delay      (SCD):    1.465ns
+    Destination Clock Delay (DCD):    1.978ns
+    Source Clock Delay      (SCD):    1.466ns
     Clock Pessimism Removal (CPR):    0.512ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -857,15 +806,15 @@ Slack (MET) :             0.265ns  (arrival time - required time)
     W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.631     0.858    clk_IBUF
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
-                         net (fo=31, routed)          0.582     1.465    inst_Led_Driver/clk
-    SLICE_X64Y25         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[18]/C
+                         net (fo=31, routed)          0.583     1.466    inst_Led_Driver/clk
+    SLICE_X64Y26         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[22]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X64Y25         FDRE (Prop_fdre_C_Q)         0.164     1.629 r  inst_Led_Driver/clock_divide_counter_reg[18]/Q
-                         net (fo=2, routed)           0.125     1.755    inst_Led_Driver/clock_divide_counter_reg[18]
-    SLICE_X64Y25         CARRY4 (Prop_carry4_S[2]_O[2])
-                                                      0.110     1.865 r  inst_Led_Driver/clock_divide_counter_reg[16]_i_1/O[2]
-                         net (fo=1, routed)           0.000     1.865    inst_Led_Driver/clock_divide_counter_reg[16]_i_1_n_5
-    SLICE_X64Y25         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[18]/D
+    SLICE_X64Y26         FDRE (Prop_fdre_C_Q)         0.164     1.630 r  inst_Led_Driver/clock_divide_counter_reg[22]/Q
+                         net (fo=2, routed)           0.125     1.756    inst_Led_Driver/clock_divide_counter_reg[22]
+    SLICE_X64Y26         CARRY4 (Prop_carry4_S[2]_O[2])
+                                                      0.110     1.866 r  inst_Led_Driver/clock_divide_counter_reg[20]_i_1/O[2]
+                         net (fo=1, routed)           0.000     1.866    inst_Led_Driver/clock_divide_counter_reg[20]_i_1_n_5
+    SLICE_X64Y26         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[22]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -875,17 +824,17 @@ Slack (MET) :             0.265ns  (arrival time - required time)
     W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.685     1.099    clk_IBUF
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
-                         net (fo=31, routed)          0.850     1.977    inst_Led_Driver/clk
-    SLICE_X64Y25         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[18]/C
-                         clock pessimism             -0.512     1.465    
-    SLICE_X64Y25         FDRE (Hold_fdre_C_D)         0.134     1.599    inst_Led_Driver/clock_divide_counter_reg[18]
+                         net (fo=31, routed)          0.851     1.978    inst_Led_Driver/clk
+    SLICE_X64Y26         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[22]/C
+                         clock pessimism             -0.512     1.466    
+    SLICE_X64Y26         FDRE (Hold_fdre_C_D)         0.134     1.600    inst_Led_Driver/clock_divide_counter_reg[22]
   -------------------------------------------------------------------
-                         required time                         -1.599    
-                         arrival time                           1.865    
+                         required time                         -1.600    
+                         arrival time                           1.866    
   -------------------------------------------------------------------
                          slack                                  0.265    
 
-Slack (MET) :             0.267ns  (arrival time - required time)
+Slack (MET) :             0.266ns  (arrival time - required time)
   Source:                 inst_Led_Driver/clock_divide_counter_reg[14]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Destination:            inst_Led_Driver/clock_divide_counter_reg[14]/D
@@ -893,7 +842,7 @@ Slack (MET) :             0.267ns  (arrival time - required time)
   Path Group:             sys_clk_pin
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.401ns  (logic 0.274ns (68.412%)  route 0.127ns (31.588%))
+  Data Path Delay:        0.400ns  (logic 0.274ns (68.524%)  route 0.126ns (31.476%))
   Logic Levels:           1  (CARRY4=1)
   Clock Path Skew:        0.000ns (DCD - SCD - CPR)
     Destination Clock Delay (DCD):    1.977ns
@@ -913,10 +862,10 @@ Slack (MET) :             0.267ns  (arrival time - required time)
     SLICE_X64Y24         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[14]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X64Y24         FDRE (Prop_fdre_C_Q)         0.164     1.629 r  inst_Led_Driver/clock_divide_counter_reg[14]/Q
-                         net (fo=2, routed)           0.127     1.756    inst_Led_Driver/clock_divide_counter_reg[14]
+                         net (fo=2, routed)           0.126     1.755    inst_Led_Driver/clock_divide_counter_reg[14]
     SLICE_X64Y24         CARRY4 (Prop_carry4_S[2]_O[2])
-                                                      0.110     1.866 r  inst_Led_Driver/clock_divide_counter_reg[12]_i_1/O[2]
-                         net (fo=1, routed)           0.000     1.866    inst_Led_Driver/clock_divide_counter_reg[12]_i_1_n_5
+                                                      0.110     1.865 r  inst_Led_Driver/clock_divide_counter_reg[12]_i_1/O[2]
+                         net (fo=1, routed)           0.000     1.865    inst_Led_Driver/clock_divide_counter_reg[12]_i_1_n_5
     SLICE_X64Y24         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[14]/D
   -------------------------------------------------------------------    -------------------
 
@@ -933,9 +882,9 @@ Slack (MET) :             0.267ns  (arrival time - required time)
     SLICE_X64Y24         FDRE (Hold_fdre_C_D)         0.134     1.599    inst_Led_Driver/clock_divide_counter_reg[14]
   -------------------------------------------------------------------
                          required time                         -1.599    
-                         arrival time                           1.866    
+                         arrival time                           1.865    
   -------------------------------------------------------------------
-                         slack                                  0.267    
+                         slack                                  0.266    
 
 Slack (MET) :             0.267ns  (arrival time - required time)
   Source:                 inst_Led_Driver/clock_divide_counter_reg[26]/C
@@ -1094,14 +1043,117 @@ Slack (MET) :             0.267ns  (arrival time - required time)
                          slack                                  0.267    
 
 Slack (MET) :             0.267ns  (arrival time - required time)
-  Source:                 inst_Led_Driver/clock_divide_counter_reg[22]/C
+  Source:                 inst_Led_Driver/clock_divide_counter_reg[2]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            inst_Led_Driver/clock_divide_counter_reg[22]/D
+  Destination:            inst_Led_Driver/clock_divide_counter_reg[2]/D
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.401ns  (logic 0.274ns (68.412%)  route 0.127ns (31.588%))
+  Data Path Delay:        0.401ns  (logic 0.274ns (68.401%)  route 0.127ns (31.599%))
+  Logic Levels:           1  (CARRY4=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.981ns
+    Source Clock Delay      (SCD):    1.468ns
+    Clock Pessimism Removal (CPR):    0.513ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=31, routed)          0.585     1.468    inst_Led_Driver/clk
+    SLICE_X64Y21         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X64Y21         FDRE (Prop_fdre_C_Q)         0.164     1.632 r  inst_Led_Driver/clock_divide_counter_reg[2]/Q
+                         net (fo=2, routed)           0.127     1.759    inst_Led_Driver/clock_divide_counter_reg[2]
+    SLICE_X64Y21         CARRY4 (Prop_carry4_S[2]_O[2])
+                                                      0.110     1.869 r  inst_Led_Driver/clock_divide_counter_reg[0]_i_2/O[2]
+                         net (fo=1, routed)           0.000     1.869    inst_Led_Driver/clock_divide_counter_reg[0]_i_2_n_5
+    SLICE_X64Y21         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=31, routed)          0.854     1.981    inst_Led_Driver/clk
+    SLICE_X64Y21         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[2]/C
+                         clock pessimism             -0.513     1.468    
+    SLICE_X64Y21         FDRE (Hold_fdre_C_D)         0.134     1.602    inst_Led_Driver/clock_divide_counter_reg[2]
+  -------------------------------------------------------------------
+                         required time                         -1.602    
+                         arrival time                           1.869    
+  -------------------------------------------------------------------
+                         slack                                  0.267    
+
+Slack (MET) :             0.269ns  (arrival time - required time)
+  Source:                 inst_Led_Driver/segment_var_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            inst_Led_Driver/segment_var_reg[1]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.374ns  (logic 0.183ns (48.868%)  route 0.191ns (51.132%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.977ns
+    Source Clock Delay      (SCD):    1.465ns
+    Clock Pessimism Removal (CPR):    0.512ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=31, routed)          0.582     1.465    inst_Led_Driver/clk
+    SLICE_X65Y25         FDRE                                         r  inst_Led_Driver/segment_var_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X65Y25         FDRE (Prop_fdre_C_Q)         0.141     1.606 r  inst_Led_Driver/segment_var_reg[1]/Q
+                         net (fo=10, routed)          0.191     1.798    inst_Led_Driver/segment_var_reg__0[1]
+    SLICE_X65Y25         LUT2 (Prop_lut2_I0_O)        0.042     1.840 r  inst_Led_Driver/segment_var[1]_i_1/O
+                         net (fo=1, routed)           0.000     1.840    inst_Led_Driver/plusOp[1]
+    SLICE_X65Y25         FDRE                                         r  inst_Led_Driver/segment_var_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=31, routed)          0.850     1.977    inst_Led_Driver/clk
+    SLICE_X65Y25         FDRE                                         r  inst_Led_Driver/segment_var_reg[1]/C
+                         clock pessimism             -0.512     1.465    
+    SLICE_X65Y25         FDRE (Hold_fdre_C_D)         0.105     1.570    inst_Led_Driver/segment_var_reg[1]
+  -------------------------------------------------------------------
+                         required time                         -1.570    
+                         arrival time                           1.840    
+  -------------------------------------------------------------------
+                         slack                                  0.269    
+
+Slack (MET) :             0.301ns  (arrival time - required time)
+  Source:                 inst_Led_Driver/clock_divide_counter_reg[22]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            inst_Led_Driver/clock_divide_counter_reg[23]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.435ns  (logic 0.310ns (71.185%)  route 0.125ns (28.815%))
   Logic Levels:           1  (CARRY4=1)
   Clock Path Skew:        0.000ns (DCD - SCD - CPR)
     Destination Clock Delay (DCD):    1.978ns
@@ -1121,11 +1173,11 @@ Slack (MET) :             0.267ns  (arrival time - required time)
     SLICE_X64Y26         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[22]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X64Y26         FDRE (Prop_fdre_C_Q)         0.164     1.630 r  inst_Led_Driver/clock_divide_counter_reg[22]/Q
-                         net (fo=2, routed)           0.127     1.757    inst_Led_Driver/clock_divide_counter_reg[22]
-    SLICE_X64Y26         CARRY4 (Prop_carry4_S[2]_O[2])
-                                                      0.110     1.867 r  inst_Led_Driver/clock_divide_counter_reg[20]_i_1/O[2]
-                         net (fo=1, routed)           0.000     1.867    inst_Led_Driver/clock_divide_counter_reg[20]_i_1_n_5
-    SLICE_X64Y26         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[22]/D
+                         net (fo=2, routed)           0.125     1.756    inst_Led_Driver/clock_divide_counter_reg[22]
+    SLICE_X64Y26         CARRY4 (Prop_carry4_S[2]_O[3])
+                                                      0.146     1.902 r  inst_Led_Driver/clock_divide_counter_reg[20]_i_1/O[3]
+                         net (fo=1, routed)           0.000     1.902    inst_Led_Driver/clock_divide_counter_reg[20]_i_1_n_4
+    SLICE_X64Y26         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[23]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -1136,126 +1188,24 @@ Slack (MET) :             0.267ns  (arrival time - required time)
                          net (fo=1, routed)           0.685     1.099    clk_IBUF
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
                          net (fo=31, routed)          0.851     1.978    inst_Led_Driver/clk
-    SLICE_X64Y26         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[22]/C
+    SLICE_X64Y26         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[23]/C
                          clock pessimism             -0.512     1.466    
-    SLICE_X64Y26         FDRE (Hold_fdre_C_D)         0.134     1.600    inst_Led_Driver/clock_divide_counter_reg[22]
+    SLICE_X64Y26         FDRE (Hold_fdre_C_D)         0.134     1.600    inst_Led_Driver/clock_divide_counter_reg[23]
   -------------------------------------------------------------------
                          required time                         -1.600    
-                         arrival time                           1.867    
+                         arrival time                           1.902    
   -------------------------------------------------------------------
-                         slack                                  0.267    
+                         slack                                  0.301    
 
-Slack (MET) :             0.299ns  (arrival time - required time)
-  Source:                 inst_Led_Driver/segment_var_reg[0]/C
+Slack (MET) :             0.302ns  (arrival time - required time)
+  Source:                 inst_Led_Driver/clock_divide_counter_reg[14]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            inst_Led_Driver/segment_var_reg[0]/D
+  Destination:            inst_Led_Driver/clock_divide_counter_reg[15]/D
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.390ns  (logic 0.186ns (47.732%)  route 0.204ns (52.268%))
-  Logic Levels:           1  (LUT1=1)
-  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.977ns
-    Source Clock Delay      (SCD):    1.465ns
-    Clock Pessimism Removal (CPR):    0.512ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.631     0.858    clk_IBUF
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
-                         net (fo=31, routed)          0.582     1.465    inst_Led_Driver/clk
-    SLICE_X63Y25         FDRE                                         r  inst_Led_Driver/segment_var_reg[0]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X63Y25         FDRE (Prop_fdre_C_Q)         0.141     1.606 f  inst_Led_Driver/segment_var_reg[0]/Q
-                         net (fo=11, routed)          0.204     1.810    inst_Led_Driver/segment_var_reg__0[0]
-    SLICE_X63Y25         LUT1 (Prop_lut1_I0_O)        0.045     1.855 r  inst_Led_Driver/segment_var[0]_i_1/O
-                         net (fo=1, routed)           0.000     1.855    inst_Led_Driver/segment_var[0]_i_1_n_0
-    SLICE_X63Y25         FDRE                                         r  inst_Led_Driver/segment_var_reg[0]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.685     1.099    clk_IBUF
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
-                         net (fo=31, routed)          0.850     1.977    inst_Led_Driver/clk
-    SLICE_X63Y25         FDRE                                         r  inst_Led_Driver/segment_var_reg[0]/C
-                         clock pessimism             -0.512     1.465    
-    SLICE_X63Y25         FDRE (Hold_fdre_C_D)         0.091     1.556    inst_Led_Driver/segment_var_reg[0]
-  -------------------------------------------------------------------
-                         required time                         -1.556    
-                         arrival time                           1.855    
-  -------------------------------------------------------------------
-                         slack                                  0.299    
-
-Slack (MET) :             0.300ns  (arrival time - required time)
-  Source:                 inst_Led_Driver/segment_var_reg[0]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            inst_Led_Driver/segment_var_reg[1]/D
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.392ns  (logic 0.186ns (47.488%)  route 0.206ns (52.512%))
-  Logic Levels:           1  (LUT2=1)
-  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.977ns
-    Source Clock Delay      (SCD):    1.465ns
-    Clock Pessimism Removal (CPR):    0.512ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.631     0.858    clk_IBUF
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
-                         net (fo=31, routed)          0.582     1.465    inst_Led_Driver/clk
-    SLICE_X63Y25         FDRE                                         r  inst_Led_Driver/segment_var_reg[0]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X63Y25         FDRE (Prop_fdre_C_Q)         0.141     1.606 r  inst_Led_Driver/segment_var_reg[0]/Q
-                         net (fo=11, routed)          0.206     1.812    inst_Led_Driver/segment_var_reg__0[0]
-    SLICE_X63Y25         LUT2 (Prop_lut2_I1_O)        0.045     1.857 r  inst_Led_Driver/segment_var[1]_i_1/O
-                         net (fo=1, routed)           0.000     1.857    inst_Led_Driver/plusOp[1]
-    SLICE_X63Y25         FDRE                                         r  inst_Led_Driver/segment_var_reg[1]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.685     1.099    clk_IBUF
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
-                         net (fo=31, routed)          0.850     1.977    inst_Led_Driver/clk
-    SLICE_X63Y25         FDRE                                         r  inst_Led_Driver/segment_var_reg[1]/C
-                         clock pessimism             -0.512     1.465    
-    SLICE_X63Y25         FDRE (Hold_fdre_C_D)         0.092     1.557    inst_Led_Driver/segment_var_reg[1]
-  -------------------------------------------------------------------
-                         required time                         -1.557    
-                         arrival time                           1.857    
-  -------------------------------------------------------------------
-                         slack                                  0.300    
-
-Slack (MET) :             0.301ns  (arrival time - required time)
-  Source:                 inst_Led_Driver/clock_divide_counter_reg[18]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            inst_Led_Driver/clock_divide_counter_reg[19]/D
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.435ns  (logic 0.310ns (71.185%)  route 0.125ns (28.815%))
+  Data Path Delay:        0.436ns  (logic 0.310ns (71.124%)  route 0.126ns (28.876%))
   Logic Levels:           1  (CARRY4=1)
   Clock Path Skew:        0.000ns (DCD - SCD - CPR)
     Destination Clock Delay (DCD):    1.977ns
@@ -1272,14 +1222,14 @@ Slack (MET) :             0.301ns  (arrival time - required time)
                          net (fo=1, routed)           0.631     0.858    clk_IBUF
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
                          net (fo=31, routed)          0.582     1.465    inst_Led_Driver/clk
-    SLICE_X64Y25         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[18]/C
+    SLICE_X64Y24         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[14]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X64Y25         FDRE (Prop_fdre_C_Q)         0.164     1.629 r  inst_Led_Driver/clock_divide_counter_reg[18]/Q
-                         net (fo=2, routed)           0.125     1.755    inst_Led_Driver/clock_divide_counter_reg[18]
-    SLICE_X64Y25         CARRY4 (Prop_carry4_S[2]_O[3])
-                                                      0.146     1.901 r  inst_Led_Driver/clock_divide_counter_reg[16]_i_1/O[3]
-                         net (fo=1, routed)           0.000     1.901    inst_Led_Driver/clock_divide_counter_reg[16]_i_1_n_4
-    SLICE_X64Y25         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[19]/D
+    SLICE_X64Y24         FDRE (Prop_fdre_C_Q)         0.164     1.629 r  inst_Led_Driver/clock_divide_counter_reg[14]/Q
+                         net (fo=2, routed)           0.126     1.755    inst_Led_Driver/clock_divide_counter_reg[14]
+    SLICE_X64Y24         CARRY4 (Prop_carry4_S[2]_O[3])
+                                                      0.146     1.901 r  inst_Led_Driver/clock_divide_counter_reg[12]_i_1/O[3]
+                         net (fo=1, routed)           0.000     1.901    inst_Led_Driver/clock_divide_counter_reg[12]_i_1_n_4
+    SLICE_X64Y24         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[15]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -1290,14 +1240,66 @@ Slack (MET) :             0.301ns  (arrival time - required time)
                          net (fo=1, routed)           0.685     1.099    clk_IBUF
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
                          net (fo=31, routed)          0.850     1.977    inst_Led_Driver/clk
-    SLICE_X64Y25         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[19]/C
+    SLICE_X64Y24         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[15]/C
                          clock pessimism             -0.512     1.465    
-    SLICE_X64Y25         FDRE (Hold_fdre_C_D)         0.134     1.599    inst_Led_Driver/clock_divide_counter_reg[19]
+    SLICE_X64Y24         FDRE (Hold_fdre_C_D)         0.134     1.599    inst_Led_Driver/clock_divide_counter_reg[15]
   -------------------------------------------------------------------
                          required time                         -1.599    
                          arrival time                           1.901    
   -------------------------------------------------------------------
-                         slack                                  0.301    
+                         slack                                  0.302    
+
+Slack (MET) :             0.303ns  (arrival time - required time)
+  Source:                 inst_Led_Driver/clock_divide_counter_reg[10]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            inst_Led_Driver/clock_divide_counter_reg[11]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.437ns  (logic 0.310ns (71.017%)  route 0.127ns (28.983%))
+  Logic Levels:           1  (CARRY4=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.978ns
+    Source Clock Delay      (SCD):    1.466ns
+    Clock Pessimism Removal (CPR):    0.512ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=31, routed)          0.583     1.466    inst_Led_Driver/clk
+    SLICE_X64Y23         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[10]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X64Y23         FDRE (Prop_fdre_C_Q)         0.164     1.630 r  inst_Led_Driver/clock_divide_counter_reg[10]/Q
+                         net (fo=2, routed)           0.127     1.757    inst_Led_Driver/clock_divide_counter_reg[10]
+    SLICE_X64Y23         CARRY4 (Prop_carry4_S[2]_O[3])
+                                                      0.146     1.903 r  inst_Led_Driver/clock_divide_counter_reg[8]_i_1/O[3]
+                         net (fo=1, routed)           0.000     1.903    inst_Led_Driver/clock_divide_counter_reg[8]_i_1_n_4
+    SLICE_X64Y23         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[11]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=31, routed)          0.851     1.978    inst_Led_Driver/clk
+    SLICE_X64Y23         FDRE                                         r  inst_Led_Driver/clock_divide_counter_reg[11]/C
+                         clock pessimism             -0.512     1.466    
+    SLICE_X64Y23         FDRE (Hold_fdre_C_D)         0.134     1.600    inst_Led_Driver/clock_divide_counter_reg[11]
+  -------------------------------------------------------------------
+                         required time                         -1.600    
+                         arrival time                           1.903    
+  -------------------------------------------------------------------
+                         slack                                  0.303    
 
 
 
@@ -1329,8 +1331,8 @@ Low Pulse Width   Fast    FDRE/C   n/a            0.500         5.000       4.50
 Low Pulse Width   Fast    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X64Y26   inst_Led_Driver/clock_divide_counter_reg[23]/C
 Low Pulse Width   Fast    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X64Y23   inst_Led_Driver/clock_divide_counter_reg[8]/C
 Low Pulse Width   Fast    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X64Y23   inst_Led_Driver/clock_divide_counter_reg[9]/C
+Low Pulse Width   Fast    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X65Y26   inst_Led_Driver/segment_var_reg[0]/C
 Low Pulse Width   Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X64Y21   inst_Led_Driver/clock_divide_counter_reg[0]/C
-Low Pulse Width   Fast    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X64Y24   inst_Led_Driver/clock_divide_counter_reg[12]/C
 High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X64Y23   inst_Led_Driver/clock_divide_counter_reg[10]/C
 High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X64Y23   inst_Led_Driver/clock_divide_counter_reg[11]/C
 High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X64Y24   inst_Led_Driver/clock_divide_counter_reg[12]/C

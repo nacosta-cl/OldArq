@@ -1,7 +1,7 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2015.2 (win64) Build 1266856 Fri Jun 26 16:35:25 MDT 2015
-| Date         : Fri Sep 11 21:21:19 2015
+| Date         : Sat Sep 12 21:20:00 2015
 | Host         : NB-Nacosta running 64-bit major release  (build 9200)
 | Command      : report_utilization -file Basys3_utilization_synth.rpt -pb Basys3_utilization_synth.pb
 | Design       : Basys3
@@ -30,8 +30,8 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |   40 |     0 |     20800 |  0.19 |
-|   LUT as Logic          |   40 |     0 |     20800 |  0.19 |
+| Slice LUTs*             |   41 |     0 |     20800 |  0.20 |
+|   LUT as Logic          |   41 |     0 |     20800 |  0.20 |
 |   LUT as Memory         |    0 |     0 |      9600 |  0.00 |
 | Slice Registers         |   31 |     0 |     41600 |  0.07 |
 |   Register as Flip Flop |   31 |     0 |     41600 |  0.07 |
@@ -154,8 +154,8 @@ Table of Contents
 | CARRY4   |    7 |          CarryLogic |
 | LUT2     |    6 |                 LUT |
 | LUT6     |    5 |                 LUT |
-| LUT4     |    3 |                 LUT |
-| LUT3     |    3 |                 LUT |
+| LUT4     |    4 |                 LUT |
+| LUT3     |    2 |                 LUT |
 | LUT5     |    1 |                 LUT |
 | IBUF     |    1 |                  IO |
 | BUFG     |    1 |               Clock |

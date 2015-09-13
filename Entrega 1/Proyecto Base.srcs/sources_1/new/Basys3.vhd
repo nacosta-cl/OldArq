@@ -31,39 +31,10 @@ component Led_Driver
             an          : out  std_logic_vector (3 downto 0)
            );
     end component;
-    
-component FA Port
-    (
-        num1 : in std_logic;
-        num2 : in std_logic;
-        cin : in std_logic;
-        sum : out std_logic;
-        cout : out std_logic
-    );
-    end component;
-
-component ADD16b Port
-    (  
-    word1 : in STD_LOGIC_VECTOR (15 downto 0);
-    word2 : in STD_LOGIC_VECTOR (15 downto 0);   
-    sCin : in STD_LOGIC;
-    sSum : out STD_LOGIC_VECTOR (15 downto 0);
-    sCout : out STD_LOGIC
-    );
-    end component;
-    
-component SUS16b Port 
-    (
-        rWord1 : in STD_LOGIC_VECTOR (15 downto 0);
-        rWord2 : in STD_LOGIC_VECTOR (15 downto 0);
-        rest : out STD_LOGIC_VECTOR (15 downto 0)
-    );
-    end component;    
 
 signal exNum1 : STD_LOGIC_VECTOR (15 downto 0);
 signal exNum2 : STD_LOGIC_VECTOR (15 downto 0);
 signal res : STD_LOGIC_VECTOR (15 downto 0);
-
 
 signal clock  : std_logic;                     
             
@@ -91,11 +62,11 @@ dis_d <= res(3 downto 0);
 --        sSum  => res
 --    );
 
-inst_SUS16b: SUS16b port map 
+inst_AND16b: AND16b port map
     (
-        rWord1 =>exNum1,
-        rWord2 =>exNum2,
-        rest   =>res
+        aAnd =>exNum1,
+        bAnd =>exNum2,
+        oAnd =>res
     );
 
 inst_Clock_Divider: Clock_Divider port map(
