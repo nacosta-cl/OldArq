@@ -25,6 +25,7 @@ read_vhdl -library xil_defaultlib {
   {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.srcs/sources_1/new/OR16b.vhd}
   {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.srcs/sources_1/new/NOT16b.vhd}
   {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.srcs/sources_1/new/AND16b.vhd}
+  {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.srcs/sources_1/new/Reg.vhd}
   {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.srcs/sources_1/new/ALU.vhd}
   {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.srcs/sources_1/new/Led_Driver.vhd}
   {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.srcs/sources_1/new/Clock_Divider.vhd}

@@ -1,7 +1,7 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2015.2 (win64) Build 1266856 Fri Jun 26 16:35:25 MDT 2015
-| Date         : Sun Sep 13 01:34:42 2015
+| Date         : Sun Sep 13 03:04:16 2015
 | Host         : NB-Nacosta running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file Basys3_control_sets_placed.rpt
 | Design       : Basys3
@@ -22,8 +22,8 @@ Table of Contents
 +-------------------------------------------------------------------+-------+
 |                               Status                              | Count |
 +-------------------------------------------------------------------+-------+
-| Number of unique control sets                                     |     2 |
-| Minimum Number of register sites lost to control set restrictions |     9 |
+| Number of unique control sets                                     |     6 |
+| Minimum Number of register sites lost to control set restrictions |    21 |
 +-------------------------------------------------------------------+-------+
 
 
@@ -33,23 +33,27 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |               0 |            0 |
+| No           | No                    | No                     |               1 |            1 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              27 |            7 |
-| Yes          | No                    | No                     |               0 |            0 |
+| No           | Yes                   | No                     |              54 |           14 |
+| Yes          | No                    | No                     |              32 |            8 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |               4 |            1 |
+| Yes          | Yes                   | No                     |               4 |            2 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 3. Detailed Control Set Information
 -----------------------------------
 
-+----------------+----------------------+----------------------------------------+------------------+----------------+
-|  Clock Signal  |     Enable Signal    |            Set/Reset Signal            | Slice Load Count | Bel Load Count |
-+----------------+----------------------+----------------------------------------+------------------+----------------+
-|  clk_IBUF_BUFG | inst_Led_Driver/eqOp | inst_Led_Driver/segment_var[3]_i_1_n_0 |                1 |              4 |
-|  clk_IBUF_BUFG |                      | inst_Led_Driver/eqOp                   |                7 |             27 |
-+----------------+----------------------+----------------------------------------+------------------+----------------+
++----------------------+-----------------------------+----------------------------------------+------------------+----------------+
+|     Clock Signal     |        Enable Signal        |            Set/Reset Signal            | Slice Load Count | Bel Load Count |
++----------------------+-----------------------------+----------------------------------------+------------------+----------------+
+|  clk_IBUF_BUFG       |                             |                                        |                1 |              1 |
+|  clk_IBUF_BUFG       | inst_Led_Driver/eqOp        | inst_Led_Driver/segment_var[3]_i_1_n_0 |                2 |              4 |
+|  internal_clock_BUFG | inst_regB/reg[0]_i_1__0_n_0 |                                        |                4 |             16 |
+|  internal_clock_BUFG | inst_regA/reg[0]_i_1_n_0    |                                        |                4 |             16 |
+|  clk_IBUF_BUFG       |                             | inst_Led_Driver/eqOp                   |                7 |             27 |
+|  clk_IBUF_BUFG       |                             | inst_Clock_Divider/clear               |                7 |             27 |
++----------------------+-----------------------------+----------------------------------------+------------------+----------------+
 
 
