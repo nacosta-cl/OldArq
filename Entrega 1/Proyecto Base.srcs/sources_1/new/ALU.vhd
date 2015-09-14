@@ -61,15 +61,6 @@ component ShiftR16b is
        outShiftR : out STD_LOGIC_VECTOR (15 downto 0));
     end component;
 
-component Reg is
-    Port ( clock    : in  std_logic;
-           load     : in  std_logic;
-           up       : in  std_logic;
-           down     : in  std_logic;
-           datain   : in  std_logic_vector (15 downto 0);
-           dataout  : out std_logic_vector (15 downto 0));
-    end component;
-
 --Cables de conexion
 
 signal opR0 : STD_LOGIC_VECTOR (15 downto 0);
