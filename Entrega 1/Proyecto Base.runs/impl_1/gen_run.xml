@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1442126131">
-  <File Type="OPT-DCP" Name="Basys3_opt.dcp"/>
   <File Type="RUN-CONSTRS" Name="$PDATADIR/runs/impl_1/constrs_in.xml"/>
+  <File Type="OPT-DCP" Name="Basys3_opt.dcp"/>
   <File Type="RUN-SRCS" Name="$PDATADIR/runs/impl_1/sources.xml"/>
-  <File Type="PWROPT-DCP" Name="Basys3_pwropt.dcp"/>
+  <File Type="RUN-STRAT" Name="$PDATADIR/runs/impl_1/impl_1.psg"/>
   <File Type="ROUTE-DCP" Name="Basys3_routed.dcp"/>
   <File Type="PA-TCL" Name="Basys3.tcl"/>
-  <File Type="RUN-STRAT" Name="$PDATADIR/runs/impl_1/impl_1.psg"/>
+  <File Type="PWROPT-DCP" Name="Basys3_pwropt.dcp"/>
   <File Type="OPT-DRC" Name="Basys3_drc_opted.rpt"/>
   <File Type="PWROPT-DRC" Name="Basys3_drc_pwropted.rpt"/>
   <File Type="OPT-HWDEF" Name="Basys3.hwdef"/>
@@ -20,8 +20,8 @@
   <File Type="PLACE-PRE-SIMILARITY" Name="Basys3_incremental_reuse_pre_placed.rpt"/>
   <File Type="POSTPLACE-PWROPT-DCP" Name="Basys3_postplace_pwropt.dcp"/>
   <File Type="PHYSOPT-DCP" Name="Basys3_physopt.dcp"/>
-  <File Type="RDI-RDI" Name="Basys3.vdi"/>
   <File Type="PHYSOPT-DRC" Name="Basys3_drc_physopted.rpt"/>
+  <File Type="RDI-RDI" Name="Basys3.vdi"/>
   <File Type="ROUTE-DRC" Name="Basys3_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="Basys3_drc_routed.pb"/>
   <File Type="ROUTE-PWR" Name="Basys3_power_routed.rpt"/>
