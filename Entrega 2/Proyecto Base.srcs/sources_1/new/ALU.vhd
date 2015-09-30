@@ -6,8 +6,13 @@ entity ALU is
            numB        : in  std_logic_vector (15 downto 0);
            sel      : in  std_logic_vector (2 downto 0);
            ci       : in  std_logic;
+           
+           res   : out std_logic_vector (15 downto 0);
+           Z    : out std_logic;
+           N    : out std_logic
            co       : out std_logic;
-           res   : out std_logic_vector (15 downto 0));
+           );
+
 end ALU;
 
 architecture Behavioral of ALU is
@@ -72,10 +77,12 @@ signal opR5 : STD_LOGIC_VECTOR (15 downto 0);
 signal opR6 : STD_LOGIC_VECTOR (15 downto 0);
 signal opR7 : STD_LOGIC_VECTOR (15 downto 0);
 
+--Resultado interno
+signal iRes : STD_LOGIC_VECTOR (15 downto 0);
 begin
 --Mux de seleccion de los cables
 with sel select
-    res <=  opR0 when "000",
+    iRes <=  opR0 when "000",
             opR1 when "001",
             opR2 when "010",
             opR3 when "011",
@@ -84,7 +91,15 @@ with sel select
             opR6 when "110",
             opR7 when "111",
             "0000000000000000" when others;
+
+with iRes select
+    Z <= '1' when "0000000000000000",
+         '0' when others;
+with iRes(15) select
+    N <= '1' when '1',
+         '0' when others;
             
+res <= iRes;
 --Operadores modulares
 inst_ADD: ADD16b port map
 (

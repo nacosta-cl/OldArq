@@ -52,12 +52,12 @@ set rc [catch {
   set_param xicom.use_bs_reader 1
   debug::add_scope template.lib 1
   set_property design_mode GateLvl [current_fileset]
-  set_property webtalk.parent_dir {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.cache/wt} [current_project]
-  set_property parent.project_path {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.xpr} [current_project]
-  set_property ip_repo_paths {{c:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.cache/ip}} [current_project]
-  set_property ip_output_repo {{c:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.cache/ip}} [current_project]
-  add_files -quiet {{C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.runs/synth_1/Basys3.dcp}}
-  read_xdc {{C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1/Proyecto Base.srcs/constrs_1/new/Basys3.xdc}}
+  set_property webtalk.parent_dir {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.cache/wt} [current_project]
+  set_property parent.project_path {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.xpr} [current_project]
+  set_property ip_repo_paths {{c:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.cache/ip}} [current_project]
+  set_property ip_output_repo {{c:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.cache/ip}} [current_project]
+  add_files -quiet {{C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.runs/synth_1/Basys3.dcp}}
+  read_xdc {{C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/constrs_1/new/Basys3.xdc}}
   link_design -top Basys3 -part xc7a35tcpg236-1
   close_msg_db -file init_design.pb
 } RESULT]

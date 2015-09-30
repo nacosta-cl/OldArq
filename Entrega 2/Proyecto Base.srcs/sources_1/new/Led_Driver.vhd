@@ -50,6 +50,7 @@ segment_swapper : process (clk)
        end if;
     end process;
 
+
 with segment_var select
     an <= "0111" when "00",
           "1011" when "01",
@@ -57,7 +58,7 @@ with segment_var select
           "1110" when "11";
           
 with segment_var select
-slected_dis <= dis_a when "00",
+slected_dis <=  dis_a when "00",
                 dis_b when "01",
                 dis_c when "10",
                 dis_d when "11";

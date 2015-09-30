@@ -1,7 +1,7 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2015.2 (win64) Build 1266856 Fri Jun 26 16:35:25 MDT 2015
-| Date             : Mon Sep 14 17:31:17 2015
+| Date             : Wed Sep 30 17:20:46 2015
 | Host             : NB-Nacosta running 64-bit major release  (build 9200)
 | Command          : report_power -file Basys3_power_routed.rpt -pb Basys3_power_summary_routed.pb
 | Design           : Basys3
@@ -30,12 +30,12 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 0.080 |
-| Dynamic (W)              | 0.008 |
+| Total On-Chip Power (W)  | 0.096 |
+| Dynamic (W)              | 0.025 |
 | Device Static (W)        | 0.072 |
 | Effective TJA (C/W)      | 5.0   |
-| Max Ambient (C)          | 84.6  |
-| Junction Temperature (C) | 25.4  |
+| Max Ambient (C)          | 84.5  |
+| Junction Temperature (C) | 25.5  |
 | Confidence Level         | Low   |
 | Setting File             | ---   |
 | Simulation Activity File | ---   |
@@ -50,17 +50,17 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        3 |       --- |             --- |
-| Slice Logic    |     0.002 |      360 |       --- |             --- |
-|   LUT as Logic |     0.002 |      199 |     20800 |            0.96 |
+| Slice Logic    |     0.002 |      383 |       --- |             --- |
+|   LUT as Logic |     0.002 |      206 |     20800 |            0.99 |
 |   CARRY4       |    <0.001 |       26 |      8150 |            0.32 |
-|   Register     |    <0.001 |       91 |     41600 |            0.22 |
+|   Register     |    <0.001 |       89 |     41600 |            0.21 |
 |   BUFG         |    <0.001 |        1 |        32 |            3.13 |
-|   F7/F8 Muxes  |    <0.001 |        3 |     32600 |           <0.01 |
-|   Others       |     0.000 |        8 |       --- |             --- |
-| Signals        |     0.002 |      291 |       --- |             --- |
-| I/O            |     0.004 |       22 |       106 |           20.75 |
+|   F7/F8 Muxes  |    <0.001 |       14 |     32600 |            0.04 |
+|   Others       |     0.000 |        9 |       --- |             --- |
+| Signals        |     0.002 |      294 |       --- |             --- |
+| I/O            |     0.019 |       25 |       106 |           23.58 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.080 |          |           |                 |
+| Total          |     0.096 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -70,9 +70,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.014 |       0.005 |      0.010 |
-| Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
-| Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |
+| Vccint    |       1.000 |     0.015 |       0.005 |      0.010 |
+| Vccaux    |       1.800 |     0.013 |       0.001 |      0.013 |
+| Vcco33    |       3.300 |     0.006 |       0.005 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -139,11 +139,11 @@ Table of Contents
 +----------------------+-----------+
 | Name                 | Power (W) |
 +----------------------+-----------+
-| Basys3               |     0.008 |
+| Basys3               |     0.025 |
 |   inst_Clock_Divider |    <0.001 |
 |   inst_Led_Driver    |    <0.001 |
-|   inst_regA          |     0.002 |
-|   inst_regB          |     0.001 |
+|   inst_regA          |     0.003 |
+|   inst_regB          |    <0.001 |
 +----------------------+-----------+
 
 

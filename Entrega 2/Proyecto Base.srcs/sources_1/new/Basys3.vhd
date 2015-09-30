@@ -14,6 +14,7 @@ entity Basys3 is
     Port (
         sw          : in   std_logic_vector (15 downto 0);
         btn         : in   std_logic_vector (4 downto 0);  -- 0 Center, 1 Up, 2 Left, 3 Right, 4 Down
+        led         : out   std_logic_vector (15 downto 0);
         clk         : in   std_logic;
         clk_up      : in   std_logic;
         seg         : out  std_logic_vector (7 downto 0);
@@ -46,7 +47,9 @@ component ALU
        sel      : in  std_logic_vector (2 downto 0);
        ci       : in  std_logic;
        co       : out std_logic;
-       res   : out std_logic_vector (15 downto 0));
+       res   : out std_logic_vector (15 downto 0);
+       Z    : out std_logic;
+       N    : out std_logic);
     end component;
     
 component Reg
@@ -79,7 +82,11 @@ signal dis_b : std_logic_vector(3 downto 0);
 signal dis_c : std_logic_vector(3 downto 0);
 signal dis_d : std_logic_vector(3 downto 0);
 
+--ZNC
+signal ALUstatus : std_logic_vector(2 downto 0); 
+
 begin
+
 
 --Listado de instancias
 --Componentes basicos
@@ -126,12 +133,18 @@ inst_ALU: ALU port map
     numB => num2,
     sel => sw(2 downto 0),
     ci => '0',
-    co => nulo,
-    res => res
+    co => ALUstatus(0),
+    res => res,
+    Z => ALUstatus(2),
+    N => ALUstatus(1)
 );
 --Fin de instancias
 
+
+
 --Selector de información
+led(15 downto 13) <= ALUstatus;
+
 with btn(0) select
     display <=  nums when '0',
                 res when '1',

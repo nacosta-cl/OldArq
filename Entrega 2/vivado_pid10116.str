@@ -85,3 +85,871 @@ selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sourc
 selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd), inst_ALU - ALU - Behavioral (ALU.vhd), inst_AND - AND16b - Behavioral (AND16b.vhd)]", 9, false); // A:k (H:JPanel, cl:JFrame)
 selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd), inst_ALU - ALU - Behavioral (ALU.vhd), inst_SUS - SUS16b - Behavioral (SUS16b.vhd)]", 8, true); // A:k (H:JPanel, cl:JFrame) - Node
 selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd), inst_ALU - ALU - Behavioral (ALU.vhd), inst_SUS - SUS16b - Behavioral (SUS16b.vhd), ADD - ADD16b - Behavioral (ADD16b.vhd)]", 9, true); // A:k (H:JPanel, cl:JFrame) - Node
+// Elapsed time: 412 seconds
+closeMainWindow("Proyecto Base - [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.xpr] - Vivado 2015.2"); // cl:JFrame
+// ap:bI (cl:JFrame): Exit Vivado: addNotify
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, ap:bI)
+dismissDialog("Exit Vivado"); // ap:bI (cl:JFrame)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, Add Sources]", 2, false); // w:Y (v:H, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// b:g (cl:JFrame): Add Sources: addNotify
+selectButton("NEXT", "Next >"); // JButton:AbstractButton (ButtonPanel:JPanel, b:g)
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_OR_CREATE_SOURCE_FILE, "Add"); // w:JideButton (CommandBar:DockableBar, b:g)
+selectMenuItem(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files..."); // ab:JMenuItem (ai:JPopupMenu, b:g)
+// Elapsed time: 78 seconds
+dismissFileChooser();
+// Elapsed time: 28 seconds
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_OR_CREATE_SOURCE_FILE, "Add"); // w:JideButton (CommandBar:DockableBar, b:g)
+selectMenuItem(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files..."); // ab:JMenuItem (ai:JPopupMenu, b:g)
+// HMemoryUtils.trashcanNow. Engine heap size: 469 MB. GUI used memory: 38 MB. Current time: 9/30/15 3:18:31 PM CLST
+// [Engine Memory]: 469 MB (+9779kb) [00:12:04]
+// Elapsed time: 62 seconds
+setFileChooser("C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/ROM.vhd");
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_OR_CREATE_SOURCE_FILE, "Add"); // w:JideButton (CommandBar:DockableBar, b:g)
+selectMenuItem(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files..."); // ab:JMenuItem (ai:JPopupMenu, b:g)
+// [GUI Memory]: 65 MB (+554kb) [00:12:54]
+// Elapsed time: 25 seconds
+setFileChooser("C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/PC.vhd");
+selectButton("FINISH", "Finish"); // JButton:AbstractButton (ButtonPanel:JPanel, b:g)
+// 'f' command handler elapsed time: 211 seconds
+dismissDialog("Add Sources"); // b:g (cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -norecurse {{C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/ROM.vhd} {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/PC.vhd}} 
+// cp:P (cl:JFrame):  Add Sources  : addNotify
+dismissDialog("Add Sources"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 11 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, PC - Behavioral (PC.vhd)]", 15, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, PC - Behavioral (PC.vhd)]", 15, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, PC - Behavioral (PC.vhd)]", 15, false, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, PC - Behavioral (PC.vhd)]", 15, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, PC - Behavioral (PC.vhd)]", 15, false, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click
+floatFrame(PAResourceOtoP.PAViews_CODE, "PC.vhd"); // ap:DockableFrame (FrameContainer:JideTabbedPane, cl:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 483 MB. GUI used memory: 38 MB. Current time: 9/30/15 3:19:52 PM CLST
+// PAResourceOtoP.PAViews_CODE: Code: float view
+maximizeFrame(PAResourceOtoP.PAViews_CODE, "PC.vhd"); // ap:DockableFrame (FrameContainer:JideTabbedPane, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("PC.vhd", 602, 180); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("PC.vhd", 236, 361); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("PC.vhd", 230, 430); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("PC.vhd", 226, 482); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+// Elapsed time: 33 seconds
+closeFrame(PAResourceOtoP.PAViews_CODE, "PC.vhd"); // ap:DockableFrame (FrameContainer:JideTabbedPane, FrameFloatingContainer:ResizableFrame)
+dockFrame(PAResourceOtoP.PAViews_CODE, "PC.vhd"); // ap:DockableFrame (FrameContainer:JideTabbedPane, FrameFloatingContainer:ResizableFrame)
+maximizeFrame(PAResourceOtoP.PAViews_CODE, "PC.vhd"); // ap:DockableFrame (FrameContainer:JideTabbedPane, FrameFloatingContainer:ResizableFrame)
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // F:b
+// [GUI Memory]: 74 MB (+5745kb) [00:13:59]
+// [Engine Memory]: 499 MB (+6941kb) [00:14:00]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ROM - Behavioral (ROM.vhd)]", 16, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ROM - Behavioral (ROM.vhd)]", 16, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ROM - Behavioral (ROM.vhd)]", 16, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ROM - Behavioral (ROM.vhd)]", 16, false, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click
+selectCodeEditor("ROM.vhd", 385, 353); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 54 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd), inst_ALU - ALU - Behavioral (ALU.vhd)]", 6, true); // A:k (H:JPanel, cl:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd), inst_ALU - ALU - Behavioral (ALU.vhd), inst_ADD - ADD16b - Behavioral (ADD16b.vhd)]", 7, true); // A:k (H:JPanel, cl:JFrame) - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd), inst_ALU - ALU - Behavioral (ALU.vhd), inst_ADD - ADD16b - Behavioral (ADD16b.vhd)]", 7); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd), inst_ALU - ALU - Behavioral (ALU.vhd), inst_ADD - ADD16b - Behavioral (ADD16b.vhd)]", 7, true); // A:k (H:JPanel, cl:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd), inst_ALU - ALU - Behavioral (ALU.vhd), inst_ADD - ADD16b - Behavioral (ADD16b.vhd)]", 7, true, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click - Node
+selectCodeEditor("ADD16b.vhd", 65, 194); // bj:J (JPanel:JComponent, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd), inst_ALU - ALU - Behavioral (ALU.vhd), inst_AND - AND16b - Behavioral (AND16b.vhd)]", 9, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd), inst_ALU - ALU - Behavioral (ALU.vhd), inst_SUS - SUS16b - Behavioral (SUS16b.vhd)]", 8, true); // A:k (H:JPanel, cl:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd), inst_ALU - ALU - Behavioral (ALU.vhd), inst_SUS - SUS16b - Behavioral (SUS16b.vhd)]", 8, true); // A:k (H:JPanel, cl:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd), inst_ALU - ALU - Behavioral (ALU.vhd), inst_SUS - SUS16b - Behavioral (SUS16b.vhd)]", 8, true, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click - Node
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd), inst_ALU - ALU - Behavioral (ALU.vhd), inst_SUS - SUS16b - Behavioral (SUS16b.vhd)]", 8); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd), inst_ALU - ALU - Behavioral (ALU.vhd), inst_OR - OR16b - Behavioral (OR16b.vhd)]", 10, false); // A:k (H:JPanel, cl:JFrame)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd), inst_ALU - ALU - Behavioral (ALU.vhd)]", 6); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd), inst_ALU - ALU - Behavioral (ALU.vhd)]", 6, true); // A:k (H:JPanel, cl:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd), inst_ALU - ALU - Behavioral (ALU.vhd), inst_XOR - XOR16b - Behavioral (XOR16b.vhd)]", 11, false, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click
+selectCodeEditor("ALU.vhd", 358, 157); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 409, 163); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 405, 145); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 51 seconds
+selectCodeEditor("ALU.vhd", 154, 177); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'c'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 209, 197); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 220, 200); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 229, 199); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 233, 195, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+// [GUI Memory]: 79 MB (+1803kb) [00:16:47]
+selectCodeEditor("ALU.vhd", 225, 196); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 261, 175); // bj:J (JPanel:JComponent, cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_PROJECT, "Open Recent Project"); // X:JMenu (JPopupMenu:JComponent, cl:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_FLOW, "Flow"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+selectMenuItem(PAResourceCommand.PACommandNames_REPLACE_IN_FILES, "Replace in Files..."); // ab:JMenuItem (JPopupMenu:JComponent, cl:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_REPLACE_IN_FILES
+// Replace in Files: addNotify
+selectComboBox("pa.FindAndReplaceAllDialog_FIND_COMBO_BOX", "co", -1); // JComboBox:JComponent (JPanel:JComponent, a:FindAndReplaceDialog)
+selectComboBox("pa.FindAndReplaceAllDialog_REPLACE_COMBO_BOX", "C", -1); // JComboBox:JComponent (JPanel:JComponent, a:FindAndReplaceDialog)
+selectCheckBox((HResource) null, "Match case", true); // JCheckBox:JToggleButton (JPanel:JComponent, a:FindAndReplaceDialog): TRUE
+selectCheckBox((HResource) null, "Match whole word", true); // JCheckBox:JToggleButton (JPanel:JComponent, a:FindAndReplaceDialog): TRUE
+selectButton(PAResourceEtoH.FindAndReplaceAllDialog_FIND, "Find"); // g:a (ButtonPanel:JPanel, a:FindAndReplaceDialog)
+// n:ap (cl:JFrame): Save Text Editor Changes: addNotify
+selectButton(RDIResource.ConfirmSaveTextEditsDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, n:ap)
+// 'e' command handler elapsed time: 18 seconds
+dismissDialog("Save Text Editor Changes"); // n:ap (cl:JFrame)
+selectCodeEditor("ALU.vhd", 167, 172); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 77, 155); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 90, 144); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 13 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "co"); // o:ao (f:JComboBox, cl:JFrame)
+selectCodeEditor("ALU.vhd", 88, 27); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 79, 31); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 79, 31); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 192, 141); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 250, 315); // bj:J (JPanel:JComponent, cl:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 505 MB. GUI used memory: 42 MB. Current time: 9/30/15 3:24:26 PM CLST
+// Elapsed time: 24 seconds
+selectCodeEditor("ALU.vhd", 347, 154); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 43 seconds
+selectCodeEditor("ALU.vhd", 302, 219); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 174 seconds
+selectCodeEditor("ALU.vhd", 84, 218); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 93, 266); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 223 seconds
+selectCodeEditor("ALU.vhd", 124, 187); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 199, 180); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 202, 181, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+selectCodeEditor("ALU.vhd", 202, 180); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 202, 179, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+selectCodeEditor("ALU.vhd", 60, 162); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 125, 201); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 81, 201); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 20 seconds
+selectCodeEditor("ALU.vhd", 74, 229); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 69, 362); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 42, 409); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 199, 280); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 77 seconds
+selectCodeEditor("ALU.vhd", 162, 240); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 105, 222); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 157, 247); // bj:J (JPanel:JComponent, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd), inst_ALU - ALU - Behavioral (ALU.vhd), inst_sh16bL - ShiftL16b - Behavioral (ShiftL16b.vhd)]", 13, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd), inst_ALU - ALU - Behavioral (ALU.vhd), inst_sh16bL - ShiftL16b - Behavioral (ShiftL16b.vhd)]", 13, false, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click
+selectCodeEditor("ShiftL16b.vhd", 108, 353); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 11 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ShiftL16b.vhd", 4); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectCodeEditor("ALU.vhd", 62, 303); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 23 seconds
+selectCodeEditor("ALU.vhd", 217, 309); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 215, 343); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 222 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU.vhd", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 525 MB. GUI used memory: 43 MB. Current time: 9/30/15 3:38:47 PM CLST
+// [Engine Memory]: 525 MB (+381kb) [00:32:15]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd)]", 1, true); // A:k (H:JPanel, cl:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd)]", 1, true); // A:k (H:JPanel, cl:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd)]", 1, true, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click - Node
+selectCodeEditor("Basys3.vhd", 86, 246); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 88, 218); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 10 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd)]", 1); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd), inst_Led_Driver - Led_Driver - Behavioral (Led_Driver.vhd)]", 3, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd), inst_Led_Driver - Led_Driver - Behavioral (Led_Driver.vhd)]", 3, false, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click
+selectCodeEditor("Led_Driver.vhd", 201, 277); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Led_Driver.vhd", 70, 182); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Led_Driver.vhd", 137, 205); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Led_Driver.vhd", 85, 204); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Led_Driver.vhd", 68, 197); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Led_Driver.vhd", 132, 205); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Led_Driver.vhd", 63, 110); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Led_Driver.vhd", 91, 193); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Led_Driver.vhd", 58, 204); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 20 seconds
+selectCodeEditor("Led_Driver.vhd", 311, 284); // bj:J (JPanel:JComponent, cl:JFrame)
+// [GUI Memory]: 85 MB (+1562kb) [00:33:24]
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd)]", 1); // A:k (H:JPanel, cl:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 4); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, Basys3.xdc]", 6, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, Basys3.xdc]", 6, false, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, Basys3.xdc]", 6, false); // A:k (H:JPanel, cl:JFrame)
+selectCodeEditor("Basys3.xdc", 107, 262); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.xdc", 8, 43); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 21 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd)]", 1, true); // A:k (H:JPanel, cl:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd)]", 1, true); // A:k (H:JPanel, cl:JFrame) - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd)]", 1); // A:k (H:JPanel, cl:JFrame)
+// Elapsed time: 78 seconds
+selectCodeEditor("Basys3.xdc", 116, 189); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.xdc", 178, 107); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 42 seconds
+selectCodeEditor("Basys3.xdc", 727, 289); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 10 seconds
+selectCodeEditor("Basys3.xdc", 1, 98); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 31 seconds
+typeControlKey(null, null, 'z');
+// [GUI Memory]: 89 MB (+180kb) [00:36:51]
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+// Elapsed time: 12 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Basys3.xdc", 3); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_FILE, "Open Recent File"); // X:JMenu (JPopupMenu:JComponent, cl:JFrame)
+selectMenuItem(RDIResourceCommand.RDICommands_SAVE_ALL_FILES, "Save All Files..."); // ab:JMenuItem (JPopupMenu:JComponent, cl:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+// Run Command: RDIResourceCommand.RDICommands_SAVE_ALL_FILES
+// n:ap (cl:JFrame): Save Text Editor Changes: addNotify
+selectButton(RDIResource.ConfirmSaveTextEditsDialog_YES, "Yes"); // a:JButton (JPanel:JComponent, n:ap)
+// TclEventType: DG_GRAPH_STALE
+dismissDialog("Save Text Editor Changes"); // n:ap (cl:JFrame)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 96 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "SUS16b.vhd", 2); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ADD16b.vhd", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ROM.vhd", 6); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 291, 264); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 23, 227); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 15 seconds
+selectCodeEditor("Basys3.vhd", 129, 312); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 133, 337); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 83 seconds
+selectCodeEditor("Basys3.vhd", 180, 364); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 233, 292); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 134 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Basys3.vhd", 4); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectCodeEditor("ALU.vhd", 214, 175); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 232, 177); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'c'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU.vhd", 5); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ShiftL16b.vhd", 6); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 391, 307); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "Basys3.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 127, 335); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 181, 155); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 206, 140); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 240, 108); // bj:J (JPanel:JComponent, cl:JFrame)
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// aR:ah (cl:JFrame): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a:JButton (JPanel:JComponent, aR:ah)
+// cp:P (cl:JFrame):  Save Constraints : addNotify
+// cp:P (cl:JFrame):  Resetting Runs : addNotify
+dismissDialog("Save Project"); // aR:ah (cl:JFrame)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: RUN_RESET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// 'bQ' command handler elapsed time: 4 seconds
+dismissDialog("Resetting Runs"); // cp:P (cl:JFrame)
+selectCodeEditor("Basys3.vhd", 299, 261); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream 
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// cp:P (cl:JFrame):  Generate Bitstream : addNotify
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectButton(RDIResource.ProgressDialog_BACKGROUND, "Background"); // a:JButton (JPanel:JComponent, cp:P)
+// TclEventType: RUN_LAUNCH
+selectCodeEditor("Basys3.vhd", 357, 300); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Wed Sep 30 15:50:34 2015] Launched synth_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.runs/synth_1/runme.log [Wed Sep 30 15:50:34 2015] Launched impl_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// [GUI Memory]: 97 MB (+2902kb) [00:44:10]
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files]", 1); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, Basys3.vhd]", 2, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, Basys3.vhd]", 2, false, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click
+selectTab((HResource) null, (HResource) null, "Messages", 1); // FrameContainer:JideTabbedPane (ContainerContainer:JideSplitPane, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Analysis Results, sources_1, [HDL 9-806] Syntax error near Z. [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/Basys3.vhd:50]. ]", 9, false); // ae:k (JViewport:JComponent, cl:JFrame)
+// TclEventType: RUN_FAILED
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Analysis Results, sources_1, [HDL 9-806] Syntax error near Z. [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/Basys3.vhd:50]. ]", 9, false, false, false, false, false, true); // ae:k (JViewport:JComponent, cl:JFrame) - Double Click
+// Q:ap (cl:JFrame): Synthesis Failed: addNotify
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, Q:ap)
+dismissDialog("Synthesis Failed"); // Q:ap (cl:JFrame)
+selectCodeEditor("Basys3.vhd", 221, 109); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 11 seconds
+selectCodeEditor("Basys3.vhd", 219, 106); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 353, 71); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 188, 153); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 183, 148); // bj:J (JPanel:JComponent, cl:JFrame)
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// aR:ah (cl:JFrame): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a:JButton (JPanel:JComponent, aR:ah)
+// cp:P (cl:JFrame):  Save Constraints : addNotify
+// cp:P (cl:JFrame):  Resetting Runs : addNotify
+dismissDialog("Save Project"); // aR:ah (cl:JFrame)
+// TclEventType: RUN_MODIFY
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: RUN_RESET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: RUN_RESET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// 'bQ' command handler elapsed time: 4 seconds
+dismissDialog("Resetting Runs"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// cp:P (cl:JFrame):  Generate Bitstream : addNotify
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream 
+// TclEventType: RUN_LAUNCH
+selectButton(RDIResource.ProgressDialog_BACKGROUND, "Background"); // a:JButton (JPanel:JComponent, cp:P)
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Wed Sep 30 15:51:39 2015] Launched synth_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.runs/synth_1/runme.log [Wed Sep 30 15:51:39 2015] Launched impl_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: RUN_FAILED
+// Q:ap (cl:JFrame): Synthesis Failed: addNotify
+// Elapsed time: 24 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, Q:ap)
+dismissDialog("Synthesis Failed"); // Q:ap (cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-2772] type std_logic does not match with a string literal [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/ALU.vhd:91]. ]", 14, true); // ae:k (JViewport:JComponent, cl:JFrame) - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\Nacosta\Documents\DEV\Arqui\ArquiProyectos\Entrega 2\Proyecto Base.srcs\sources_1\new\ALU.vhd;-;;-;16;-;line;-;91;-;;-;16;-;"); // ae:k (JViewport:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 68, 94); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 24 seconds
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// aR:ah (cl:JFrame): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a:JButton (JPanel:JComponent, aR:ah)
+// cp:P (cl:JFrame):  Save Constraints : addNotify
+// cp:P (cl:JFrame):  Resetting Runs : addNotify
+dismissDialog("Save Project"); // aR:ah (cl:JFrame)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: RUN_RESET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// 'bQ' command handler elapsed time: 3 seconds
+dismissDialog("Resetting Runs"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream 
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// cp:P (cl:JFrame):  Generate Bitstream : addNotify
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Wed Sep 30 15:52:51 2015] Launched synth_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.runs/synth_1/runme.log [Wed Sep 30 15:52:51 2015] Launched impl_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, open_project {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.xpr}. , [Project 1-313] Project file moved from 'C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 1' since last save.. ]", 2, false); // ae:k (JViewport:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 205, 142); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: RUN_FAILED
+// Q:ap (cl:JFrame): Synthesis Failed: addNotify
+// Elapsed time: 22 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, Q:ap)
+dismissDialog("Synthesis Failed"); // Q:ap (cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-2810] unit behavioral ignored due to previous errors [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/ALU.vhd:15]. ]", 15, false); // ae:k (JViewport:JComponent, cl:JFrame)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\Nacosta\Documents\DEV\Arqui\ArquiProyectos\Entrega 2\Proyecto Base.srcs\sources_1\new\ALU.vhd;-;;-;16;-;line;-;15;-;;-;16;-;"); // ae:k (JViewport:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 72, 172); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 77, 165); // bj:J (JPanel:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-1565] actual for formal port word2 is neither a static name nor a globally static expression [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/SUS16b.vhd:55]. ]", 13, false); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-1779] cannot read from 'out' object res ; use 'buffer' or 'inout' [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/ALU.vhd:90]. ]", 14, true); // ae:k (JViewport:JComponent, cl:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-2810] unit behavioral ignored due to previous errors [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/ALU.vhd:15]. ]", 15, false); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-1779] cannot read from 'out' object res ; use 'buffer' or 'inout' [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/ALU.vhd:90]. ]", 14, true); // ae:k (JViewport:JComponent, cl:JFrame) - Node
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-1779] cannot read from 'out' object res ; use 'buffer' or 'inout' [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/ALU.vhd:90]. ]", 14); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-1779] cannot read from 'out' object res ; use 'buffer' or 'inout' [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/ALU.vhd:90]. , [Synth 8-1779] cannot read from 'out' object res ; use 'buffer' or 'inout' [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/ALU.vhd:93]. ]", 15, false); // ae:k (JViewport:JComponent, cl:JFrame)
+// Elapsed time: 93 seconds
+selectCodeEditor("ALU.vhd", 299, 213); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 188, 121); // bj:J (JPanel:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-1779] cannot read from 'out' object res ; use 'buffer' or 'inout' [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/ALU.vhd:90]. ]", 14, true); // ae:k (JViewport:JComponent, cl:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-1779] cannot read from 'out' object res ; use 'buffer' or 'inout' [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/ALU.vhd:90]. , [Synth 8-1779] cannot read from 'out' object res ; use 'buffer' or 'inout' [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/ALU.vhd:93]. ]", 15, false); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-1779] cannot read from 'out' object res ; use 'buffer' or 'inout' [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/ALU.vhd:90]. ]", 14, true); // ae:k (JViewport:JComponent, cl:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-1779] cannot read from 'out' object res ; use 'buffer' or 'inout' [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/ALU.vhd:90]. , [Synth 8-1779] cannot read from 'out' object res ; use 'buffer' or 'inout' [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/ALU.vhd:93]. ]", 15, false); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-1779] cannot read from 'out' object res ; use 'buffer' or 'inout' [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/ALU.vhd:90]. ]", 14, true); // ae:k (JViewport:JComponent, cl:JFrame) - Node
+selectCodeEditor("ALU.vhd", 155, 149); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 30 seconds
+selectCodeEditor("ALU.vhd", 76, 173); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 71, 144); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 0, 110); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 0, 110, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+selectCodeEditor("ALU.vhd", 0, 110); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 1, 110); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 1, 110); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'c'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 85, 133); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 85, 133, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey(null, null, 'z');
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 78, 141); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 22 seconds
+selectCodeEditor("ALU.vhd", 34, 117); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 14 seconds
+selectCodeEditor("ALU.vhd", 24, 149); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 12 seconds
+floatFrame(PAResourceOtoP.PAViews_CODE, "ALU.vhd *"); // ap:DockableFrame (FrameContainer:JideTabbedPane, cl:JFrame)
+// PAResourceOtoP.PAViews_CODE: Code: float view
+maximizeFrame(PAResourceOtoP.PAViews_CODE, "ALU.vhd *"); // ap:DockableFrame (FrameContainer:JideTabbedPane, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("ALU.vhd", 503, 302); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("ALU.vhd", 294, 366); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("ALU.vhd", 294, 366, false, false, false, false, true); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame) - Double Click
+selectCodeEditor("ALU.vhd", 294, 366); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("ALU.vhd", 294, 366); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("ALU.vhd", 294, 366); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("ALU.vhd", 294, 366); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("ALU.vhd", 163, 185); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("ALU.vhd", 145, 302); // bj:J (JPanel:JComponent, FrameFloatingContainer:ResizableFrame)
+// Elapsed time: 12 seconds
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // w:JideButton (CommandBar:DockableBar, FrameFloatingContainer:ResizableFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+dockFrame(PAResourceOtoP.PAViews_CODE, "ALU.vhd *"); // ap:DockableFrame (FrameContainer:JideTabbedPane, FrameFloatingContainer:ResizableFrame)
+maximizeFrame(PAResourceOtoP.PAViews_CODE, "ALU.vhd *"); // ap:DockableFrame (FrameContainer:JideTabbedPane, FrameFloatingContainer:ResizableFrame)
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// cp:P (cl:JFrame):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+dismissDialog("Resetting Runs"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// cp:P (cl:JFrame):  Generate Bitstream : addNotify
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Wed Sep 30 15:57:51 2015] Launched synth_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.runs/synth_1/runme.log [Wed Sep 30 15:57:51 2015] Launched impl_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // cp:P (cl:JFrame)
+// TclEventType: RUN_COMPLETED
+// Elapsed time: 86 seconds
+selectCodeEditor("ALU.vhd", 170, 200); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: RUN_STEP_COMPLETED
+// ak:a (cl:JFrame): Launch Run Critical Messages: addNotify
+// Elapsed time: 29 seconds
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // i:a (JPanel:JComponent, ak:a)
+dismissDialog("Launch Run Critical Messages"); // ak:a (cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd)]", 1, true); // A:k (H:JPanel, cl:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd)]", 1, true, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click - Node
+selectCodeEditor("Basys3.vhd", 204, 99); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: RUN_FAILED
+// Q:ap (cl:JFrame): Implementation Failed: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, Q:ap)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Implementation Failed"); // Q:ap (cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [DRC 23-20] Rule violation (BIVC-1) Bank IO standard Vcc - Conflicting Vcc voltages in bank 14. For example, the following two ports in this bank have conflicting VCCOs:  . sw[3] (LVCMOS18, requiring VCCO=1.800) and sw[0] (LVCMOS33, requiring VCCO=3.300). ]", 6, false); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [Vivado_Tcl 4-23] Error(s) found during DRC. Placer not run.. ]", 7, false); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [DRC 23-20] Rule violation (BIVC-1) Bank IO standard Vcc - Conflicting Vcc voltages in bank 14. For example, the following two ports in this bank have conflicting VCCOs:  . sw[3] (LVCMOS18, requiring VCCO=1.800) and sw[0] (LVCMOS33, requiring VCCO=3.300). ]", 6, false); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [Vivado_Tcl 4-23] Error(s) found during DRC. Placer not run.. ]", 7, false); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [DRC 23-20] Rule violation (BIVC-1) Bank IO standard Vcc - Conflicting Vcc voltages in bank 14. For example, the following two ports in this bank have conflicting VCCOs:  . sw[3] (LVCMOS18, requiring VCCO=1.800) and sw[0] (LVCMOS33, requiring VCCO=3.300). ]", 6, false); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [Vivado_Tcl 4-23] Error(s) found during DRC. Placer not run.. ]", 7, false); // ae:k (JViewport:JComponent, cl:JFrame)
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Design Initialization, [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/constrs_1/new/Basys3.xdc:47]. ]", 4); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Design Initialization, [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/constrs_1/new/Basys3.xdc:47]. ]", 4, true); // ae:k (JViewport:JComponent, cl:JFrame) - Node
+selectCodeEditor("Basys3.vhd", 114, 112); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.vhd", 45, 92); // bj:J (JPanel:JComponent, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Basys3.vhd", 8); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/constrs_1/new/Basys3.xdc:47]. ]", 1); // ae:k (JViewport:JComponent, cl:JFrame)
+// Elapsed time: 11 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU.vhd", 5); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Basys3.vhd", 5); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Led_Driver.vhd", 7); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Basys3.vhd", 8); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU.vhd", 7); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+// [GUI Memory]: 103 MB (+1575kb) [00:54:24]
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Basys3.vhd", 8); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU.vhd", 7); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Basys3.vhd", 8); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectCodeEditor("ALU.vhd", 397, 192); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 293, 138); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 156, 160); // bj:J (JPanel:JComponent, cl:JFrame)
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// aR:ah (cl:JFrame): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a:JButton (JPanel:JComponent, aR:ah)
+// cp:P (cl:JFrame):  Save Constraints : addNotify
+// ap:bI (cl:JFrame): No Implementation Results Available: addNotify
+dismissDialog("Save Project"); // aR:ah (cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a:JButton (JPanel:JComponent, ap:bI)
+// HOptionPane Warning: 'A background task is running. Please wait until it completes and try again. (Background Task)'
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectButton("RDIResource.ProgressDialog_BACKGROUND_TASK_RUNNING_OK", "OK"); // BasicOptionPaneUI$ButtonFactory:JButton (JPanel:JComponent, U:JDialog)
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a:JButton (JPanel:JComponent, ap:bI)
+// cp:P (cl:JFrame):  Reset to Previous Step : addNotify
+dismissDialog("No Implementation Results Available"); // ap:bI (cl:JFrame)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run impl_1 -prev_step  
+// 'bQ' command handler elapsed time: 8 seconds
+dismissDialog("Reset to Previous Step"); // cp:P (cl:JFrame)
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream 
+// cp:P (cl:JFrame):  Generate Bitstream : addNotify
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Wed Sep 30 16:01:30 2015] Launched impl_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // cp:P (cl:JFrame)
+selectCodeEditor("ALU.vhd", 102, 160); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 102, 160, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+collapseTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager]", 26); // w:Y (v:H, cl:JFrame)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager, Open Target]", 27, false); // w:Y (v:H, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HW_TARGET
+selectMenuItem((HResource) null, "localhost:3121,xilinx_tcf/Digilent/210183698483A,PARAM.FREQUENCY:15000000"); // ab:JMenuItem (ai:JPopupMenu, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// cp:P (cl:JFrame):  Open Hardware Target : addNotify
+// TclEventType: LOAD_FEATURE
+// TclEventType: HW_SESSION_OPEN
+// Tcl Message: open_hw 
+// Tcl Message: connect_hw_server -url localhost:3121 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 
+// Tcl Message: INFO: [Labtools 27-2222] Launching hw_server... 
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:  ****** Xilinx hw_server v2015.2   **** Build date : Jun 26 2015-16:56:39     ** Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.   
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: connect_hw_server: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 749.477 ; gain = 0.000 
+// Tcl Message: current_hw_target [get_hw_targets */xilinx_tcf/Digilent/210183698483A] 
+// Tcl Message: ERROR: [Labtoolstcl 44-199] No matching targets found on connected servers: localhost Resolution: If needed connect the desired target to a server and use command refresh_hw_server. Then rerun the get_hw_targets command. 
+// Tcl Message: ERROR: [Common 17-39] 'get_hw_targets' failed due to earlier errors. 
+// N:a (cl:JFrame): Critical Messages: addNotify
+// Elapsed time: 11 seconds
+dismissDialog("Open Hardware Target"); // cp:P (cl:JFrame)
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // i:a (JPanel:JComponent, N:a)
+dismissDialog("Critical Messages"); // N:a (cl:JFrame)
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // i:l (JPanel:JComponent, cl:JFrame)
+selectMenu(PAResourceOtoP.ProgramDebugTab_OPEN_RECENTLY_OPENED_TARGET, "Recent Targets"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenuItem((HResource) null, "localhost:3121,xilinx_tcf/Digilent/210183698483A,PARAM.FREQUENCY:15000000"); // ab:JMenuItem (JPopupMenu:JComponent, cl:JFrame)
+// cp:P (cl:JFrame):  Open Hardware Target : addNotify
+// TclEventType: HW_OBJECT_DELETE
+// TclEventType: HW_SERVER_CLOSE
+// TclEventType: RUN_FAILED
+// Tcl Message: disconnect_hw_server localhost:3121 
+// Tcl Message: connect_hw_server -url localhost:3121 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: current_hw_target [get_hw_targets */xilinx_tcf/Digilent/210183698483A] 
+// Tcl Message: ERROR: [Labtoolstcl 44-199] No matching targets found on connected servers: localhost Resolution: If needed connect the desired target to a server and use command refresh_hw_server. Then rerun the get_hw_targets command. 
+// Tcl Message: ERROR: [Common 17-39] 'get_hw_targets' failed due to earlier errors. 
+// N:a (cl:JFrame): Critical Messages: addNotify
+dismissDialog("Open Hardware Target"); // cp:P (cl:JFrame)
+// Q:ap (cl:JFrame): Implementation Failed: addNotify
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, Q:ap)
+dismissDialog("Implementation Failed"); // Q:ap (cl:JFrame)
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // i:a (JPanel:JComponent, N:a)
+dismissDialog("Critical Messages"); // N:a (cl:JFrame)
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // i:l (JPanel:JComponent, cl:JFrame)
+selectMenu(PAResourceOtoP.ProgramDebugTab_OPEN_RECENTLY_OPENED_TARGET, "Recent Targets"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenu(PAResourceOtoP.ProgramDebugTab_CLOSED_TARGETS, "Closed Targets"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenu(PAResourceOtoP.ProgramDebugTab_CLOSED_TARGETS, "Closed Targets"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenu(PAResourceOtoP.ProgramDebugTab_OPEN_RECENTLY_OPENED_TARGET, "Recent Targets"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenu(PAResourceOtoP.ProgramDebugTab_CLOSED_TARGETS, "Closed Targets"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenu(PAResourceOtoP.ProgramDebugTab_CLOSED_TARGETS, "Closed Targets"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenu(PAResourceOtoP.ProgramDebugTab_CLOSED_TARGETS, "Closed Targets"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenu(PAResourceOtoP.ProgramDebugTab_OPEN_RECENTLY_OPENED_TARGET, "Recent Targets"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenu(PAResourceOtoP.ProgramDebugTab_CLOSED_TARGETS, "Closed Targets"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenu(PAResourceOtoP.ProgramDebugTab_OPEN_RECENTLY_OPENED_TARGET, "Recent Targets"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenuItem(PAResourceOtoP.ProgramDebugTab_CLEAR_LIST, "Clear List"); // ab:JMenuItem (JPopupMenu:JComponent, cl:JFrame)
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // i:l (JPanel:JComponent, cl:JFrame)
+selectMenu(PAResourceOtoP.ProgramDebugTab_CLOSED_TARGETS, "Closed Targets"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenuItem(PAResourceCommand.PACommandNames_OPEN_TARGET_WIZARD, "Open New Target..."); // ab:JMenuItem (ai:JPopupMenu, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_TARGET_WIZARD
+// ae:g (cl:JFrame): Open New Hardware Target: addNotify
+selectButton("NEXT", "Next >"); // JButton:AbstractButton (ButtonPanel:JPanel, ae:g)
+// TclEventType: HW_OBJECT_DELETE
+// TclEventType: HW_SERVER_CLOSE
+// cp:P (ae:g):  Open Server : addNotify
+// Tcl Message: disconnect_hw_server localhost:3121 
+// TclEventType: HW_SERVER_UPDATE
+// TclEventType: HW_TARGET_CHANGE
+// cp:P (ae:g):  Open Target : addNotify
+// TclEventType: HW_TARGET_CHANGE
+dismissDialog("Open Server"); // cp:P (ae:g)
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_SYSMON_DELETE
+// TclEventType: HW_TARGET_UPDATE
+selectButton("NEXT", "Next >"); // JButton:AbstractButton (ButtonPanel:JPanel, ae:g)
+dismissDialog("Open Target"); // cp:P (ae:g)
+selectTable(PAResourceEtoH.HardwareDeviceChooserPanel_DEVICE_CHOOSER_TABLE, "xc7a35t_0 ; 0362D093 ; 6", 0, "0362D093", 1); // D:v (JViewport:JComponent, ae:g)
+selectButton("NEXT", "Next >"); // JButton:AbstractButton (ButtonPanel:JPanel, ae:g)
+// HMemoryUtils.trashcanNow. Engine heap size: 581 MB. GUI used memory: 52 MB. Current time: 9/30/15 4:02:32 PM CLST
+selectButton("BACK", "< Back"); // JButton:AbstractButton (ButtonPanel:JPanel, ae:g)
+// cp:P (ae:g):  Open Target : addNotify
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_DEVICE_CHANGE
+// [Engine Memory]: 583 MB (+33123kb) [00:56:01]
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_SYSMON_DELETE
+// TclEventType: HW_TARGET_UPDATE
+dismissDialog("Open Target"); // cp:P (ae:g)
+selectTable(PAResourceEtoH.HardwareDeviceChooserPanel_DEVICE_CHOOSER_TABLE, "xc7a35t_0 ; 0362D093 ; 6", 0, "0362D093", 1); // D:v (JViewport:JComponent, ae:g)
+selectButton("NEXT", "Next >"); // JButton:AbstractButton (ButtonPanel:JPanel, ae:g)
+// TclEventType: HW_OBJECT_DELETE
+// TclEventType: HW_SERVER_CLOSE
+// cp:P (ae:g):  Open Hardware Target : addNotify
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: connect_hw_server -url localhost:3121 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 
+// Tcl Message: current_hw_target [get_hw_targets */xilinx_tcf/Digilent/210183637323A] 
+// TclEventType: HW_TARGET_CHANGE
+// Tcl Message: set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Digilent/210183637323A] 
+// TclEventType: HW_TARGET_CHANGE
+// Tcl Message: open_hw_target 
+// Tcl Message: INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183637323A 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// Tcl Message: current_hw_device [lindex [get_hw_devices] 0] 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// Tcl Message: refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0] 
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+selectButton("FINISH", "Finish"); // JButton:AbstractButton (ButtonPanel:JPanel, ae:g)
+// 'w' command handler elapsed time: 19 seconds
+dismissDialog("Open Hardware Target"); // cp:P (ae:g)
+dismissDialog("Open New Hardware Target"); // ae:g (cl:JFrame)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // i:l (JPanel:JComponent, cl:JFrame)
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "XADC ;   ", 3, "XADC", 0, false); // f:av (JViewport:JComponent, cl:JFrame)
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "XADC ;   ", 3, "XADC", 0, false); // f:av (JViewport:JComponent, cl:JFrame)
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "XADC ;   ", 3, "XADC", 0, false, false, false, false, false, true); // f:av (JViewport:JComponent, cl:JFrame) - Double Click
+// Run Command: PAResourceCommand.PACommandNames_NEW_HARDWARE_DASHBOARD
+// a:ag (cl:JFrame): New Dashboard: addNotify
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, a:ag)
+// 'C' command handler elapsed time: 6 seconds
+dismissDialog("New Dashboard"); // a:ag (cl:JFrame)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // i:l (JPanel:JComponent, cl:JFrame)
+selectMenuItem((HResource) null, "xc7a35t_0"); // ab:JMenuItem (ai:JPopupMenu, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// aC:ag (cl:JFrame): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_SPECIFY_BITSTREAM_FILE, (String) null); // r:a (aS:JPanel, aC:ag)
+dismissFileChooser();
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, aC:ag)
+// 'x' command handler elapsed time: 7 seconds
+dismissDialog("Program Device"); // aC:ag (cl:JFrame)
+selectButton(PAResourceQtoS.StaleMoreAction_OUT_OF_DATE_DETAILS, "more info"); // i:l (JPanel:JComponent, cl:JFrame)
+// place_design ERROR Due to: show
+selectTab((HResource) null, (HResource) null, "Tcl Console", 0); // FrameContainer:JideTabbedPane (ContainerContainer:JideSplitPane, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, current_hw_target [get_hw_targets */xilinx_tcf/Digilent/210183698483A]. , [Labtoolstcl 44-199] No matching targets found on connected servers: localhost. ]", 2, false); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Analysis Results, sources_1]", 4, true); // ae:k (JViewport:JComponent, cl:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Analysis Results, sources_1]", 4, true, false, false, false, false, true); // ae:k (JViewport:JComponent, cl:JFrame) - Double Click - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Analysis Results, sim_1]", 5, true); // ae:k (JViewport:JComponent, cl:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Analysis Results, sources_1]", 4, true); // ae:k (JViewport:JComponent, cl:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Analysis Results, sources_1, [HDL 9-806] Syntax error near Z. [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/ALU.vhd:11]. ]", 5, false); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Analysis Results, sources_1, [HDL 9-806] Syntax error near Z. [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/ALU.vhd:11]. ]", 5, false, false, false, false, false, true); // ae:k (JViewport:JComponent, cl:JFrame) - Double Click
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Analysis Results, sources_1, [HDL 9-806] Syntax error near Z. [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/ALU.vhd:11]. ]", 5, false); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Analysis Results, sources_1, [HDL 9-806] Syntax error near Z. [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/ALU.vhd:11]. ]", 5, false); // ae:k (JViewport:JComponent, cl:JFrame)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\Nacosta\Documents\DEV\Arqui\ArquiProyectos\Entrega 2\Proyecto Base.srcs\sources_1\new\ALU.vhd;-;;-;16;-;line;-;11;-;;-;16;-;"); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Analysis Results, sources_1, [HDL 9-806] Syntax error near Z. [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/ALU.vhd:11]. ]", 5, false, false, false, false, false, true); // ae:k (JViewport:JComponent, cl:JFrame) - Double Click
+selectCodeEditor("ALU.vhd", 205, 131); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 321, 150, false, false, false, true, false); // bj:J (JPanel:JComponent, cl:JFrame) - Popup Trigger
+selectCodeEditor("ALU.vhd", 298, 113); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 377, 114); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ALU.vhd", 213, 147); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 24 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Basys3.xdc", 6); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [DRC 23-20] Rule violation (BIVC-1) Bank IO standard Vcc - Conflicting Vcc voltages in bank 14. For example, the following two ports in this bank have conflicting VCCOs:  . sw[3] (LVCMOS18, requiring VCCO=1.800) and sw[0] (LVCMOS33, requiring VCCO=3.300). ]", 14, false); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [Vivado_Tcl 4-23] Error(s) found during DRC. Placer not run.. ]", 15, false); // ae:k (JViewport:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.xdc", 2, 111); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 11 seconds
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// aR:ah (cl:JFrame): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a:JButton (JPanel:JComponent, aR:ah)
+// cp:P (cl:JFrame):  Save Constraints : addNotify
+// TclEventType: DG_GRAPH_STALE
+// cp:P (cl:JFrame):  Resetting Runs : addNotify
+dismissDialog("Save Project"); // aR:ah (cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_MODIFY
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_MODIFY
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// 'bQ' command handler elapsed time: 3 seconds
+dismissDialog("Resetting Runs"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// cp:P (cl:JFrame):  Generate Bitstream : addNotify
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Wed Sep 30 16:04:32 2015] Launched synth_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.runs/synth_1/runme.log [Wed Sep 30 16:04:32 2015] Launched impl_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_FAILED
+// Q:ap (cl:JFrame): Implementation Failed: addNotify
+// Elapsed time: 188 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, Q:ap)
+dismissDialog("Implementation Failed"); // Q:ap (cl:JFrame)
+selectCodeEditor("Basys3.xdc", 49, 222); // bj:J (JPanel:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [DRC 23-20] Rule violation (BIVC-1) Bank IO standard Vcc - Conflicting Vcc voltages in bank 14. For example, the following two ports in this bank have conflicting VCCOs:  . sw[3] (LVCMOS18, requiring VCCO=1.800) and sw[0] (LVCMOS33, requiring VCCO=3.300). ]", 5, false); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [DRC 23-20] Rule violation (BIVC-1) Bank IO standard Vcc - Conflicting Vcc voltages in bank 14. For example, the following two ports in this bank have conflicting VCCOs:  . sw[3] (LVCMOS18, requiring VCCO=1.800) and sw[0] (LVCMOS33, requiring VCCO=3.300). ]", 5, false, false, false, false, false, true); // ae:k (JViewport:JComponent, cl:JFrame) - Double Click
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [DRC 23-20] Rule violation (BIVC-1) Bank IO standard Vcc - Conflicting Vcc voltages in bank 14. For example, the following two ports in this bank have conflicting VCCOs:  . sw[3] (LVCMOS18, requiring VCCO=1.800) and sw[0] (LVCMOS33, requiring VCCO=3.300). ]", 5, false); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [DRC 23-20] Rule violation (BIVC-1) Bank IO standard Vcc - Conflicting Vcc voltages in bank 14. For example, the following two ports in this bank have conflicting VCCOs:  . sw[3] (LVCMOS18, requiring VCCO=1.800) and sw[0] (LVCMOS33, requiring VCCO=3.300). ]", 5, false); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [DRC 23-20] Rule violation (BIVC-1) Bank IO standard Vcc - Conflicting Vcc voltages in bank 14. For example, the following two ports in this bank have conflicting VCCOs:  . sw[3] (LVCMOS18, requiring VCCO=1.800) and sw[0] (LVCMOS33, requiring VCCO=3.300). ]", 5, false, false, false, false, false, true); // ae:k (JViewport:JComponent, cl:JFrame) - Double Click
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [DRC 23-20] Rule violation (BIVC-1) Bank IO standard Vcc - Conflicting Vcc voltages in bank 14. For example, the following two ports in this bank have conflicting VCCOs:  . sw[3] (LVCMOS18, requiring VCCO=1.800) and sw[0] (LVCMOS33, requiring VCCO=3.300). ]", 5, false); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [DRC 23-20] Rule violation (BIVC-1) Bank IO standard Vcc - Conflicting Vcc voltages in bank 14. For example, the following two ports in this bank have conflicting VCCOs:  . sw[3] (LVCMOS18, requiring VCCO=1.800) and sw[0] (LVCMOS33, requiring VCCO=3.300). ]", 5, false); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [DRC 23-20] Rule violation (BIVC-1) Bank IO standard Vcc - Conflicting Vcc voltages in bank 14. For example, the following two ports in this bank have conflicting VCCOs:  . sw[3] (LVCMOS18, requiring VCCO=1.800) and sw[0] (LVCMOS33, requiring VCCO=3.300). ]", 5, false); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [DRC 23-20] Rule violation (BIVC-1) Bank IO standard Vcc - Conflicting Vcc voltages in bank 14. For example, the following two ports in this bank have conflicting VCCOs:  . sw[3] (LVCMOS18, requiring VCCO=1.800) and sw[0] (LVCMOS33, requiring VCCO=3.300). ]", 5, false); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [DRC 23-20] Rule violation (BIVC-1) Bank IO standard Vcc - Conflicting Vcc voltages in bank 14. For example, the following two ports in this bank have conflicting VCCOs:  . sw[3] (LVCMOS18, requiring VCCO=1.800) and sw[0] (LVCMOS33, requiring VCCO=3.300). ]", 5, false, false, false, false, true, false); // ae:k (JViewport:JComponent, cl:JFrame) - Popup Trigger
+selectMenu(PAResourceItoN.MsgTreePanel_MESSAGE_SEVERITY, "Message Severity"); // X:JMenu (M:JPopupMenu, Popup:JWindow)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [DRC 23-20] Rule violation (BIVC-1) Bank IO standard Vcc - Conflicting Vcc voltages in bank 14. For example, the following two ports in this bank have conflicting VCCOs:  . sw[3] (LVCMOS18, requiring VCCO=1.800) and sw[0] (LVCMOS33, requiring VCCO=3.300). ]", 5, false); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [Vivado_Tcl 4-23] Error(s) found during DRC. Placer not run.. ]", 6, false); // ae:k (JViewport:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.xdc", 53, 89); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 33 seconds
+selectCodeEditor("Basys3.xdc", 1, 123); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("Basys3.xdc", 3, 136); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 14 seconds
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// aR:ah (cl:JFrame): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a:JButton (JPanel:JComponent, aR:ah)
+// cp:P (cl:JFrame):  Save Constraints : addNotify
+// ap:bI (cl:JFrame): No Implementation Results Available: addNotify
+dismissDialog("Save Project"); // aR:ah (cl:JFrame)
+// TclEventType: FILE_SET_CHANGE
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a:JButton (JPanel:JComponent, ap:bI)
+// cp:P (cl:JFrame):  Resetting Runs : addNotify
+dismissDialog("No Implementation Results Available"); // ap:bI (cl:JFrame)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run impl_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// 'bQ' command handler elapsed time: 5 seconds
+selectCodeEditor("Basys3.xdc", 411, 235); // bj:J (JPanel:JComponent, cl:JFrame)
+dismissDialog("Resetting Runs"); // cp:P (cl:JFrame)
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream 
+// cp:P (cl:JFrame):  Generate Bitstream : addNotify
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Wed Sep 30 16:09:03 2015] Launched impl_1... Run output will be captured here: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // cp:P (cl:JFrame)
+// TclEventType: RUN_STEP_COMPLETED
+// ak:a (cl:JFrame): Launch Run Critical Messages: addNotify
+// Elapsed time: 55 seconds
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // i:a (JPanel:JComponent, ak:a)
+dismissDialog("Launch Run Critical Messages"); // ak:a (cl:JFrame)
+// Elapsed time: 18 seconds
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Design Initialization, [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/constrs_1/new/Basys3.xdc:47]. ]", 5); // ae:k (JViewport:JComponent, cl:JFrame)
+// Elapsed time: 62 seconds
+selectCodeEditor("Basys3.xdc", 353, 168, false, false, false, true, false); // bj:J (JPanel:JComponent, cl:JFrame) - Popup Trigger
+// TclEventType: RUN_COMPLETED
+// Q:ap (cl:JFrame): Bitstream Generation Completed: addNotify
+// Elapsed time: 43 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, Q:ap)
+dismissDialog("Bitstream Generation Completed"); // Q:ap (cl:JFrame)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // i:l (JPanel:JComponent, cl:JFrame)
+selectMenuItem((HResource) null, "xc7a35t_0"); // ab:JMenuItem (ai:JPopupMenu, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// aC:ag (cl:JFrame): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a:JButton (JPanel:JComponent, aC:ag)
+// cp:P (cl:JFrame):  Program Device : addNotify
+dismissDialog("Program Device"); // aC:ag (cl:JFrame)
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROBES.FILE {} [lindex [get_hw_devices] 0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.runs/impl_1/Basys3.bit} [lindex [get_hw_devices] 0] 
+// Tcl Message: program_hw_devices [lindex [get_hw_devices] 0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices] 0] 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+// 'x' command handler elapsed time: 4 seconds
+dismissDialog("Program Device"); // cp:P (cl:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 602 MB. GUI used memory: 54 MB. Current time: 9/30/15 4:12:17 PM CLST
