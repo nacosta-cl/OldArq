@@ -107,33 +107,32 @@ lista = [
     'NOP'
 ]
 
-dict = {}
+label = {}
+
+intrucciones = {}
 for i in range(len(lista)):
-        dict[lista[i]]=Rellena(sumBin(i+1))
-        ##print(lista[i]+"="+str(i))
-##print(dict)
+        intrucciones[lista[i]]=Rellena(sumBin(i+1))
 
 
-def leer(Archivo):
-    ar = open(Archivo,'r')
-    linea = ar.readline()
-    lista = []
-    while linea != "":
-        x =linea.split('//')
-        if(':' in x[0]):
-            while True:
-                linea = ar.readline()
-                w = linea.split('//')
-                
-
-
-            if(':' not in )
-
-
-        print(x)
-        linea = ar.readline()
-    ar.close()
+def leer(Archivo,label):
+    ar = open(Archivo,'r')  ## Abrir el archivo
+    linea = ar.readline()   ## Leer la primera linea
+    while linea:        ## Sale cuando la linea leida esta vacia
+        nombre = linea.split(':')   ## Separamos el nombre del label
+        label[nombre[0]] = []       ## Creamos una llave con el nombre del label y la clave es una lista para todas las instrucciones 
+        while linea:    ## Nuevamente sale cuando la linea esta vacia
+            linea = ar.readline()  ## Leemos la siguiente linea, que corresponden a las intrucciones dentro del label
+            w = linea.split('//')  ## Separamos los comentarios
+            if not ":" in w[0]:   ## Si la linea no contiene :, significa que no es un nuevo label, por lo tanto lo agregamos a la lista de instrucciones en el dic.
+                label[nombre[0]].append(w[0].strip())  ## Lo agregamos al dic.
+            else:
+                break
+            
+    ar.close()## Cerramos el archivo
+    
 
 
 
-leer('Ejemplo1.txt')
+
+
+leer('Ejemplo1.txt',label)
