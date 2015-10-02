@@ -1,0 +1,9 @@
+Input	Resultado
+000	Suma
+001	Resta
+010	AND
+011	XOR
+100	OR
+101	NOT
+110	ShiftL
+111	ShittR

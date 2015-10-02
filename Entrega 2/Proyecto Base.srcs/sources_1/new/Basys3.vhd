@@ -1,5 +1,5 @@
 --CPU Básico de 16 bits
---v0.0.1
+--v0.0.2.1
 --IIC2343 - Arquitectura de computadores
 --Integrantes
 --  Nicolás Acosta Huenulef
@@ -7,6 +7,10 @@
 --  Jorge Trincado
 --  Nicolás Julio
 --  Cristobal Gomara
+
+--Comentarios Generales
+--Todos los arreglos que dicen downto son little endian
+
 --Entidad raiz
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -62,9 +66,9 @@ component ROM
     end component;
 component PC
     Port ( clock    : in  std_logic;
-       load     : in  std_logic;
-       datain   : in  std_logic_vector (11 downto 0);
-       dataout  : out std_logic_vector (11 downto 0));
+           load     : in  std_logic;
+           datain   : in  std_logic_vector (11 downto 0);
+           dataout  : out std_logic_vector (11 downto 0));
     end component;
 --Unidad de control
 component CU
@@ -75,7 +79,8 @@ component CU
             selMuxA     : out std_logic_vector (1 downto 0);
             selMuxB     : out std_logic_vector (1 downto 0);
             selALU      : out std_logic_vector (2 downto 0);
-            write       : out std_logic);
+            write       : out std_logic;
+            LPC         : out std_logic);
     end component;
 
 component ALU
@@ -110,20 +115,39 @@ end component;
 --Fin de componentes
 
 --Inicio de señales
---Cosas de la ALU
-signal ALUnum1 : STD_LOGIC_VECTOR (15 downto 0);
-signal ALUnum2 : STD_LOGIC_VECTOR (15 downto 0);
 
---resultado de la ALU
-signal ALUres : STD_LOGIC_VECTOR (15 downto 0);
+--ALU
 
---A la pantalla
-signal display : STD_LOGIC_VECTOR (15 downto 0);
+signal ALUnumA      : STD_LOGIC_VECTOR (15 downto 0);
+signal ALUnumB      : STD_LOGIC_VECTOR (15 downto 0);
+signal ALUres       : STD_LOGIC_VECTOR (15 downto 0);
+signal ALUstatus    : STD_LOGIC_VECTOR (2 downto 0);
+signal ALUselect    : STD_LOGIC_VECTOR (11 downto 0);
 
---cable vacío
-signal nulo : STD_LOGIC;
+--ROM
+signal PCaddr    : STD_LOGIC_VECTOR(11 downto 0);
+signal instrLit  : std_logic_vector(32 downto 0);
+
+signal addr      : STD_LOGIC_VECTOR(11 downto 0);   --Conecta a RAM y PC
+signal lit       : std_logic_vector(15 downto 0);
+signal instr     : std_logic_vector(16 downto 0);
+
+--Señales de control
+
+signal loadPC   : STD_LOGIC;
+signal enabRegA : STD_LOGIC;
+signal enabRegB : STD_LOGIC;
+signal selMuxA  : STD_LOGIC_VECTOR (2 downto 0);
+signal selMuxB  : STD_LOGIC_VECTOR (2 downto 0);
+signal selAlu   : STD_LOGIC_VECTOR (2 downto 0);
+signal write    : STD_LOGIC;
+
+--Salida de la RAM
+
+signal RAMdOut  : STD_LOGIC_VECTOR (15 downto 0);
 
 --Salidas de los registros
+
 signal reg1 : STD_LOGIC_VECTOR (15 downto 0);
 signal reg2 : STD_LOGIC_VECTOR (15 downto 0);
 
@@ -135,14 +159,17 @@ signal dis_b : std_logic_vector(3 downto 0);
 signal dis_c : std_logic_vector(3 downto 0);
 signal dis_d : std_logic_vector(3 downto 0);
 
---ZNC
-signal ALUstatus : std_logic_vector(2 downto 0); 
+--A la pantalla
+signal display : STD_LOGIC_VECTOR (15 downto 0);
+
+--cable vacío
+signal nulo : STD_LOGIC;
 
 --Fin señales
+
 begin
-
-
 --Listado de instancias
+--Los componentes se ordenan por complejidad e importancia
 --Componentes basicos
 inst_Clock_Divider: Clock_Divider port map(
         clk         =>clk,
@@ -160,14 +187,57 @@ inst_Led_Driver: Led_Driver port map(
         seg => seg,
         an => an
 	);
+--ALU op. Siempre conectado. Operacion de salida elegida mediante un mux
+inst_ALU: ALU port map(
+        numA => ALUnumA,
+        numB => ALUnumB,
+        sel => ALUselect,
+        ci => '0',
+        co => ALUstatus(2),
+        res => ALUres,
+        Z => ALUstatus(0),
+        N => ALUstatus(1)
+    );
+--ROM
+inst_ROM: ROM port map(  
+            address => PCaddr,
+            dataout => instrLit 
+         );
+--CU
+inst_CU: CU port map( 
+        instruc   => instr,
+        ALUstatus => ALUstatus,
+        enabRegA  => enabRegA,
+        enabRegB  => enabRegB,
+        selMuxA   => selMuxA,
+        selMuxB   => selMuxB,
+        selALU    => ALUselect, 
+        write     => write,
+        LPC       => loadPC
+        );
+--PC
+inst_PC: PC port map(
+        clock    => clock,
+        load     => loadPC,
+        datain   => addr,
+        dataout  => PCaddr
+    );
+--RAM
+inst_RAM: RAM port map(
+        clock    => clock,
+        write    => write,
+        address  => addr,
+        datain   => ALUres,
+        dataout  => RAMdOut
+);
 --Registros
 inst_regA: Reg port map(
         clock    => clock,
         load     => selRegA,
-        up       => btn(3),
-        down     => btn(2),
+        up       => '0',
+        down     => '0',
         datain   => ALUres,
-        dataout  => num1
+        dataout  => numA
     );
 inst_regB: Reg port map(
         clock    => clock,
@@ -175,54 +245,40 @@ inst_regB: Reg port map(
         up       => '0',
         down     => '0',
         datain   => ALUres,
-        dataout  => num2
+        dataout  => numB
      );
              
 --Muxers
 inst_MUXa: MUX_2b port map(
-    e1      =>
-    e2      =>
-    e3      =>
-    e4      =>
-    mSelect =>
-    muxOut  =>
+    e1      => "0000000000000000",
+    e2      => "1111111111111111",
+    e3      => numA,
+    e4      => "0000000000000000",
+    mSelect => selMuxA,
+    muxOut  => ALUnumA
     );
     
 inst_MUXb: MUX_2b port map(
-    e1      =>
-    e2      =>
-    e3      =>
-    e4      =>
-    mSelect =>
-    muxOut  =>
+    e1      => "0000000000000000",
+    e2      => numB,
+    e3      => RAMdOut,
+    e4      => lit,
+    mSelect => selMuxB,
+    muxOut  => ALUnumB
     );
---Se mueve con up-down
 
---ALU op. Siempre conectado. Operacion de salida elegida mediante un mux
-inst_ALU: ALU port map
-(
-    numA => ALUnum1,
-    numB => ALUnum2,
-    sel => sw(2 downto 0),
-    ci => '0',
-    co => ALUstatus(2),
-    res => ALUres,
-    Z => ALUstatus(0),
-    N => ALUstatus(1)
-);
 --Fin de instancias
 
-
-
---Selector de información
+instr <= instrLit(7 downto 0);
+lit <= instrLit(7 downto 0);
+addr <= instrLit(11 downto 0);
+--Conexiones internas
+--Status en las leds 
 led(15 downto 13) <= ALUstatus;
 
---Creacion del vector para numeros
-nums (7 downto 0) <= num2 (7 downto 0);
-nums (15 downto 8) <= num1 (7 downto 0);
---Envío a los numeros led
-dis_a <= display(15 downto 12);
-dis_b <= display(11 downto 8);
-dis_c <= display(7 downto 4);
-dis_d <= display(3 downto 0);
+----Envío a los numeros led
+--dis_a <= display(15 downto 12);
+--dis_b <= display(11 downto 8);
+--dis_c <= display(7 downto 4);
+--dis_d <= display(3 downto 0);
 end Behavioral;
