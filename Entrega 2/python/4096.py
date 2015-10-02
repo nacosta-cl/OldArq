@@ -15,7 +15,7 @@ def sumBin(dec):
     return b
 
 def Rellena(N):
-    longitud = 33-len(N)
+    longitud = 17-len(N)
     Numero = '0'*longitud
     Numero+=N
     return Numero
@@ -24,7 +24,7 @@ def Rellena(N):
 
 
 lista = [
-    "MOV A,B ",
+    "MOV A,B",
     'MOV B,A',
     'MOV A,Lit',
     'MOV B,Lit',
@@ -107,32 +107,128 @@ lista = [
     'NOP'
 ]
 
+instrucciones = {}
+
 label = {}
-
-intrucciones = {}
 for i in range(len(lista)):
-        intrucciones[lista[i]]=Rellena(sumBin(i+1))
+        instrucciones[lista[i]]=Rellena(sumBin(i))
+        ##print(lista[i]+"="+str(i))
+#print(instrucciones)
 
+
+orden_labels =[]
+l = []
 
 def leer(Archivo,label):
-    ar = open(Archivo,'r')  ## Abrir el archivo
-    linea = ar.readline()   ## Leer la primera linea
-    while linea:        ## Sale cuando la linea leida esta vacia
-        nombre = linea.split(':')   ## Separamos el nombre del label
-        label[nombre[0]] = []       ## Creamos una llave con el nombre del label y la clave es una lista para todas las instrucciones 
-        while linea:    ## Nuevamente sale cuando la linea esta vacia
-            linea = ar.readline()  ## Leemos la siguiente linea, que corresponden a las intrucciones dentro del label
-            w = linea.split('//')  ## Separamos los comentarios
-            if not ":" in w[0]:   ## Si la linea no contiene :, significa que no es un nuevo label, por lo tanto lo agregamos a la lista de instrucciones en el dic.
-                label[nombre[0]].append(w[0].strip())  ## Lo agregamos al dic.
+    ar = open(Archivo,'r')
+    linea = ar.readline()
+
+    while linea:
+
+        nombre = linea.split(':')
+        Nombre = nombre[0].strip()
+        orden_labels.append(Nombre)
+
+        label[Nombre]=[]
+        while linea:
+            linea = ar.readline()
+
+            w = linea.split('//')
+
+            if( ':' not  in w[0]):
+                label[Nombre].append(w[0].strip())
             else:
                 break
-            
-    ar.close()## Cerramos el archivo
-    
+    ar.close()
+
+def contador(Linea):
+    conta = 0
+    for i in Linea:
+        if i == ' ':
+            conta+=1
+        else:
+            break
+    return conta
+
+def Leer(Archivo, label):
+    Ar = open(Archivo,'r')
+    Lineas = Ar.readlines()
+    cont = 0
+    cccc = -1
+    primeras_lineas = []
+    while cont < len(Lineas):
+        nombre = Lineas[cont].strip()
+        nombre = nombre.split(':')
+        Nombre = nombre[0].strip()
+        orden_labels.append(Nombre)
+        label[Nombre]=[]
+
+        while cont < len(Lineas):
+            cont+=1
+            if cont>=len(Lineas):
+                break
+            else:
+                Linea_anterior = Lineas[cont-1].split(':')
+                Linea_anterior = Linea_anterior[0].split('//')
+                Linea_anterior = Linea_anterior[0].strip()
+                w = Lineas[cont].split('//')
+
+                if Linea_anterior in orden_labels:
+                    primeras_lineas.append(contador(w[0]))
+                    cccc+=1
+
+                if(':' not  in w[0]):
+                    cc = contador(w[0])
+
+                    if cc == primeras_lineas[cccc]:
+                        label[Nombre].append(w[0].strip())
+
+                    else:
+                        label["CODE"].append(w[0].strip())
 
 
 
 
+                else:
+                    break
+    Ar.close()
 
-leer('Ejemplo1.txt',label)
+
+def orden_instrucciones(diccionario,valor,cantidad):
+    if len(l)< cantidad:
+        if valor != '':
+
+            l.append(valor)
+            x = valor.split()
+            if len(x)>=2:
+                if x != [] and  x[1] in orden_labels:
+                    for z in diccionario[x[1]]:
+                        if z != '' :
+                            orden_instrucciones(diccionario,z,cantidad)
+
+
+def lista_instrucciones(diccionario,cantidad):
+    for x in diccionario["CODE"]:
+        orden_instrucciones(diccionario,x,cantidad)
+
+def suma_instrucciones(diccionario, orden_labels):
+    contador = 0
+    for i in orden_labels:
+        if i != "DATA":
+            for x in diccionario[i]:
+                if x != '':
+                    contador+= 1
+    return contador
+
+
+
+Leer('Ejemplo5.txt',label)
+
+
+
+print(label)
+lista_instrucciones(label,suma_instrucciones(label,orden_labels))
+
+print(l)
+
+
