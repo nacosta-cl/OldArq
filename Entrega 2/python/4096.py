@@ -14,13 +14,37 @@ def sumBin(dec):
             dec=dec/2
     return b
 
+def hexaBin(hexa):
+    numero =''
+    diccionario = {
+        '0':'0000',
+        '1':'0001',
+        '2':'0010',
+        '3':'0011',
+        '4':'0100',
+        '5':'0101',
+        '6':'0110',
+        '7':'0111',
+        '8':'1000',
+        '9':'1001',
+        'A':'1010',
+        'B':'1011',
+        'C':'1100',
+        'D':'1101',
+        'E':'1110',
+        'F':'1111',
+    }
+
+    for i in hexa:
+        numero+=diccionario[i]
+
+    return numero
+
 def Rellena(N):
     longitud = 17-len(N)
     Numero = '0'*longitud
     Numero+=N
     return Numero
-
-
 
 
 lista = [
@@ -141,6 +165,29 @@ def leer(Archivo,label):
                 break
     ar.close()
 
+
+variables = {} #Diccionario de variables a direccion en ram
+def variablesDataRAM(var):
+    var = var.strip()
+    [nombre,valor] = var.split(" ")
+    variables[nombre] = len(variables.keys())+1
+    return variables
+
+def variablesIns(var):
+    var = var.strip()
+    [nombre,valor] = var.split(" ")
+    variablesDataRAM(var)
+    if(valor[-1]!="b"):
+        if(valor[-1]!="h"):
+            valor=sumBin(int(valor))
+        else:
+            valor = hexaBin(valor[:-1])
+    else:
+        valor = valor[:-1]
+    return ["MOV A,"+str(valor),"MOV "+str(variables[nombre])+",A"]
+
+
+
 def contador(Linea):
     conta = 0
     for i in Linea:
@@ -181,8 +228,9 @@ def Leer(Archivo, label):
                     cc = contador(w[0])
 
                     if cc == primeras_lineas[cccc]:
-                        label[Nombre].append(w[0].strip())
-
+                        #label[Nombre].append(w[0].strip())
+                        l=w[0].strip()
+                        label[Nombre].append(l.split(" ")[0]+" "+"".join(l.split(" ")[1:]))
                     else:
                         label["CODE"].append(w[0].strip())
 
@@ -221,14 +269,30 @@ def suma_instrucciones(diccionario, orden_labels):
     return contador
 
 
+instrucciones2 = {} #Dict con data con instrucciones
+def dataFinal(diccionario):
+    for nombre2 in diccionario:
+        if(nombre2 != "DATA"):
+            instrucciones2[nombre2] = label[nombre2]
+        else:
+            instrucciones2["DATA"] = []
+
+    for nombre in diccionario["DATA"]:
+        for ins in variablesIns(nombre):
+            instrucciones2["DATA"].append(ins)
+
+
+
 
 Leer('Ejemplo5.txt',label)
 
+dataFinal(label)
+print (instrucciones2)
 
 
-print(label)
+#print(label)
 lista_instrucciones(label,suma_instrucciones(label,orden_labels))
 
-print(l)
+#print(l)
 
 
