@@ -117,9 +117,6 @@ end component;
 --Inicio de señales
 
 --ALU
-signal numA      : STD_LOGIC_VECTOR (15 downto 0);
-signal numB      : STD_LOGIC_VECTOR (15 downto 0);
-
 signal ALUnumA      : STD_LOGIC_VECTOR (15 downto 0);
 signal ALUnumB      : STD_LOGIC_VECTOR (15 downto 0);
 signal ALUres       : STD_LOGIC_VECTOR (15 downto 0);
@@ -153,6 +150,8 @@ signal RAMdOut  : STD_LOGIC_VECTOR (15 downto 0);
 signal reg1 : STD_LOGIC_VECTOR (15 downto 0);
 signal reg2 : STD_LOGIC_VECTOR (15 downto 0);
 
+signal numA      : STD_LOGIC_VECTOR (15 downto 0);
+signal numB      : STD_LOGIC_VECTOR (15 downto 0);
 -- Integrados: reloj, display
 signal clock  : std_logic;                     
             
@@ -173,6 +172,11 @@ begin
 --Listado de instancias
 --Los componentes se ordenan por complejidad e importancia
 --Componentes basicos
+
+instr <= instrLit (32 downto 16); 
+addr <= instrLit (11 downto 0);
+lit <= instrLit (15 downto 0);
+
 inst_Clock_Divider: Clock_Divider port map(
         clk         =>clk,
         clk_up      =>clk_up,
@@ -253,7 +257,7 @@ inst_regB: Reg port map(
 --Muxers
 inst_MUXa: MUX_2b port map(
     e1      => "0000000000000000",
-    e2      => "1111111111111111",
+    e2      => "0000000000000001",
     e3      => numA,
     e4      => "0000000000000000",
     mSelect => selMuxA,
@@ -269,6 +273,8 @@ inst_MUXb: MUX_2b port map(
     muxOut  => ALUnumB
     );
 
+
+
 --Fin de instancias
 
 --instr <= instrLit(7 downto 0);
@@ -277,6 +283,8 @@ inst_MUXb: MUX_2b port map(
 --Conexiones internas
 --Status en las leds 
 led(15 downto 13) <= ALUstatus;
+
+--with 
 
 ----Envío a los numeros led
 --dis_a <= display(15 downto 12);

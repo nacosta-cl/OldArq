@@ -24,6 +24,7 @@ read_vhdl -library xil_defaultlib {
   {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/OR16b.vhd}
   {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/NOT16b.vhd}
   {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/AND16b.vhd}
+  {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/CU.vhd}
   {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/PC.vhd}
   {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/ROM.vhd}
   {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/Led_Driver.vhd}
@@ -32,7 +33,6 @@ read_vhdl -library xil_defaultlib {
   {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/RAM.vhd}
   {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/MUX.vhd}
   {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/Reg.vhd}
-  {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/CU.vhd}
   {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/Basys3.vhd}
 }
 read_xdc {{C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/constrs_1/new/Basys3.xdc}}
