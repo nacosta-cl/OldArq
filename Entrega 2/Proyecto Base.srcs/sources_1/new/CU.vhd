@@ -33,7 +33,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity CU is
     Port(   instruc     : in std_logic_vector (16 downto 0);
-        actStatus   : in std_logic_vector (2 downto 0);
+        ALUstatus   : in std_logic_vector (2 downto 0);
         enabRegA    : out std_logic;
         enabRegB    : out std_logic;
         selMuxA     : out std_logic_vector (1 downto 0);

@@ -73,7 +73,7 @@ component PC
 --Unidad de control
 component CU
     Port(   instruc     : in std_logic_vector (16 downto 0);
-            actStatus   : in std_logic_vector (2 downto 0);
+            ALUstatus   : in std_logic_vector (2 downto 0);
             enabRegA    : out std_logic;
             enabRegB    : out std_logic;
             selMuxA     : out std_logic_vector (1 downto 0);
@@ -104,12 +104,12 @@ component Reg
 end component;
 
 component MUX_2b
-    Port ( e1 : in STD_LOGIC_VECTOR (16 downto 0);
-           e2 : in STD_LOGIC_VECTOR (16 downto 0);
-           e3 : in STD_LOGIC_VECTOR (16 downto 0);
-           e4 : in STD_LOGIC_VECTOR (16 downto 0);
+    Port ( e1 : in STD_LOGIC_VECTOR (15 downto 0);
+           e2 : in STD_LOGIC_VECTOR (15 downto 0);
+           e3 : in STD_LOGIC_VECTOR (15 downto 0);
+           e4 : in STD_LOGIC_VECTOR (15 downto 0);
            mSelect  : in STD_LOGIC_VECTOR (1 downto 0);
-           muxOut : in STD_LOGIC_VECTOR (16 downto 0) );
+           muxOut : in STD_LOGIC_VECTOR (15 downto 0) );
 end component;
 
 --Fin de componentes
@@ -117,12 +117,14 @@ end component;
 --Inicio de señales
 
 --ALU
+signal numA      : STD_LOGIC_VECTOR (15 downto 0);
+signal numB      : STD_LOGIC_VECTOR (15 downto 0);
 
 signal ALUnumA      : STD_LOGIC_VECTOR (15 downto 0);
 signal ALUnumB      : STD_LOGIC_VECTOR (15 downto 0);
 signal ALUres       : STD_LOGIC_VECTOR (15 downto 0);
 signal ALUstatus    : STD_LOGIC_VECTOR (2 downto 0);
-signal ALUselect    : STD_LOGIC_VECTOR (11 downto 0);
+signal ALUselect    : STD_LOGIC_VECTOR (2 downto 0);
 
 --ROM
 signal PCaddr    : STD_LOGIC_VECTOR(11 downto 0);
@@ -137,8 +139,8 @@ signal instr     : std_logic_vector(16 downto 0);
 signal loadPC   : STD_LOGIC;
 signal enabRegA : STD_LOGIC;
 signal enabRegB : STD_LOGIC;
-signal selMuxA  : STD_LOGIC_VECTOR (2 downto 0);
-signal selMuxB  : STD_LOGIC_VECTOR (2 downto 0);
+signal selMuxA  : STD_LOGIC_VECTOR (1 downto 0);
+signal selMuxB  : STD_LOGIC_VECTOR (1 downto 0);
 signal selAlu   : STD_LOGIC_VECTOR (2 downto 0);
 signal write    : STD_LOGIC;
 
@@ -233,7 +235,7 @@ inst_RAM: RAM port map(
 --Registros
 inst_regA: Reg port map(
         clock    => clock,
-        load     => selRegA,
+        load     => enabRegA,
         up       => '0',
         down     => '0',
         datain   => ALUres,
@@ -241,7 +243,7 @@ inst_regA: Reg port map(
     );
 inst_regB: Reg port map(
         clock    => clock,
-        load     => selRegB,
+        load     => enabRegB,
         up       => '0',
         down     => '0',
         datain   => ALUres,
@@ -269,9 +271,9 @@ inst_MUXb: MUX_2b port map(
 
 --Fin de instancias
 
-instr <= instrLit(7 downto 0);
-lit <= instrLit(7 downto 0);
-addr <= instrLit(11 downto 0);
+--instr <= instrLit(7 downto 0);
+--lit <= instrLit(7 downto 0);
+--addr <= instrLit(11 downto 0);
 --Conexiones internas
 --Status en las leds 
 led(15 downto 13) <= ALUstatus;

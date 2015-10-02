@@ -32,12 +32,12 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity MUX_2b is
-    Port ( e1 : in STD_LOGIC_VECTOR (16 downto 0);
-           e2 : in STD_LOGIC_VECTOR (16 downto 0);
-           e3 : in STD_LOGIC_VECTOR (16 downto 0);
-           e4 : in STD_LOGIC_VECTOR (16 downto 0);
+    Port ( e1 : in STD_LOGIC_VECTOR (15 downto 0);
+           e2 : in STD_LOGIC_VECTOR (15 downto 0);
+           e3 : in STD_LOGIC_VECTOR (15 downto 0);
+           e4 : in STD_LOGIC_VECTOR (15 downto 0);
            mSelect  : in STD_LOGIC_VECTOR (1 downto 0);
-           muxOut : out STD_LOGIC_VECTOR (16 downto 0) );
+           muxOut : out STD_LOGIC_VECTOR (15 downto 0) );
 end MUX_2b;
 
 architecture Behavioral of MUX_2b is
