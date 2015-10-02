@@ -1,11 +1,12 @@
---ALU básica
---v1.1
+--CPU Básico de 16 bits
+--v0.0.1
 --IIC2343 - Arquitectura de computadores
 --Integrantes
 --  Nicolás Acosta Huenulef
---  Sebastian Carraedo
 --  Benjamin Rigonesi
 --  Jorge Trincado
+--  Nicolás Julio
+--  Cristobal Gomara
 --Entidad raiz
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -24,6 +25,8 @@ end Basys3;
 
 architecture Behavioral of Basys3 is
 
+--Inicio de componentes
+
 component Clock_Divider
     Port ( clk          : in std_logic;
            clk_up       : in std_logic;
@@ -41,15 +44,49 @@ component Led_Driver
             an          : out  std_logic_vector (3 downto 0)
            );
     end component;
+    
+component RAM
+    Port (
+        clock       : in   std_logic;
+        write       : in   std_logic;
+        address     : in   std_logic_vector (11 downto 0);
+        datain      : in   std_logic_vector (15 downto 0);
+        dataout     : out  std_logic_vector (15 downto 0)
+          );
+    end component;
+    
+component ROM
+    Port (  address   : in  std_logic_vector(11 downto 0);
+            dataout   : out std_logic_vector(32 downto 0)
+         );
+    end component;
+component PC
+    Port ( clock    : in  std_logic;
+       load     : in  std_logic;
+       datain   : in  std_logic_vector (11 downto 0);
+       dataout  : out std_logic_vector (11 downto 0));
+    end component;
+--Unidad de control
+component CU
+    Port(   instruc     : in std_logic_vector (16 downto 0);
+            actStatus   : in std_logic_vector (2 downto 0);
+            enabRegA    : out std_logic;
+            enabRegB    : out std_logic;
+            selMuxA     : out std_logic_vector (1 downto 0);
+            selMuxB     : out std_logic_vector (1 downto 0);
+            selALU      : out std_logic_vector (2 downto 0);
+            write       : out std_logic);
+    end component;
+
 component ALU
     Port ( numA        : in  std_logic_vector (15 downto 0);
-       numB        : in  std_logic_vector (15 downto 0);
-       sel      : in  std_logic_vector (2 downto 0);
-       ci       : in  std_logic;
-       co       : out std_logic;
-       res   : out std_logic_vector (15 downto 0);
-       Z    : out std_logic;
-       N    : out std_logic);
+           numB        : in  std_logic_vector (15 downto 0);
+           sel      : in  std_logic_vector (2 downto 0);
+           ci       : in  std_logic;
+           co       : out std_logic;
+           res   : out std_logic_vector (15 downto 0);
+           Z    : out std_logic;
+           N    : out std_logic);
     end component;
     
 component Reg
@@ -61,16 +98,32 @@ component Reg
            dataout  : out std_logic_vector (15 downto 0));
 end component;
 
-signal num1 : STD_LOGIC_VECTOR (15 downto 0);
-signal num2 : STD_LOGIC_VECTOR (15 downto 0);
-signal nums : STD_LOGIC_VECTOR (15 downto 0);
+component MUX_2b
+    Port ( e1 : in STD_LOGIC_VECTOR (16 downto 0);
+           e2 : in STD_LOGIC_VECTOR (16 downto 0);
+           e3 : in STD_LOGIC_VECTOR (16 downto 0);
+           e4 : in STD_LOGIC_VECTOR (16 downto 0);
+           mSelect  : in STD_LOGIC_VECTOR (1 downto 0);
+           muxOut : in STD_LOGIC_VECTOR (16 downto 0) );
+end component;
 
-signal res : STD_LOGIC_VECTOR (15 downto 0);
+--Fin de componentes
 
+--Inicio de señales
+--Cosas de la ALU
+signal ALUnum1 : STD_LOGIC_VECTOR (15 downto 0);
+signal ALUnum2 : STD_LOGIC_VECTOR (15 downto 0);
+
+--resultado de la ALU
+signal ALUres : STD_LOGIC_VECTOR (15 downto 0);
+
+--A la pantalla
 signal display : STD_LOGIC_VECTOR (15 downto 0);
 
+--cable vacío
 signal nulo : STD_LOGIC;
---
+
+--Salidas de los registros
 signal reg1 : STD_LOGIC_VECTOR (15 downto 0);
 signal reg2 : STD_LOGIC_VECTOR (15 downto 0);
 
@@ -85,6 +138,7 @@ signal dis_d : std_logic_vector(3 downto 0);
 --ZNC
 signal ALUstatus : std_logic_vector(2 downto 0); 
 
+--Fin señales
 begin
 
 
@@ -106,36 +160,54 @@ inst_Led_Driver: Led_Driver port map(
         seg => seg,
         an => an
 	);
---Registros. No se les entrega un datain, solo los cambios
---Se mueve con izq-der
+--Registros
 inst_regA: Reg port map(
         clock    => clock,
-        load     => '0',
+        load     => selRegA,
         up       => btn(3),
         down     => btn(2),
-        datain   =>"0000000000000000",
+        datain   => ALUres,
         dataout  => num1
     );
---Se mueve con up-down
 inst_regB: Reg port map(
         clock    => clock,
-        load     => '0',
-        up       => btn(1),
-        down     => btn(4),
-        datain   => "0000000000000000",
+        load     => selRegB,
+        up       => '0',
+        down     => '0',
+        datain   => ALUres,
         dataout  => num2
      );
-         
+             
+--Muxers
+inst_MUXa: MUX_2b port map(
+    e1      =>
+    e2      =>
+    e3      =>
+    e4      =>
+    mSelect =>
+    muxOut  =>
+    );
+    
+inst_MUXb: MUX_2b port map(
+    e1      =>
+    e2      =>
+    e3      =>
+    e4      =>
+    mSelect =>
+    muxOut  =>
+    );
+--Se mueve con up-down
+
 --ALU op. Siempre conectado. Operacion de salida elegida mediante un mux
 inst_ALU: ALU port map
 (
-    numA => num1,
-    numB => num2,
+    numA => ALUnum1,
+    numB => ALUnum2,
     sel => sw(2 downto 0),
     ci => '0',
-    co => ALUstatus(0),
-    res => res,
-    Z => ALUstatus(2),
+    co => ALUstatus(2),
+    res => ALUres,
+    Z => ALUstatus(0),
     N => ALUstatus(1)
 );
 --Fin de instancias
@@ -144,11 +216,6 @@ inst_ALU: ALU port map
 
 --Selector de información
 led(15 downto 13) <= ALUstatus;
-
-with btn(0) select
-    display <=  nums when '0',
-                res when '1',
-                "0000000000000000" when others;
 
 --Creacion del vector para numeros
 nums (7 downto 0) <= num2 (7 downto 0);

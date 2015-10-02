@@ -6,11 +6,10 @@ entity ALU is
            numB        : in  std_logic_vector (15 downto 0);
            sel      : in  std_logic_vector (2 downto 0);
            ci       : in  std_logic;
-           
            res   : out std_logic_vector (15 downto 0);
            Z    : out std_logic;
-           N    : out std_logic
-           co       : out std_logic;
+           N    : out std_logic;
+           co       : out std_logic
            );
 
 end ALU;
@@ -78,6 +77,8 @@ signal opR6 : STD_LOGIC_VECTOR (15 downto 0);
 signal opR7 : STD_LOGIC_VECTOR (15 downto 0);
 
 --Resultado interno
+signal iCo : STD_LOGIC;
+signal iZ : STD_LOGIC;
 signal iRes : STD_LOGIC_VECTOR (15 downto 0);
 begin
 --Mux de seleccion de los cables
@@ -92,12 +93,17 @@ with sel select
             opR7 when "111",
             "0000000000000000" when others;
 
+co <= iCo;
+
+with iCo select
+    Z <= iZ when '0',
+         '0' when others;
 with iRes select
-    Z <= '1' when "0000000000000000",
+    iZ <= '1' when "0000000000000000",
          '0' when others;
 with iRes(15) select
-    N <= '1' when '1',
-         '0' when others;
+    N <= '0' when '1',
+         '1' when others;
             
 res <= iRes;
 --Operadores modulares
@@ -106,7 +112,7 @@ inst_ADD: ADD16b port map
     word1 => numA,
     word2 => numB,
     sCin => ci,
-    sCout => co,
+    sCout => iCo,
     sSum => opR0
 );
 inst_SUS: SUS16b port map
