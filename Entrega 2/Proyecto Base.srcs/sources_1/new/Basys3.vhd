@@ -109,7 +109,7 @@ component MUX_2b
            e3 : in STD_LOGIC_VECTOR (15 downto 0);
            e4 : in STD_LOGIC_VECTOR (15 downto 0);
            mSelect  : in STD_LOGIC_VECTOR (1 downto 0);
-           muxOut : in STD_LOGIC_VECTOR (15 downto 0) );
+           muxOut : out STD_LOGIC_VECTOR (15 downto 0) );
 end component;
 
 --Fin de componentes
