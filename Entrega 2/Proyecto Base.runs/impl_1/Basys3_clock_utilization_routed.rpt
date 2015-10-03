@@ -1,7 +1,7 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------
 | Tool Version      : Vivado v.2015.2 (win64) Build 1266856 Fri Jun 26 16:35:25 MDT 2015
-| Date              : Fri Oct 02 22:09:48 2015
+| Date              : Sat Oct 03 03:45:43 2015
 | Host              : NB-Nacosta running 64-bit major release  (build 9200)
 | Command           : report_clock_utilization -file Basys3_clock_utilization_routed.rpt
 | Design            : Basys3
@@ -48,7 +48,7 @@ Table of Contents
 +-------+--------------------+---------------+------+-------+-------+
 | Index | BUFG Cell          | Net Name      | BELs | Sites | Fixed |
 +-------+--------------------+---------------+------+-------+-------+
-|     1 | clk_IBUF_BUFG_inst | clk_IBUF_BUFG |   57 |    16 |    no |
+|     1 | clk_IBUF_BUFG_inst | clk_IBUF_BUFG |   57 |    17 |    no |
 |     2 | clock_BUFG_inst    | clock_BUFG    |  108 |    27 |    no |
 +-------+--------------------+---------------+------+-------+-------+
 
