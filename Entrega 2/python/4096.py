@@ -60,46 +60,46 @@ lista = {
     'ADD A,B' : '0001011',
     'ADD B,A' : '0001100',
     'ADD A,Lit' : '0001101',
-    'ADD B,Lit' : '0000000', ##temporal
+    'ADD B,Lit' : '1111111', ##temporal
     'ADD A,(Dir)' : '0001110',
-    'ADD B,(Dir)' : '0000000', ##temporal
+    'ADD B,(Dir)' : '1111111', ##temporal
     'ADD (Dir)' : '0010000',
 
     'SUB A,B' : '0010001',
     'SUB B,A' : '0010010',
-    'SUB A,Lit' : '000000', ##temporal
-    'SUB B,Lit' : '000000', ##temporal
+    'SUB A,Lit' : '1111111', ##temporal
+    'SUB B,Lit' : '1111111', ##temporal
     'SUB A,(Dir)' : '0010011',
-    'SUB B,(Dir)' : '000000', ##temporal
+    'SUB B,(Dir)' : '1111111', ##temporal
     'SUB (Dir)' : '0010101',
 
     'AND A,B' : '0010110',
     'AND B,A' : '0010111',
     'AND A, Lit' : '0011000',
-    'AND B, Lit' : '0011001', ##temporal
+    'AND B, Lit' : '1111111', ##temporal
     'AND A,(Dir)' : '0011001',
-    'AND B,(Dir)' : '0011011', ##temporal
+    'AND B,(Dir)' : '1111111', ##temporal
     'AND(Dir)' : '0011011',
 
 
     'OR A,B' : '0011100',
     'OR B,A' : '0011101',
     'OR A,Lit' : '0011110',
-    'OR B,Lit' : '0000000', ##temporal
+    'OR B,Lit' : '1111111', ##temporal
     'OR A,(Dir)' : '0011111',
-    'OR B,(Dir)' : '0000000', ##temporal
+    'OR B,(Dir)' : '1111111', ##temporal
     'OR (Dir)' : '0100001',
 
     'NOT A' : '0100010',
     'NOT B,A' : '0100011',
-    'NOT (Dir),A' : '0000000', ##temporal
+    'NOT (Dir),A' : '1111111', ##temporal
 
     'XOR A,B' : '0101000',
     'XOR B,A' : '0101001',
     'XOR A,Lit' : '0101010',
-    'XOR B,Lit' : '0000000', ##temporal
+    'XOR B,Lit' : '1111111', ##temporal
     'XOR A,(Dir)' : '0101011',
-    'XOR B,(Dir)' : '0000000', ##temporal
+    'XOR B,(Dir)' : '1111111', ##temporal
     'XOR (Dir)' : '0101101',
 
     'SHL A' : '0101110',
@@ -110,15 +110,15 @@ lista = {
     'SHR B,A' : '0110101',
     'SHR (Dir),A' : '0111001',
 
-    'INC A' : '0000000', ##temporal
+    'INC A' : '1111111', ##temporal
     'INC B' : '0111010',
-    'INC (Dir)' : '0000000', ##temporal
+    'INC (Dir)' : '1111111', ##temporal
 
-    'DEC A' : '0000000', ##temporal
+    'DEC A' : '1111111', ##temporal
 
     'CMP A,B' : '0111011',
     'CMP A,Lit' : '0111100',
-    'CMP A,(Dir)' : '0000000', ##temporal
+    'CMP A,(Dir)' : '1111111', ##temporal
 
     'JMP Ins' : '0111101',
     'JEQ Ins' : '0111110',
@@ -128,7 +128,7 @@ lista = {
     'JLT Ins' : '1000010',
     'JLE Ins' : '1000011',
     'JCR Ins' : '1000100',
-    'NOP' : '000000' ##temporal
+    'NOP' : '1111111' ##temporal
 }
 #print(lista)
 instrucciones = {}
