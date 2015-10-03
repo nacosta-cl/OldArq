@@ -40,104 +40,105 @@ def hexaBin(hexa):
 
     return numero
 
-def Rellena(N):
-    longitud = 17-len(N)
+def Rellena(N,hasta):
+    longitud = hasta-len(N)
     Numero = '0'*longitud
     Numero+=N
     return Numero
 
 
-lista = [
-    "MOV A,B",
-    'MOV B,A',
-    'MOV A,Lit',
-    'MOV B,Lit',
-    'MOV A,(Dir)',
-    'MOV B,(Dir)',
-    'MOV (Dir),A',
-    'MOV (Dir),B',
+lista = {
+    'MOV A,B' : '0000000',
+    'MOV B,A' : '0000001',
+    'MOV A,Lit' : '0000010',
+    'MOV B,Lit' : '0000011',
+    'MOV A,(Dir)' : '0000100',
+    'MOV B,(Dir)' : '0000101',
+    'MOV (Dir),A' : '0000110',
+    'MOV (Dir),B' : '0000111',
 
-    'ADD A,B',
-    'ADD B,A',
-    'ADD A,Lit',
-    'ADD B,Lit',
-    'ADD A,(Dir)',
-    'ADD B,(Dir)',
-    'ADD (Dir)',
+    'ADD A,B' : '0001011',
+    'ADD B,A' : '0001100',
+    'ADD A,Lit' : '0001101',
+    #'ADD B,Lit' : '0000000', ****
+    'ADD A,(Dir)' : '0001110',
+    #'ADD B,(Dir)' : '0000000', ****
+    'ADD (Dir)' : '0010000',
 
-    'SUB A,B',
-    'SUB B,A',
-    'SUB A,Lit',
-    'SUB B,Lit',
-    'SUB A,(Dir)',
-    'SUB B,(Dir)',
-    'SUB (Dir)',
+    'SUB A,B' : '0010001',
+    'SUB B,A' : '0010010',
+    #'SUB A,Lit' : '000000',
+    #'SUB B,Lit' : '000000',
+    'SUB A,(Dir)' : '0010011',
+    #'SUB B,(Dir)' : '000000',
+    'SUB (Dir)' : '0010101',
 
-    'AND A,B',
-    'AND B,A',
-    'AND A, Lit',
-    'AND B, Lit',
-    'AND A,(Dir)',
-    'AND B,(Dir)',
-    'AND(Dir)',
+    'AND A,B' : '0010110',
+    'AND B,A' : '0010111',
+    'AND A, Lit' : '0011000',
+    #'AND B, Lit' : '0011001',
+    'AND A,(Dir)' : '0011001',
+    #'AND B,(Dir)' : '0011011',
+    'AND(Dir)' : '0011011',
 
 
-    'OR A,B',
-    'OR B,A',
-    'OR A,Lit',
-    'OR B,Lit',
-    'OR A,(Dir)',
-    'OR B,(Dir)',
-    'OR (Dir)',
+    'OR A,B' : '0011100',
+    'OR B,A' : '0011101',
+    'OR A,Lit' : '0011110',
+    #'OR B,Lit' : '0000000',
+    'OR A,(Dir)' : '0011111',
+    #'OR B,(Dir)' : '0000000',
+    'OR (Dir)' : '0100001',
 
-    'XOR A,B',
-    'XOR B,A',
-    'XOR A,Lit',
-    'XOR B,Lit',
-    'XOR A,(Dir)',
-    'XOR B,(Dir)',
-    'XOR (Dir)',
+    'NOT A' : '0100010',
+    'NOT B,A' : '0100011',
+    #'NOT (Dir),A' : '0000000',
 
-    'NOT A',
-    'NOT B,A',
-    'NOT (Dir),A',
+    'XOR A,B' : '0101000',
+    'XOR B,A' : '0101001',
+    'XOR A,Lit' : '0101010',
+    #'XOR B,Lit' : '0000000',
+    'XOR A,(Dir)' : '0101011',
+    #'XOR B,(Dir)' : '0000000',
+    'XOR (Dir)' : '0101101',
 
-    'SHL A',
-    'SHL B,A',
-    'SHL (Dir),A',
+    'SHL A' : '0101110',
+    'SHL B,A' : '0101111',
+    'SHL (Dir),A' : '0110011',
 
-    'SHR A',
-    'SHR B,A',
-    'SHR (Dir),A',
+    'SHR A' : '0110100',
+    'SHR B,A' : '0110101',
+    'SHR (Dir),A' : '0111001',
 
-    'INC A',
-    'INC B',
-    'INC (Dir)',
+    #'INC A' : '0000000',
+    'INC B' : '0111010',
+    #'INC (Dir)' : '0000000',
 
-    'DEC A',
+    #'DEC A' : '0000000',
 
-    'CMP A,B',
-    'CMP A,Lit',
-    'CMP A,(Dir)',
+    'CMP A,B' : '0111011',
+    'CMP A,Lit' : '0111100',
+    #'CMP A,(Dir)' : '0000000',
 
-    'JMP Ins',
-    'JEQ Ins',
-    'JNE Ins',
-    'JGT Ins',
-    'JGE Ins',
-    'JLT Ins',
-    'JLE Ins',
-    'JCR Ins',
-    'NOP'
-]
-
+    'JMP Ins' : '0111101',
+    'JEQ Ins' : '0111110',
+    'JNE Ins' : '0111111',
+    'JGT Ins' : '1000000',
+    'JGE Ins' : '1000001',
+    'JLT Ins' : '1000010',
+    'JLE Ins' : '1000011',
+    'JCR Ins' : '1000100'
+    #'NOP' : '000000'
+}
+print(lista)
 instrucciones = {}
 
+
 label = {}
-for i in range(len(lista)):
+'''for i in range(len(lista)):
         instrucciones[lista[i]]=Rellena(sumBin(i))
         ##print(lista[i]+"="+str(i))
-#print(instrucciones)
+#print(instrucciones)'''
 
 
 orden_labels =[]
@@ -282,6 +283,21 @@ def dataFinal(diccionario):
             instrucciones2["DATA"].append(ins)
 
 
+def instr_binario(inst):
+    inst = inst.split(" ")[1]
+    lista_inst = inst.split(',')
+    if lista_inst[0][0] == '(':
+        print('es direccion')
+    if lista_inst[1][0] == '(':
+        if not esint(lista_inst[1][1]):
+            print('es variable')
+        else:
+            if lista_inst[1][-2] == 'b':
+                print('es variable binario')
+            elif lista_inst[1][-2] == 'h':
+                print('es variable hexa')
+            else:
+                print('es decimal')
 
 
 Leer('Ejemplo5.txt',label)
