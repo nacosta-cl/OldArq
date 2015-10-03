@@ -1,4 +1,3 @@
-__author__ = 'Cristobal'
 
 
 def sumBin(dec):
@@ -296,7 +295,10 @@ def instr_binario(inst):
     if lista_inst[0][0] == '(': #tipo mov (a),A
         #print('es direccion')
         if not esint(lista_inst[0][1]): #tipo mov (c),A
-                return('variable izq')
+                if(not lista_inst[0][-2] == 'h'):
+                    return('variable izq')
+                else:
+                    return('hexa izq')
         else:
             if lista_inst[0][-2] == 'b': #tipo mov (10b),A
                 return('bin izq')
@@ -306,7 +308,10 @@ def instr_binario(inst):
                 return('decimal izq') #tipo mov (10),A
     elif lista_inst[1][0] == '(': #Analogo al anterior
         if not esint(lista_inst[1][1]):
-            return('variable der')
+            if(not lista_inst[1][-2] == 'h'):
+                return('variable der')
+            else:
+                return('hexa der')
         else:
             if lista_inst[1][-2] == 'b':
                 return('bin der')
@@ -316,6 +321,7 @@ def instr_binario(inst):
                 return('decimal der')
     else:
         return("instruccion")
+
 
 def tipoVar(valor):
     if(not esint(valor[0])):
