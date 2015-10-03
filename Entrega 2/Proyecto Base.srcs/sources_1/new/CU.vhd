@@ -53,11 +53,24 @@ begin
 --Formato instrucciones: "0000000000"+opcode (10 ceros + opcode)
 --Traduccion a OPcode estandarizado
 OPcode <= instruc(6 downto 0); 
---Tabla de situaciones
+--Conexiones pertinentes
+
+LPC <= ctrlSigs(10);
+enabRegA <= ctrlSigs(9);
+enabRegB <= ctrlSigs(8);
+selMuxA <= ctrlSigs(7 downto 6);
+selMuxB <= ctrlSigs(5 downto 4);
+selALU <= ctrlSigs(3 downto 1);
+write <= ctrlSigs(0);
+
+-- Tabla de situaciones
 -- muxA      00-> 0x0   01->0x1    10->A      11->0x0
+
 -- muxB      00-> 0x0   01->B      10->DOUT   11->LIT
+
 -- selectAlu 000->ADD   001->SUB   010->AND   011->OR   100->XOR   101->NOT   110->SHL   111->SHR
 
+-- Leer
 --loadPC|loadA|loadB|selectMuxA|selectMuxB|selectALU|Write (11bits)
 with OPcode select
     ctrlSigs <= "01000010000" when "0000000",
@@ -68,5 +81,8 @@ with OPcode select
                 "00100100000" when "0000101",
                 "00010000001" when "0000110",
                 "00000010001" when "0000111",
+                "01010010000" when "0001011",
+                "00000000000" when "1111111",
                 "00000000000" when others;
+
 end Behavioral;

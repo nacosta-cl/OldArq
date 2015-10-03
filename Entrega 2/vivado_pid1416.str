@@ -1,0 +1,72 @@
+/*
+
+Vivado v2015.2 (64-bit)
+SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+Process ID: 1416
+
+Current time: 	10/2/15 10:18:50 PM CLST
+Time zone: 	Chile Time (America/Santiago)
+
+OS: Windows 8
+Version: 6.2
+Architecture: amd64
+Available processors (cores): 4
+
+Screen size: 1366x768
+Screen resolution (DPI): 96
+Available screens: 1
+Default font: family=Tahoma,name=Tahoma,style=plain,size=11
+
+Java version: 	1.8.0_25 64-bit
+Java home: 	C:/Xilinx/Vivado/2015.2/tps/win64/jre
+
+User name: 	Nacosta
+User directory: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2
+User country: 	CL
+User language: 	es
+User locale: 	es_CL
+
+Vivado preferences path: C:/Users/Nacosta/AppData/Roaming/Xilinx/Vivado/2015.2/vivado.ini
+Vivado layouts directory: C:/Users/Nacosta/AppData/Roaming/Xilinx/Vivado/2015.2/layouts/application
+
+GUI allocated memory:	120 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 368 MB
+
+*/
+
+// TclEventType: START_GUI
+// HColorUtils.generateUniqueColorPalette (num colors: 55) elapsed time: 1.6s
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 62 MB (+62705kb) [00:00:14]
+// [Engine Memory]: 331 MB (+195516kb) [00:00:14]
+// TclEventType: PROJECT_OPEN_DIALOG
+// cp:P (cl:JFrame):  Open Project : addNotify
+// Opening Vivado Project: C:\Users\Nacosta\Documents\DEV\Arqui\ArquiProyectos\Entrega 2\Proyecto Base.xpr. Version: Vivado v2015.2 
+// Tcl Message: open_project {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.xpr} 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 374 MB. GUI used memory: 24 MB. Current time: 10/2/15 10:18:52 PM CLST
+// [Engine Memory]: 374 MB (+27381kb) [00:00:18]
+// Tcl Message: open_project {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.xpr} 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 437 MB (+47290kb) [00:00:26]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2015.2/data/ip'. 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Project name: Proyecto Base; location: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2; part: xc7a35tcpg236-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:31 ; elapsed = 00:00:21 . Memory (MB): peak = 670.531 ; gain = 135.355 
+// [Engine Memory]: 461 MB (+1924kb) [00:00:36]
+dismissDialog("Open Project"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH

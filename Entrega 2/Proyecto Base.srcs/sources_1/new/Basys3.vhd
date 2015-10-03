@@ -17,7 +17,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity Basys3 is
     Port (
-        sw          : in   std_logic_vector (15 downto 0);
+        sw          : in   std_logic_vector (2 downto 0);
         btn         : in   std_logic_vector (4 downto 0);  -- 0 Center, 1 Up, 2 Left, 3 Right, 4 Down
         led         : out   std_logic_vector (15 downto 0);
         clk         : in   std_logic;
@@ -162,7 +162,7 @@ signal dis_d : std_logic_vector(3 downto 0);
 
 --A la pantalla
 signal display : STD_LOGIC_VECTOR (15 downto 0);
-
+signal switches : STD_LOGIC_VECTOR (2 downto 0);
 --cable vacío
 signal nulo : STD_LOGIC;
 
@@ -285,10 +285,25 @@ inst_MUXb: MUX_2b port map(
 led(15 downto 13) <= ALUstatus;
 
 --with 
-
+switches(0)<= sw(0);
+switches(1)<= sw(1);
+switches(2)<= sw(2);
+--switches(3)<= sw(3);
+--switches(4)<= sw(4);
+--switches(5)<= sw(5);
+--switches(6)<= sw(6);
+--switches(7)<= sw(7);
+--switches(8)<= sw(8);
+--switches(9)<= sw(9);
+with switches select
+    display <= ALUres   when "001",
+               numA     when "010",
+               numB     when "011",
+               RAMdOut  when "100",
+               "0000000000000000" when others;
 ----Envío a los numeros led
---dis_a <= display(15 downto 12);
---dis_b <= display(11 downto 8);
---dis_c <= display(7 downto 4);
---dis_d <= display(3 downto 0);
+dis_a <= display(15 downto 12);
+dis_b <= display(11 downto 8);
+dis_c <= display(7 downto 4);
+dis_d <= display(3 downto 0);
 end Behavioral;
