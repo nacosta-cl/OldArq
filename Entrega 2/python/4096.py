@@ -394,40 +394,53 @@ def ins_generica(ins):
     #print(nombre)
     #print(valor)'''
 
+listaInsBin = []
 def dataFinalBin(dict):
     opcode=0
-    var=0
-    for nombre in dict:
+    literal=0
+    for nombre in orden_labels:
         funcion = dict[nombre] #data,code,end,etc
         for ins in funcion: #cada instruccion de cada funcion
             if(ins_generica(ins)):
                 print(ins_generica(ins))
                 insgen,izq,der=ins_generica(ins)
                 if(izq[0]=="("): #direccion
-                    var=Rellena(str(izq[1:-1]),16)
+                    literal=Rellena(str(izq[1:-1]),16)
                 elif(der[0]=="("): #direccion
-                    var=Rellena(str(der[1:-1]),16)
+                    literal=Rellena(str(der[1:-1]),16)
                 elif(esint(izq)):
-                    var=Rellena(str(izq),16)
+                    literal=Rellena(str(izq),16)
                 elif(esint(der)):
-                    var=Rellena(str(der),16)
+                    literal=Rellena(str(der),16)
                 else:
-                    var=Rellena("",16)
+                    literal=Rellena("",16)
                 opcode=Rellena(str(lista[insgen]),17)
                 #print(str(lista[insgen]))
                 #print(opcode)
                 #print(var)
-                print(str(opcode)+str(var))
+                print(str(opcode)+str(literal))
+                listaInsBin.append(str(opcode)+str(literal))
+
+def rellenaLista(lista,N):
+    for i in range(len(lista), N):
+        lista.append(Rellena("",33))
 
 
 Leer('Ejemplo5.txt',label)
 
 dataFinal(label) #Calcula los comandos en texto
 
-dataFinalBin(instrucciones2)
+dataFinalBin(instrucciones2) #transforma instrucciones a bin y agrega en lista listaInsBin
 
-print(instrucciones2)
+rellenaLista(listaInsBin,4096) #rellena la lista listaInsBin con 4096 elementos
 
+#IMPORTATE: LISTA CON 4096 ES LA LISTA listaInsBin
+for i in listaInsBin:
+    print('"'+i+'",')
+
+#print(instrucciones2)
+
+#print(listaInsBin)
 #print(variables)
 
 #print(label)
