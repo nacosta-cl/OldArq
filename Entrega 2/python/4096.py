@@ -41,6 +41,7 @@ def hexaBin(hexa):
     return numero
 
 def Rellena(N,hasta):
+    N=N.strip()
     longitud = hasta-len(N)
     Numero = '0'*longitud
     Numero+=N
@@ -60,46 +61,46 @@ lista = {
     'ADD A,B' : '0001011',
     'ADD B,A' : '0001100',
     'ADD A,Lit' : '0001101',
-    #'ADD B,Lit' : '0000000', ****
+    'ADD B,Lit' : '0000000', ##temporal
     'ADD A,(Dir)' : '0001110',
-    #'ADD B,(Dir)' : '0000000', ****
+    'ADD B,(Dir)' : '0000000', ##temporal
     'ADD (Dir)' : '0010000',
 
     'SUB A,B' : '0010001',
     'SUB B,A' : '0010010',
-    #'SUB A,Lit' : '000000',
-    #'SUB B,Lit' : '000000',
+    'SUB A,Lit' : '000000', ##temporal
+    'SUB B,Lit' : '000000', ##temporal
     'SUB A,(Dir)' : '0010011',
-    #'SUB B,(Dir)' : '000000',
+    'SUB B,(Dir)' : '000000', ##temporal
     'SUB (Dir)' : '0010101',
 
     'AND A,B' : '0010110',
     'AND B,A' : '0010111',
     'AND A, Lit' : '0011000',
-    #'AND B, Lit' : '0011001',
+    'AND B, Lit' : '0011001', ##temporal
     'AND A,(Dir)' : '0011001',
-    #'AND B,(Dir)' : '0011011',
+    'AND B,(Dir)' : '0011011', ##temporal
     'AND(Dir)' : '0011011',
 
 
     'OR A,B' : '0011100',
     'OR B,A' : '0011101',
     'OR A,Lit' : '0011110',
-    #'OR B,Lit' : '0000000',
+    'OR B,Lit' : '0000000', ##temporal
     'OR A,(Dir)' : '0011111',
-    #'OR B,(Dir)' : '0000000',
+    'OR B,(Dir)' : '0000000', ##temporal
     'OR (Dir)' : '0100001',
 
     'NOT A' : '0100010',
     'NOT B,A' : '0100011',
-    #'NOT (Dir),A' : '0000000',
+    'NOT (Dir),A' : '0000000', ##temporal
 
     'XOR A,B' : '0101000',
     'XOR B,A' : '0101001',
     'XOR A,Lit' : '0101010',
-    #'XOR B,Lit' : '0000000',
+    'XOR B,Lit' : '0000000', ##temporal
     'XOR A,(Dir)' : '0101011',
-    #'XOR B,(Dir)' : '0000000',
+    'XOR B,(Dir)' : '0000000', ##temporal
     'XOR (Dir)' : '0101101',
 
     'SHL A' : '0101110',
@@ -110,15 +111,15 @@ lista = {
     'SHR B,A' : '0110101',
     'SHR (Dir),A' : '0111001',
 
-    #'INC A' : '0000000',
+    'INC A' : '0000000', ##temporal
     'INC B' : '0111010',
-    #'INC (Dir)' : '0000000',
+    'INC (Dir)' : '0000000', ##temporal
 
-    #'DEC A' : '0000000',
+    'DEC A' : '0000000', ##temporal
 
     'CMP A,B' : '0111011',
     'CMP A,Lit' : '0111100',
-    #'CMP A,(Dir)' : '0000000',
+    'CMP A,(Dir)' : '0000000', ##temporal
 
     'JMP Ins' : '0111101',
     'JEQ Ins' : '0111110',
@@ -127,10 +128,10 @@ lista = {
     'JGE Ins' : '1000001',
     'JLT Ins' : '1000010',
     'JLE Ins' : '1000011',
-    'JCR Ins' : '1000100'
-    #'NOP' : '000000'
+    'JCR Ins' : '1000100',
+    'NOP' : '000000' ##temporal
 }
-print(lista)
+#print(lista)
 instrucciones = {}
 
 
@@ -185,7 +186,7 @@ def variablesIns(var):
             valor = hexaBin(valor[:-1])
     else:
         valor = valor[:-1]
-    return ["MOV A,"+str(valor),"MOV "+str(variables[nombre])+",A"]
+    return ["MOV A,"+str(valor),"MOV ("+str(variables[nombre])+"),A"] #transforma data a instruciones
 
 
 
@@ -282,29 +283,152 @@ def dataFinal(diccionario):
         for ins in variablesIns(nombre):
             instrucciones2["DATA"].append(ins)
 
+def esint(num):
+    try:
+        int(num)
+        return True
+    except:
+        return False
 
 def instr_binario(inst):
-    inst = inst.split(" ")[1]
+    #inst = inst.split(" ")[1]
     lista_inst = inst.split(',')
-    if lista_inst[0][0] == '(':
-        print('es direccion')
-    if lista_inst[1][0] == '(':
+    if lista_inst[0][0] == '(': #tipo mov (a),A
+        #print('es direccion')
+        if not esint(lista_inst[0][1]): #tipo mov (c),A
+                return('variable izq')
+        else:
+            if lista_inst[0][-2] == 'b': #tipo mov (10b),A
+                return('bin izq')
+            elif lista_inst[0][-2] == 'h': #tipo mov (10h),A
+                return('hexa izq')
+            else:
+                return('decimal izq') #tipo mov (10),A
+    elif lista_inst[1][0] == '(': #Analogo al anterior
         if not esint(lista_inst[1][1]):
-            print('es variable')
+            return('variable der')
         else:
             if lista_inst[1][-2] == 'b':
-                print('es variable binario')
+                return('bin der')
             elif lista_inst[1][-2] == 'h':
-                print('es variable hexa')
+                return('hexa der')
             else:
-                print('es decimal')
+                return('decimal der')
+    else:
+        return("instruccion")
+
+def tipoVar(valor):
+    if(not esint(valor[0])):
+        return 0 #es variable
+    elif(valor[-1]=="b"):
+        return 1 #es binario
+    elif(valor[-1]=="h"):
+        return 2 #es hexa
+    else:
+        return 3 #es dec
+
+def transformarBin(valor):
+    if(tipoVar(valor)==1): #lit binario
+        return valor[:-1] #lit en binario sin "b"
+    elif(tipoVar(valor)==2): #lit hexa
+        return hexaBin(valor[:-1]) #lit en bin transformado desde hexa
+    elif(tipoVar(valor)==3): #lit en dec
+        return sumBin(int(valor)) #lit en bin transformado desde
+
+def ins_generica(ins):
+    valor="" #por si aparece 'NOP'
+    izqcoma=""
+    dercoma=""
+    nombre,valor=ins.split(" ")
+    retorna = ""
+    if(nombre!=""):
+        if(valor.count(",")>0): #del tipo MOV x,y
+            izqcoma,dercoma=valor.split(",") #lado izq y lado der de la coma
+            if(instr_binario(valor)=="instruccion"): #tipo MOV A,Lit || MOV A,B
+                if(tipoVar(izqcoma)!=0): #tipo MOV Lit,A
+                    retorna = str(nombre)+" Lit,"+str(dercoma)
+                    izqcoma=transformarBin(izqcoma)
+                elif(tipoVar(dercoma)!=0): #tipo MOV A,Lit
+                    retorna = str(nombre)+" "+str(izqcoma)+",Lit"
+                    dercoma=transformarBin(dercoma)
+                else:
+                    retorna = str(nombre)+" "+str(izqcoma)+","+str(dercoma)
+            elif(instr_binario(valor)=="variable izq"): #tipo MOV (c),A
+                retorna = str(nombre)+" (Dir),"+str(dercoma)
+                izqcoma = "("+str(transformarBin(str(variables[izqcoma[1:-1]])))+")" #transforma var a lugar en ram (binario)
+            elif(instr_binario(valor)=="variable der"): #tipo MOV A,(c)
+                retorna = str(nombre)+" "+str(izqcoma)+",(Dir)"
+                dercoma = "("+str(transformarBin(str(variables[dercoma[1:-1]])))+")" #transforma var a lugar en ram (binario)
+            elif(instr_binario(valor)=="bin izq" or instr_binario(valor)=="hexa izq" or instr_binario(valor)=="decimal izq"): #tipo MOV (6),A
+                retorna = str(nombre)+" (Dir),"+str(dercoma)
+                izqcoma = "("+str(transformarBin(izqcoma[1:-1]))+")"
+            elif(instr_binario(valor)=="bin der" or instr_binario(valor)=="hexa der" or instr_binario(valor)=="decimal der"): #tipo MOV A,(6)
+                retorna = str(nombre)+" "+str(izqcoma)+",(Dir)"
+                dercoma = "("+str(transformarBin(dercoma[1:-1]))+")"
+            '''print(valor)
+            print(instr_binario(valor))
+            print(izqcoma)
+            print(dercoma)'''
+        else: #del tipo JMP abc || DEC A
+            dercoma = " "
+            if(valor.count("(")>0): #del tipo ICL (Dir)
+                retorna = str(nombre)+" (Dir)"
+                if not esint(valor[1]): #tipo
+                    izqcoma = valor
+                else:
+                    izqcoma = "("+transformarBin(valor[1:-1])+")"
+            else:
+                if(nombre[0]!="J"): #Todos los que no comienzan con J
+                    retorna = str(nombre)+" "+str(valor)
+                    izqcoma = valor
+                else: #JMP etc
+                    retorna = str(nombre)+" Ins"
+                    izqcoma = valor
+        return [retorna,izqcoma,dercoma]
+    else:
+        return False
+    '''print(izqcoma)
+    print(dercoma)
+    print(retorna)
+    print()
+    #print(nombre)
+    #print(valor)'''
+
+def dataFinalBin(dict):
+    opcode=0
+    var=0
+    for nombre in dict:
+        funcion = dict[nombre] #data,code,end,etc
+        for ins in funcion: #cada instruccion de cada funcion
+            if(ins_generica(ins)):
+                print(ins_generica(ins))
+                insgen,izq,der=ins_generica(ins)
+                if(izq[0]=="("): #direccion
+                    var=Rellena(str(izq[1:-1]),16)
+                elif(der[0]=="("): #direccion
+                    var=Rellena(str(der[1:-1]),16)
+                elif(esint(izq)):
+                    var=Rellena(str(izq),16)
+                elif(esint(der)):
+                    var=Rellena(str(der),16)
+                else:
+                    var=Rellena("",16)
+                opcode=Rellena(str(lista[insgen]),17)
+                #print(str(lista[insgen]))
+                #print(opcode)
+                #print(var)
+                print(str(opcode)+str(var))
 
 
 Leer('Ejemplo5.txt',label)
 
-dataFinal(label)
-print (instrucciones2)
+dataFinal(label) #Calcula los comandos en texto
 
+dataFinalBin(instrucciones2)
+
+print(instrucciones2)
+
+#print(variables)
 
 #print(label)
 lista_instrucciones(label,suma_instrucciones(label,orden_labels))
