@@ -426,6 +426,41 @@ def rellenaLista(lista,N):
         lista.append(Rellena("",33))
 
 
+def outputTXT(file):
+    f = open(file,'w+')
+    count = 0
+
+    ##Info q vale pico
+    f.write("library IEEE;\n")
+    f.write("use IEEE.STD_LOGIC_1164.ALL;\n")
+    f.write("use IEEE.STD_LOGIC_UNSIGNED.ALL;\n")
+    f.write("USE IEEE.NUMERIC_STD.ALL;\n")
+    f.write("\n")
+    f.write("entity ROM is\n")
+    f.write("\tPort (\n")
+    f.write("\t\taddress   : in  std_logic_vector(11 downto 0);\n")
+    f.write("\t\tdataout   : out std_logic_vector(32 downto 0)\n")
+    f.write("\t\t);\n")
+    f.write("end ROM;\n")
+    f.write("\n")
+    f.write("architecture Behavioral of ROM is\n")
+    f.write("\n")
+    f.write("type memory_array is array (0 to ((2 ** 12) - 1) ) of std_logic_vector (32 downto 0);\n")
+    f.write("\n")
+    f.write("signal memory : memory_array:= (\n")
+    for i in listaInsBin:
+        count+=1
+        if(count != len(listaInsBin)):
+            f.write(str('\t"'+i+'",\n'))
+        else:
+            f.write(str('\t"'+i+'"\n'))
+    f.write(");\n")
+    f.write("begin\n")
+    f.write("\n")
+    f.write("\tdataout <= memory(to_integer(unsigned(address)));\n")
+    f.write("\n")
+    f.write("end Behavioral;")
+
 Leer('Ejemplo5.txt',label)
 
 dataFinal(label) #Calcula los comandos en texto
@@ -434,9 +469,9 @@ dataFinalBin(instrucciones2) #transforma instrucciones a bin y agrega en lista l
 
 rellenaLista(listaInsBin,4096) #rellena la lista listaInsBin con 4096 elementos
 
+outputTXT("output.txt")
 #IMPORTATE: LISTA CON 4096 ES LA LISTA listaInsBin
-for i in listaInsBin:
-    print('"'+i+'",')
+
 
 #print(instrucciones2)
 
