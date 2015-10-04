@@ -67,3 +67,7 @@ set_property PROGRAM.FILE {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/E
 program_hw_devices [lindex [get_hw_devices] 0]
 refresh_hw_device [lindex [get_hw_devices] 0]
 close_hw_target
+close [ open {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/reg_3b.vhd} w ]
+add_files {{C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/reg_3b.vhd}}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1

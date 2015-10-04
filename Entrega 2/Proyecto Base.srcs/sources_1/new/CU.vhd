@@ -48,6 +48,17 @@ architecture Behavioral of CU is
 signal ctrlSigs : std_logic_vector (10 downto 0);
 signal OPcode   : std_logic_vector (6 downto 0);
 
+signal Z : std_logic;
+signal N : std_logic;
+signal C : std_logic;
+
+signal cEQ : std_logic;
+signal cNE : std_logic;
+signal cGT : std_logic;
+signal cLT : std_logic;
+signal cGE : std_logic;
+signal cLE : std_logic;
+signal cCR : std_logic;
 begin
 
 --Formato instrucciones: "0000000000"+opcode (10 ceros + opcode)
@@ -63,6 +74,21 @@ selMuxB <= ctrlSigs(5 downto 4);
 selALU <= ctrlSigs(3 downto 1);
 write <= ctrlSigs(0);
 
+Z <= ALUstatus(0);
+N <= ALUstatus(1);
+C <= ALUstatus(2);
+
+
+--Eveluadores de condicion correcta para saltos condicionales
+cEQ <= Z == 1;
+cNE <= Z == 0;
+cGT <= (N == 0 and Z == 0);
+cLT <= N == 1;
+cGE <= N == 0;
+cLE <= (N == 1 or Z == 1);
+cCR <= C == 1;
+
+
 -- Tabla de situaciones
 -- muxA      00-> 0x0   01->0x1    10->A      11->0x0
 
@@ -72,7 +98,11 @@ write <= ctrlSigs(0);
 
 -- Leer
 --loadPC|loadA|loadB|selectMuxA|selectMuxB|selectALU|Write (11bits)
+
+
+
 with OPcode select
+                --MOV
     ctrlSigs <= "01000010000" when "0000000",
                 "00110000000" when "0000001",
                 "01000110000" when "0000010",
@@ -85,15 +115,68 @@ with OPcode select
                 "01010010000" when "0001011",
                 "00110010000" when "0001100",
                 "01010110000" when "0001101",
-                --b,lit
+                "00110110000" when "1000000",--b,lit
                 "01010100000" when "0001110",
-                --b,dir
+                "00110100000" when "1000001", --b,dir
                 "00010010001" when "0010000",
                 "01010010010" when "0010001",
                 "00110010010" when "0010010",
-                
-                
-                "00000000000" when "1111111",
+                --SUB
+                "01010110010" when "1000010", --SUB A,Lit
+                "00110110010" when "1000011", --SUB B,Lit
+                "01010100010" when "0010011",
+                "00110100010" when "1000100", --SUB B,Dir
+                "00010010011" when "0010101",
+                "01010010000" when "0010110",
+                "00110010000" when "0010111",
+                "01010110000" when "0011000",
+                "00110110100" when "1000101", --AND B,Lit
+                "01010100000" when "0011001",
+                "00110100100" when "1000110", --AND B,Dir
+                "00010010001" when "0011011",
+                "01010010110" when "0011100",
+                "00110010110" when "0011101",
+                "01010110110" when "0011110",
+                "00110110110" when "1000111", --OR B,Lit
+                "01010100110" when "0011111",
+                "00110100110" when "1001000", --OR B,Dir
+                "00010010111" when "0100001",
+                "01010001010" when "0100010",
+                "00110001010" when "0100011",
+                "00010011011" when "0100111",
+                "01010011000" when "0101000",
+                "00110011000" when "0101001",
+                "01010111000" when "0101010",
+                "00110111000" when "1001001", --XOR B,Lit
+                "01010101000" when "0101011",
+                "00110101000" when "1001010", --XOR B,Dir
+                "00010011001" when "0101101",
+                "01010001100" when "0101110",
+                "00110001100" when "0101111",
+                "00010011101" when "0110011",
+                "01010001110" when "0110100",
+                "00110001110" when "0110101",
+                "00010011111" when "0111001",
+--              --INC A se reemplaza en compilador por la instruccion ADD A,1
+                "00101010000" when "0111010",
+                "00001100001" when "1001011", --INC Dir
+--              --DEC A idem arriba SUB A,1
+                "00010010010" when "0111011",
+                "00010110010" when "0111100",
+                "00010100010" when "1001100", --CMP A,Dir 
+                --Saltos
+                "10000000000" when "0111101",
+                --JMP JEQ JNE JGT JGE JLT JLE JCR
+                "10000000000" when ("1001101" and cEQ),
+                "10000000000" when ("1001110" and cNE),
+                "10000000000" when ("1001111" and cGT),
+                "10000000000" when ("1010000" and cGE),
+                "10000000000" when ("1010001" and cLT),
+                "10000000000" when ("1010010" and cLE),
+                "10000000000" when ("1010011" and cCR),
+                "00010001011" when "1010100", --NOT (DIR),A
+                "00000000000" when "1111111", --NOP
                 "00000000000" when others;
+
 
 end Behavioral;

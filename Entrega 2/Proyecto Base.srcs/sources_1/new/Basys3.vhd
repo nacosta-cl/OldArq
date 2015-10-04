@@ -103,6 +103,15 @@ component Reg
            dataout  : out std_logic_vector (15 downto 0));
 end component;
 
+component Reg_3b
+    Port ( clock    : in  std_logic;
+       load     : in  std_logic;
+       up       : in  std_logic;
+       down     : in  std_logic;
+       datain   : in  std_logic_vector (2 downto 0);
+       dataout  : out std_logic_vector (2 downto 0));
+end component;
+
 component MUX_2b
     Port ( e1 : in STD_LOGIC_VECTOR (15 downto 0);
            e2 : in STD_LOGIC_VECTOR (15 downto 0);
@@ -122,7 +131,7 @@ signal ALUnumB      : STD_LOGIC_VECTOR (15 downto 0);
 signal ALUres       : STD_LOGIC_VECTOR (15 downto 0);
 signal ALUstatus    : STD_LOGIC_VECTOR (2 downto 0);
 signal ALUselect    : STD_LOGIC_VECTOR (2 downto 0);
-
+signal actStatus    : STD_LOGIC_VECTOR (2 downto 0);
 --ROM
 signal PCaddr    : STD_LOGIC_VECTOR(11 downto 0);
 signal instrLit  : std_logic_vector(32 downto 0);
@@ -212,7 +221,7 @@ inst_ROM: ROM port map(
 --CU
 inst_CU: CU port map( 
         instruc   => instr,
-        ALUstatus => ALUstatus,
+        ALUstatus => actStatus,
         enabRegA  => enabRegA,
         enabRegB  => enabRegB,
         selMuxA   => selMuxA,
@@ -253,7 +262,15 @@ inst_regB: Reg port map(
         datain   => ALUres,
         dataout  => numB
      );
-             
+inst_statusReg: Reg_3b port map(
+             clock    => clock,
+             load     => '1',
+             up       => '0',
+             down     => '0',
+             datain   => ALUstatus,
+             dataout  => actStatus
+          );
+                          
 --Muxers
 inst_MUXa: MUX_2b port map(
     e1      => "0000000000000000",

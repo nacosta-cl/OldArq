@@ -150,3 +150,7 @@ Please use disconnect_hw_server to close the current server connection. Check ca
 Restart the hw_server application running on host localhost, port 3121 and then use connect_hw_server to re-establish connection to target.
 close_hw_target
 INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Digilent/210183637323A
+close [ open {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/reg_3b.vhd} w ]
+add_files {{C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/reg_3b.vhd}}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1

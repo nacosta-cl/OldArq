@@ -95,15 +95,17 @@ with sel select
 
 co <= iCo;
 
+--Cero
 with iCo select
     Z <= iZ when '0',
          '0' when others;
 with iRes select
     iZ <= '1' when "0000000000000000",
          '0' when others;
+--Negativo
 with iRes(15) select
-    N <= '0' when '1',
-         '1' when others;
+    N <= '1' when '1',
+         '0' when others;
             
 res <= iRes;
 --Operadores modulares
