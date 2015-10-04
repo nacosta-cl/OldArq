@@ -5,6 +5,10 @@ root = Tk()
 
 
 def sumBin(dec):
+    if(dec[-1]=="d"):
+        dec = int(dec[:-1])
+    else:
+        dec = int(dec)
     b = ''
     if(dec==0):
         b = '0'
@@ -15,7 +19,7 @@ def sumBin(dec):
         else:
             b='0'+b
             dec=dec/2
-    return b
+    return b+"b"
 
 def hexaBin(hexa):
     numero =''
@@ -41,7 +45,7 @@ def hexaBin(hexa):
     for i in hexa:
         numero+=diccionario[i]
 
-    return numero
+    return numero+"b"
 
 def Rellena(N,hasta):
     N=N.strip()
@@ -184,7 +188,7 @@ def variablesIns(var):
     variablesDataRAM(var)
     if(valor[-1]!="b"):
         if(valor[-1]!="h"):
-            valor=sumBin(int(valor))
+            valor=sumBin(str(valor))
         else:
             valor = hexaBin(valor[:-1])
     else:
@@ -343,13 +347,16 @@ def transformarBin(valor):
     elif(tipoVar(valor)==2): #lit hexa
         return hexaBin(valor[:-1]) #lit en bin transformado desde hexa
     elif(tipoVar(valor)==3): #lit en dec
-        return sumBin(int(valor)) #lit en bin transformado desde
+        return sumBin(str(valor)) #lit en bin transformado desde
 
 def ins_generica(ins):
-    valor="" #por si aparece 'NOP'
-    izqcoma=""
-    dercoma=""
+    valor=" " #por si aparece 'NOP'
+    izqcoma=" "
+    dercoma=" "
     nombre,valor=ins.split(" ")
+    nombre = nombre.strip()
+    nombre = nombre.replace("\t","")
+    valor = valor.strip()
     retorna = ""
     if(nombre!=""):
         if(valor.count(",")>0): #del tipo MOV x,y
@@ -388,7 +395,10 @@ def ins_generica(ins):
                 else:
                     izqcoma = "("+transformarBin(valor[1:-1])+")"
             else:
-                if(nombre[0]!="J"): #Todos los que no comienzan con J
+                if(nombre=="NOP"):
+                    retorna = str(nombre)
+                    izqcoma = " "
+                elif(nombre[0]!="J"): #Todos los que no comienzan con J
                     retorna = str(nombre)+" "+str(valor)
                     izqcoma = valor
                 else: #JMP etc
