@@ -20,6 +20,7 @@ SUB A,1
 MOV (F),A
 CMP A,0
 JGT Potencia
+JMP end
 Multiplicacion:
 MOV A,(RES_Parcial)
 ADD A,(I)
@@ -29,3 +30,5 @@ SUB A,1
 MOV (i),A
 CMP A,0
 JNE Multiplicacion
+end:
+JMP end
