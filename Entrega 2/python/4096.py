@@ -19,7 +19,7 @@ def sumBin(dec):
         else:
             b='0'+b
             dec=dec/2
-    return b+"b"
+    return b
 
 def hexaBin(hexa):
     numero =''
