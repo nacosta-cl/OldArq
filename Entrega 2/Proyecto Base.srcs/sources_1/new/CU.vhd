@@ -45,6 +45,7 @@ end CU;
 
 architecture Behavioral of CU is
 
+signal naturalSigs : std_logic_vector (10 downto 0);
 signal ctrlSigs : std_logic_vector (10 downto 0);
 signal OPcode   : std_logic_vector (6 downto 0);
 
@@ -59,6 +60,15 @@ signal cLT : std_logic;
 signal cGE : std_logic;
 signal cLE : std_logic;
 signal cCR : std_logic;
+
+signal iJEQ : STD_LOGIC;
+signal iJNE : STD_LOGIC;
+signal iJLT : STD_LOGIC;
+signal iJGE : STD_LOGIC;
+signal iJCR : STD_LOGIC;
+signal iJGT : STD_LOGIC;
+signal iJLE : STD_LOGIC;
+
 begin
 
 --Formato instrucciones: "0000000000"+opcode (10 ceros + opcode)
@@ -80,13 +90,35 @@ C <= ALUstatus(2);
 
 
 --Eveluadores de condicion correcta para saltos condicionales
-cEQ <= Z == 1;
-cNE <= Z == 0;
-cGT <= (N == 0 and Z == 0);
-cLT <= N == 1;
-cGE <= N == 0;
-cLE <= (N == 1 or Z == 1);
-cCR <= C == 1;
+cEQ <= (Z)       when (iJEQ = '1') else '0';
+cNE <= (not Z)   when (iJNE = '1') else '0';
+cLT <= (N)       when (iJLT = '1') else '0';
+cGE <= (not N)   when (iJGE = '1') else '0';
+cCR <= (C)       when (iJCR = '1') else '0';
+cGT <= (Z or N)  when (iJGT = '1') else '0';
+cLE <= (Z nor N) when (iJLE = '1') else '0';
+
+with opcode select
+    iJEQ <= '1' when "1001101",    
+            '0' when others;
+with opcode select
+    iJNE <= '1' when "1001110",
+            '0' when others;
+with opcode select
+    iJGT <= '1' when "1001111",    
+            '0' when others;
+with opcode select
+    iJGE <= '1' when "1010000",    
+            '0' when others;
+with opcode select
+    iJLT <= '1' when "1010001",    
+            '0' when others;
+with opcode select
+    iJLE <= '1' when "1010010",    
+            '0' when others;
+with opcode select
+    iJCR <= '1' when "1010011",    
+            '0' when others;
 
 
 -- Tabla de situaciones
@@ -98,12 +130,12 @@ cCR <= C == 1;
 
 -- Leer
 --loadPC|loadA|loadB|selectMuxA|selectMuxB|selectALU|Write (11bits)
-
-
-
+ctrlSigs <= "10000000000" when ((cEQ = '1') or (cNE = '1') or (cGT = '1') or (cGE = '1') or (cLT = '1') or (cLE = '1') or (cCR = '1'))
+            else naturalSigs;
+                --JMP JEQ JNE JGT JGE JLT JLE JCR
 with OPcode select
                 --MOV
-    ctrlSigs <= "01000010000" when "0000000",
+ naturalSigs <= "01000010000" when "0000000",
                 "00110000000" when "0000001",
                 "01000110000" when "0000010",
                 "00100110000" when "0000011",
@@ -166,14 +198,6 @@ with OPcode select
                 "00010100010" when "1001100", --CMP A,Dir 
                 --Saltos
                 "10000000000" when "0111101",
-                --JMP JEQ JNE JGT JGE JLT JLE JCR
-                "10000000000" when ("1001101" and cEQ),
-                "10000000000" when ("1001110" and cNE),
-                "10000000000" when ("1001111" and cGT),
-                "10000000000" when ("1010000" and cGE),
-                "10000000000" when ("1010001" and cLT),
-                "10000000000" when ("1010010" and cLE),
-                "10000000000" when ("1010011" and cCR),
                 "00010001011" when "1010100", --NOT (DIR),A
                 "00000000000" when "1111111", --NOP
                 "00000000000" when others;
