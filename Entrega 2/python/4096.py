@@ -79,8 +79,8 @@ lista = {
 
     'AND A,B' : '0010110',
     'AND B,A' : '0010111',
-    'AND A, Lit' : '0011000',
-    'AND B, Lit' : '1111111', ##temporal
+    'AND A,Lit' : '0011000',
+    'AND B,Lit' : '1111111', ##temporal
     'AND A,(Dir)' : '0011001',
     'AND B,(Dir)' : '1111111', ##temporal
     'AND(Dir)' : '0011011',
@@ -228,22 +228,22 @@ def Leer(Archivo, label):
                 if Linea_anterior in orden_labels:
                     primeras_lineas.append(contador(w[0]))
                     cccc+=1
+                if w[0]!= '\n':
+                    if(':' not  in w[0]):
+                        cc = contador(w[0])
 
-                if(':' not  in w[0]):
-                    cc = contador(w[0])
+                        if cc == primeras_lineas[cccc]:
+                            #label[Nombre].append(w[0].strip())
+                            l=w[0].strip()
+                            label[Nombre].append(l.split(" ")[0]+" "+"".join(l.split(" ")[1:]))
+                        else:
+                            label["CODE"].append(w[0].strip())
 
-                    if cc == primeras_lineas[cccc]:
-                        #label[Nombre].append(w[0].strip())
-                        l=w[0].strip()
-                        label[Nombre].append(l.split(" ")[0]+" "+"".join(l.split(" ")[1:]))
+
+
+
                     else:
-                        label["CODE"].append(w[0].strip())
-
-
-
-
-                else:
-                    break
+                        break
     Ar.close()
 
 
