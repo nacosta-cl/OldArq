@@ -1,7 +1,7 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2015.2 (win64) Build 1266856 Fri Jun 26 16:35:25 MDT 2015
-| Date         : Sat Oct 03 03:44:15 2015
+| Date         : Sat Oct 03 18:22:08 2015
 | Host         : NB-Nacosta running 64-bit major release  (build 9200)
 | Command      : report_io -file Basys3_io_placed.rpt
 | Design       : Basys3
