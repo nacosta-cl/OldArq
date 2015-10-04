@@ -90,14 +90,7 @@ C <= ALUstatus(2);
 
 
 --Eveluadores de condicion correcta para saltos condicionales
-cEQ <= (Z)       when (iJEQ = '1') else '0';
-cNE <= (not Z)   when (iJNE = '1') else '0';
-cLT <= (N)       when (iJLT = '1') else '0';
-cGE <= (not N)   when (iJGE = '1') else '0';
-cCR <= (C)       when (iJCR = '1') else '0';
-cGT <= (Z or N)  when (iJGT = '1') else '0';
-cLE <= (Z nor N) when (iJLE = '1') else '0';
-
+--Algun opcode util
 with opcode select
     iJEQ <= '1' when "1001101",    
             '0' when others;
@@ -119,20 +112,32 @@ with opcode select
 with opcode select
     iJCR <= '1' when "1010011",    
             '0' when others;
+--condiciones de paso
+cEQ <= (Z)       when (iJEQ = '1') else '0';
+cNE <= (not Z)   when (iJNE = '1') else '0';
+cLT <= (N)       when (iJLT = '1') else '0';
+cGE <= (not N)   when (iJGE = '1') else '0';
+cCR <= (C)       when (iJCR = '1') else '0';
+cGT <= (Z or N)  when (iJGT = '1') else '0';
+cLE <= (Z nor N) when (iJLE = '1') else '0';
 
+--JMP JEQ JNE JGT JGE JLT JLE JCR
 
--- Tabla de situaciones
--- muxA      00-> 0x0   01->0x1    10->A      11->0x0
-
--- muxB      00-> 0x0   01->B      10->DOUT   11->LIT
-
--- selectAlu 000->ADD   001->SUB   010->AND   011->OR   100->XOR   101->NOT   110->SHL   111->SHR
-
--- Leer
---loadPC|loadA|loadB|selectMuxA|selectMuxB|selectALU|Write (11bits)
 ctrlSigs <= "10000000000" when ((cEQ = '1') or (cNE = '1') or (cGT = '1') or (cGE = '1') or (cLT = '1') or (cLE = '1') or (cCR = '1'))
             else naturalSigs;
-                --JMP JEQ JNE JGT JGE JLT JLE JCR
+            
+            
+            
+-- Tabla de situaciones
+                -- muxA      00-> 0x0   01->0x1    10->A      11->0x0
+                
+                -- muxB      00-> 0x0   01->B      10->DOUT   11->LIT
+                
+                -- selectAlu 000->ADD   001->SUB   010->AND   011->OR   100->XOR   101->NOT   110->SHL   111->SHR
+                
+                -- Leer
+                --loadPC|loadA|loadB|selectMuxA|selectMuxB|selectALU|Write (11bits)
+
 with OPcode select
                 --MOV
  naturalSigs <= "01000010000" when "0000000",
