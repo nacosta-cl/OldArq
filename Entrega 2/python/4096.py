@@ -203,7 +203,7 @@ def contador(Linea):
     return conta
 
 def Leer(Archivo, label):
-    Ar = open(Archivo,'r')
+    Ar = open(Archivo,'r',encoding="latin-1")
     Lineas = Ar.readlines()
     cont = 0
     cccc = -1
