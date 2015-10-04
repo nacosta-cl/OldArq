@@ -12,7 +12,7 @@ MOV A,(RES)
 MOV (i),A
 JMP Multiplicacion
 MOV A,(RES_Parcial)
-MOV (Res),A
+MOV (RES),A
 MOV A,0
 MOV (RES_Parcial),A
 MOV A,(F)
