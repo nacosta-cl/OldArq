@@ -141,6 +141,7 @@ instrucciones = {}
 
 
 label = {}
+labelVar = []
 '''for i in range(len(lista)):
         instrucciones[lista[i]]=Rellena(sumBin(i))
         ##print(lista[i]+"="+str(i))
@@ -202,6 +203,7 @@ def contador(Linea):
             break
     return conta
 
+
 def Leer(Archivo, label):
     Ar = open(Archivo,'r',encoding="latin-1")
     Lineas = Ar.readlines()
@@ -214,6 +216,7 @@ def Leer(Archivo, label):
         Nombre = nombre[0].strip()
         orden_labels.append(Nombre)
         label[Nombre]=[]
+        labelVar.append(Nombre+" 0") #Agregamos cada label como una var de valor 0
 
         while cont < len(Lineas):
             cont+=1
@@ -282,6 +285,10 @@ def dataFinal(diccionario):
     for nombre in diccionario["DATA"]:
         for ins in variablesIns(nombre):
             instrucciones2["DATA"].append(ins)
+
+    for labelNombre in labelVar:
+        for labelIns in variablesIns(labelNombre):
+            instrucciones2["DATA"].append(labelIns)
 
 def esint(num):
     try:
@@ -395,7 +402,8 @@ def ins_generica(ins):
                     izqcoma = valor
                 else: #JMP etc
                     retorna = str(nombre)+" Ins"
-                    izqcoma = valor
+                    izqcoma = "("+str(transformarBin(str(variables[valor])))+")"
+                    dercoma = valor
         return [retorna,izqcoma,dercoma]
     else:
         return False
@@ -488,12 +496,12 @@ outputTXT(root.filesavename)
 #IMPORTATE: LISTA CON 4096 ES LA LISTA listaInsBin
 
 
-#print(instrucciones2)
+print(instrucciones2)
 
 #print(listaInsBin)
 #print(variables)
 
-#print(label)
+print(label)
 lista_instrucciones(label,suma_instrucciones(label,orden_labels))
 
 #print(l)
