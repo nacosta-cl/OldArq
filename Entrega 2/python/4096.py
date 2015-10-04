@@ -1,3 +1,7 @@
+from tkinter import *
+from tkinter import filedialog
+root = Tk()
+
 
 
 def sumBin(dec):
@@ -467,7 +471,10 @@ def outputTXT(file):
     f.write("\n")
     f.write("end Behavioral;")
 
-Leer('Ejemplo5.txt',label)
+    f.close()
+
+root.filename = filedialog.askopenfilename(initialdir = "./",title = "Choose your file")
+Leer(root.filename,label)
 
 dataFinal(label) #Calcula los comandos en texto
 
