@@ -45,7 +45,7 @@ def hexaBin(hexa):
     for i in hexa:
         numero+=diccionario[i]
 
-    return numero+"b"
+    return numero
 
 def Rellena(N,hasta):
     N=N.strip()
@@ -193,7 +193,7 @@ def variablesIns(var):
             valor = hexaBin(valor[:-1])
     else:
         valor = valor[:-1]
-    return ["MOV A,"+str(valor),"MOV ("+str(variables[nombre])+"),A"] #transforma data a instruciones
+    return ["MOV A,"+str(valor)+"b","MOV ("+str(variables[nombre])+"),A"] #transforma data a instruciones
 
 
 
