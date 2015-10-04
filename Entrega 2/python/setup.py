@@ -14,3 +14,4 @@ Hay que instalar cx_freeze y ejecutar en terminal
 Donde
 	C:\Python34\python -> directorio donde esta python
 	setup.py -> script
+'''
