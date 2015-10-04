@@ -449,7 +449,11 @@ def outputTXT(file):
     f = open(file,'w+')
     count = 0
 
-    ##Info q vale pico
+    ##Info
+    f.write("-- Variable | Direccion (dec) | Direccion (bin)\n")
+    for variable in variables:
+        f.write("-- "+str(variable)+" | "+str(variables[variable])+" | "+str(sumBin(str(variables[variable])))+"\n")
+    f.write("\n")
     f.write("library IEEE;\n")
     f.write("use IEEE.STD_LOGIC_1164.ALL;\n")
     f.write("use IEEE.STD_LOGIC_UNSIGNED.ALL;\n")
