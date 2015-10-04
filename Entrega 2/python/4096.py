@@ -55,7 +55,7 @@ def Rellena(N,hasta):
 
 
 lista = {
-    'MOV A,B' : '0000000',
+    'MOV A,B' : '1111110',
     'MOV B,A' : '0000001',
     'MOV A,Lit' : '0000010',
     'MOV B,Lit' : '0000011',
@@ -134,7 +134,7 @@ lista = {
     'JLT Ins' : '1000010',
     'JLE Ins' : '1000011',
     'JCR Ins' : '1000100',
-    'NOP' : '1111111'
+    'NOP' : '0000000'
 }
 #print(lista)
 instrucciones = {}
