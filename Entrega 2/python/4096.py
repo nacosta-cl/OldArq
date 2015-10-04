@@ -473,8 +473,8 @@ def outputTXT(file):
 
     f.close()
 
-root.filename = filedialog.askopenfilename(initialdir = "./",title = "Choose your file")
-Leer(root.filename,label)
+root.fileopenname = filedialog.askopenfilename(initialdir = "./",title = "Escoge input")
+Leer(root.fileopenname,label)
 
 dataFinal(label) #Calcula los comandos en texto
 
@@ -482,7 +482,8 @@ dataFinalBin(instrucciones2) #transforma instrucciones a bin y agrega en lista l
 
 rellenaLista(listaInsBin,4096) #rellena la lista listaInsBin con 4096 elementos
 
-outputTXT("output.txt")
+root.filesavename = filedialog.asksaveasfilename(initialdir = "./", title = "Escoge output")
+outputTXT(root.filesavename)
 #IMPORTATE: LISTA CON 4096 ES LA LISTA listaInsBin
 
 
