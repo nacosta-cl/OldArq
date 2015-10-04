@@ -2,7 +2,7 @@
 --v0.0.2.1
 --IIC2343 - Arquitectura de computadores
 --Integrantes
---  Nicolás Acosta Huenulef
+--  Nicolás Acosta
 --  Benjamin Rigonesi
 --  Jorge Trincado
 --  Nicolás Julio
@@ -171,6 +171,7 @@ signal dis_d : std_logic_vector(3 downto 0);
 
 --A la pantalla
 signal display : STD_LOGIC_VECTOR (15 downto 0);
+signal regValues : STD_LOGIC_VECTOR (15 downto 0);
 signal switches : STD_LOGIC_VECTOR (2 downto 0);
 --cable vacío
 signal nulo : STD_LOGIC;
@@ -301,23 +302,18 @@ inst_MUXb: MUX_2b port map(
 --Status en las leds 
 led(15 downto 13) <= ALUstatus;
 
---with 
 switches(0)<= sw(0);
 switches(1)<= sw(1);
 switches(2)<= sw(2);
---switches(3)<= sw(3);
---switches(4)<= sw(4);
---switches(5)<= sw(5);
---switches(6)<= sw(6);
---switches(7)<= sw(7);
---switches(8)<= sw(8);
---switches(9)<= sw(9);
+
+regValues(15 downto 8) <= numA(7 downto 0);
+regValues(7 downto 0) <= numB(7 downto 0);
 with switches select
     display <= ALUres   when "001",
                numA     when "010",
                numB     when "011",
                RAMdOut  when "100",
-               "0000000000000000" when others;
+               regValues when others;
 ----Envío a los numeros led
 dis_a <= display(15 downto 12);
 dis_b <= display(11 downto 8);

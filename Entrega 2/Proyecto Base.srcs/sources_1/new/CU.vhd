@@ -140,7 +140,7 @@ ctrlSigs <= "10000000000" when ((cEQ = '1') or (cNE = '1') or (cGT = '1') or (cG
 
 with OPcode select
                 --MOV
- naturalSigs <= "01000010000" when "0000000",
+ naturalSigs <= "01000010000" when "1111110",
                 "00110000000" when "0000001",
                 "01000110000" when "0000010",
                 "00100110000" when "0000011",
@@ -204,7 +204,7 @@ with OPcode select
                 --Saltos
                 "10000000000" when "0111101",
                 "00010001011" when "1010100", --NOT (DIR),A
-                "00000000000" when "1111111", --NOP
+                "00000000000" when "0000000", --NOP
                 "00000000000" when others;
 
 
