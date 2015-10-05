@@ -22,7 +22,7 @@ MOV A,(aux2)
 MOV B,(varB)
 CMP A,B
 JNE Potencia
-
+JMP end
 Multiplicacion:
 MOV A,(aux3)
 ADD A,(var1)
@@ -33,3 +33,5 @@ MOV (aux4),A
 MOV B,(aux1)
 CMP A,B
 JNE Multiplicacion
+end:
+JMP end
