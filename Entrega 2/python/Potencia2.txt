@@ -1,0 +1,35 @@
+DATA:
+var1 0
+var2 0
+aux1 1
+aux2 0
+aux3 0
+aux4 0
+CODE:
+MOV (var1),A
+MOV (var2),B
+Potencia:
+JMP Multiplicacion
+MOV A,(aux3)
+MOV (aux1), A
+MOV A,(aux2)
+INC A
+MOV (aux2),A
+MOV A,0
+MOV (aux3),A
+MOV (aux4),A
+MOV A,(aux2)
+MOV B,(varB)
+CMP A,B
+JNE Potencia
+
+Multiplicacion:
+MOV A,(aux3)
+ADD A,(var1)
+MOV (aux3),A
+MOV A,(aux4)
+INC A
+MOV (aux4),A
+MOV B,(aux1)
+CMP A,B
+JNE Multiplicacion
