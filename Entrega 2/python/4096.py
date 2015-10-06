@@ -127,13 +127,13 @@ lista = {
     'CMP A,(Dir)' : '1001100',
 
     'JMP Ins' : '0111101',
-    'JEQ Ins' : '0111110',
-    'JNE Ins' : '0111111',
-    'JGT Ins' : '1000000',
-    'JGE Ins' : '1000001',
-    'JLT Ins' : '1000010',
-    'JLE Ins' : '1000011',
-    'JCR Ins' : '1000100',
+    'JEQ Ins' : '1001101',
+    'JNE Ins' : '1001110',
+    'JGT Ins' : '1001111',
+    'JGE Ins' : '1010001',
+    'JLT Ins' : '1010000',
+    'JLE Ins' : '1010010',
+    'JCR Ins' : '1010011',
     'NOP' : '0000000'
 }
 #print(lista)
@@ -141,7 +141,7 @@ instrucciones = {}
 
 
 label = {}
-labelVar = []
+#labelVar = []
 '''for i in range(len(lista)):
         instrucciones[lista[i]]=Rellena(sumBin(i))
         ##print(lista[i]+"="+str(i))
@@ -216,7 +216,7 @@ def Leer(Archivo, label):
         Nombre = nombre[0].strip()
         orden_labels.append(Nombre)
         label[Nombre]=[]
-        labelVar.append(Nombre+" 0") #Agregamos cada label como una var de valor 0
+        #labelVar.append(Nombre+" 0") #Agregamos cada label como una var de valor 0
 
         while cont < len(Lineas):
             cont+=1
@@ -286,9 +286,9 @@ def dataFinal(diccionario):
         for ins in variablesIns(nombre):
             instrucciones2["DATA"].append(ins)
 
-    for labelNombre in labelVar:
+    '''for labelNombre in labelVar:
         for labelIns in variablesIns(labelNombre):
-            instrucciones2["DATA"].append(labelIns)
+            instrucciones2["DATA"].append(labelIns)'''
 
 def esint(num):
     try:
@@ -329,6 +329,22 @@ def instr_binario(inst):
                 return('decimal der')
     else:
         return("instruccion")
+
+def insToType(valor):
+    if not valor[0] == '(': #tipo XOR (var)
+        return 0 #return('instruccion')
+    elif not esint(valor[1]): #valor var
+        if(not valor[-2] == 'h'):
+            return 1 #return('variable')
+        else:
+            return 3 #return('hexa')
+    else:
+        if valor[-2] == 'b': #valor 10b
+            return 2 #return('bin')
+        elif valor[-2] == 'h': #valor 10h
+            return 3 #return('hexa')
+        else:
+            return 4 #return('decimal') #valor 10
 
 def tipoVar(valor):
     if(not esint(valor[0])):
@@ -387,23 +403,29 @@ def ins_generica(ins):
             print(dercoma)'''
         else: #del tipo JMP abc || DEC A
             dercoma = " "
-            if(valor.count("(")>0): #del tipo ICL (Dir)
+            '''if(valor.count("(")>0): #del tipo ICL (Dir)
                 retorna = str(nombre)+" (Dir)"
                 if not esint(valor[1]): #tipo
                     izqcoma = valor
                 else:
                     izqcoma = "("+transformarBin(valor[1:-1])+")"
-            else:
-                if(nombre=="NOP"):
-                    retorna = str(nombre)
-                    izqcoma = " "
-                elif(nombre[0]!="J"): #Todos los que no comienzan con J
+            else:'''
+            if(nombre=="NOP"):
+                retorna = str(nombre)
+                izqcoma = " "
+            elif(nombre[0]!="J"): #Todos los que no comienzan con J
+                #retorna = str(nombre)+" "+str(valor)
+                if(insToType(valor)==0): #instruccion: tipo INC A
                     retorna = str(nombre)+" "+str(valor)
-                    izqcoma = valor
-                else: #JMP etc
-                    retorna = str(nombre)+" Ins"
-                    izqcoma = "("+str(transformarBin(str(variables[valor])))+")"
-                    dercoma = valor
+                    izqcoma = str(valor)
+                elif(insToType(valor)==1): #variable: tipo INC (var)
+                    retorna = str(nombre)+" (Dir)"
+                    izqcoma = "("+str(transformarBin(str(variables[valor[1:-1]])))+")"
+                    dercoma = str(valor)
+            else: #JMP etc
+                retorna = str(nombre)+" Ins"
+                izqcoma = "("+str(transformarBin(str(countIns[valor])))+")"
+                dercoma = valor
         return [retorna,izqcoma,dercoma]
     else:
         return False
@@ -415,10 +437,15 @@ def ins_generica(ins):
     #print(valor)'''
 
 listaInsBin = []
+countIns = {}
 def dataFinalBin(dict):
-    opcode=0
-    literal=0
+    opcode = 0
+    literal = 0
+    count = 1
     for nombre in orden_labels:
+        #print(nombre)
+        countIns[nombre] = count
+        #print(countIns)
         funcion = dict[nombre] #data,code,end,etc
         for ins in funcion: #cada instruccion de cada funcion
             if(ins_generica(ins)):
@@ -440,6 +467,7 @@ def dataFinalBin(dict):
                 #print(var)
                 print(str(opcode)+str(literal))
                 listaInsBin.append(str(opcode)+str(literal))
+                count += 1
 
 def rellenaLista(lista,N):
     for i in range(len(lista), N):
@@ -453,6 +481,9 @@ def outputTXT(file):
     f.write("-- Variable | Direccion (dec) | Direccion (bin)\n")
     for variable in variables:
         f.write("-- "+str(variable)+" | "+str(variables[variable])+" | "+str(sumBin(str(variables[variable])))+"\n")
+    f.write("---\n")
+    for linea in countIns:
+        f.write("-- "+str(linea)+" | "+str(countIns[linea])+" | "+str(sumBin(str(countIns[linea])))+"\n")
     f.write("\n")
     f.write("library IEEE;\n")
     f.write("use IEEE.STD_LOGIC_1164.ALL;\n")
