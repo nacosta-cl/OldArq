@@ -151,7 +151,7 @@ label = {}
 orden_labels =[]
 l = []
 
-def leer(Archivo,label):
+'''def leer(Archivo,label):
     ar = open(Archivo,'r')
     linea = ar.readline()
 
@@ -171,7 +171,7 @@ def leer(Archivo,label):
                 label[Nombre].append(w[0].strip())
             else:
                 break
-    ar.close()
+    ar.close()'''
 
 
 variables = {} #Diccionario de variables a direccion en ram
@@ -204,7 +204,7 @@ def contador(Linea):
     return conta
 
 
-def Leer(Archivo, label):
+'''def Leer(Archivo, label):
     Ar = open(Archivo,'r',encoding="latin-1")
     Lineas = Ar.readlines()
     cont = 0
@@ -248,7 +248,7 @@ def Leer(Archivo, label):
                             label["CODE"].append(w[0].strip())
                     else:
                         break
-    Ar.close()
+    Ar.close()'''
 
 def orden_instrucciones(diccionario,valor,cantidad):
     if len(l)< cantidad:
@@ -517,8 +517,62 @@ def outputTXT(file):
 
     f.close()
 
+def Leer_Archivo(Archivo,label):
+    archivo = open(Archivo,'r',encoding='latin-1')
+    Linea= archivo.readline()
+    Lineas = [] ## las Lineas que nos sirver
+    Espacios_Label=[] ## espacios o tabulaciones de los Labels
+    contador_label =-1 ## cuantos labels hay
+
+    while Linea:
+        temp = Linea.split('//')
+        Linea = temp[0] # si la linea tiene comentarios no los pesacamos
+        if Linea.strip():
+            Lineas.append(Linea) ## agregamos las lineas que no son // y que no son espacion es blanco
+        Linea = archivo.readline()
+
+    for i in range(len(Lineas)):
+        Linea_actual = Lineas[i]
+        if  Linea_actual.strip():
+
+            if ':' in Linea_actual:
+                Auxiliar = Linea_actual.split(':')
+                Nombre_Label = Auxiliar[0].strip()#Nombre label
+                label[Nombre_Label] = []
+                orden_labels.append(Nombre_Label)
+                contador_label+=1
+
+                try:
+                    if':' in Lineas[i+1]:
+                        Espacios_Label.append(0)#si el label no tiene ninguna instruccion le ponemos 0 nomas
+                except:
+                    continue
+            else:
+                Linea_anterior = Lineas[i-1]# linea anterior a la liena en la que vamos
+                Espacios_linea_actual = contador(Linea_actual) #espacios o tabulaciones de la linea actual
+                Linea_actual = Linea_actual.strip()
+                Linea_actual = Linea_actual.split(" ")[0]+" "+"".join(Linea_actual.split(" ")[1:])
+                Linea_actual = Linea_actual.replace(' ','\t')
+                Linea_actual = Linea_actual.replace('\t',' ',1)
+                Linea_actual = Linea_actual.replace('\t','') # la dejamos con un solo espacio MOV A,B
+
+                if ':' in Linea_anterior:
+                    Espacios_Label.append(Espacios_linea_actual)#Primera linea de cada label, agregamos sus espacios en blaco al comienzo
+                if Espacios_linea_actual >= Espacios_Label[contador_label]: # si la linea en la que vamos tiene igual o mas espacios al comienzo que la linea anterior es porque
+                    #pertenence al mismo label, sino es de CODE
+                    LabelName = orden_labels[contador_label]
+                    if(Linea_actual=="DEC A"):
+                        Linea_actual = "SUB A,1"
+                    if(Linea_actual=="INC A"):
+                        Linea_actual = "ADD A,1"
+                    label[LabelName].append(Linea_actual)
+                else:
+                    label["CODE"].append(Linea_actual)
+    print(label)
+    archivo.close()
+
 root.fileopenname = filedialog.askopenfilename(initialdir = "./",title = "Escoge input")
-Leer(root.fileopenname,label)
+Leer_Archivo(root.fileopenname,label)
 
 dataFinal(label) #Calcula los comandos en texto
 
@@ -536,7 +590,7 @@ print(instrucciones2)
 #print(listaInsBin)
 #print(variables)
 
-print(label)
+
 lista_instrucciones(label,suma_instrucciones(label,orden_labels))
 
 #print(l)
