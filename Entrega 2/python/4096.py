@@ -443,12 +443,13 @@ def ins_generica(ins):
     #print(valor)'''
 
 listaInsBin = []
+listaInsTxt = []
 countIns = {}
 def dataFinalBin(dict):
     opcode = 0
     literal = 0
     count = 1
-    ###cambie esto!!!
+    ###cambie esto!!! #no era lo mismo? pero bueno lo dejo asi
     for nombre in orden_labels:
         countIns[nombre] = count
         funcion = dict[nombre]
@@ -476,13 +477,15 @@ def dataFinalBin(dict):
                 else:
                     literal=Rellena("",16)
                 opcode=Rellena(str(lista[insgen]),17)
-                print(lista)
+                #print(lista)
                 #print(str(lista[insgen]))
                 #print(opcode)
                 #print(var)
                 print(str(opcode)+str(literal))
                 listaInsBin.append(str(opcode)+str(literal))
+                listaInsTxt.append(ins_generica(ins))
                 #count += 1
+    print(listaInsTxt)
 
 def rellenaLista(lista,N):
     for i in range(len(lista), N):
@@ -490,7 +493,6 @@ def rellenaLista(lista,N):
 
 def outputTXT(file):
     f = open(file,'w+')
-    count = 0
 
     ##Info
     f.write("-- Variable | Direccion (dec) | Direccion (bin)\n")
@@ -517,12 +519,16 @@ def outputTXT(file):
     f.write("type memory_array is array (0 to ((2 ** 12) - 1) ) of std_logic_vector (32 downto 0);\n")
     f.write("\n")
     f.write("signal memory : memory_array:= (\n")
-    for i in listaInsBin:
-        count+=1
-        if(count != len(listaInsBin)):
-            f.write(str('\t"'+i+'",\n'))
-        else:
-            f.write(str('\t"'+i+'"\n'))
+    for i in range(len(listaInsBin)):
+        if((i+1) != len(listaInsBin)):
+            f.write(str('\t"'+listaInsBin[i]+'",'))
+        else: #sin coma al final
+            f.write(str('\t"'+listaInsBin[i]+'"'))
+
+        try:
+            f.write(str(" -- "+listaInsTxt[i][0]+" | "+listaInsTxt[i][1]+" | "+listaInsTxt[i][2]+"\n"))
+        except:
+            f.write("\n")
     f.write(");\n")
     f.write("begin\n")
     f.write("\n")
