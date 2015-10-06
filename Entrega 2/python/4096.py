@@ -278,7 +278,7 @@ instrucciones2 = {} #Dict con data con instrucciones
 def dataFinal(diccionario):
     for nombre2 in diccionario:
         if(nombre2 != "DATA"):
-            instrucciones2[nombre2] = label[nombre2]
+            instrucciones2[nombre2] = diccionario[nombre2]
         else:
             instrucciones2["DATA"] = []
 
@@ -320,6 +320,7 @@ def instr_binario(inst):
                 return('variable der')
             else:
                 return('hexa der')
+
         else:
             if lista_inst[1][-2] == 'b':
                 return('bin der')
@@ -327,6 +328,9 @@ def instr_binario(inst):
                 return('hexa der')
             else:
                 return('decimal der')
+
+    elif lista_inst[1][-1] =='h':
+        return('instruccion')
     else:
         return("instruccion")
 
@@ -346,13 +350,14 @@ def insToType(valor):
         else:
             return 4 #return('decimal') #valor 10
 
+###cambie esto
 def tipoVar(valor):
-    if(not esint(valor[0])):
-        return 0 #es variable
-    elif(valor[-1]=="b"):
+    if(valor[-1]=="b"):
         return 1 #es binario
     elif(valor[-1]=="h"):
         return 2 #es hexa
+    elif(not esint(valor[0])):
+        return 0 #es variable
     else:
         return 3 #es dec
 
@@ -426,6 +431,7 @@ def ins_generica(ins):
                 retorna = str(nombre)+" Ins"
                 izqcoma = "("+str(transformarBin(str(countIns[valor])))+")"
                 dercoma = valor
+
         return [retorna,izqcoma,dercoma]
     else:
         return False
@@ -442,9 +448,17 @@ def dataFinalBin(dict):
     opcode = 0
     literal = 0
     count = 1
+    ###cambie esto!!!
+    for nombre in orden_labels:
+        countIns[nombre] = count
+        funcion = dict[nombre]
+        for ins in funcion:
+            count+=1
+
+
     for nombre in orden_labels:
         #print(nombre)
-        countIns[nombre] = count
+        #countIns[nombre] = count
         #print(countIns)
         funcion = dict[nombre] #data,code,end,etc
         for ins in funcion: #cada instruccion de cada funcion
@@ -462,12 +476,13 @@ def dataFinalBin(dict):
                 else:
                     literal=Rellena("",16)
                 opcode=Rellena(str(lista[insgen]),17)
+                print(lista)
                 #print(str(lista[insgen]))
                 #print(opcode)
                 #print(var)
                 print(str(opcode)+str(literal))
                 listaInsBin.append(str(opcode)+str(literal))
-                count += 1
+                #count += 1
 
 def rellenaLista(lista,N):
     for i in range(len(lista), N):
@@ -585,7 +600,7 @@ outputTXT(root.filesavename)
 #IMPORTATE: LISTA CON 4096 ES LA LISTA listaInsBin
 
 
-print(instrucciones2)
+
 
 #print(listaInsBin)
 #print(variables)
