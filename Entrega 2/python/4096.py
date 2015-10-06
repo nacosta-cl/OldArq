@@ -427,6 +427,11 @@ def ins_generica(ins):
                     retorna = str(nombre)+" (Dir)"
                     izqcoma = "("+str(transformarBin(str(variables[valor[1:-1]])))+")"
                     dercoma = str(valor)
+                else:
+                    #retorna = str(nombre)+" Lit"
+                    retorna = str(nombre)+" (Dir)" #Deberia ser Lit, pero no existe, y en ejemplo 6 se cae
+                    izqcoma = "("+str(transformarBin(str(valor[1:-1])))+")"
+                    dercoma = str(valor)
             else: #JMP etc
                 retorna = str(nombre)+" Ins"
                 izqcoma = "("+str(transformarBin(str(countIns[valor])))+")"
@@ -573,6 +578,7 @@ def Leer_Archivo(Archivo,label):
                 Espacios_linea_actual = contador(Linea_actual) #espacios o tabulaciones de la linea actual
                 Linea_actual = Linea_actual.strip()
                 Linea_actual = Linea_actual.split(" ")[0]+" "+"".join(Linea_actual.split(" ")[1:])
+                Linea_actual = Linea_actual.replace('\r',' ') #Porsiacaso
                 Linea_actual = Linea_actual.replace(' ','\t')
                 Linea_actual = Linea_actual.replace('\t',' ',1)
                 Linea_actual = Linea_actual.replace('\t','') # la dejamos con un solo espacio MOV A,B
