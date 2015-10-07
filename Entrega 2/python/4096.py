@@ -285,7 +285,9 @@ def dataFinal(diccionario):
     for nombre in diccionario["DATA"]:
         for ins in variablesIns(nombre):
             instrucciones2["DATA"].append(ins)
-        instrucciones2["DATA"].append("MOV A,0") #Limpia registro A despues de cada var
+
+    if(len(instrucciones2["DATA"])>0):
+        instrucciones2["DATA"].append("MOV A,0") #Limpia registro A despues de las variables
 
     '''for labelNombre in labelVar:
         for labelIns in variablesIns(labelNombre):

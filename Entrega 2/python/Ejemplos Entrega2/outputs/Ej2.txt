@@ -1,8 +1,8 @@
 -- Variable | Direccion (dec) | Direccion (bin)
 ---
--- CODE | 0 | 0
--- fin | 9 | 1001
 -- DATA | 0 | 0
+-- fin | 9 | 1001
+-- CODE | 0 | 0
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
