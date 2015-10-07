@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import filedialog
+import random
 root = Tk()
 
 
@@ -597,7 +598,11 @@ def Leer_Archivo(Archivo,label):
                         Linea_actual = "ADD A,1"
                     label[LabelName].append(Linea_actual)
                 else:
-                    label["CODE"].append(Linea_actual)
+                    r = random.randint(0,100000)
+                    extra = str(r)
+                    label[extra]=[]
+                    label[extra].append(Linea_actual)
+                    orden_labels.append(str(r))
     print(label)
     archivo.close()
 
