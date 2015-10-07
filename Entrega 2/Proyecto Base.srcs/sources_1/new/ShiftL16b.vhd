@@ -33,13 +33,14 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity ShiftL16b is
     Port ( inShiftL : in STD_LOGIC_VECTOR (15 downto 0);
-           outShiftL : out STD_LOGIC_VECTOR (15 downto 0));
+           outShiftL : out STD_LOGIC_VECTOR (15 downto 0);
+           co : out STD_LOGIC);
 end ShiftL16b;
 
 architecture Behavioral of ShiftL16b is
 
 begin
-
+    co <= inShiftL(15);
     outShiftL(15 downto 1) <= inShiftL(14 downto 0);
     outShiftL(0) <= '0';
 

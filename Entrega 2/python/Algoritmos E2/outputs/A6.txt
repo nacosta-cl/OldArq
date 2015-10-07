@@ -9,6 +9,8 @@
 -- DATA | 0 | 0
 -- CODE | 7 | 111
 
+--exout f0 80 0
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;

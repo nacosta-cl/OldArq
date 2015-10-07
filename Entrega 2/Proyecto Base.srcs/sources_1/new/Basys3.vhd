@@ -80,7 +80,9 @@ component CU
             selMuxB     : out std_logic_vector (1 downto 0);
             selALU      : out std_logic_vector (2 downto 0);
             write       : out std_logic;
-            LPC         : out std_logic);
+            LPC         : out std_logic;
+            wStatus     : out std_logic;
+            jmpBits     : out std_logic_vector (7 downto 0));
     end component;
 
 component ALU
@@ -149,6 +151,7 @@ signal selMuxA  : STD_LOGIC_VECTOR (1 downto 0);
 signal selMuxB  : STD_LOGIC_VECTOR (1 downto 0);
 signal selAlu   : STD_LOGIC_VECTOR (2 downto 0);
 signal write    : STD_LOGIC;
+signal writeStatus : STD_LOGIC;
 
 --Salida de la RAM
 
@@ -159,8 +162,8 @@ signal RAMdOut  : STD_LOGIC_VECTOR (15 downto 0);
 signal reg1 : STD_LOGIC_VECTOR (15 downto 0);
 signal reg2 : STD_LOGIC_VECTOR (15 downto 0);
 
-signal numA      : STD_LOGIC_VECTOR (15 downto 0);
-signal numB      : STD_LOGIC_VECTOR (15 downto 0);
+signal numA : STD_LOGIC_VECTOR (15 downto 0);
+signal numB : STD_LOGIC_VECTOR (15 downto 0);
 -- Integrados: reloj, display
 signal clock  : std_logic;                     
             
@@ -172,6 +175,9 @@ signal dis_d : std_logic_vector(3 downto 0);
 --A la pantalla
 signal display : STD_LOGIC_VECTOR (15 downto 0);
 signal regValues : STD_LOGIC_VECTOR (15 downto 0);
+signal PCdisp : STD_LOGIC_VECTOR (15 downto 0);
+signal jbits : STD_LOGIC_VECTOR (15 downto 0);
+signal statusBits : STD_LOGIC_VECTOR (15 downto 0);
 signal switches : STD_LOGIC_VECTOR (2 downto 0);
 --cable vacío
 signal nulo : STD_LOGIC;
@@ -190,7 +196,7 @@ lit <= instrLit (15 downto 0);
 inst_Clock_Divider: Clock_Divider port map(
         clk         =>clk,
         clk_up      =>clk_up,
-        slow        =>'0',
+        slow        =>'1',
         clock       =>clock
     );
 
@@ -229,7 +235,9 @@ inst_CU: CU port map(
         selMuxB   => selMuxB,
         selALU    => ALUselect, 
         write     => write,
-        LPC       => loadPC
+        LPC       => loadPC,
+        wStatus   => writeStatus,
+        jmpBits   => jBits (7 downto 0)
         );
 --PC
 inst_PC: PC port map(
@@ -265,7 +273,7 @@ inst_regB: Reg port map(
      );
 inst_statusReg: Reg_3b port map(
              clock    => clock,
-             load     => '1',
+             load     => '1',--writeStatus,
              up       => '0',
              down     => '0',
              datain   => ALUstatus,
@@ -291,29 +299,35 @@ inst_MUXb: MUX_2b port map(
     muxOut  => ALUnumB
     );
 
-
-
 --Fin de instancias
 
---instr <= instrLit(7 downto 0);
---lit <= instrLit(7 downto 0);
---addr <= instrLit(11 downto 0);
 --Conexiones internas
 --Status en las leds 
 led(15 downto 13) <= ALUstatus;
+led(7 downto 0) <= jBits(7 downto 0);
 
 switches(0)<= sw(0);
 switches(1)<= sw(1);
 switches(2)<= sw(2);
 
+--Debugger
+
 regValues(15 downto 8) <= numA(7 downto 0);
 regValues(7 downto 0) <= numB(7 downto 0);
+statusBits(10 downto 8) <= ALUstatus;
+statusBits(2 downto 0) <= actstatus;
+pcdisp(11 downto 0) <= PCaddr;
+
 with switches select
     display <= ALUres   when "001",
                numA     when "010",
                numB     when "011",
                RAMdOut  when "100",
+               pcdisp   when "101",
+               jbits    when "110",
+               statusBits when "111",
                regValues when others;
+
 ----Envío a los numeros led
 dis_a <= display(15 downto 12);
 dis_b <= display(11 downto 8);

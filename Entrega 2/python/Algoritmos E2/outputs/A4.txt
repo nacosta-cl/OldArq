@@ -1,12 +1,12 @@
 -- Variable | Direccion (dec) | Direccion (bin)
--- vd2 | 1 | 1
 -- vd | 0 | 0
+-- vd2 | 1 | 1
 ---
--- DATA | 0 | 0
 -- CODE | 5 | 101
 -- fin | 22 | 10110
--- paso2 | 17 | 10001
+-- DATA | 0 | 0
 -- mal | 14 | 1110
+-- paso2 | 17 | 10001
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;

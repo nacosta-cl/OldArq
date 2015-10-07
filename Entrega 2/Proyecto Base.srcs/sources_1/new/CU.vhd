@@ -40,7 +40,10 @@ entity CU is
             selMuxB     : out std_logic_vector (1 downto 0);
             selALU      : out std_logic_vector (2 downto 0);
             write       : out std_logic;
-            LPC         : out std_logic);
+            LPC         : out std_logic;
+            wStatus     : out std_logic;
+            jmpBits     : out std_logic_vector (7 downto 0)
+            );
 end CU;
 
 architecture Behavioral of CU is
@@ -75,7 +78,7 @@ begin
 --Traduccion a OPcode estandarizado
 OPcode <= instruc(6 downto 0); 
 --Conexiones pertinentes
-
+--wStatus <= ctrlSigs(11);
 LPC <= ctrlSigs(10);
 enabRegA <= ctrlSigs(9);
 enabRegB <= ctrlSigs(8);
@@ -90,7 +93,7 @@ C <= ALUstatus(2);
 
 
 --Eveluadores de condicion correcta para saltos condicionales
---Algun opcode util
+--Hay algún opcode util de salto
 with opcode select
     iJEQ <= '1' when "1001101",    
             '0' when others;
@@ -101,10 +104,10 @@ with opcode select
     iJGT <= '1' when "1001111",    
             '0' when others;
 with opcode select
-    iJGE <= '1' when "1010000",    
+    iJGE <= '1' when "1010001",    
             '0' when others;
 with opcode select
-    iJLT <= '1' when "1010001",    
+    iJLT <= '1' when "1010000",    
             '0' when others;
 with opcode select
     iJLE <= '1' when "1010010",    
@@ -112,25 +115,41 @@ with opcode select
 with opcode select
     iJCR <= '1' when "1010011",    
             '0' when others;
---condiciones de paso
-cEQ <= (Z)       when (iJEQ = '1') else '0';
-cNE <= (not Z)   when (iJNE = '1') else '0';
-cLT <= (N)       when (iJLT = '1') else '0';
-cGE <= (not N)   when (iJGE = '1') else '0';
-cCR <= (C)       when (iJCR = '1') else '0';
-cGT <= (Z or N)  when (iJGT = '1') else '0';
-cLE <= (Z nor N) when (iJLE = '1') else '0';
+
+--Condiciones de paso
+--Se tiene que cumplir condicion de salto y funcionalidad de OPcode
+cEQ <= (Z)       when (iJEQ = '1') else '0'; --OK
+cNE <= not Z     when (iJNE = '1') else '0'; --Ncomp
+cLT <= (N)       when (iJLT = '1') else '0'; --Ncomp
+cGE <= not N     when (iJGE = '1') else '0'; --Ncomp
+cCR <= (C)       when (iJCR = '1') else '0'; --Ncomp
+cGT <= (Z or N)  when (iJGT = '1') else '0'; --Ncomp
+cLE <= (Z nor N) when (iJLE = '1') else '0'; --Ncomp
+
+jmpBits(0) <= cEQ;
+jmpBits(1) <= cNE;
+jmpBits(2) <= cLT;
+jmpBits(3) <= cGE;
+jmpBits(4) <= cCR;
+jmpBits(5) <= cGT;
+jmpBits(6) <= cLE;
 
 --JMP JEQ JNE JGT JGE JLT JLE JCR
+--Activar registro de status
+with naturalSigs select
+    wStatus <= '1' when "00010010010",
+               '1' when "00010110010",
+               '1' when "00010100010",
+               '0' when others;
 
+--salta si existe salto
 ctrlSigs <= "10000000000" when ((cEQ = '1') or (cNE = '1') or (cGT = '1') or (cGE = '1') or (cLT = '1') or (cLE = '1') or (cCR = '1'))
             else naturalSigs;
             
             
-            
 -- Tabla de situaciones
                 -- muxA      00-> 0x0   01->0x1    10->A      11->0x0
-                
+               
                 -- muxB      00-> 0x0   01->B      10->DOUT   11->LIT
                 
                 -- selectAlu 000->ADD   001->SUB   010->AND   011->OR   100->XOR   101->NOT   110->SHL   111->SHR
@@ -158,19 +177,19 @@ with OPcode select
                 "00010010001" when "0010000",
                 "01010010010" when "0010001",
                 "00110010010" when "0010010",
-                --SUB
+              --SUB
                 "01010110010" when "1000010", --SUB A,Lit
                 "00110110010" when "1000011", --SUB B,Lit
                 "01010100010" when "0010011",
                 "00110100010" when "1000100", --SUB B,Dir
                 "00010010011" when "0010101",
-                "01010010000" when "0010110",
-                "00110010000" when "0010111",
-                "01010110000" when "0011000",
+                "01010010100" when "0010110",
+                "00110010100" when "0010111",
+                "01010110100" when "0011000",
                 "00110110100" when "1000101", --AND B,Lit
-                "01010100000" when "0011001",
+                "01010100100" when "0011001",
                 "00110100100" when "1000110", --AND B,Dir
-                "00010010001" when "0011011",
+                "00010010101" when "0011011",
                 "01010010110" when "0011100",
                 "00110010110" when "0011101",
                 "01010110110" when "0011110",
@@ -195,17 +214,16 @@ with OPcode select
                 "00110001110" when "0110101",
                 "00010011111" when "0111001",
 --              --INC A se reemplaza en compilador por la instruccion ADD A,1
-                "00101010000" when "0111010",
+                "00101010000" when "0111010", --INC B
                 "00001100001" when "1001011", --INC Dir
 --              --DEC A idem arriba SUB A,1
-                "00010010010" when "0111011",
-                "00010110010" when "0111100",
+                "00010010010" when "0111011", --CMP A,B
+                "00010110010" when "0111100", --CMP
                 "00010100010" when "1001100", --CMP A,Dir 
                 --Saltos
-                "10000000000" when "0111101",
+                "10000000000" when "0111101", --JMP
                 "00010001011" when "1010100", --NOT (DIR),A
                 "00000000000" when "0000000", --NOP
                 "00000000000" when others;
-
 
 end Behavioral;

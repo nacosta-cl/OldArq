@@ -57,7 +57,8 @@ component NOT16b is
     
 component ShiftL16b is
     Port ( inShiftL : in STD_LOGIC_VECTOR (15 downto 0);
-       outShiftL : out STD_LOGIC_VECTOR (15 downto 0));
+       outShiftL : out STD_LOGIC_VECTOR (15 downto 0);
+       co : out STD_LOGIC);
     end component;
 
 component ShiftR16b is
@@ -78,6 +79,7 @@ signal opR7 : STD_LOGIC_VECTOR (15 downto 0);
 
 --Resultado interno
 signal iCo : STD_LOGIC;
+signal iiCo : STD_LOGIC;
 signal iZ : STD_LOGIC;
 signal iRes : STD_LOGIC_VECTOR (15 downto 0);
 begin
@@ -93,7 +95,10 @@ with sel select
             opR7 when "111",
             "0000000000000000" when others;
 
-co <= iCo;
+with sel select
+co <= iCo when "000",
+      iiCo when "110",
+      '0' when others;
 
 --Cero
 with iCo select
@@ -150,7 +155,8 @@ inst_NOT: NOT16b port map
 inst_sh16bL: ShiftL16b port map
 (
     inShiftL => numA,
-    outShiftL => opR6
+    outShiftL => opR6,
+    co => iiCo
 );
 inst_sh16bR: ShiftR16b port map
 (
