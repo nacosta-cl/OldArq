@@ -178,7 +178,7 @@ variables = {} #Diccionario de variables a direccion en ram
 def variablesDataRAM(var):
     var = var.strip()
     [nombre,valor] = var.split(" ")
-    variables[nombre] = len(variables.keys())+1
+    variables[nombre] = len(variables.keys())
     return variables
 
 def variablesIns(var):
@@ -285,6 +285,7 @@ def dataFinal(diccionario):
     for nombre in diccionario["DATA"]:
         for ins in variablesIns(nombre):
             instrucciones2["DATA"].append(ins)
+        instrucciones2["DATA"].append("MOV A,0") #Limpia registro A despues de cada var
 
     '''for labelNombre in labelVar:
         for labelIns in variablesIns(labelNombre):
@@ -453,7 +454,7 @@ countIns = {}
 def dataFinalBin(dict):
     opcode = 0
     literal = 0
-    count = 1
+    count = 0 #num de linea q estamos
     ###cambie esto!!! #no era lo mismo? pero bueno lo dejo asi
     for nombre in orden_labels:
         countIns[nombre] = count
@@ -621,5 +622,3 @@ outputTXT(root.filesavename)
 lista_instrucciones(label,suma_instrucciones(label,orden_labels))
 
 #print(l)
-
-
