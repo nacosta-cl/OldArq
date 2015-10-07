@@ -3,9 +3,9 @@
 -- v1 | 0 | 0
 -- v2 | 1 | 1
 ---
+-- CODE | 7 | 111
 -- DATA | 0 | 0
 -- inpar | 19 | 10011
--- CODE | 7 | 111
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;

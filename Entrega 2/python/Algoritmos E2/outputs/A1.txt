@@ -1,10 +1,10 @@
 -- Variable | Direccion (dec) | Direccion (bin)
--- var1 | 0 | 0
--- var3 | 2 | 10
 -- var2 | 1 | 1
+-- var3 | 2 | 10
+-- var1 | 0 | 0
 ---
--- DATA | 0 | 0
 -- CODE | 7 | 111
+-- DATA | 0 | 0
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;

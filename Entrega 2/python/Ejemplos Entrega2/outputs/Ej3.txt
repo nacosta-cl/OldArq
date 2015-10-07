@@ -1,8 +1,8 @@
 -- Variable | Direccion (dec) | Direccion (bin)
 -- var1 | 0 | 0
 ---
--- DATA | 0 | 0
 -- CODE | 3 | 11
+-- DATA | 0 | 0
 -- fin | 9 | 1001
 
 library IEEE;

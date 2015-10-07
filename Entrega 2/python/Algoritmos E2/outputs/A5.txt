@@ -1,14 +1,14 @@
 -- Variable | Direccion (dec) | Direccion (bin)
+-- b | 1 | 1
 -- c | 2 | 10
 -- a | 0 | 0
--- b | 1 | 1
 ---
 -- DATA | 0 | 0
--- loop3 | 17 | 10001
--- loop | 8 | 1000
 -- error | 15 | 1111
--- CODE | 7 | 111
 -- loop2 | 12 | 1100
+-- CODE | 7 | 111
+-- loop | 8 | 1000
+-- loop3 | 17 | 10001
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
