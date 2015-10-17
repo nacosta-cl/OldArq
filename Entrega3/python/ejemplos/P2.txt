@@ -1,11 +1,9 @@
 DATA:
 vector  7
  		5
-			6
+		6
 		4
-var1 	2
-			3
-var2 2
+
 CODE:
 
 MOV B, vector // guarda el puntero del arreglo vector en B
