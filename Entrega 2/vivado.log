@@ -151,3 +151,5 @@ close [ open {C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 2/Proyecto Base.srcs
 add_files {{C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/SP.vhd}}
 update_compile_order -fileset sources_1
 remove_files {{C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 2/Proyecto Base.srcs/sources_1/new/SP.vhd}}
+exit
+INFO: [Common 17-206] Exiting Vivado at Sat Oct 17 18:13:54 2015...
