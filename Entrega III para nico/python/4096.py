@@ -67,7 +67,7 @@ lista = {
     "MOV A,(B)":'0001000',
     'MOV B,(B)':'0001001',
     'MOV (B),A':'0001010',
-    'MOV (B),Lit':'1111111',#no esta
+    'MOV (B),Lit':'1010110',#no esta
 
     'ADD A,B' : '0001011',
     'ADD B,A' : '0001100',
@@ -77,7 +77,7 @@ lista = {
     'ADD B,(Dir)' : '1000001',
     'ADD (Dir)' : '0010000',
     'ADD A,(B)':'0001111',
-    'ADD B,(B)':'1111111', #no esta
+    'ADD B,(B)':'1010111', #no esta
 
 
     'SUB A,B' : '0010001',
@@ -113,7 +113,7 @@ lista = {
     'NOT A' : '0100010',
     'NOT B,A' : '0100011',
     'NOT (Dir),A' : '1010100',
-    'NOT (B),A':'0', #no esta
+    'NOT (B),A':'1010101', #no esta
 
 
     'XOR A,B' : '0101000',
@@ -124,30 +124,30 @@ lista = {
     'XOR B,(Dir)' : '1001010',
     'XOR (Dir)' : '0101101',
     'XOR A,(B)':'0101100',
-    'XOR B,(B)':'1111111', #no esta
+    'XOR B,(B)':'1011000', #no esta
 
     'SHL A' : '0101110',
     'SHL B,A' : '0101111',
     'SHL (Dir),A' : '0110011',
-    'SHL (B),A':'1111111', #no esta
+    'SHL (B),A':'1011001', #no esta
 
     'SHR A' : '0110100',
     'SHR B,A' : '0110101',
     'SHR (Dir),A' : '0111001',
-    'SHR (B),A':'1111111', #no esta
+    'SHR (B),A':'1011010', #no esta
 
 
-    'INC A' : '11111110', ##sin uso
+    'INC A' : '1011011', ##sin uso
     'INC B' : '0111010',
     'INC (Dir)' : '1001011',
-    'INC (B)' : '1111111', ##sin uso
+    'INC (B)' : '1011100', ##sin uso
 
-    'DEC A' : '11111111', ##sin uso
+    'DEC A' : '1011110', ##sin uso
 
     'CMP A,B' : '0111011',
     'CMP A,Lit' : '0111100',
     'CMP A,(Dir)' : '1001100',
-    'CMP A,(B)':'1111111', #no esta
+    'CMP A,(B)':'1011101', #no esta
 
     'JMP Ins' : '0111101',
     'JEQ Ins' : '1001101',
@@ -159,18 +159,21 @@ lista = {
     'JCR Ins' : '1010011',
     'NOP' : '0000000',
 
-    'PUSH A':'1001000',
-    'PUSH B':'1001001',
+    'PUSH A':'1100011',
+    'PUSH B':'1100100',
 
-    'POP A':'1001010', #falta la otra
-    'POP B':'1001100', #falta la otra
+    'POP A':'1100101', #falta la otra
+    #segunda = 1100110
+    'POP B':'1100111', #falta la otra
+    #segunda = 1101000
 
     'CALL Dir':'1000101',
     'RET':'1000110', #falta la otra
+    #segunda = 1100010
 
-    'IN A,Lit':'1111111', #no esta
-    'IN B,Lit':'1111111', #no esta
-    'IN (B),Lit':'1111111', #no esta
+    'IN A,Lit':'1011111', #no esta
+    'IN B,Lit':'1100000', #no esta
+    'IN (B),Lit':'1100001', #no esta
 
 
 }
