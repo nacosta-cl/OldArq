@@ -1,0 +1,13 @@
+DATA:
+
+CODE:
+IN B
+boton:
+IN A
+CMP A,B
+JNE fin
+JMP boton
+fin:
+MOV A,10
+MOV B,10
+JMP fin
