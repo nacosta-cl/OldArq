@@ -182,6 +182,11 @@ signal switches : STD_LOGIC_VECTOR (2 downto 0);
 --cable vacío
 signal nulo : STD_LOGIC;
 
+--cables SP
+signal incSP : STD_LOGIC;
+signal decSP : STD_LOGIC;
+signal outSP : STD_LOGIC_VECTOR (15 downto 0);
+
 --Fin señales
 
 begin
@@ -246,6 +251,15 @@ inst_PC: PC port map(
         datain   => addr,
         dataout  => PCaddr
     );
+--SP
+inst_SP: Reg port map(
+        clock    => clock,
+        up       => incSP,
+        down     => decSP, --tenemos que crear esto
+        load     => '0',
+        datain   => "0000000000000000",
+        dataout  => outSP
+    );
 --RAM
 inst_RAM: RAM port map(
         clock    => clock,
@@ -281,6 +295,15 @@ inst_statusReg: Reg_3b port map(
           );
                           
 --Muxers
+inst_MuxSP: MUX_2b port map(
+    e1      => "0000000000000000",
+    e2      => "0000000000000001",
+    e3      => numA,
+    e4      => "0000000000000000",
+    mSelect => selMuxA,
+    muxOut  => ALUnumA
+    );
+      
 inst_MUXa: MUX_2b port map(
     e1      => "0000000000000000",
     e2      => "0000000000000001",
