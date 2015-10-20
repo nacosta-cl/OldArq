@@ -67,7 +67,7 @@ lista = {
     "MOV A,(B)":'0001000',
     'MOV B,(B)':'0001001',
     'MOV (B),A':'0001010',
-    'MOV (B),Lit':'1010110',#no esta
+    'MOV (B),Lit':'1111111',#no esta
 
     'ADD A,B' : '0001011',
     'ADD B,A' : '0001100',
@@ -77,8 +77,8 @@ lista = {
     'ADD B,(Dir)' : '1000001',
     'ADD (Dir)' : '0010000',
     'ADD A,(B)':'0001111',
-    'ADD B,(B)':'1010111', #no esta
-
+    'ADD B,(B)':'1111111', #no esta
+    'ADD (B),Lit':'1111111', #no esta No dice que deberia estar pero aparece en lso ejemplos
 
     'SUB A,B' : '0010001',
     'SUB B,A' : '0010010',
@@ -113,8 +113,7 @@ lista = {
     'NOT A' : '0100010',
     'NOT B,A' : '0100011',
     'NOT (Dir),A' : '1010100',
-    'NOT (B),A':'1010101', #no esta
-
+    'NOT (B),A' : '1111111', #no esta
 
     'XOR A,B' : '0101000',
     'XOR B,A' : '0101001',
@@ -124,30 +123,29 @@ lista = {
     'XOR B,(Dir)' : '1001010',
     'XOR (Dir)' : '0101101',
     'XOR A,(B)':'0101100',
-    'XOR B,(B)':'1011000', #no esta
+    'XOR B,(B)':'1111111', #no esta
 
     'SHL A' : '0101110',
     'SHL B,A' : '0101111',
     'SHL (Dir),A' : '0110011',
-    'SHL (B),A':'1011001', #no esta
+    'SHL (B),A':'1111111', #no esta
 
     'SHR A' : '0110100',
     'SHR B,A' : '0110101',
     'SHR (Dir),A' : '0111001',
-    'SHR (B),A':'1011010', #no esta
+    'SHR (B),A':'1111111', #no esta
 
-
-    'INC A' : '1011011', ##sin uso
+    'INC A' : '11111110', ##sin uso
     'INC B' : '0111010',
     'INC (Dir)' : '1001011',
-    'INC (B)' : '1011100', ##sin uso
+    'INC (B)' : '1111111', ##sin uso <=> ADD (B),1 ????
 
-    'DEC A' : '1011110', ##sin uso
+    'DEC A' : '11111111', ##sin uso
 
     'CMP A,B' : '0111011',
     'CMP A,Lit' : '0111100',
     'CMP A,(Dir)' : '1001100',
-    'CMP A,(B)':'1011101', #no esta
+    'CMP A,(B)':'1111111', #no esta
 
     'JMP Ins' : '0111101',
     'JEQ Ins' : '1001101',
@@ -159,23 +157,20 @@ lista = {
     'JCR Ins' : '1010011',
     'NOP' : '0000000',
 
-    'PUSH A':'1100011',
-    'PUSH B':'1100100',
+    'PUSH A':'1001000',
+    'PUSH B':'1001001',
 
-    'POP A':'1100101', #falta la otra
-    #segunda = 1100110
-    'POP B':'1100111', #falta la otra
-    #segunda = 1101000
+    'POP1 A':'1001010',
+    'INCSP A':'1001011',
+    'POP1 B':'1001100',
+    'INCSP B':'1001101',
 
     'CALL Dir':'1000101',
     'RET':'1000110', #falta la otra
-    #segunda = 1100010
 
-    'IN A,Lit':'1011111', #no esta
-    'IN B,Lit':'1100000', #no esta
-    'IN (B),Lit':'1100001', #no esta
-
-
+    'IN A,Lit':'1111111', #no esta
+    'IN B,Lit':'1111111', #no esta
+    'IN (B),Lit':'1111111' #no esta
 }
 #print(lista)
 instrucciones = {}
@@ -216,13 +211,29 @@ l = []
 
 
 variables = {} #Diccionario de variables a direccion en ram
-def variablesDataRAM(var):
-    var = var.strip()
-    [nombre,valor] = var.split(" ")
+def variablesDataRAM(nombre):
     variables[nombre] = len(variables.keys())
-    return variables
+    return len(variables.keys()) - 1
 
-def variablesIns(var):
+def variablesIns(var,valores):
+    n = 0
+    comandos = []
+    for i in valores:
+        #print(i)
+        if(i[-1]!="b"):
+            if(i[-1]!="h"):
+                i = sumBin(str(i))
+            else:
+                i = hexaBin(i[:-1])
+        else:
+            i = i[:-1]
+        dirram = variablesDataRAM(var+str(sumBin(str(n)))) #Agregamos el vector/variable al dict de direccion en ram
+        comandos.append("MOV B,"+str(i)+"b")
+        comandos.append("MOV ("+str(sumBin(str(dirram)))+"b),B")
+        n += 1
+    return comandos
+
+'''def variablesIns(var):
     var = var.strip()
     [nombre,valor] = var.split(" ")
     variablesDataRAM(var)
@@ -234,6 +245,7 @@ def variablesIns(var):
     else:
         valor = valor[:-1]
     return ["MOV A,"+str(valor)+"b","MOV ("+str(variables[nombre])+"),A"] #transforma data a instruciones
+'''
 
 def contador(Linea):
     conta = 0
@@ -323,12 +335,13 @@ def dataFinal(diccionario):
         else:
             instrucciones2["DATA"] = []
 
-    for nombre in diccionario["DATA"]:
-        for ins in variablesIns(nombre):
-            instrucciones2["DATA"].append(ins)
+    for item in diccionario["DATA"]:
+        ins = variablesIns(item[0],item[1])
+        for instruccion in ins:
+            instrucciones2["DATA"].append(instruccion)
 
     if(len(instrucciones2["DATA"])>0):
-        instrucciones2["DATA"].append("MOV A,0") #Limpia registro A despues de las variables
+        instrucciones2["DATA"].append("MOV B,0") #Limpia registro A despues de las variables
 
     '''for labelNombre in labelVar:
         for labelIns in variablesIns(labelNombre):
@@ -441,24 +454,49 @@ def ins_generica(ins):
             if(instr_binario(valor)=="instruccion"): #tipo MOV A,Lit || MOV A,B
                 if(tipoVar(izqcoma)!=0): #tipo MOV Lit,A
                     retorna = str(nombre)+" Lit,"+str(dercoma)
-                    izqcoma=transformarBin(izqcoma)
+                    izqcoma = transformarBin(izqcoma)
                 elif(tipoVar(dercoma)!=0): #tipo MOV A,Lit
                     retorna = str(nombre)+" "+str(izqcoma)+",Lit"
-                    dercoma=transformarBin(dercoma)
+                    dercoma = transformarBin(dercoma)
                 else:
-                    retorna = str(nombre)+" "+str(izqcoma)+","+str(dercoma)
+                    if(len(izqcoma)>1):
+                        retorna = str(nombre)+" Lit,"+str(dercoma)
+                        izqcoma = str(variables[str(izqcoma)+str(0)])
+                    elif(len(dercoma)>1):
+                        retorna = str(nombre)+" "+str(izqcoma)+",Lit"
+                        dercoma = str(variables[str(dercoma)+str(0)])
+                    else:
+                        retorna = str(nombre)+" "+str(izqcoma)+","+str(dercoma)
             elif(instr_binario(valor)=="variable izq"): #tipo MOV (c),A
-                retorna = str(nombre)+" (Dir),"+str(dercoma)
-                izqcoma = "("+str(transformarBin(str(variables[izqcoma[1:-1]])))+")" #transforma var a lugar en ram (binario)
+                try:
+                    retorna = str(nombre)+" (Dir),"+str(dercoma)
+                    izqcoma = "("+str(transformarBin(str(variables[izqcoma[1:-1]+"0"])))+")" #transforma var a lugar en ram (binario)
+                except:
+                    if(tipoPalabra(dercoma)!=1):
+                        retorna = str(nombre)+" "+str(izqcoma)+",Lit"
+                        dercoma = str(transformarBin(dercoma))
+                    else:
+                        retorna = str(nombre)+" "+str(izqcoma)+","+str(dercoma)
+                        izqcoma = " "+str(izqcoma)
             elif(instr_binario(valor)=="variable der"): #tipo MOV A,(c)
-                retorna = str(nombre)+" "+str(izqcoma)+",(Dir)"
-                dercoma = "("+str(transformarBin(str(variables[dercoma[1:-1]])))+")" #transforma var a lugar en ram (binario)
+                try:
+                    retorna = str(nombre)+" "+str(izqcoma)+",(Dir)"
+                    dercoma = "("+str(transformarBin(str(variables[dercoma[1:-1]+"0"])))+")" #transforma var a lugar en ram (binario)
+                except: #tipo MOV A,(B)
+                    retorna = str(nombre)+" "+str(izqcoma)+","+str(dercoma)
+                    dercoma = " "+str(dercoma)
             elif(instr_binario(valor)=="bin izq" or instr_binario(valor)=="hexa izq" or instr_binario(valor)=="decimal izq"): #tipo MOV (6),A
-                retorna = str(nombre)+" (Dir),"+str(dercoma)
-                izqcoma = "("+str(transformarBin(izqcoma[1:-1]))+")"
+                try:
+                    retorna = str(nombre)+" (Dir),"+str(dercoma)
+                    izqcoma = "("+str(transformarBin(izqcoma[1:-1]))+")"
+                except:
+                    retorna = str(nombre)+" "+str(izqcoma)+","+str(dercoma)
             elif(instr_binario(valor)=="bin der" or instr_binario(valor)=="hexa der" or instr_binario(valor)=="decimal der"): #tipo MOV A,(6)
-                retorna = str(nombre)+" "+str(izqcoma)+",(Dir)"
-                dercoma = "("+str(transformarBin(dercoma[1:-1]))+")"
+                try:
+                    retorna = str(nombre)+" "+str(izqcoma)+",(Dir)"
+                    dercoma = "("+str(transformarBin(dercoma[1:-1]))+")"
+                except:
+                    retorna = str(nombre)+" "+str(izqcoma)+","+str(dercoma)
             '''print(valor)
             print(instr_binario(valor))
             print(izqcoma)
@@ -472,9 +510,13 @@ def ins_generica(ins):
                 else:
                     izqcoma = "("+transformarBin(valor[1:-1])+")"
             else:'''
-            if(nombre=="NOP"):
+            if(nombre=="NOP" or nombre=="RET"):
                 retorna = str(nombre)
                 izqcoma = " "
+            elif(nombre=="CALL"):
+                retorna = str(nombre)+" Dir"
+                izqcoma = "("+str(transformarBin(str(countIns[valor])))+")"
+                dercoma = str(valor)
             elif(nombre[0]!="J"): #Todos los que no comienzan con J
                 #retorna = str(nombre)+" "+str(valor)
                 if(insToType(valor)==0): #instruccion: tipo INC A
@@ -482,7 +524,7 @@ def ins_generica(ins):
                     izqcoma = str(valor)
                 elif(insToType(valor)==1): #variable: tipo INC (var)
                     retorna = str(nombre)+" (Dir)"
-                    izqcoma = "("+str(transformarBin(str(variables[valor[1:-1]])))+")"
+                    izqcoma = "("+str(transformarBin(str(variables[valor[1:-1]+"0"])))+")"
                     dercoma = str(valor)
                 else:
                     #retorna = str(nombre)+" Lit"
@@ -493,7 +535,7 @@ def ins_generica(ins):
                 retorna = str(nombre)+" Ins"
                 izqcoma = "("+str(transformarBin(str(countIns[valor])))+")"
                 dercoma = valor
-                print(valor)
+                #print(valor)
 
         return [retorna,izqcoma,dercoma]
     else:
@@ -529,14 +571,14 @@ def dataFinalBin(dict):
             if(ins_generica(ins)):
                 print(ins_generica(ins))
                 insgen,izq,der=ins_generica(ins)
-                if(izq[0]=="("): #direccion
-                    literal=Rellena(str(izq[1:-1]),16)
-                elif(der[0]=="("): #direccion
-                    literal=Rellena(str(der[1:-1]),16)
-                elif(esint(izq)):
+                if(esint(izq)):
                     literal=Rellena(str(izq),16)
                 elif(esint(der)):
                     literal=Rellena(str(der),16)
+                elif(izq[0]=="("): #direccion
+                    literal=Rellena(str(izq[1:-1]),16)
+                elif(der[0]=="("): #direccion
+                    literal=Rellena(str(der[1:-1]),16)
                 else:
                     literal=Rellena("",16)
                 opcode=Rellena(str(lista[insgen]),17)
@@ -620,7 +662,7 @@ def Leer_Archivo(Archivo,label):
     for i in range(len(Lineas)):
         Linea_actual = Lineas[i]
 
-        if  Linea_actual.strip():
+        if Linea_actual.strip():
 
             if ':' in Linea_actual:
                 Auxiliar = Linea_actual.split(':')
@@ -662,23 +704,44 @@ def Leer_Archivo(Archivo,label):
                              vector[1].append(palabra[0])
                     else:
 
-                        if(Linea_actual=="DEC A"):
-                            Linea_actual = "SUB A,1"
-                        if(Linea_actual=="INC A"):
-                            Linea_actual = "ADD A,1"
+                        try: #Cambia los INC por ADD, DEC por SUB || TRY por si aparece "nop"
+                            lSpit = Linea_actual.split(" ")
+                            if(lSpit[0] == "INC"):
+                                Linea_actual = "ADD "+lSpit[1]+",1"
+                            if(lSpit[0] == "DEC"):
+                                Linea_actual = "SUB "+lSpit[1]+",1"
+                            if(lSpit[0] == "POP"):
+                                label[LabelName].append("POP1 "+lSpit[1]) #Inventada por mi
+                                Linea_actual = "INCSP "+lSpit[1] #Inventada por mi
+                        except:
+                            Linea_actual = Linea_actual #Hace nada
+
                         label[LabelName].append(Linea_actual)
                 else:
 
                     r = random.randint(0,100000)
                     extra = str(r)
                     label[extra]=[]
+
+                    try: #Cambia los INC por ADD, DEC por SUB || TRY por si aparece "nop"
+                        lSpit = Linea_actual.split(" ")
+                        if(lSpit[0] == "INC"):
+                            Linea_actual = "ADD "+lSpit[1]+",1"
+                        if(lSpit[0] == "DEC"):
+                            Linea_actual = "SUB "+lSpit[1]+",1"
+                        if(lSpit[0] == "POP"):
+                            label[extra].append("POP1 "+lSpit[1]) #Inventada por mi
+                            Linea_actual = "INCSP "+lSpit[1] #Inventada por mi
+                    except:
+                        Linea_actual = Linea_actual #Hace nada
+
                     label[extra].append(Linea_actual)
                     orden_labels.append(str(r))
     print(label)
     archivo.close()
 
 #root.fileopenname = filedialog.askopenfilename(initialdir = "./",title = "Escoge input")
-Leer_Archivo('P2.txt',label)
+Leer_Archivo('Ejemplo8.txt',label)
 
 
 dataFinal(label) #Calcula los comandos en texto
@@ -689,7 +752,6 @@ rellenaLista(listaInsBin,4096) #rellena la lista listaInsBin con 4096 elementos
 
 #root.filesavename = filedialog.asksaveasfilename(initialdir = "./", title = "Escoge output")
 outputTXT('output.txt')
-#IMPORTATE: LISTA CON 4096 ES LA LISTA listaInsBin
 
 
 
