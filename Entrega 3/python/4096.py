@@ -340,8 +340,7 @@ def dataFinal(diccionario):
         for instruccion in ins:
             instrucciones2["DATA"].append(instruccion)
 
-    if(len(instrucciones2["DATA"])>0):
-        instrucciones2["DATA"].append("MOV B,0") #Limpia registro A despues de las variables
+    instrucciones2["DATA"].append("MOV B,0") #Limpia registro A despues de las variables
 
     '''for labelNombre in labelVar:
         for labelIns in variablesIns(labelNombre):
@@ -569,6 +568,7 @@ def dataFinalBin(dict):
         funcion = dict[nombre] #data,code,end,etc
         for ins in funcion: #cada instruccion de cada funcion
             if(ins_generica(ins)):
+                print(ins_generica(ins))
                 insgen,izq,der=ins_generica(ins)
                 if(esint(izq)):
                     literal=Rellena(str(izq),16)
@@ -632,7 +632,7 @@ def outputTXT(file):
             f.write(str('\t"'+listaInsBin[i]+'"'))
 
         try:
-            f.write(str(" -- "+listaInsTxt[i][0]+" | "+listaInsTxt[i][1]+" | "+listaInsTxt[i][2]))
+            f.write(str(" -- "+str(i)+": "+listaInsTxt[i][0]+" | "+listaInsTxt[i][1]+" | "+listaInsTxt[i][2]))
             try:
                 f.write(str("\t--> "+str(l[i])+"\n"))
             except:
@@ -719,7 +719,7 @@ def Leer_Archivo(Archivo,label):
                                 label[LabelName].append("INCSP "+lSpit[1]) #Inventada por mi
                                 Linea_actual = "POP1 "+lSpit[1] #Inventada por mi
                         except:
-                            Linea_actual = Linea_actual #Hace nada
+                            continue #Hace nada
 
                         label[LabelName].append(Linea_actual)
                 else:
@@ -738,17 +738,18 @@ def Leer_Archivo(Archivo,label):
                             label[extra].append("INCSP "+lSpit[1]) #Inventada por mi
                             Linea_actual = "POP1 "+lSpit[1]#Inventada por mi
                     except:
-                        Linea_actual = Linea_actual #Hace nada
+                        continue #Hace nada
 
                     label[extra].append(Linea_actual)
                     orden_labels.append(extra)
-                    contador_label+=1
+                    contador_label += 1
                     Espacios_Label.append(0)
     print(label)
     archivo.close()
 
-#root.fileopenname = filedialog.askopenfilename(initialdir = "./",title = "Escoge input")
-Leer_Archivo('Ejemplo8.txt',label)
+root.fileopenname = filedialog.askopenfilename(initialdir = "./",title = "Escoge input")
+Leer_Archivo(root.fileopenname,label)
+#Leer_Archivo('Ejemplo8.txt',label)
 
 
 
@@ -758,8 +759,9 @@ dataFinalBin(instrucciones2) #transforma instrucciones a bin y agrega en lista l
 
 rellenaLista(listaInsBin,4096) #rellena la lista listaInsBin con 4096 elementos
 
-#root.filesavename = filedialog.asksaveasfilename(initialdir = "./", title = "Escoge output")
-outputTXT('output.txt')
+root.filesavename = filedialog.asksaveasfilename(initialdir = "./", title = "Escoge output")
+outputTXT(root.filesavename)
+#outputTXT('output.txt')
 
 
 
