@@ -597,6 +597,7 @@ def rellenaLista(lista,N):
         lista.append(Rellena("",33))
 
 def outputTXT(file):
+    l = {}
     f = open(file,'w+')
 
     ##Info
@@ -606,6 +607,7 @@ def outputTXT(file):
     f.write("---\n")
     for linea in countIns:
         f.write("-- "+str(linea)+" | "+str(countIns[linea])+" | "+str(sumBin(str(countIns[linea])))+"\n")
+        l[countIns[linea]] = str(linea)
     f.write("\n")
     f.write("library IEEE;\n")
     f.write("use IEEE.STD_LOGIC_1164.ALL;\n")
@@ -631,7 +633,11 @@ def outputTXT(file):
             f.write(str('\t"'+listaInsBin[i]+'"'))
 
         try:
-            f.write(str(" -- "+listaInsTxt[i][0]+" | "+listaInsTxt[i][1]+" | "+listaInsTxt[i][2]+"\n"))
+            f.write(str(" -- "+listaInsTxt[i][0]+" | "+listaInsTxt[i][1]+" | "+listaInsTxt[i][2]))
+            try:
+                f.write(str("\t--> "+str(l[i])+"\n"))
+            except:
+                f.write("\n")
         except:
             f.write("\n")
     f.write(");\n")
@@ -711,8 +717,8 @@ def Leer_Archivo(Archivo,label):
                             if(lSpit[0] == "DEC"):
                                 Linea_actual = "SUB "+lSpit[1]+",1"
                             if(lSpit[0] == "POP"):
-                                label[LabelName].append("POP1 "+lSpit[1]) #Inventada por mi
-                                Linea_actual = "INCSP "+lSpit[1] #Inventada por mi
+                                label[LabelName].append("INCSP "+lSpit[1]) #Inventada por mi
+                                Linea_actual = "POP1 "+lSpit[1] #Inventada por mi
                         except:
                             Linea_actual = Linea_actual #Hace nada
 
