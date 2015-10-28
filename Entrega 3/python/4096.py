@@ -569,7 +569,6 @@ def dataFinalBin(dict):
         funcion = dict[nombre] #data,code,end,etc
         for ins in funcion: #cada instruccion de cada funcion
             if(ins_generica(ins)):
-                print(ins_generica(ins))
                 insgen,izq,der=ins_generica(ins)
                 if(esint(izq)):
                     literal=Rellena(str(izq),16)
@@ -590,7 +589,7 @@ def dataFinalBin(dict):
                 listaInsBin.append(str(opcode)+str(literal))
                 listaInsTxt.append(ins_generica(ins))
                 #count += 1
-    print(listaInsTxt)
+
 
 def rellenaLista(lista,N):
     for i in range(len(lista), N):
@@ -736,18 +735,21 @@ def Leer_Archivo(Archivo,label):
                         if(lSpit[0] == "DEC"):
                             Linea_actual = "SUB "+lSpit[1]+",1"
                         if(lSpit[0] == "POP"):
-                            label[extra].append("POP1 "+lSpit[1]) #Inventada por mi
-                            Linea_actual = "INCSP "+lSpit[1] #Inventada por mi
+                            label[extra].append("INCSP "+lSpit[1]) #Inventada por mi
+                            Linea_actual = "POP1 "+lSpit[1]#Inventada por mi
                     except:
                         Linea_actual = Linea_actual #Hace nada
 
                     label[extra].append(Linea_actual)
-                    orden_labels.append(str(r))
+                    orden_labels.append(extra)
+                    contador_label+=1
+                    Espacios_Label.append(0)
     print(label)
     archivo.close()
 
 #root.fileopenname = filedialog.askopenfilename(initialdir = "./",title = "Escoge input")
 Leer_Archivo('Ejemplo8.txt',label)
+
 
 
 dataFinal(label) #Calcula los comandos en texto
