@@ -167,7 +167,7 @@ lista = {
     'RET':'1000110',
 
     'ADD (SP),Lit' : '1001101', #Aumenta el SP
-    'DEC (SP),Lit' : '1001101', #Disminuye el SP
+    'DEC (SP),Lit' : '1001101', #SIN USO - Disminuye el SP
 
     'IN A,Lit':'1101000',
     'IN B,Lit':'1101001',
@@ -718,8 +718,9 @@ def Leer_Archivo(Archivo,label):
                                 Linea_actual = "SUB "+lSpit[1]+",1"
                             if(lSpit[0] == "POP"):
                                 label[LabelName].append("ADD (SP),1") #Inventada
-                            if(lSpit[0] == "PUSH"):
-                                label[extra].append("DEC (SP),1") #Inventada
+                            '''if(lSpit[0] == "PUSH"):
+                                label[LabelName].append("PUSH "+lSpit[1])
+                                Linea_actual = "DEC (SP),1" #Inventada'''
                             if(lSpit[0] == "RET"):
                                 label[LabelName].append("ADD (SP),1") #Inventada
                         except:
@@ -740,10 +741,11 @@ def Leer_Archivo(Archivo,label):
                             Linea_actual = "SUB "+lSpit[1]+",1"
                         if(lSpit[0] == "POP"):
                             label[extra].append("ADD (SP),1") #Inventada
-                        if(lSpit[0] == "PUSH"):
-                            label[extra].append("DEC (SP),1") #Inventada
+                        '''if(lSpit[0] == "PUSH"):
+                            label[extra].append("PUSH "+lSpit[1])
+                            Linea_actual = "DEC (SP),1" #Inventada'''
                         if(lSpit[0] == "RET"):
-                            label[LabelName].append("ADD (SP),1") #Inventada
+                            label[extra].append("ADD (SP),1") #Inventada
                     except:
                         continue #Hace nada
 
