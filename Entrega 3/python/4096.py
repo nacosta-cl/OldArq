@@ -67,7 +67,7 @@ lista = {
     "MOV A,(B)":'0001000',
     'MOV B,(B)':'0001001',
     'MOV (B),A':'0001010',
-    'MOV (B),Lit':'1010110',#no esta
+    'MOV (B),Lit':'1010110',
 
     'ADD A,B' : '0001011',
     'ADD B,A' : '0001100',
@@ -77,8 +77,8 @@ lista = {
     'ADD B,(Dir)' : '1000001',
     'ADD (Dir)' : '0010000',
     'ADD A,(B)':'0001111',
-    'ADD B,(B)':'1010111', #no esta
-    'ADD (B),Lit':'1011000', #no esta No dice que deberia estar pero aparece en lso ejemplos
+    'ADD B,(B)':'1010111',
+    'ADD (B),Lit':'1011000',
 
     'SUB A,B' : '0010001',
     'SUB B,A' : '0010010',
@@ -88,7 +88,7 @@ lista = {
     'SUB B,(Dir)' : '1000100',
     'SUB (Dir)' : '0010101',
     'SUB A,(B)':'0010100',
-    'SUB B,(B)':'1011001', #no esta
+    'SUB B,(B)':'1011001',
 
     'AND A,B' : '0010110',
     'AND B,A' : '0010111',
@@ -98,7 +98,7 @@ lista = {
     'AND B,(Dir)' : '1000101',
     'AND(Dir)' : '0011011',
     'AND A,(B)':'0011010',
-    'AND B,(B)':'1011010', #no esta
+    'AND B,(B)':'1011010',
 
     'OR A,B' : '0011100',
     'OR B,A' : '0011101',
@@ -108,12 +108,12 @@ lista = {
     'OR B,(Dir)' : '1001000',
     'OR (Dir)' : '0100001',
     'OR A,(B)':'0100000',
-    'OR B,(B)':'1011011', #no esta
+    'OR B,(B)':'1011011',
 
     'NOT A' : '0100010',
     'NOT B,A' : '0100011',
     'NOT (Dir),A' : '1010100',
-    'NOT (B),A' : '1100000', #no esta
+    'NOT (B),A' : '1100000',
 
     'XOR A,B' : '0101000',
     'XOR B,A' : '0101001',
@@ -123,29 +123,29 @@ lista = {
     'XOR B,(Dir)' : '1001010',
     'XOR (Dir)' : '0101101',
     'XOR A,(B)':'0101100',
-    'XOR B,(B)':'1100001', #no esta
+    'XOR B,(B)':'1100001',
 
     'SHL A' : '0101110',
     'SHL B,A' : '0101111',
     'SHL (Dir),A' : '0110011',
-    'SHL (B),A':'1100010', #no esta
+    'SHL (B),A':'1100010',
 
     'SHR A' : '0110100',
     'SHR B,A' : '0110101',
     'SHR (Dir),A' : '0111001',
-    'SHR (B),A':'1100011', #no esta
+    'SHR (B),A':'1100011',
 
-    'INC A' : '1100100', ##sin uso
+    'INC A' : '1100100',
     'INC B' : '0111010',
     'INC (Dir)' : '1001011',
-    'INC (B)' : '1100101', ##sin uso <=> ADD (B),1 ????
+    'INC (B)' : '1100101', ## <=> ADD (B),1 ????
 
-    'DEC A' : '1100110', ##sin uso
+    'DEC A' : '1100110',
 
     'CMP A,B' : '0111011',
     'CMP A,Lit' : '0111100',
     'CMP A,(Dir)' : '1001100',
-    'CMP A,(B)':'1100111', #no esta
+    'CMP A,(B)':'1100111',
 
     'JMP Ins' : '0111101',
     'JEQ Ins' : '1001101',
@@ -160,17 +160,18 @@ lista = {
     'PUSH A':'1001000',
     'PUSH B':'1001001',
 
-    'POP1 A':'1001010',
-    'INCSP A':'1001011',
-    'POP1 B':'1001100',
-    'INCSP B':'1001101',
+    'POP A':'1001010',
+    'POP B':'1001100',
 
     'CALL Dir':'1000101',
-    'RET':'1000110', #falta la otra
+    'RET':'1000110',
 
-    'IN A,Lit':'1101000', #no esta
-    'IN B,Lit':'1101001', #no esta
-    'IN (B),Lit':'1101010' #no esta
+    'ADD (SP),Lit' : '1001101', #Aumenta el SP
+    'DEC (SP),Lit' : '1001101', #Disminuye el SP
+
+    'IN A,Lit':'1101000',
+    'IN B,Lit':'1101001',
+    'IN (B),Lit':'1101010'
 }
 #print(lista)
 instrucciones = {}
@@ -653,7 +654,7 @@ def Leer_Archivo(Archivo,label):
     Linea= archivo.readline()
     Lineas = [] ## las Lineas que nos sirver
     Espacios_Label=[] ## espacios o tabulaciones de los Labels
-    contador_label =-1 ## cuantos labels hay
+    contador_label = -1 ## cuantos labels hay
     vector = []
 
 
@@ -668,7 +669,7 @@ def Leer_Archivo(Archivo,label):
         Linea_actual = Lineas[i]
 
         if Linea_actual.strip():
-
+            #print(Linea_actual)
             if ':' in Linea_actual:
                 Auxiliar = Linea_actual.split(':')
                 Nombre_Label = Auxiliar[0].strip()#Nombre label
@@ -696,7 +697,7 @@ def Leer_Archivo(Archivo,label):
                 if Espacios_linea_actual >= Espacios_Label[contador_label]: # si la linea en la que vamos tiene igual o mas espacios al comienzo que la linea anterior es porque
                     #pertenence al mismo label, sino es de CODE
                     LabelName = orden_labels[contador_label]
-                    if LabelName =="DATA":
+                    if LabelName == "DATA":
                         palabra = Linea_actual.split(" ")
 
                         if tipoPalabra(palabra[0]) == 1:
@@ -716,8 +717,11 @@ def Leer_Archivo(Archivo,label):
                             if(lSpit[0] == "DEC"):
                                 Linea_actual = "SUB "+lSpit[1]+",1"
                             if(lSpit[0] == "POP"):
-                                label[LabelName].append("INCSP "+lSpit[1]) #Inventada por mi
-                                Linea_actual = "POP1 "+lSpit[1] #Inventada por mi
+                                label[LabelName].append("ADD (SP),1") #Inventada
+                            if(lSpit[0] == "PUSH"):
+                                label[extra].append("DEC (SP),1") #Inventada
+                            if(lSpit[0] == "RET"):
+                                label[LabelName].append("ADD (SP),1") #Inventada
                         except:
                             continue #Hace nada
 
@@ -735,8 +739,11 @@ def Leer_Archivo(Archivo,label):
                         if(lSpit[0] == "DEC"):
                             Linea_actual = "SUB "+lSpit[1]+",1"
                         if(lSpit[0] == "POP"):
-                            label[extra].append("INCSP "+lSpit[1]) #Inventada por mi
-                            Linea_actual = "POP1 "+lSpit[1]#Inventada por mi
+                            label[extra].append("ADD (SP),1") #Inventada
+                        if(lSpit[0] == "PUSH"):
+                            label[extra].append("DEC (SP),1") #Inventada
+                        if(lSpit[0] == "RET"):
+                            label[LabelName].append("ADD (SP),1") #Inventada
                     except:
                         continue #Hace nada
 
