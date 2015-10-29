@@ -67,7 +67,7 @@ lista = {
     "MOV A,(B)":'0001000',
     'MOV B,(B)':'0001001',
     'MOV (B),A':'0001010',
-    'MOV (B),Lit':'1111111',#no esta
+    'MOV (B),Lit':'1010110',#no esta
 
     'ADD A,B' : '0001011',
     'ADD B,A' : '0001100',
@@ -77,8 +77,8 @@ lista = {
     'ADD B,(Dir)' : '1000001',
     'ADD (Dir)' : '0010000',
     'ADD A,(B)':'0001111',
-    'ADD B,(B)':'1111111', #no esta
-    'ADD (B),Lit':'1111111', #no esta No dice que deberia estar pero aparece en lso ejemplos
+    'ADD B,(B)':'1010111', #no esta
+    'ADD (B),Lit':'1011000', #no esta No dice que deberia estar pero aparece en lso ejemplos
 
     'SUB A,B' : '0010001',
     'SUB B,A' : '0010010',
@@ -88,7 +88,7 @@ lista = {
     'SUB B,(Dir)' : '1000100',
     'SUB (Dir)' : '0010101',
     'SUB A,(B)':'0010100',
-    'SUB B,(B)':'1111111', #no esta
+    'SUB B,(B)':'1011001', #no esta
 
     'AND A,B' : '0010110',
     'AND B,A' : '0010111',
@@ -98,7 +98,7 @@ lista = {
     'AND B,(Dir)' : '1000101',
     'AND(Dir)' : '0011011',
     'AND A,(B)':'0011010',
-    'AND B,(B)':'1111111', #no esta
+    'AND B,(B)':'1011010', #no esta
 
     'OR A,B' : '0011100',
     'OR B,A' : '0011101',
@@ -108,12 +108,12 @@ lista = {
     'OR B,(Dir)' : '1001000',
     'OR (Dir)' : '0100001',
     'OR A,(B)':'0100000',
-    'OR B,(B)':'1111111', #no esta
+    'OR B,(B)':'1011011', #no esta
 
     'NOT A' : '0100010',
     'NOT B,A' : '0100011',
     'NOT (Dir),A' : '1010100',
-    'NOT (B),A' : '1111111', #no esta
+    'NOT (B),A' : '1100000', #no esta
 
     'XOR A,B' : '0101000',
     'XOR B,A' : '0101001',
@@ -123,29 +123,29 @@ lista = {
     'XOR B,(Dir)' : '1001010',
     'XOR (Dir)' : '0101101',
     'XOR A,(B)':'0101100',
-    'XOR B,(B)':'1111111', #no esta
+    'XOR B,(B)':'1100001', #no esta
 
     'SHL A' : '0101110',
     'SHL B,A' : '0101111',
     'SHL (Dir),A' : '0110011',
-    'SHL (B),A':'1111111', #no esta
+    'SHL (B),A':'1100010', #no esta
 
     'SHR A' : '0110100',
     'SHR B,A' : '0110101',
     'SHR (Dir),A' : '0111001',
-    'SHR (B),A':'1111111', #no esta
+    'SHR (B),A':'1100011', #no esta
 
-    'INC A' : '11111110', ##sin uso
+    'INC A' : '1100100', ##sin uso
     'INC B' : '0111010',
     'INC (Dir)' : '1001011',
-    'INC (B)' : '1111111', ##sin uso <=> ADD (B),1 ????
+    'INC (B)' : '1100101', ##sin uso <=> ADD (B),1 ????
 
-    'DEC A' : '11111111', ##sin uso
+    'DEC A' : '1100110', ##sin uso
 
     'CMP A,B' : '0111011',
     'CMP A,Lit' : '0111100',
     'CMP A,(Dir)' : '1001100',
-    'CMP A,(B)':'1111111', #no esta
+    'CMP A,(B)':'1100111', #no esta
 
     'JMP Ins' : '0111101',
     'JEQ Ins' : '1001101',
@@ -168,9 +168,9 @@ lista = {
     'CALL Dir':'1000101',
     'RET':'1000110', #falta la otra
 
-    'IN A,Lit':'1111111', #no esta
-    'IN B,Lit':'1111111', #no esta
-    'IN (B),Lit':'1111111' #no esta
+    'IN A,Lit':'1101000', #no esta
+    'IN B,Lit':'1101001', #no esta
+    'IN (B),Lit':'1101010' #no esta
 }
 #print(lista)
 instrucciones = {}
