@@ -1,0 +1,38 @@
+DATA:
+vector	1
+		5
+		8
+		2
+		22
+		4
+n		6		//cantidad num en vector
+i		1		//puntero vector
+sum		0		//sum vector
+prom	0		//promedio (return)
+promres	0		//resto del promedio (por si no es entero)
+
+CODE:
+MOV B,vector
+MOV B,(B)
+
+start:
+	MOV A,(i)
+	CMP A,(n) 		//cmp i con n
+	JGT dividir		//se sumaron todos los numeros (i>n)
+	MOV A,(sum)
+	ADD A,(B)       //suma el valor en sum
+	MOV (sum),A
+	INC (i) 		//i++
+	INC (B)
+	JMP start
+
+dividir:
+	MOV A,(sum)
+	MOV B,(prom)
+	SUB A,(n)		// sum -= n
+	ADD B,(n) 		// prom += n
+	MOV (sum),A
+	MOV (prom),B
+	CMP A,(n)
+	JGE dividir 	//sum>=prom
+	MOV (promres),A	//deja el resto

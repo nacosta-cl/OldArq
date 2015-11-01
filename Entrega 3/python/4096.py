@@ -461,6 +461,7 @@ def ins_generica(ins):
     valor = valor.strip()
     retorna = ""
     if(nombre!=""):
+        print(ins)
         if(valor.count(",")>0): #del tipo MOV x,y
             izqcoma,dercoma=valor.split(",") #lado izq y lado der de la coma
             if(instr_binario(valor)=="instruccion"): #tipo MOV A,Lit || MOV A,B
@@ -471,10 +472,10 @@ def ins_generica(ins):
                     retorna = str(nombre)+" "+str(izqcoma)+",Lit"
                     dercoma = transformarBin(dercoma)
                 else:
-                    if(len(izqcoma)>1):
+                    if(izqcoma != "A" and izqcoma != "B"):
                         retorna = str(nombre)+" Lit,"+str(dercoma)
                         izqcoma = str(variables[str(izqcoma)+str(0)])
-                    elif(len(dercoma)>1):
+                    elif(dercoma != "A" and dercoma != "B"):
                         retorna = str(nombre)+" "+str(izqcoma)+",Lit"
                         dercoma = str(variables[str(dercoma)+str(0)])
                     else:
@@ -725,9 +726,13 @@ def Leer_Archivo(Archivo,label):
                         try: #Cambia los INC por ADD, DEC por SUB || TRY por si aparece "nop"
                             lSpit = Linea_actual.split(" ")
                             if(lSpit[0] == "INC"):
-                                Linea_actual = "ADD "+lSpit[1]+",1"
+                                Linea_actual = "ADD "+lSpit[1]
+                                if(lSpit[1] == "A" or lSpit[1] == "B" or lSpit[1] == "(B)"):
+                                    Linea_actual += ",1"
                             if(lSpit[0] == "DEC"):
-                                Linea_actual = "SUB "+lSpit[1]+",1"
+                                Linea_actual = "SUB "+lSpit[1]
+                                if(lSpit[1] == "A" or lSpit[1] == "B" or lSpit[1] == "(B)"):
+                                    Linea_actual += ",1"
                             if(lSpit[0] == "POP" or lSpit[0] == "RET"):
                                 label[LabelName].append("ADD SP,1") #Inventada
                             '''if(lSpit[0] == "PUSH"):
@@ -746,9 +751,13 @@ def Leer_Archivo(Archivo,label):
                     try: #Cambia los INC por ADD, DEC por SUB || TRY por si aparece "nop"
                         lSpit = Linea_actual.split(" ")
                         if(lSpit[0] == "INC"):
-                            Linea_actual = "ADD "+lSpit[1]+",1"
+                            Linea_actual = "ADD "+lSpit[1]
+                            if(lSpit[1] == "A" or lSpit[1] == "B" or lSpit[1] == "(B)"):
+                                Linea_actual += ",1"
                         if(lSpit[0] == "DEC"):
-                            Linea_actual = "SUB "+lSpit[1]+",1"
+                            Linea_actual = "SUB "+lSpit[1]
+                            if(lSpit[1] == "A" or lSpit[1] == "B" or lSpit[1] == "(B)"):
+                                Linea_actual += ",1"
                         if(lSpit[0] == "POP" or lSpit[0] == "RET"):
                             label[extra].append("ADD SP,1") #Inventada
                         '''if(lSpit[0] == "PUSH"):
