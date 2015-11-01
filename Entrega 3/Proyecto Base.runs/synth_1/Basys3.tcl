@@ -3,7 +3,6 @@
 # 
 
 debug::add_scope template.lib 1
-set_msg_config -id {Common-41} -limit 4294967295
 set_msg_config -id {HDL 9-1061} -limit 100000
 set_msg_config -id {HDL 9-1654} -limit 100000
 create_project -in_memory -part xc7a35tcpg236-1
@@ -25,6 +24,7 @@ read_vhdl -library xil_defaultlib {
   {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/OR16b.vhd}
   {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/NOT16b.vhd}
   {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/AND16b.vhd}
+  {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/CU.vhd}
   {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/ROM.vhd}
   {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/reg_3b.vhd}
   {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/Reg.vhd}
@@ -33,7 +33,6 @@ read_vhdl -library xil_defaultlib {
   {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/MUX_2b_12d.vhd}
   {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/MUX.vhd}
   {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/Led_Driver.vhd}
-  {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/CU.vhd}
   {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/Clock_Divider.vhd}
   {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/ALU.vhd}
   {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/Basys3.vhd}

@@ -1,0 +1,19 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Wed Oct 28 19:02:51 2015
+# Process ID: 9188
+# Log file: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 3/vivado.log
+# Journal file: C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 3\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/Nacosta/Documents/DEV/Arqui/ArquiProyectos/Entrega 3/Proyecto Base.xpr}
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2015.2/data/ip'.
+open_project: Time (s): cpu = 00:00:29 ; elapsed = 00:00:24 . Memory (MB): peak = 632.258 ; gain = 88.941
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Oct 28 19:08:11 2015...

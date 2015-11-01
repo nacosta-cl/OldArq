@@ -91,8 +91,13 @@ component CU
             selALU      : out std_logic_vector (2 downto 0);
             write       : out std_logic;
             LPC         : out std_logic;
-            wStatus     : out std_logic;
-            jmpBits     : out std_logic_vector (7 downto 0));
+            jmpBits     : out std_logic_vector (7 downto 0);
+            IncSP       : out std_logic;
+            DecSP       : out std_logic;
+            Spc         : out std_logic;
+            Sadd        : out std_logic_vector(1 downto 0);
+            Sdin        : out std_logic  
+            );
     end component;
 
 component ALU
@@ -292,8 +297,12 @@ inst_CU: CU port map(
         selALU    => ALUselect, 
         write     => write,
         LPC       => loadPC,
-        wStatus   => writeStatus,
-        jmpBits   => jBits (7 downto 0)
+        jmpBits   => jBits (7 downto 0),
+        IncSP     => IncSP,
+        DecSP     => DecSP,
+        Spc       => selMuxPC(0),
+        Sadd      => Sadd,
+        Sdin      => selMuxDin(0)
     );
 --PC
 inst_PC: PC port map(
@@ -365,16 +374,16 @@ inst_MUXDataIn: MUX_2b port map(
     );
     
 inst_MUXPC: MUX_2b_12d port map(
-        e1      => RAMdout(11 downto 0),
-        e2      => addr,
+        e1      => addr,
+        e2      => RAMdout(11 downto 0),
         e3      => "000000000000",
         e4      => "000000000000",
         mSelect => selMuxPC,
         muxOut  => PCset
     );
 inst_MUXSP: MUX_2b_12d port map(
-        e1      => SPout(11 downto 0),
-        e2      => addr,
+        e1      => addr,
+        e2      => SPout(11 downto 0),
         e3      => numB12,
         e4      => "000000000000",
         mSelect => Sadd,
