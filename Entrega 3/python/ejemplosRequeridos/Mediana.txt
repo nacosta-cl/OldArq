@@ -1,0 +1,67 @@
+DATA:
+arreglo 1
+	10
+	11
+	100
+	101
+largo  101
+vector  0
+	0
+n	10
+sum	0		//sum vector
+prom	0		//promedio (return)
+promres	0
+
+
+CODE:
+AND A,1
+CMP A,1
+JEQ impar
+JMP par
+
+impar:
+MOV A, (largo)
+INC A
+SHR A
+ADD B,A
+MOV A,(B)
+JMP fin
+
+par:
+MOV A,(largo)
+SHR A
+PUSH A
+INC A
+PUSH A
+CALL promedio
+JMP fin
+
+promedio:
+POP A
+MOV B,(sum)
+ADD A,B
+POP A
+ADD A,B
+MOV (sum),B
+JMP dividir
+
+dividir:
+	MOV A,(sum)
+	MOV B,(prom)
+	SUB A,(n)		// sum -= n
+	ADD B,(n) 		// prom += n
+	MOV (sum),A
+	MOV (prom),B
+	CMP A,(n)
+	JGE dividir 	//sum>=prom
+	MOV (promres),A
+	MOV A,(prom)
+	RET
+
+
+
+
+
+
+fin:
+JMP fin
