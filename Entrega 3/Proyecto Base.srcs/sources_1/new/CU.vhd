@@ -164,7 +164,6 @@ ctrlSigs <= "00000010000000000" when ((cEQ = '1') or (cNE = '1') or (cGT = '1') 
                 --spc         0->lit 1->dout
                 -- Leer
 --incsp|decsp|spc|sadd|sdin|loadPC|loadA|loadB|selectMuxA|selectMuxB|selectALU|Write (11bits)
-0 0 0 10 0 000 10 01 101 1
 with OPcode select
                 --MOV
  naturalSigs <= "00000000000000000" when "0000000", --NOP

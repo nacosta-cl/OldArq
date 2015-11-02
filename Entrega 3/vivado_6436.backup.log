@@ -2,8 +2,8 @@
 # Vivado v2015.2 (64-bit)
 # SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
 # IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
-# Start of session at: Sun Nov 01 22:32:55 2015
-# Process ID: 6436
+# Start of session at: Sun Nov 01 16:48:12 2015
+# Process ID: 9120
 # Log file: C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/vivado.log
 # Journal file: C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3\vivado.jou
 #-----------------------------------------------------------
@@ -15,6 +15,6 @@ Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2015.2/data/ip'.
-open_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:06 . Memory (MB): peak = 721.512 ; gain = 160.336
+open_project: Time (s): cpu = 00:00:36 ; elapsed = 00:00:20 . Memory (MB): peak = 677.297 ; gain = 139.563
 exit
-INFO: [Common 17-206] Exiting Vivado at Sun Nov 01 22:35:07 2015...
+INFO: [Common 17-206] Exiting Vivado at Sun Nov 01 22:31:20 2015...
