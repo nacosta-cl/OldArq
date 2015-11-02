@@ -271,10 +271,11 @@ with OPcode select
                 "00010000010011101" when "1100011", --SHL (B),A
                 "00010000010011111" when "1100100", --SHR (B),A
                 "00010000010100010" when "1100111", --CMP A,(B)
+--incsp|decsp|spc|sadd|sdin|loadPC|loadA|loadB|selectMuxA|selectMuxB|selectALU|Write (11bits)
 
---                "00000000000000000" when "1101000", --IN A,Lit
---                "00000000000000000" when "1101001", --IN B,Lit
---                "00000000000000000" when "1101010", --IN (B),Lit
+                "00000001011000000" when "1101000", --IN A,Lit
+                "00000000111000000" when "1101001", --IN B,Lit
+                "00010000011000001" when "1101010", --IN (B),Lit
                
                 "00000000000000000" when others;
 

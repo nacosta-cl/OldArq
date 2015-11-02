@@ -17,7 +17,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity Basys3 is
     Port (
-        sw          : in   std_logic_vector (2 downto 0);
+        sw          : in   std_logic_vector (15 downto 0);
         btn         : in   std_logic_vector (4 downto 0);  -- 0 Center, 1 Up, 2 Left, 3 Right, 4 Down
         led         : out   std_logic_vector (15 downto 0);
         clk         : in   std_logic;
@@ -239,7 +239,8 @@ signal switches : STD_LOGIC_VECTOR (2 downto 0);
 --cable vacío
 signal nulo : STD_LOGIC;
 
-
+signal IOlit       : STD_LOGIC_VECTOR (15 downto 0);
+signal btnIN       : STD_LOGIC_VECTOR (15 downto 0);
 --Controles para el UART
 --UART_TX_CTRL control signals
 --signal uartRdy : std_logic;
@@ -404,7 +405,7 @@ inst_MUXa: MUX_2b port map(
         e1      => "0000000000000000",
         e2      => "0000000000000001",
         e3      => numA,
-        e4      => "0000000000000000",
+        e4      => IOlit,
         mSelect => selMuxA,
         muxOut  => ALUnumA
     );
@@ -417,7 +418,14 @@ inst_MUXb: MUX_2b port map(
         mSelect => selMuxB,
         muxOut  => ALUnumB
     );
- 
+inst_MUXIO: MUX_2b port map(
+        e1      => btnIN,
+        e2      => sw,
+        e3      => "0000000000000000",
+        e4      => "0000000000000000",
+        mSelect => lit(1 downto 0),
+        muxOut  => IOlit
+    );
 --Fin de instancias
 --Conexiones internas
 
@@ -443,27 +451,12 @@ switches(0)<= sw(0);
 switches(1)<= sw(1);
 switches(2)<= sw(2);
 
+btnIN(4 downto 0) <= btn;
 --Debugger (Ver opción UART)
 
 regValues(15 downto 8) <= numA(7 downto 0);
 regValues(7 downto 0) <= numB(7 downto 0);
 
-
---statusBits(10 downto 8) <= ALUstatus;
---statusBits(2 downto 0) <= actstatus;
---pcdisp(11 downto 0) <= PCaddr;
-
---with switches select
---    display <= ALUres   when "001",
---               numA     when "010",
---               numB     when "011",
---               RAMdOut  when "100",
---               pcdisp   when "101",
---               jbits    when "110",
---               statusBits when "111",
---               regValues when others;
-
-----Envío a los numeros led
 display <= regValues;
 dis_a <= display(15 downto 12);
 dis_b <= display(11 downto 8);
