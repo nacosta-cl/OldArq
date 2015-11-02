@@ -1,13 +1,13 @@
 DATA:
 arreglo 1
-	10
-	11
-	100
-	101
-largo  101
+	2
+	3
+	4
+	5
+largo  5
 vector  0
 	0
-n	10
+n	2
 sum	0		//sum vector
 prom	0		//promedio (return)
 promres	0

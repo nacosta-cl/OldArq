@@ -12,3 +12,5 @@ INC B
 MOV A, (B) // muestra un 6 en A
 INC B
 MOV A, (B) // muestra un 4 en A
+fin:
+JMP 10
