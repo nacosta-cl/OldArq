@@ -5,7 +5,7 @@ arreglo 1
 	4
 	4
 	5
-largo  5 
+largo  6
 a	0
 b	0
 c	0
