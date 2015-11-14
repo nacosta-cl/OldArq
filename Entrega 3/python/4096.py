@@ -114,7 +114,7 @@ lista = {
     '' : '0110111',
     '' : '0111000',
     'SHR (Dir),A' : '0111001',
-    'INC B' : '0111010',
+    'INC (B)' : '0111010',
     'CMP A,B' : '0111011',
     'CMP A,Lit' : '0111100',
     'JMP Ins' : '0111101',
@@ -145,7 +145,7 @@ lista = {
     'AND B,(Dir)' : '1010110',
     'MOV (B),Lit' : '1010111',
     'ADD B,(B)' : '1011000',
-    'ADD (B),Lit' : '1011001',
+    '' : '1011001',
     'SUB B,(B)' : '1011010',
     'AND B,(B)' : '1011011',
     'OR B,(B)' : '1011100',
@@ -163,8 +163,8 @@ lista = {
     'IN A,Lit' : '1101000',
     'IN B,Lit' : '1101001',
     'IN (B),Lit' : '1101010',
-    'DEC SP,Lit' : '1101011',
-    'ADD SP,Lit' : '1101100',
+    'DEC SP' : '1101011',
+    'INC SP' : '1101100',
     '' : '1101101',
     '' : '1101110',
     '' : '1101111',
@@ -726,15 +726,15 @@ def Leer_Archivo(Archivo,label):
                         try: #Cambia los INC por ADD, DEC por SUB || TRY por si aparece "nop"
                             lSpit = Linea_actual.split(" ")
                             if(lSpit[0] == "INC"):
-                                Linea_actual = "ADD "+lSpit[1]
-                                if(lSpit[1] == "A" or lSpit[1] == "B" or lSpit[1] == "(B)"):
+                                if(lSpit[1] == "A" or lSpit[1] == "B"):
+                                    Linea_actual = "ADD "+lSpit[1]
                                     Linea_actual += ",1"
                             if(lSpit[0] == "DEC"):
-                                Linea_actual = "SUB "+lSpit[1]
-                                if(lSpit[1] == "A" or lSpit[1] == "B" or lSpit[1] == "(B)"):
+                                if(lSpit[1] == "A" or lSpit[1] == "B"):
+                                    Linea_actual = "SUB "+lSpit[1]
                                     Linea_actual += ",1"
                             if(lSpit[0] == "POP" or lSpit[0] == "RET"):
-                                label[LabelName].append("ADD SP,1") #Inventada
+                                label[LabelName].append("INC SP") #Inventada
                             '''if(lSpit[0] == "PUSH"):
                                 label[LabelName].append("PUSH "+lSpit[1])
                                 Linea_actual = "DEC (SP),1" #Inventada'''
@@ -751,15 +751,15 @@ def Leer_Archivo(Archivo,label):
                     try: #Cambia los INC por ADD, DEC por SUB || TRY por si aparece "nop"
                         lSpit = Linea_actual.split(" ")
                         if(lSpit[0] == "INC"):
-                            Linea_actual = "ADD "+lSpit[1]
-                            if(lSpit[1] == "A" or lSpit[1] == "B" or lSpit[1] == "(B)"):
+                            if(lSpit[1] == "A" or lSpit[1] == "B"):
+                                Linea_actual = "ADD "+lSpit[1]
                                 Linea_actual += ",1"
                         if(lSpit[0] == "DEC"):
-                            Linea_actual = "SUB "+lSpit[1]
-                            if(lSpit[1] == "A" or lSpit[1] == "B" or lSpit[1] == "(B)"):
+                            if(lSpit[1] == "A" or lSpit[1] == "B"):
+                                Linea_actual = "SUB "+lSpit[1]
                                 Linea_actual += ",1"
                         if(lSpit[0] == "POP" or lSpit[0] == "RET"):
-                            label[extra].append("ADD SP,1") #Inventada
+                            label[extra].append("INC SP") #Inventada
                         '''if(lSpit[0] == "PUSH"):
                             label[extra].append("PUSH "+lSpit[1])
                             Linea_actual = "DEC (SP),1" #Inventada'''
