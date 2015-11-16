@@ -536,9 +536,13 @@ def ins_generica(ins):
                     retorna = str(nombre)+" "+str(valor)
                     izqcoma = str(valor)
                 elif(insToType(valor)==1): #variable: tipo INC (var)
-                    retorna = str(nombre)+" (Dir)"
-                    izqcoma = "("+str(transformarBin(str(variables[valor[1:-1]+"0"])))+")"
-                    dercoma = str(valor)
+                    if(str(valor) != "(B)"):
+                        retorna = str(nombre)+" (Dir)"
+                        izqcoma = "("+str(transformarBin(str(variables[valor[1:-1]+"0"])))+")"
+                        dercoma = str(valor)
+                    else:
+                        retorna = str(nombre)+" "+str(valor)
+                        izqcoma = str(valor)
                 else:
                     #retorna = str(nombre)+" Lit"
                     retorna = str(nombre)+" (Dir)" #Deberia ser Lit, pero no existe, y en ejemplo 6 se cae
