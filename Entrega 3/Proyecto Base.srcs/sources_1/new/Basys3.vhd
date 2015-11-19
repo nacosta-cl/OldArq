@@ -258,7 +258,7 @@ begin
 inst_Clock_Divider: Clock_Divider port map(
         clk         =>clk,
         clk_up      =>clk_up,
-        slow        =>'0',
+        slow        =>'1',
         clock       =>clock
     );
 
