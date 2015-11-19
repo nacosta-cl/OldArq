@@ -717,7 +717,7 @@ def Leer_Archivo(Archivo,label):
                     if LabelName == "DATA":
                         palabra = Linea_actual.split(" ")
 
-                        if len(palabra[1])> 0:
+                        if len(palabra[1]) > 0:
                             vector = []
                             vector.append(palabra[0])
                             vector.append([])
@@ -727,11 +727,14 @@ def Leer_Archivo(Archivo,label):
                                 if len(palabra[1][1:-1])>1:
                                     auxiliar = []
                                     for i in palabra[1][1:-1]:
-                                        auxiliar.append(i)
+                                        #print(ord(i)) #ord transforma a ascii
+                                        #auxiliar.append(i)
+                                        auxiliar.append(str(ord(i)))
                                     auxiliar.append('0')
                                     vector[1] = (auxiliar)
                                 else:
-                                    vector[1].append(str(palabra[1][1:-1]))
+                                    #vector[1].append(str(palabra[1][1:-1]))
+                                    vector[1].append(str(ord(palabra[1][1:-1])))
                             else:
                                 vector[1].append(palabra[1])
 
