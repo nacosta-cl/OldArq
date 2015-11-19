@@ -161,6 +161,18 @@ component MUX_2b_12d
            mSelect  : in STD_LOGIC_VECTOR (1 downto 0);
            muxOut : out STD_LOGIC_VECTOR (11 downto 0) );
 end component;
+component MUX_3b
+    Port ( e1 : in STD_LOGIC_VECTOR (15 downto 0);
+           e2 : in STD_LOGIC_VECTOR (15 downto 0);
+           e3 : in STD_LOGIC_VECTOR (15 downto 0);
+           e4 : in STD_LOGIC_VECTOR (15 downto 0);
+           e5 : in STD_LOGIC_VECTOR (15 downto 0);
+           e6 : in STD_LOGIC_VECTOR (15 downto 0);
+           e7 : in STD_LOGIC_VECTOR (15 downto 0);
+           e8 : in STD_LOGIC_VECTOR (15 downto 0);
+           mSelect  : in STD_LOGIC_VECTOR (2 downto 0);
+           muxOut : out STD_LOGIC_VECTOR (15 downto 0) );
+end component;
 component ADD16b Port 
 (
        word1 : in STD_LOGIC_VECTOR (15 downto 0);
@@ -179,6 +191,10 @@ signal timer_s        : std_logic_vector(15 downto 0);
 signal timer_ms        : std_logic_vector(15 downto 0);
 signal timer_us        : std_logic_vector(15 downto 0);
 
+--Decoder
+signal decoder1   : STD_LOGIC;
+signal decoder2   : STD_LOGIC;
+signal decoder3   : STD_LOGIC;
 
 --ALU
 signal ALUnumA      : STD_LOGIC_VECTOR (15 downto 0);
@@ -221,6 +237,8 @@ signal reg2 : STD_LOGIC_VECTOR (15 downto 0);
 
 signal numA : STD_LOGIC_VECTOR (15 downto 0);
 signal numB : STD_LOGIC_VECTOR (15 downto 0);
+signal numDis : STD_LOGIC_VECTOR (15 downto 0);
+signal numLed : STD_LOGIC_VECTOR (15 downto 0);
 
 signal numB12 : STD_LOGIC_VECTOR (11 downto 0);
 --PC
@@ -387,6 +405,24 @@ inst_SP: Reg port map(
         datain   => "0000000000000000",
         dataout  => SPout
     );
+
+inst_regDis: Reg port map(
+        clock    => clock,
+        load     => decoder2,
+        up       => '0',
+        down     => '0',
+        datain   => numA,
+        dataout  => numDis
+    );
+
+inst_regLed: Reg port map(
+        clock    => clock,
+        load     => decoder3,
+        up       => '0',
+        down     => '0',
+        datain   => numA,
+        dataout  => numLed
+    );
     
 inst_statusReg: Reg_3b port map(
         clock    => clock,
@@ -452,12 +488,17 @@ inst_MUXb: MUX_2b port map(
         mSelect => selMuxB,
         muxOut  => ALUnumB
     );
-inst_MUXIO: MUX_2b port map(
-        e1      => btnIN,
-        e2      => sw,
-        e3      => "0000000000000000",
-        e4      => "0000000000000000",
-        mSelect => lit(1 downto 0),
+inst_MUXIO: MUX_3b port map(
+        e1      => timer_s,
+        e2      => timer_ms,
+        e3      => timer_us,
+        e4(4 downto 0)  => d_btn,
+        e4(15 downto 5) => "00000000000",
+        e5      => sw,
+        e6      => "0000000000000000",
+        e7      => "0000000000000000",
+        e8      => "0000000000000000",
+        mSelect => lit(2 downto 0),
         muxOut  => IOlit
     );
 --Fin de instancias
