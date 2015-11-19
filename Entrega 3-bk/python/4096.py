@@ -166,7 +166,7 @@ lista = {
     'DEC SP' : '1101011',
     'INC SP' : '1101100',
     '0' : '1101101',
-    '0' : '1101110',
+    'INC B' : '1101110',
     '0' : '1101111',
     '0' : '1110000',
     '0' : '1110001',
@@ -536,13 +536,13 @@ def ins_generica(ins):
                     retorna = str(nombre)+" "+str(valor)
                     izqcoma = str(valor)
                 elif(insToType(valor)==1): #variable: tipo INC (var)
-                    if(str(valor) != "(B)"):
+                    if(str(valor) == "(B)" or str(valor) == "B"):
+                        retorna = str(nombre)+" "+str(valor)
+                        izqcoma = str(valor)
+                    else:
                         retorna = str(nombre)+" (Dir)"
                         izqcoma = "("+str(transformarBin(str(variables[valor[1:-1]+"0"])))+")"
                         dercoma = str(valor)
-                    else:
-                        retorna = str(nombre)+" "+str(valor)
-                        izqcoma = str(valor)
                 else:
                     #retorna = str(nombre)+" Lit"
                     retorna = str(nombre)+" (Dir)" #Deberia ser Lit, pero no existe, y en ejemplo 6 se cae
@@ -592,9 +592,9 @@ def dataFinalBin(dict):
                     literal=Rellena(str(izq),16)
                 elif(esint(der)):
                     literal=Rellena(str(der),16)
-                elif(izq[0]=="("): #direccion
+                elif(izq[0]=="(" and izq != "(B)"): #direccion
                     literal=Rellena(str(izq[1:-1]),16)
-                elif(der[0]=="("): #direccion
+                elif(der[0]=="(" and der != "(B)"): #direccion
                     literal=Rellena(str(der[1:-1]),16)
                 else:
                     literal=Rellena("",16)
@@ -730,11 +730,11 @@ def Leer_Archivo(Archivo,label):
                         try: #Cambia los INC por ADD, DEC por SUB || TRY por si aparece "nop"
                             lSpit = Linea_actual.split(" ")
                             if(lSpit[0] == "INC"):
-                                if(lSpit[1] == "A" or lSpit[1] == "B"):
+                                if(lSpit[1] == "A"):
                                     Linea_actual = "ADD "+lSpit[1]
                                     Linea_actual += ",1"
                             if(lSpit[0] == "DEC"):
-                                if(lSpit[1] == "A" or lSpit[1] == "B"):
+                                if(lSpit[1] == "A"):
                                     Linea_actual = "SUB "+lSpit[1]
                                     Linea_actual += ",1"
                             if(lSpit[0] == "POP" or lSpit[0] == "RET"):
@@ -755,11 +755,11 @@ def Leer_Archivo(Archivo,label):
                     try: #Cambia los INC por ADD, DEC por SUB || TRY por si aparece "nop"
                         lSpit = Linea_actual.split(" ")
                         if(lSpit[0] == "INC"):
-                            if(lSpit[1] == "A" or lSpit[1] == "B"):
+                            if(lSpit[1] == "A"):
                                 Linea_actual = "ADD "+lSpit[1]
                                 Linea_actual += ",1"
                         if(lSpit[0] == "DEC"):
-                            if(lSpit[1] == "A" or lSpit[1] == "B"):
+                            if(lSpit[1] == "A"):
                                 Linea_actual = "SUB "+lSpit[1]
                                 Linea_actual += ",1"
                         if(lSpit[0] == "POP" or lSpit[0] == "RET"):
