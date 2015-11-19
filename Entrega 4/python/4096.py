@@ -83,7 +83,7 @@ lista = {
     'AND A,Lit' : '0011000',
     'AND A,(Dir)' : '0011001',
     'AND A,(B)' : '0011010',
-    'AND(Dir)' : '0011011',
+    'AND (Dir)' : '0011011',
     'OR A,B' : '0011100',
     'OR B,A' : '0011101',
     'OR A,Lit' : '0011110',
@@ -91,11 +91,11 @@ lista = {
     'OR A,(B)' : '0100000',
     'OR (Dir)' : '0100001',
     'NOT A' : '0100010',
-    'NOT B,A' : '0100011',
-    '' : '0100100',
-    '' : '0100101',
-    '' : '0100110',
-    '' : '0100111',
+    'NOT B,A' : '0100011 ',
+    '0' : '0100100 ',
+    '0' : '0100101 ',
+    '0' : '0100110 ',
+    '0' : '0100111 ',
     'XOR A,B' : '0101000',
     'XOR B,A' : '0101001',
     'XOR A,Lit' : '0101010',
@@ -104,22 +104,22 @@ lista = {
     'XOR (Dir)' : '0101101',
     'SHL A' : '0101110',
     'SHL B,A' : '0101111',
-    '' : '0110000',
-    '' : '0110001',
-    '' : '0110010',
+    '0' : '0110000',
+    '0' : '0110001',
+    '0' : '0110010',
     'SHL (Dir),A' : '0110011',
     'SHR A' : '0110100',
     'SHR B,A' : '0110101',
-    '' : '0110110',
-    '' : '0110111',
-    '' : '0111000',
+    '0' : '0110110',
+    '0' : '0110111',
+    '0' : '0111000',
     'SHR (Dir),A' : '0111001',
-    'INC B' : '0111010',
+    'INC (B)' : '0111010',
     'CMP A,B' : '0111011',
     'CMP A,Lit' : '0111100',
     'JMP Ins' : '0111101',
-    '' : '0111110',
-    '' : '0111111',
+    '0' : '0111110',
+    '0' : '0111111',
     'ADD B,Lit' : '1000000',
     'ADD B,(Dir)' : '1000001',
     'SUB A,Lit' : '1000010',
@@ -145,7 +145,7 @@ lista = {
     'AND B,(Dir)' : '1010110',
     'MOV (B),Lit' : '1010111',
     'ADD B,(B)' : '1011000',
-    'ADD (B),Lit' : '1011001',
+    '0' : '1011001',
     'SUB B,(B)' : '1011010',
     'AND B,(B)' : '1011011',
     'OR B,(B)' : '1011100',
@@ -157,33 +157,33 @@ lista = {
     'XOR B,(B)' : '1100010',
     'SHL (B),A' : '1100011',
     'SHR (B),A' : '1100100',
-    '' : '1100101',
-    '' : '1100110',
+    '0' : '1100101',
+    '0' : '1100110',
     'CMP A,(B)' : '1100111',
     'IN A,Lit' : '1101000',
     'IN B,Lit' : '1101001',
     'IN (B),Lit' : '1101010',
-    'DEC SP,Lit' : '1101011',
-    'ADD SP,Lit' : '1101100',
-    'OUT A,B' : '1101101',
-    'OUT A,(B)' : '1101110',
-    'OUT A,(Dir)' : '1101111',
-    'OUT A,Lit' : '1110000',
-    '' : '1110001',
-    '' : '1110010',
-    '' : '1110011',
-    '' : '1110100',
-    '' : '1110101',
-    '' : '1110110',
-    '' : '1110111',
-    '' : '1111000',
-    '' : '1111001',
-    '' : '1111010',
-    '' : '1111011',
-    '' : '1111100',
-    '' : '1111101',
+    'DEC SP' : '1101011',
+    'INC SP' : '1101100',
+    '0' : '1101101',
+    'INC B' : '1101110',
+    '0' : '1101111',
+    '0' : '1110000',
+    '0' : '1110001',
+    '0' : '1110010',
+    '0' : '1110011',
+    '0' : '1110100',
+    '0' : '1110101',
+    '0' : '1110110',
+    '0' : '1110111',
+    '0' : '1111000',
+    '0' : '1111001',
+    '0' : '1111010',
+    '0' : '1111011',
+    '0' : '1111100',
+    '0' : '1111101',
     'MOV A,B' : '1111110',
-    '' : '1111111'
+    '0' : '1111111'
 }
 #print(lista)
 instrucciones = {}
@@ -536,9 +536,13 @@ def ins_generica(ins):
                     retorna = str(nombre)+" "+str(valor)
                     izqcoma = str(valor)
                 elif(insToType(valor)==1): #variable: tipo INC (var)
-                    retorna = str(nombre)+" (Dir)"
-                    izqcoma = "("+str(transformarBin(str(variables[valor[1:-1]+"0"])))+")"
-                    dercoma = str(valor)
+                    if(str(valor) == "(B)" or str(valor) == "B"):
+                        retorna = str(nombre)+" "+str(valor)
+                        izqcoma = str(valor)
+                    else:
+                        retorna = str(nombre)+" (Dir)"
+                        izqcoma = "("+str(transformarBin(str(variables[valor[1:-1]+"0"])))+")"
+                        dercoma = str(valor)
                 else:
                     #retorna = str(nombre)+" Lit"
                     retorna = str(nombre)+" (Dir)" #Deberia ser Lit, pero no existe, y en ejemplo 6 se cae
@@ -588,9 +592,9 @@ def dataFinalBin(dict):
                     literal=Rellena(str(izq),16)
                 elif(esint(der)):
                     literal=Rellena(str(der),16)
-                elif(izq[0]=="("): #direccion
+                elif(izq[0]=="(" and izq != "(B)"): #direccion
                     literal=Rellena(str(izq[1:-1]),16)
-                elif(der[0]=="("): #direccion
+                elif(der[0]=="(" and der != "(B)"): #direccion
                     literal=Rellena(str(der[1:-1]),16)
                 else:
                     literal=Rellena("",16)
@@ -713,17 +717,13 @@ def Leer_Archivo(Archivo,label):
                     if LabelName == "DATA":
                         palabra = Linea_actual.split(" ")
 
-
                         if len(palabra[1])> 0:
-                            print(palabra)
                             vector = []
                             vector.append(palabra[0])
                             vector.append([])
 
-
                             if palabra[1][0] == str("'") or palabra[1][0] == str('"'):
-                                print(palabra[1][0])
-                                print('si')
+                                #print(palabra[1][0])
                                 if len(palabra[1][1:-1])>1:
                                     auxiliar = []
                                     for i in palabra[1][1:-1]:
@@ -735,9 +735,6 @@ def Leer_Archivo(Archivo,label):
                             else:
                                 vector[1].append(palabra[1])
 
-
-
-
                             label[LabelName].append(vector)
                         else:
                              vector[1].append(palabra[0])
@@ -746,15 +743,15 @@ def Leer_Archivo(Archivo,label):
                         try: #Cambia los INC por ADD, DEC por SUB || TRY por si aparece "nop"
                             lSpit = Linea_actual.split(" ")
                             if(lSpit[0] == "INC"):
-                                Linea_actual = "ADD "+lSpit[1]
-                                if(lSpit[1] == "A" or lSpit[1] == "B" or lSpit[1] == "(B)"):
+                                if(lSpit[1] == "A"):
+                                    Linea_actual = "ADD "+lSpit[1]
                                     Linea_actual += ",1"
                             if(lSpit[0] == "DEC"):
-                                Linea_actual = "SUB "+lSpit[1]
-                                if(lSpit[1] == "A" or lSpit[1] == "B" or lSpit[1] == "(B)"):
+                                if(lSpit[1] == "A"):
+                                    Linea_actual = "SUB "+lSpit[1]
                                     Linea_actual += ",1"
                             if(lSpit[0] == "POP" or lSpit[0] == "RET"):
-                                label[LabelName].append("ADD SP,1") #Inventada
+                                label[LabelName].append("INC SP") #Inventada
                             '''if(lSpit[0] == "PUSH"):
                                 label[LabelName].append("PUSH "+lSpit[1])
                                 Linea_actual = "DEC (SP),1" #Inventada'''
@@ -771,15 +768,15 @@ def Leer_Archivo(Archivo,label):
                     try: #Cambia los INC por ADD, DEC por SUB || TRY por si aparece "nop"
                         lSpit = Linea_actual.split(" ")
                         if(lSpit[0] == "INC"):
-                            Linea_actual = "ADD "+lSpit[1]
-                            if(lSpit[1] == "A" or lSpit[1] == "B" or lSpit[1] == "(B)"):
+                            if(lSpit[1] == "A"):
+                                Linea_actual = "ADD "+lSpit[1]
                                 Linea_actual += ",1"
                         if(lSpit[0] == "DEC"):
-                            Linea_actual = "SUB "+lSpit[1]
-                            if(lSpit[1] == "A" or lSpit[1] == "B" or lSpit[1] == "(B)"):
+                            if(lSpit[1] == "A"):
+                                Linea_actual = "SUB "+lSpit[1]
                                 Linea_actual += ",1"
                         if(lSpit[0] == "POP" or lSpit[0] == "RET"):
-                            label[extra].append("ADD SP,1") #Inventada
+                            label[extra].append("INC SP") #Inventada
                         '''if(lSpit[0] == "PUSH"):
                             label[extra].append("PUSH "+lSpit[1])
                             Linea_actual = "DEC (SP),1" #Inventada'''
@@ -793,9 +790,9 @@ def Leer_Archivo(Archivo,label):
     print(label)
     archivo.close()
 
-#root.fileopenname = filedialog.askopenfilename(initialdir = "./",title = "Escoge input")
-#Leer_Archivo(root.fileopenname,label)
-Leer_Archivo('A1.txt',label)
+root.fileopenname = filedialog.askopenfilename(initialdir = "./",title = "Escoge input")
+Leer_Archivo(root.fileopenname,label)
+#Leer_Archivo('Ejemplo8.txt',label)
 
 
 
@@ -805,9 +802,9 @@ dataFinalBin(instrucciones2) #transforma instrucciones a bin y agrega en lista l
 
 rellenaLista(listaInsBin,4096) #rellena la lista listaInsBin con 4096 elementos
 
-#root.filesavename = filedialog.asksaveasfilename(initialdir = "./", title = "Escoge output")
-#outputTXT(root.filesavename)
-outputTXT('output.txt')
+root.filesavename = filedialog.asksaveasfilename(initialdir = "./", title = "Escoge output")
+outputTXT(root.filesavename)
+#outputTXT('output.txt')
 
 
 
