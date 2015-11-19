@@ -408,7 +408,7 @@ inst_SP: Reg port map(
 
 inst_regDis: Reg port map(
         clock    => clock,
-        load     => decoder2,
+        load     => decoder0,
         up       => '0',
         down     => '0',
         datain   => numA,
@@ -417,7 +417,7 @@ inst_regDis: Reg port map(
 
 inst_regLed: Reg port map(
         clock    => clock,
-        load     => decoder3,
+        load     => decoder1,
         up       => '0',
         down     => '0',
         datain   => numA,
@@ -489,12 +489,12 @@ inst_MUXb: MUX_2b port map(
         muxOut  => ALUnumB
     );
 inst_MUXIO: MUX_3b port map(
-        e1      => timer_s,
-        e2      => timer_ms,
-        e3      => timer_us,
-        e4(4 downto 0)  => d_btn,
-        e4(15 downto 5) => "00000000000",
-        e5      => sw,
+        e1      => sw,
+        e2(4 downto 0)  => d_btn,
+        e2(15 downto 5) => "00000000000",
+        e3      => timer_s,
+        e4      => timer_ms,
+        e5      => timer_us,
         e6      => "0000000000000000",
         e7      => "0000000000000000",
         e8      => "0000000000000000",
