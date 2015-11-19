@@ -19,7 +19,7 @@ entity Basys3 is
     Port (
         sw          : in   std_logic_vector (15 downto 0); -- Señales de entrada de los interruptores -- Arriba   = '1'   -- Los 3 swiches de la derecha: 2, 1 y 0.
         btn         : in   std_logic_vector (4 downto 0);  -- Señales de entrada de los botones       -- Apretado = '1'   -- 0 central, 1 arriba, 2 izquierda, 3 derecha y 4 abajo.
-        led         : out  std_logic_vector (3 downto 0);  -- Señales de salida  a  los leds          -- Prendido = '1'   -- Los 4 leds de la derecha: 3, 2, 1 y 0.
+        led         : out  std_logic_vector (15 downto 0);  -- Señales de salida  a  los leds          -- Prendido = '1'   -- Los 4 leds de la derecha: 3, 2, 1 y 0.
         clk         : in   std_logic;                      -- No Tocar - Señal de entrada del clock   -- Frecuencia = 100Mhz.
         seg         : out  std_logic_vector (7 downto 0);  -- No Tocar - Salida de las señales de segmentos.
         an          : out  std_logic_vector (3 downto 0)   -- No Tocar - Salida del selector de diplay.
@@ -275,7 +275,7 @@ signal regValues : STD_LOGIC_VECTOR (15 downto 0);
 signal PCdisp : STD_LOGIC_VECTOR (15 downto 0);
 signal jbits : STD_LOGIC_VECTOR (15 downto 0);
 signal statusBits : STD_LOGIC_VECTOR (15 downto 0);
-signal switches : STD_LOGIC_VECTOR (2 downto 0);
+signal switches : STD_LOGIC_VECTOR (15 downto 0);
 --cable vacío
 signal nulo : STD_LOGIC;
 
@@ -489,7 +489,7 @@ inst_MUXb: MUX_2b port map(
         muxOut  => ALUnumB
     );
 inst_MUXIO: MUX_3b port map(
-        e1      => sw,
+        e1      => switches,
         e2(4 downto 0)  => d_btn,
         e2(15 downto 5) => "00000000000",
         e3      => timer_s,
@@ -519,12 +519,16 @@ RAMdOut12 <= RAMdOut (11 downto 0);
 numB12 <= numB (11 downto 0);
 
 ----Status en las leds
-led(15 downto 13) <= ALUstatus;
-led(7 downto 0) <= jBits(7 downto 0);
+--led(15 downto 13) <= ALUstatus;
+--led(7 downto 0) <= jBits(7 downto 0);
 
-switches(0)<= sw(0);
-switches(1)<= sw(1);
-switches(2)<= sw(2);
+----Salida regLed
+led <= numLed;
+
+
+switches<= sw;
+--switches(1)<= sw(1);
+--switches(2)<= sw(2);
 
 btnIN(4 downto 0) <= btn;
 --Debugger (Ver opción UART)
@@ -532,7 +536,8 @@ btnIN(4 downto 0) <= btn;
 regValues(15 downto 8) <= numA(7 downto 0);
 regValues(7 downto 0) <= numB(7 downto 0);
 
-display <= regValues;
+--display <= regValues;
+display <= numDis;
 dis_a <= display(15 downto 12);
 dis_b <= display(11 downto 8);
 dis_c <= display(7 downto 4);
