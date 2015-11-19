@@ -1,0 +1,236 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Wed Nov 18 20:35:30 2015
+# Process ID: 3408
+# Log file: C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/vivado.log
+# Journal file: C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.xpr}
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2015.2/data/ip'.
+open_project: Time (s): cpu = 00:00:36 ; elapsed = 00:00:17 . Memory (MB): peak = 720.289 ; gain = 145.598
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 308 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2015.2
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+open_run: Time (s): cpu = 00:00:13 ; elapsed = 00:00:12 . Memory (MB): peak = 872.109 ; gain = 139.594
+INFO: [Common 17-344] 'open_run' was cancelled
+open_hw
+connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2015.2
+  **** Build date : Jun 26 2015-16:56:39
+    ** Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 936.570 ; gain = 0.000
+current_hw_target [get_hw_targets */xilinx_tcf/Digilent/210183637323A]
+set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Digilent/210183637323A]
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183637323A
+set_property PROGRAM.FILE {C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.runs/impl_1/Basys3.bit} [lindex [get_hw_devices] 0]
+current_hw_device [lindex [get_hw_devices] 0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.runs/impl_1/Basys3.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.runs/impl_1/Basys3.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.runs/impl_1/Basys3.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-1061] Parsing VHDL file "C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/ADD16b.vhd" into library xil_defaultlib [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/ADD16b.vhd:1]
+INFO: [HDL 9-1061] Parsing VHDL file "C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/ALU.vhd" into library xil_defaultlib [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/ALU.vhd:1]
+INFO: [HDL 9-1061] Parsing VHDL file "C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/AND16b.vhd" into library xil_defaultlib [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/AND16b.vhd:1]
+INFO: [HDL 9-1061] Parsing VHDL file "C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/Basys3.vhd" into library xil_defaultlib [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/Basys3.vhd:1]
+INFO: [HDL 9-1061] Parsing VHDL file "C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/CU.vhd" into library xil_defaultlib [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/CU.vhd:1]
+INFO: [HDL 9-1061] Parsing VHDL file "C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/imports/new/Clock_Divider.vhd" into library xil_defaultlib [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/imports/new/Clock_Divider.vhd:1]
+INFO: [HDL 9-1061] Parsing VHDL file "C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/imports/new/Debouncer.vhd" into library xil_defaultlib [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/imports/new/Debouncer.vhd:1]
+INFO: [HDL 9-1061] Parsing VHDL file "C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/FA.vhd" into library xil_defaultlib [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/FA.vhd:1]
+INFO: [HDL 9-1061] Parsing VHDL file "C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/HA.vhd" into library xil_defaultlib [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/HA.vhd:1]
+INFO: [HDL 9-1061] Parsing VHDL file "C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/Led_Driver.vhd" into library xil_defaultlib [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/Led_Driver.vhd:1]
+INFO: [HDL 9-1061] Parsing VHDL file "C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/MUX.vhd" into library xil_defaultlib [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/MUX.vhd:1]
+INFO: [HDL 9-1061] Parsing VHDL file "C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/MUXIO.vhd" into library xil_defaultlib [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/MUXIO.vhd:1]
+INFO: [HDL 9-1061] Parsing VHDL file "C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/MUX_2b_12d.vhd" into library xil_defaultlib [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/MUX_2b_12d.vhd:1]
+INFO: [HDL 9-1061] Parsing VHDL file "C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/NOT16b.vhd" into library xil_defaultlib [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/NOT16b.vhd:1]
+INFO: [HDL 9-1061] Parsing VHDL file "C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/OR16b.vhd" into library xil_defaultlib [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/OR16b.vhd:1]
+INFO: [HDL 9-1061] Parsing VHDL file "C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/PC.vhd" into library xil_defaultlib [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/PC.vhd:1]
+INFO: [HDL 9-1061] Parsing VHDL file "C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/RAM.vhd" into library xil_defaultlib [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/RAM.vhd:1]
+INFO: [HDL 9-1061] Parsing VHDL file "C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/ROM.vhd" into library xil_defaultlib [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/ROM.vhd:1]
+INFO: [HDL 9-1061] Parsing VHDL file "C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/Reg.vhd" into library xil_defaultlib [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/Reg.vhd:1]
+INFO: [HDL 9-1061] Parsing VHDL file "C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/SUS16b.vhd" into library xil_defaultlib [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/SUS16b.vhd:1]
+INFO: [HDL 9-1061] Parsing VHDL file "C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/ShiftL16b.vhd" into library xil_defaultlib [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/ShiftL16b.vhd:1]
+INFO: [HDL 9-1061] Parsing VHDL file "C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/ShiftR16b.vhd" into library xil_defaultlib [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/ShiftR16b.vhd:1]
+INFO: [HDL 9-1061] Parsing VHDL file "C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/imports/new/Timer.vhd" into library xil_defaultlib [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/imports/new/Timer.vhd:1]
+INFO: [HDL 9-1061] Parsing VHDL file "C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/UART_TX_CTRL.vhd" into library xil_defaultlib [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/UART_TX_CTRL.vhd:1]
+INFO: [HDL 9-1061] Parsing VHDL file "C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/XOR16b.vhd" into library xil_defaultlib [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/XOR16b.vhd:1]
+INFO: [HDL 9-1061] Parsing VHDL file "C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/reg_3b.vhd" into library xil_defaultlib [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/reg_3b.vhd:1]
+[Wed Nov 18 20:46:24 2015] Launched synth_1...
+Run output will be captured here: C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.runs/synth_1/runme.log
+launch_runs impl_1
+[Wed Nov 18 20:48:24 2015] Launched impl_1...
+Run output will be captured here: C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream
+[Wed Nov 18 20:51:52 2015] Launched impl_1...
+Run output will be captured here: C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.runs/impl_1/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.runs/impl_1/Basys3.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+reset_run synth_1
+launch_runs impl_1
+[Wed Nov 18 21:06:18 2015] Launched synth_1...
+Run output will be captured here: C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.runs/synth_1/runme.log
+[Wed Nov 18 21:06:18 2015] Launched impl_1...
+Run output will be captured here: C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream
+[Wed Nov 18 21:08:11 2015] Launched impl_1...
+Run output will be captured here: C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.runs/impl_1/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.runs/impl_1/Basys3.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Wed Nov 18 21:10:13 2015] Launched synth_1...
+Run output will be captured here: C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.runs/synth_1/runme.log
+[Wed Nov 18 21:10:13 2015] Launched impl_1...
+Run output will be captured here: C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.runs/impl_1/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.runs/impl_1/Basys3.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream
+[Wed Nov 18 21:41:36 2015] Launched impl_1...
+Run output will be captured here: C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.runs/impl_1/runme.log
+update_compile_order -fileset sources_1
+reset_run impl_1 -prev_step 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Wed Nov 18 21:42:06 2015] Launched synth_1...
+Run output will be captured here: C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.runs/synth_1/runme.log
+[Wed Nov 18 21:42:06 2015] Launched impl_1...
+Run output will be captured here: C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1
+[Wed Nov 18 21:43:18 2015] Launched synth_1...
+Run output will be captured here: C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.runs/synth_1/runme.log
+[Wed Nov 18 21:43:18 2015] Launched impl_1...
+Run output will be captured here: C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream
+[Wed Nov 18 21:45:50 2015] Launched impl_1...
+Run output will be captured here: C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.runs/impl_1/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.runs/impl_1/Basys3.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+reset_run impl_1
+launch_runs impl_1
+[Wed Nov 18 21:55:43 2015] Launched impl_1...
+Run output will be captured here: C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Wed Nov 18 21:58:16 2015] Launched synth_1...
+Run output will be captured here: C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.runs/synth_1/runme.log
+[Wed Nov 18 21:58:16 2015] Launched impl_1...
+Run output will be captured here: C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.runs/impl_1/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.runs/impl_1/Basys3.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+reset_run impl_1
+launch_runs impl_1
+[Wed Nov 18 22:07:59 2015] Launched impl_1...
+Run output will be captured here: C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1
+[Wed Nov 18 22:14:25 2015] Launched synth_1...
+Run output will be captured here: C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.runs/synth_1/runme.log
+[Wed Nov 18 22:14:25 2015] Launched impl_1...
+Run output will be captured here: C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream
+[Wed Nov 18 22:17:07 2015] Launched impl_1...
+Run output will be captured here: C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.runs/impl_1/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.runs/impl_1/Basys3.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Nov 18 22:20:19 2015...

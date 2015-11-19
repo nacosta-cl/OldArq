@@ -2,14 +2,16 @@
 # Vivado v2015.2 (64-bit)
 # SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
 # IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
-# Start of session at: Wed Nov 18 20:35:30 2015
-# Process ID: 3408
+# Start of session at: Wed Nov 18 22:23:37 2015
+# Process ID: 9164
 # Log file: C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/vivado.log
 # Journal file: C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project {C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.xpr}
-open_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
 open_hw
 connect_hw_server -url localhost:3121
 current_hw_target [get_hw_targets */xilinx_tcf/Digilent/210183637323A]
@@ -22,6 +24,9 @@ set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
 set_property PROGRAM.FILE {C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.runs/impl_1/Basys3.bit} [lindex [get_hw_devices] 0]
 program_hw_devices [lindex [get_hw_devices] 0]
 refresh_hw_device [lindex [get_hw_devices] 0]
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
 set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
 set_property PROGRAM.FILE {C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.runs/impl_1/Basys3.bit} [lindex [get_hw_devices] 0]
 program_hw_devices [lindex [get_hw_devices] 0]
@@ -30,6 +35,21 @@ set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
 set_property PROGRAM.FILE {C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.runs/impl_1/Basys3.bit} [lindex [get_hw_devices] 0]
 program_hw_devices [lindex [get_hw_devices] 0]
 refresh_hw_device [lindex [get_hw_devices] 0]
+reset_run synth_1
+launch_runs impl_1
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.runs/impl_1/Basys3.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+reset_run impl_1
+launch_runs impl_1
+wait_on_run impl_1
+reset_run synth_1
+launch_runs synth_1
+wait_on_run synth_1
 reset_run synth_1
 launch_runs synth_1
 wait_on_run synth_1
@@ -41,50 +61,10 @@ set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
 set_property PROGRAM.FILE {C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.runs/impl_1/Basys3.bit} [lindex [get_hw_devices] 0]
 program_hw_devices [lindex [get_hw_devices] 0]
 refresh_hw_device [lindex [get_hw_devices] 0]
-reset_run synth_1
-launch_runs impl_1
-wait_on_run impl_1
-launch_runs impl_1 -to_step write_bitstream
-wait_on_run impl_1
-set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
-set_property PROGRAM.FILE {C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.runs/impl_1/Basys3.bit} [lindex [get_hw_devices] 0]
-program_hw_devices [lindex [get_hw_devices] 0]
-refresh_hw_device [lindex [get_hw_devices] 0]
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream
-wait_on_run impl_1
-set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
-set_property PROGRAM.FILE {C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.runs/impl_1/Basys3.bit} [lindex [get_hw_devices] 0]
-program_hw_devices [lindex [get_hw_devices] 0]
-refresh_hw_device [lindex [get_hw_devices] 0]
-reset_run impl_1 -prev_step 
-launch_runs impl_1 -to_step write_bitstream
-wait_on_run impl_1
-update_compile_order -fileset sources_1
-reset_run impl_1 -prev_step 
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream
-wait_on_run impl_1
-reset_run synth_1
-launch_runs impl_1
-wait_on_run impl_1
-launch_runs impl_1 -to_step write_bitstream
-wait_on_run impl_1
-set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
-set_property PROGRAM.FILE {C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.runs/impl_1/Basys3.bit} [lindex [get_hw_devices] 0]
-program_hw_devices [lindex [get_hw_devices] 0]
-refresh_hw_device [lindex [get_hw_devices] 0]
 reset_run impl_1
 launch_runs impl_1
 wait_on_run impl_1
 reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream
-wait_on_run impl_1
-set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
-set_property PROGRAM.FILE {C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.runs/impl_1/Basys3.bit} [lindex [get_hw_devices] 0]
-program_hw_devices [lindex [get_hw_devices] 0]
-refresh_hw_device [lindex [get_hw_devices] 0]
-reset_run impl_1
 launch_runs impl_1
 wait_on_run impl_1
 reset_run synth_1

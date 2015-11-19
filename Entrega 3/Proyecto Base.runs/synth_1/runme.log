@@ -15,7 +15,7 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 246.383 ; gain = 68.516
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 245.918 ; gain = 68.172
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-1565] actual for formal port word2 is neither a static name nor a globally static expression [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/SUS16b.vhd:55]
 INFO: [Synth 8-638] synthesizing module 'Basys3' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/Basys3.vhd:30]
@@ -76,9 +76,9 @@ INFO: [Synth 8-3491] module 'ShiftR16b' declared at 'C:/Users/Jorge/Desktop/Arqu
 INFO: [Synth 8-638] synthesizing module 'ShiftR16b' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/ShiftR16b.vhd:39]
 INFO: [Synth 8-256] done synthesizing module 'ShiftR16b' (12#1) [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/ShiftR16b.vhd:39]
 INFO: [Synth 8-256] done synthesizing module 'ALU' (13#1) [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/ALU.vhd:17]
-INFO: [Synth 8-3491] module 'ROM' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/ROM.vhd:15' bound to instance 'inst_ROM' of component 'ROM' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/Basys3.vhd:286]
-INFO: [Synth 8-638] synthesizing module 'ROM' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/ROM.vhd:22]
-INFO: [Synth 8-256] done synthesizing module 'ROM' (14#1) [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/ROM.vhd:22]
+INFO: [Synth 8-3491] module 'ROM' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/ROM.vhd:18' bound to instance 'inst_ROM' of component 'ROM' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/Basys3.vhd:286]
+INFO: [Synth 8-638] synthesizing module 'ROM' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/ROM.vhd:25]
+INFO: [Synth 8-256] done synthesizing module 'ROM' (14#1) [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/ROM.vhd:25]
 INFO: [Synth 8-3491] module 'CU' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/CU.vhd:34' bound to instance 'inst_CU' of component 'CU' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/Basys3.vhd:291]
 INFO: [Synth 8-638] synthesizing module 'CU' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/CU.vhd:53]
 INFO: [Synth 8-256] done synthesizing module 'CU' (15#1) [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/CU.vhd:53]
@@ -116,7 +116,7 @@ WARNING: [Synth 8-3331] design Basys3 has unconnected port led[10]
 WARNING: [Synth 8-3331] design Basys3 has unconnected port led[9]
 WARNING: [Synth 8-3331] design Basys3 has unconnected port led[8]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 279.656 ; gain = 101.789
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 279.176 ; gain = 101.430
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -143,7 +143,7 @@ WARNING: [Synth 8-3295] tying undriven pin inst_MUXIO:e1[7] to constant 0 [C:/Us
 WARNING: [Synth 8-3295] tying undriven pin inst_MUXIO:e1[6] to constant 0 [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/Basys3.vhd:421]
 WARNING: [Synth 8-3295] tying undriven pin inst_MUXIO:e1[5] to constant 0 [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 3/Proyecto Base.srcs/sources_1/new/Basys3.vhd:421]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 279.656 ; gain = 101.789
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 279.176 ; gain = 101.430
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -157,22 +157,22 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 577.961 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 578.215 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 577.961 ; gain = 400.094
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 578.215 ; gain = 400.469
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 577.961 ; gain = 400.094
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 578.215 ; gain = 400.469
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 577.961 ; gain = 400.094
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 578.215 ; gain = 400.469
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "iZ" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "iJEQ" won't be mapped to RAM because it is too sparse
@@ -183,7 +183,7 @@ INFO: [Synth 8-5546] ROM "iJLT" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "iJLE" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "iJCR" won't be mapped to RAM because it is too sparse
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 577.961 ; gain = 400.094
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 578.215 ; gain = 400.469
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -290,7 +290,7 @@ BRAMs: 150 (col length: RAMB18 60 RAMB36 30)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 577.961 ; gain = 400.094
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 578.215 ; gain = 400.469
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
@@ -310,9 +310,9 @@ WARNING: [Synth 8-3331] design Basys3 has unconnected port led[8]
 WARNING: [Synth 8-3331] design Basys3 has unconnected port led[7]
 WARNING: [Synth 8-3917] design Basys3 has port seg[7] driven by constant 1
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 577.961 ; gain = 400.094
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 578.215 ; gain = 400.469
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 577.961 ; gain = 400.094
+Finished Parallel Reinference  : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 578.215 ; gain = 400.469
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -351,16 +351,16 @@ WARNING: [Synth 8-3332] Sequential element (\inst_SP/reg_reg[15] ) is unused and
 Start Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 577.961 ; gain = 400.094
+Finished Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 578.215 ; gain = 400.469
 ---------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 577.961 ; gain = 400.094
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 578.215 ; gain = 400.469
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 577.961 ; gain = 400.094
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 578.215 ; gain = 400.469
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
@@ -368,10 +368,10 @@ Start Timing Optimization
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:35 ; elapsed = 00:00:38 . Memory (MB): peak = 577.961 ; gain = 400.094
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:35 ; elapsed = 00:00:38 . Memory (MB): peak = 578.215 ; gain = 400.469
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:38 . Memory (MB): peak = 577.961 ; gain = 400.094
+Finished Timing Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:38 . Memory (MB): peak = 578.215 ; gain = 400.469
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -382,10 +382,8 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-3332] Sequential element (\inst_statusReg/reg_reg[2] ) is unused and will be removed from module Basys3.
-WARNING: [Synth 8-3332] Sequential element (\inst_statusReg/reg_reg[1] ) is unused and will be removed from module Basys3.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:41 ; elapsed = 00:00:47 . Memory (MB): peak = 621.414 ; gain = 443.547
+Finished Technology Mapping : Time (s): cpu = 00:00:41 ; elapsed = 00:00:47 . Memory (MB): peak = 632.199 ; gain = 454.453
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -403,7 +401,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:42 ; elapsed = 00:00:48 . Memory (MB): peak = 621.414 ; gain = 443.547
+Finished IO Insertion : Time (s): cpu = 00:00:42 ; elapsed = 00:00:47 . Memory (MB): peak = 632.199 ; gain = 454.453
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -416,7 +414,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:42 ; elapsed = 00:00:48 . Memory (MB): peak = 621.414 ; gain = 443.547
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:42 ; elapsed = 00:00:47 . Memory (MB): peak = 632.199 ; gain = 454.453
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -428,13 +426,13 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:42 ; elapsed = 00:00:48 . Memory (MB): peak = 621.414 ; gain = 443.547
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:42 ; elapsed = 00:00:47 . Memory (MB): peak = 632.199 ; gain = 454.453
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Start Renaming Generated Ports : Time (s): cpu = 00:00:42 ; elapsed = 00:00:48 . Memory (MB): peak = 621.414 ; gain = 443.547
+Start Renaming Generated Ports : Time (s): cpu = 00:00:42 ; elapsed = 00:00:47 . Memory (MB): peak = 632.199 ; gain = 454.453
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:42 ; elapsed = 00:00:48 . Memory (MB): peak = 621.414 ; gain = 443.547
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:42 ; elapsed = 00:00:47 . Memory (MB): peak = 632.199 ; gain = 454.453
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -453,15 +451,15 @@ Report Cell Usage:
 |1     |BUFG      |     2|
 |2     |CARRY4    |    32|
 |3     |LUT1      |    55|
-|4     |LUT2      |    78|
-|5     |LUT3      |    41|
-|6     |LUT4      |    99|
-|7     |LUT5      |    49|
-|8     |LUT6      |   180|
-|9     |MUXF7     |    26|
-|10    |MUXF8     |     7|
+|4     |LUT2      |    87|
+|5     |LUT3      |    48|
+|6     |LUT4      |   112|
+|7     |LUT5      |   173|
+|8     |LUT6      |   252|
+|9     |MUXF7     |    43|
+|10    |MUXF8     |     8|
 |11    |RAM256X1S |   256|
-|12    |FDRE      |   114|
+|12    |FDRE      |   116|
 |13    |IBUF      |    23|
 |14    |OBUF      |    22|
 |15    |OBUFT     |     6|
@@ -471,25 +469,25 @@ Report Instance Areas:
 +------+---------------------+--------------+------+
 |      |Instance             |Module        |Cells |
 +------+---------------------+--------------+------+
-|1     |top                  |              |   990|
+|1     |top                  |              |  1235|
 |2     |  inst_Clock_Divider |Clock_Divider |    95|
 |3     |  inst_Led_Driver    |Led_Driver    |    75|
-|4     |  inst_PC            |PC            |   342|
-|5     |  inst_RAM           |RAM           |   359|
-|6     |  inst_SP            |Reg           |    22|
+|4     |  inst_PC            |PC            |   591|
+|5     |  inst_RAM           |RAM           |   358|
+|6     |  inst_SP            |Reg           |    16|
 |7     |  inst_regA          |Reg_0         |    16|
 |8     |  inst_regB          |Reg_1         |    27|
-|9     |  inst_statusReg     |reg_3b        |     1|
+|9     |  inst_statusReg     |reg_3b        |     4|
 +------+---------------------+--------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:42 ; elapsed = 00:00:48 . Memory (MB): peak = 621.414 ; gain = 443.547
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:42 ; elapsed = 00:00:47 . Memory (MB): peak = 632.199 ; gain = 454.453
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 13 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:31 ; elapsed = 00:00:39 . Memory (MB): peak = 621.414 ; gain = 130.719
-Synthesis Optimization Complete : Time (s): cpu = 00:00:42 ; elapsed = 00:00:48 . Memory (MB): peak = 621.414 ; gain = 443.547
+Synthesis finished with 0 errors, 0 critical warnings and 11 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:31 ; elapsed = 00:00:39 . Memory (MB): peak = 632.199 ; gain = 140.254
+Synthesis Optimization Complete : Time (s): cpu = 00:00:42 ; elapsed = 00:00:48 . Memory (MB): peak = 632.199 ; gain = 454.453
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 311 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
@@ -497,8 +495,8 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   RAM256X1S => RAM256X1S (MUXF7, MUXF7, MUXF8, RAMS64E, RAMS64E, RAMS64E, RAMS64E): 256 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-117 Infos, 38 Warnings, 0 Critical Warnings and 0 Errors encountered.
+117 Infos, 36 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:43 ; elapsed = 00:00:47 . Memory (MB): peak = 621.414 ; gain = 429.313
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.154 . Memory (MB): peak = 621.414 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Wed Nov 18 22:15:18 2015...
+synth_design: Time (s): cpu = 00:00:43 ; elapsed = 00:00:47 . Memory (MB): peak = 632.199 ; gain = 440.695
+report_utilization: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.141 . Memory (MB): peak = 632.199 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Nov 18 22:48:24 2015...
