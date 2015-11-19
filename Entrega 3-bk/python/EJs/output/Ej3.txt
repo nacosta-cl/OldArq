@@ -2,8 +2,8 @@
 ---
 -- DATA | 0 | 0
 -- boton | 2 | 10
--- CODE | 1 | 1
 -- fin | 6 | 110
+-- CODE | 1 | 1
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;

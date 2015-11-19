@@ -1,9 +1,9 @@
 -- Variable | Direccion (dec) | Direccion (bin)
--- var20 | 1 | 1
 -- var10 | 0 | 0
+-- var20 | 1 | 1
 ---
--- malfin | 13 | 1101
 -- CODE | 5 | 101
+-- malfin | 13 | 1101
 -- fin | 12 | 1100
 -- DATA | 0 | 0
 
