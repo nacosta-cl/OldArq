@@ -20,6 +20,7 @@ entity Basys3 is
         sw          : in   std_logic_vector (15 downto 0); -- Señales de entrada de los interruptores -- Arriba   = '1'   -- Los 3 swiches de la derecha: 2, 1 y 0.
         btn         : in   std_logic_vector (4 downto 0);  -- Señales de entrada de los botones       -- Apretado = '1'   -- 0 central, 1 arriba, 2 izquierda, 3 derecha y 4 abajo.
         led         : out  std_logic_vector (15 downto 0);  -- Señales de salida  a  los leds          -- Prendido = '1'   -- Los 4 leds de la derecha: 3, 2, 1 y 0.
+        lcd         : out  std_logic_vector (10 downto 0); --Señales hacia el lcd
         clk         : in   std_logic;                      -- No Tocar - Señal de entrada del clock   -- Frecuencia = 100Mhz.
         seg         : out  std_logic_vector (7 downto 0);  -- No Tocar - Salida de las señales de segmentos.
         an          : out  std_logic_vector (3 downto 0)   -- No Tocar - Salida del selector de diplay.
@@ -525,6 +526,9 @@ numB12 <= numB (11 downto 0);
 ----Salida regLed
 led <= numLed;
 
+---Salida LCD
+lcd(9 downto 0) <= numA(9 downto 0);
+lcd(10) <= decoder2;
 
 switches<= sw;
 --switches(1)<= sw(1);
