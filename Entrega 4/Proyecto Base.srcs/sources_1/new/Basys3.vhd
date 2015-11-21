@@ -114,8 +114,7 @@ component CU
             Spc         : out std_logic;
             Sadd        : out std_logic_vector(1 downto 0);
             Sdin        : out std_logic;  
-            Ldc         : out stg_logic
-            );
+            Ldc         : out std_logic);
     end component;
 
 component ALU
@@ -203,7 +202,7 @@ signal timer_us        : std_logic_vector(15 downto 0);
 
 --Decoder
 signal loadDecoOut   : STD_LOGIC;
-signal decoder   : STD_LOGIC_VECTOR (3 downto 0);
+signal deco   : STD_LOGIC_VECTOR (3 downto 0);
 
 --ALU
 signal ALUnumA      : STD_LOGIC_VECTOR (15 downto 0);
@@ -417,7 +416,7 @@ inst_SP: Reg port map(
 
 inst_regDis: Reg port map(
         clock    => clock,
-        load     => decoder(0),
+        load     => deco(0),
         up       => '0',
         down     => '0',
         datain   => numA,
@@ -426,7 +425,7 @@ inst_regDis: Reg port map(
 
 inst_regLed: Reg port map(
         clock    => clock,
-        load     => decoder(1),
+        load     => deco(1),
         up       => '0',
         down     => '0',
         datain   => numA,
@@ -513,9 +512,9 @@ inst_MUXIO: MUX_3b port map(
     
 -- Decoder
 inst_Decoder: Decoder port map(
-        loadOut => loadDecoOut;
-        din     => numB(1 downto 0);
-        dout    => decoder
+        loadOut => loadDecoOut,
+        din     => numB(1 downto 0),
+        dout    => deco
     );
    
 --Fin de instancias
@@ -544,7 +543,7 @@ led <= numLed;
 
 ---Salida LCD
 lcd(9 downto 0) <= numA(9 downto 0);
-lcd(10) <= decoder(2);
+lcd(10) <= deco(2);
 
 switches<= sw;
 --switches(1)<= sw(1);

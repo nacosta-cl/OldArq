@@ -8,7 +8,7 @@ entity Decoder is
         dout : out std_logic_vector(3 downto 0));
 end Decoder;
  
-architecture descript of Decoder is
+architecture Behavioral of Decoder is
 
 begin
    

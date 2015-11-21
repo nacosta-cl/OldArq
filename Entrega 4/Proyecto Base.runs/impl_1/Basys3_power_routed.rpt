@@ -1,7 +1,7 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2015.2 (win64) Build 1266856 Fri Jun 26 16:35:25 MDT 2015
-| Date             : Wed Nov 18 22:49:43 2015
+| Date             : Sat Nov 21 00:45:49 2015
 | Host             : Jorge-PC running 64-bit major release  (build 9200)
 | Command          : report_power -file Basys3_power_routed.rpt -pb Basys3_power_summary_routed.pb
 | Design           : Basys3
@@ -30,8 +30,8 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 0.122 |
-| Dynamic (W)              | 0.050 |
+| Total On-Chip Power (W)  | 0.116 |
+| Dynamic (W)              | 0.044 |
 | Device Static (W)        | 0.072 |
 | Effective TJA (C/W)      | 5.0   |
 | Max Ambient (C)          | 84.4  |
@@ -49,19 +49,19 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.001 |        3 |       --- |             --- |
-| Slice Logic              |     0.014 |     2679 |       --- |             --- |
-|   LUT as Logic           |     0.007 |      559 |     20800 |            2.69 |
+| Clocks                   |     0.002 |        3 |       --- |             --- |
+| Slice Logic              |     0.015 |     3223 |       --- |             --- |
+|   LUT as Logic           |     0.007 |      860 |     20800 |            4.13 |
 |   LUT as Distributed RAM |     0.007 |     1024 |      9600 |           10.67 |
-|   F7/F8 Muxes            |    <0.001 |      819 |     32600 |            2.51 |
-|   CARRY4                 |    <0.001 |       32 |      8150 |            0.39 |
-|   Register               |    <0.001 |      116 |     41600 |            0.28 |
+|   F7/F8 Muxes            |    <0.001 |      891 |     32600 |            2.73 |
+|   CARRY4                 |    <0.001 |       64 |      8150 |            0.79 |
+|   Register               |    <0.001 |      258 |     41600 |            0.62 |
 |   BUFG                   |    <0.001 |        1 |        32 |            3.13 |
-|   Others                 |     0.000 |       13 |       --- |             --- |
-| Signals                  |     0.024 |      967 |       --- |             --- |
-| I/O                      |     0.011 |       45 |       106 |           42.45 |
+|   Others                 |     0.000 |       18 |       --- |             --- |
+| Signals                  |     0.019 |     1318 |       --- |             --- |
+| I/O                      |     0.008 |       61 |       106 |           57.55 |
 | Static Power             |     0.072 |          |           |                 |
-| Total                    |     0.122 |          |           |                 |
+| Total                    |     0.116 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,9 +71,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.049 |       0.039 |      0.010 |
+| Vccint    |       1.000 |     0.045 |       0.036 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
-| Vcco33    |       3.300 |     0.004 |       0.003 |      0.001 |
+| Vcco33    |       3.300 |     0.003 |       0.002 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -140,10 +140,11 @@ Table of Contents
 +--------------------------------+-----------+
 | Name                           | Power (W) |
 +--------------------------------+-----------+
-| Basys3                         |     0.050 |
+| Basys3                         |     0.044 |
 |   inst_Clock_Divider           |    <0.001 |
+|   inst_Debouncer               |     0.001 |
 |   inst_Led_Driver              |    <0.001 |
-|   inst_PC                      |     0.027 |
+|   inst_PC                      |     0.022 |
 |   inst_RAM                     |     0.010 |
 |     memory_reg_0_255_0_0       |    <0.001 |
 |     memory_reg_0_255_10_10     |    <0.001 |
@@ -402,6 +403,7 @@ Table of Contents
 |     memory_reg_768_1023_8_8    |    <0.001 |
 |     memory_reg_768_1023_9_9    |    <0.001 |
 |   inst_SP                      |    <0.001 |
+|   inst_Timer                   |    <0.001 |
 |   inst_regA                    |    <0.001 |
 |   inst_regB                    |    <0.001 |
 |   inst_statusReg               |    <0.001 |

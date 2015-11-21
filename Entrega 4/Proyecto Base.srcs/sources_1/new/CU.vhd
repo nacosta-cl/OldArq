@@ -53,8 +53,8 @@ end CU;
 
 architecture Behavioral of CU is
 
-signal naturalSigs : std_logic_vector (16 downto 0);
-signal ctrlSigs : std_logic_vector (16 downto 0);
+signal naturalSigs : std_logic_vector (17 downto 0);
+signal ctrlSigs : std_logic_vector (17 downto 0);
 signal OPcode   : std_logic_vector (6 downto 0);
 
 signal Z : std_logic;
@@ -149,7 +149,7 @@ jmpBits(6) <= cLE;
 --Activar registro de status
 
 --salta si existe salto
-ctrlSigs <= "00000010000000000" when ((cEQ = '1') or (cNE = '1') or (cGT = '1') or (cGE = '1') or (cLT = '1') or (cLE = '1') or (cCR = '1'))
+ctrlSigs <= "000000010000000000" when ((cEQ = '1') or (cNE = '1') or (cGT = '1') or (cGE = '1') or (cLT = '1') or (cLE = '1') or (cCR = '1'))
             else naturalSigs;
             
             
@@ -262,6 +262,6 @@ naturalSigs <=  "000000000000000000" when "0000000", --NOP
                 "010000000000000000" when "1101100", --INC SP
                 "000000000101010000" when "1101110", --INC B
                 "000000001000010000" when "1111110", --MOV A,B
-                "00000000000000000" when others;
+                "000000000000000000" when others;
 
 end Behavioral;
