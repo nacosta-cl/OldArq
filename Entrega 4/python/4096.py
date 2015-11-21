@@ -461,7 +461,7 @@ def ins_generica(ins):
     valor = valor.strip()
     retorna = ""
     if(nombre!=""):
-        print(ins)
+       # print(ins)
         if(valor.count(",")>0): #del tipo MOV x,y
             izqcoma,dercoma=valor.split(",") #lado izq y lado der de la coma
             if(instr_binario(valor)=="instruccion"): #tipo MOV A,Lit || MOV A,B
@@ -720,6 +720,7 @@ def Leer_Archivo(Archivo,label):
                     if LabelName == "DATA":
                         palabra = Linea_actual.split(" ")
 
+
                         if len(palabra[1]) > 0:
                             vector = []
                             vector.append(palabra[0])
@@ -741,14 +742,29 @@ def Leer_Archivo(Archivo,label):
                             else:
                                 vector[1].append(palabra[1])
 
+
                             label[LabelName].append(vector)
 
                         else:
+
                              vector[1].append(palabra[0])
+
                     else:
 
                         try: #Cambia los INC por ADD, DEC por SUB || TRY por si aparece "nop"
                             lSpit = Linea_actual.split(" ")
+                            if ',' in lSpit[1]:
+                                variable = lSpit[1].split(",")
+                                if variable[1][0]=="'" and variable[1][-1]=="'":
+                                    print(variable)
+                                    aux= sumBin(str(ord(variable[1][1:-1]))+"d")+"b"
+                                    print(aux)
+                                    cadena = str(lSpit[0]+" "+variable[0]+','+ str(aux))
+                                    print(cadena)
+                                    Linea_actual = cadena
+
+
+
                             if(lSpit[0] == "INC"):
                                 if(lSpit[1] == "A"):
                                     Linea_actual = "ADD "+lSpit[1]
@@ -794,12 +810,12 @@ def Leer_Archivo(Archivo,label):
                     orden_labels.append(extra)
                     contador_label += 1
                     Espacios_Label.append(0)
-    #print(label)
+    print(label)
     archivo.close()
 
-root.fileopenname = filedialog.askopenfilename(initialdir = "./",title = "Escoge input")
-Leer_Archivo(root.fileopenname,label)
-#Leer_Archivo('Ejemplo8.txt',label)
+#root.fileopenname = filedialog.askopenfilename(initialdir = "./",title = "Escoge input")
+#Leer_Archivo(root.fileopenname,label)
+Leer_Archivo('base.txt',label)
 
 
 
@@ -809,9 +825,9 @@ dataFinalBin(instrucciones2) #transforma instrucciones a bin y agrega en lista l
 
 rellenaLista(listaInsBin,4096) #rellena la lista listaInsBin con 4096 elementos
 
-root.filesavename = filedialog.asksaveasfilename(initialdir = "./", title = "Escoge output")
-outputTXT(root.filesavename)
-#outputTXT('output.txt')
+#root.filesavename = filedialog.asksaveasfilename(initialdir = "./", title = "Escoge output")
+#outputTXT(root.filesavename)
+outputTXT('output.txt')
 
 
 
