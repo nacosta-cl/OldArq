@@ -753,18 +753,15 @@ def Leer_Archivo(Archivo,label):
 
                         try: #Cambia los INC por ADD, DEC por SUB || TRY por si aparece "nop"
                             lSpit = Linea_actual.split(" ")
-                            if ',' in lSpit[1]:
-                                variable = lSpit[1].split(",")
-                                if variable[1][0]=="'" and variable[1][-1]=="'":
-                                    print(variable)
-                                    aux= sumBin(str(ord(variable[1][1:-1]))+"d")+"b"
-                                    print(aux)
+                            if(',' in lSpit[1]):
+                                variable = lSpit[1].split(",", 1) #por si el char es ","
+                                if((variable[1][0]=="'" and variable[1][-1]=="'") or (variable[1][0]=='"' and variable[1][-1]=='"')):
+                                    #print(variable)
+                                    aux = sumBin(str(ord(variable[1][1:-1]))+"d")+"b"
+                                    #print(aux)
                                     cadena = str(lSpit[0]+" "+variable[0]+','+ str(aux))
-                                    print(cadena)
+                                    #print(cadena)
                                     Linea_actual = cadena
-
-
-
                             if(lSpit[0] == "INC"):
                                 if(lSpit[1] == "A"):
                                     Linea_actual = "ADD "+lSpit[1]
@@ -790,6 +787,15 @@ def Leer_Archivo(Archivo,label):
 
                     try: #Cambia los INC por ADD, DEC por SUB || TRY por si aparece "nop"
                         lSpit = Linea_actual.split(" ")
+                        if(',' in lSpit[1]):
+                            variable = lSpit[1].split(",", 1) #por si el char es ","
+                            if((variable[1][0]=="'" and variable[1][-1]=="'") or (variable[1][0]=='"' and variable[1][-1]=='"')):
+                                #print(variable)
+                                aux = sumBin(str(ord(variable[1][1:-1]))+"d")+"b"
+                                #print(aux)
+                                cadena = str(lSpit[0]+" "+variable[0]+','+ str(aux))
+                                #print(cadena)
+                                Linea_actual = cadena
                         if(lSpit[0] == "INC"):
                             if(lSpit[1] == "A"):
                                 Linea_actual = "ADD "+lSpit[1]
@@ -810,12 +816,12 @@ def Leer_Archivo(Archivo,label):
                     orden_labels.append(extra)
                     contador_label += 1
                     Espacios_Label.append(0)
-    print(label)
+    #print(label)
     archivo.close()
 
 #root.fileopenname = filedialog.askopenfilename(initialdir = "./",title = "Escoge input")
 #Leer_Archivo(root.fileopenname,label)
-Leer_Archivo('base.txt',label)
+Leer_Archivo('test.txt',label)
 
 
 
