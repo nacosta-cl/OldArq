@@ -113,7 +113,8 @@ component CU
             DecSP       : out std_logic;
             Spc         : out std_logic;
             Sadd        : out std_logic_vector(1 downto 0);
-            Sdin        : out std_logic  
+            Sdin        : out std_logic;  
+            Ldc         : out stg_logic
             );
     end component;
 
@@ -201,6 +202,7 @@ signal timer_ms        : std_logic_vector(15 downto 0);
 signal timer_us        : std_logic_vector(15 downto 0);
 
 --Decoder
+signal loadDecoOut   : STD_LOGIC;
 signal decoder   : STD_LOGIC_VECTOR (3 downto 0);
 
 --ALU
@@ -228,7 +230,6 @@ signal selMuxB  : STD_LOGIC_VECTOR (1 downto 0);
 signal selAlu   : STD_LOGIC_VECTOR (2 downto 0);
 signal write    : STD_LOGIC;
 signal writeStatus : STD_LOGIC;
-
 
 --Salida de la RAM
 
@@ -362,7 +363,8 @@ inst_CU: CU port map(
         DecSP     => DecSP,
         Spc       => selMuxPC(0),
         Sadd      => Sadd,
-        Sdin      => selMuxDin(0)
+        Sdin      => selMuxDin(0),
+        Ldc       => loadDecoOut
     );
 --PC
 inst_PC: PC port map(
@@ -415,7 +417,7 @@ inst_SP: Reg port map(
 
 inst_regDis: Reg port map(
         clock    => clock,
-        load     => decoder0,
+        load     => decoder(0),
         up       => '0',
         down     => '0',
         datain   => numA,
@@ -424,7 +426,7 @@ inst_regDis: Reg port map(
 
 inst_regLed: Reg port map(
         clock    => clock,
-        load     => decoder1,
+        load     => decoder(1),
         up       => '0',
         down     => '0',
         datain   => numA,
@@ -511,9 +513,9 @@ inst_MUXIO: MUX_3b port map(
     
 -- Decoder
 inst_Decoder: Decoder port map(
-        loadOut =>
-        din     =>
-        dout    =>
+        loadOut => loadDecoOut;
+        din     => numB(1 downto 0);
+        dout    => decoder
     );
    
 --Fin de instancias
@@ -542,7 +544,7 @@ led <= numLed;
 
 ---Salida LCD
 lcd(9 downto 0) <= numA(9 downto 0);
-lcd(10) <= decoder2;
+lcd(10) <= decoder(2);
 
 switches<= sw;
 --switches(1)<= sw(1);

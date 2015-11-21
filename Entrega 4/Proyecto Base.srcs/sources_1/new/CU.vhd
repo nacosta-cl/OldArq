@@ -46,7 +46,8 @@ entity CU is
             DecSP       : out std_logic;
             Spc         : out std_logic;
             Sadd        : out std_logic_vector(1 downto 0);
-            Sdin        : out std_logic
+            Sdin        : out std_logic;
+            Ldc         : out std_logic
             );
 end CU;
 
@@ -82,6 +83,7 @@ begin
 --Traduccion a OPcode estandarizado
 OPcode <= instruc(6 downto 0); 
 --Conexiones pertinentes
+Ldc         <= ctrlSigs(17);
 IncSP       <= ctrlSigs(16);
 DecSP       <= ctrlSigs(15);
 Spc         <= ctrlSigs(14);
@@ -162,7 +164,7 @@ ctrlSigs <= "00000010000000000" when ((cEQ = '1') or (cNE = '1') or (cGT = '1') 
                 --sdin        0->ALU 1->Adder
                 --spc         0->lit 1->dout
                 -- Leer
---incsp|decsp|spc|sadd|sdin|loadPC|loadA|loadB|selectMuxA|selectMuxB|selectALU|Write (11bits)
+--loadOut|incsp|decsp|spc|sadd|sdin|loadPC|loadA|loadB|selectMuxA|selectMuxB|selectALU|Write (11bits)
 with OPcode select
                 --MOV
 naturalSigs <=  "00000000000000000" when "0000000", --NOP
