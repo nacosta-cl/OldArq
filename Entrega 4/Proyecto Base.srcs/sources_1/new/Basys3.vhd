@@ -2,10 +2,8 @@
 --v0.0.2.1
 --IIC2343 - Arquitectura de computadores
 --Integrantes
---  Nicolás Acosta
 --  Benjamin Rigonesi
 --  Jorge Trincado
---  Nicolás Julio
 --  Cristobal Gomara
 
 --Comentarios Generales
@@ -513,7 +511,7 @@ inst_MUXIO: MUX_3b port map(
 -- Decoder
 inst_Decoder: Decoder port map(
         loadOut => loadDecoOut,
-        din     => numB(1 downto 0),
+        din     => ALUnumB(1 downto 0),
         dout    => deco
     );
    
@@ -535,11 +533,13 @@ RAMdOut12 <= RAMdOut (11 downto 0);
 numB12 <= numB (11 downto 0);
 
 ----Status en las leds
---led(15 downto 13) <= ALUstatus;
---led(7 downto 0) <= jBits(7 downto 0);
+--led(15 downto 13) <= ALUstatus; -- Co|N|Z
+--led(7 downto 0) <= jBits(7 downto 0); -- cLE|cCT|cCR|cGE|cLT|cNE|cEQ
 
 ----Salida regLed
-led <= numLed;
+--led <= numLed;
+led(9 downto 0) <= numA(9 downto 0);
+led(10) <= deco(2);
 
 ---Salida LCD
 lcd(9 downto 0) <= numA(9 downto 0);
@@ -556,7 +556,15 @@ regValues(15 downto 8) <= numA(7 downto 0);
 regValues(7 downto 0) <= numB(7 downto 0);
 
 --display <= regValues;
-display <= numDis;
+--display <= numDis;
+--display(15 downto 4) <= "000000000000";
+--display(3 downto 0) <= deco;
+display(15 downto 13) <= "000";
+display(12) <= loadDecoOut;
+display(11 downto 10) <= "00";
+display(9 downto 8) <= ALUnumB(1 downto 0);
+--display(15 downto 8) <= numA(7 downto 0);
+display(7 downto 0) <= PCaddr(7 downto 0);
 dis_a <= display(15 downto 12);
 dis_b <= display(11 downto 8);
 dis_c <= display(7 downto 4);

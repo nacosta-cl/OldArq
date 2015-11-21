@@ -1,0 +1,410 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Sat Nov 21 05:02:52 2015
+# Process ID: 8988
+# Log file: C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.runs/synth_1/Basys3.vds
+# Journal file: C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source Basys3.tcl -notrace
+Command: synth_design -top Basys3 -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 246.145 ; gain = 68.246
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-1565] actual for formal port word2 is neither a static name nor a globally static expression [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/SUS16b.vhd:55]
+INFO: [Synth 8-638] synthesizing module 'Basys3' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Basys3.vhd:28]
+INFO: [Synth 8-3491] module 'Clock_Divider' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/imports/new/Clock_Divider.vhd:7' bound to instance 'inst_Clock_Divider' of component 'Clock_Divider' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Basys3.vhd:303]
+INFO: [Synth 8-638] synthesizing module 'Clock_Divider' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/imports/new/Clock_Divider.vhd:13]
+INFO: [Synth 8-256] done synthesizing module 'Clock_Divider' (1#1) [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/imports/new/Clock_Divider.vhd:13]
+INFO: [Synth 8-3491] module 'Debouncer' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/imports/new/Debouncer.vhd:42' bound to instance 'inst_Debouncer' of component 'Debouncer' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Basys3.vhd:309]
+INFO: [Synth 8-638] synthesizing module 'Debouncer' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/imports/new/Debouncer.vhd:50]
+	Parameter DEBNC_CLOCKS bound to: 65536 - type: integer 
+	Parameter PORT_WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Debouncer' (2#1) [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/imports/new/Debouncer.vhd:50]
+INFO: [Synth 8-3491] module 'Timer' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/imports/new/Timer.vhd:5' bound to instance 'inst_Timer' of component 'Timer' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Basys3.vhd:315]
+INFO: [Synth 8-638] synthesizing module 'Timer' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/imports/new/Timer.vhd:13]
+INFO: [Synth 8-256] done synthesizing module 'Timer' (3#1) [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/imports/new/Timer.vhd:13]
+INFO: [Synth 8-3491] module 'Led_Driver' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Led_Driver.vhd:5' bound to instance 'inst_Led_Driver' of component 'Led_Driver' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Basys3.vhd:322]
+INFO: [Synth 8-638] synthesizing module 'Led_Driver' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Led_Driver.vhd:17]
+INFO: [Synth 8-256] done synthesizing module 'Led_Driver' (4#1) [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Led_Driver.vhd:17]
+INFO: [Synth 8-3491] module 'ALU' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ALU.vhd:4' bound to instance 'inst_ALU' of component 'ALU' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Basys3.vhd:332]
+INFO: [Synth 8-638] synthesizing module 'ALU' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ALU.vhd:17]
+INFO: [Synth 8-226] default block is never used [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ALU.vhd:88]
+INFO: [Synth 8-3491] module 'ADD16b' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ADD16b.vhd:34' bound to instance 'inst_ADD' of component 'ADD16b' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ALU.vhd:117]
+INFO: [Synth 8-638] synthesizing module 'ADD16b' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ADD16b.vhd:45]
+INFO: [Synth 8-3491] module 'FA' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/FA.vhd:34' bound to instance 'FAbit0' of component 'FA' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ADD16b.vhd:76]
+INFO: [Synth 8-638] synthesizing module 'FA' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/FA.vhd:44]
+INFO: [Synth 8-3491] module 'HA' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/HA.vhd:34' bound to instance 'inst_HA' of component 'HA' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/FA.vhd:62]
+INFO: [Synth 8-638] synthesizing module 'HA' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/HA.vhd:41]
+INFO: [Synth 8-256] done synthesizing module 'HA' (5#1) [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/HA.vhd:41]
+INFO: [Synth 8-3491] module 'HA' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/HA.vhd:34' bound to instance 'inst_HA2' of component 'HA' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/FA.vhd:69]
+INFO: [Synth 8-256] done synthesizing module 'FA' (6#1) [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/FA.vhd:44]
+INFO: [Synth 8-3491] module 'FA' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/FA.vhd:34' bound to instance 'FAbit1' of component 'FA' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ADD16b.vhd:84]
+INFO: [Synth 8-3491] module 'FA' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/FA.vhd:34' bound to instance 'FAbit2' of component 'FA' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ADD16b.vhd:92]
+INFO: [Synth 8-3491] module 'FA' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/FA.vhd:34' bound to instance 'FAbit3' of component 'FA' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ADD16b.vhd:100]
+INFO: [Synth 8-3491] module 'FA' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/FA.vhd:34' bound to instance 'FAbit4' of component 'FA' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ADD16b.vhd:109]
+INFO: [Synth 8-3491] module 'FA' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/FA.vhd:34' bound to instance 'FAbit5' of component 'FA' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ADD16b.vhd:118]
+INFO: [Synth 8-3491] module 'FA' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/FA.vhd:34' bound to instance 'FAbit6' of component 'FA' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ADD16b.vhd:126]
+INFO: [Synth 8-3491] module 'FA' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/FA.vhd:34' bound to instance 'FAbit7' of component 'FA' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ADD16b.vhd:134]
+INFO: [Synth 8-3491] module 'FA' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/FA.vhd:34' bound to instance 'FAbit8' of component 'FA' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ADD16b.vhd:142]
+INFO: [Synth 8-3491] module 'FA' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/FA.vhd:34' bound to instance 'FAbit9' of component 'FA' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ADD16b.vhd:150]
+INFO: [Synth 8-3491] module 'FA' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/FA.vhd:34' bound to instance 'FAbit10' of component 'FA' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ADD16b.vhd:158]
+INFO: [Synth 8-3491] module 'FA' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/FA.vhd:34' bound to instance 'FAbit11' of component 'FA' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ADD16b.vhd:166]
+INFO: [Synth 8-3491] module 'FA' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/FA.vhd:34' bound to instance 'FAbit12' of component 'FA' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ADD16b.vhd:174]
+INFO: [Synth 8-3491] module 'FA' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/FA.vhd:34' bound to instance 'FAbit13' of component 'FA' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ADD16b.vhd:182]
+INFO: [Synth 8-3491] module 'FA' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/FA.vhd:34' bound to instance 'FAbit14' of component 'FA' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ADD16b.vhd:190]
+INFO: [Synth 8-3491] module 'FA' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/FA.vhd:34' bound to instance 'FAbit15' of component 'FA' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ADD16b.vhd:198]
+INFO: [Synth 8-256] done synthesizing module 'ADD16b' (7#1) [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ADD16b.vhd:45]
+INFO: [Synth 8-3491] module 'SUS16b' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/SUS16b.vhd:34' bound to instance 'inst_SUS' of component 'SUS16b' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ALU.vhd:125]
+INFO: [Synth 8-638] synthesizing module 'SUS16b' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/SUS16b.vhd:40]
+INFO: [Synth 8-3491] module 'ADD16b' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ADD16b.vhd:34' bound to instance 'ADD' of component 'ADD16b' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/SUS16b.vhd:53]
+INFO: [Synth 8-256] done synthesizing module 'SUS16b' (8#1) [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/SUS16b.vhd:40]
+INFO: [Synth 8-3491] module 'AND16b' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/AND16b.vhd:34' bound to instance 'inst_AND' of component 'AND16b' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ALU.vhd:132]
+INFO: [Synth 8-638] synthesizing module 'AND16b' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/AND16b.vhd:40]
+INFO: [Synth 8-256] done synthesizing module 'AND16b' (9#1) [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/AND16b.vhd:40]
+INFO: [Synth 8-3491] module 'OR16b' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/OR16b.vhd:34' bound to instance 'inst_OR' of component 'OR16b' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ALU.vhd:138]
+INFO: [Synth 8-638] synthesizing module 'OR16b' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/OR16b.vhd:40]
+INFO: [Synth 8-256] done synthesizing module 'OR16b' (10#1) [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/OR16b.vhd:40]
+INFO: [Synth 8-3491] module 'XOR16b' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/XOR16b.vhd:34' bound to instance 'inst_XOR' of component 'XOR16b' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ALU.vhd:144]
+INFO: [Synth 8-638] synthesizing module 'XOR16b' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/XOR16b.vhd:40]
+INFO: [Synth 8-256] done synthesizing module 'XOR16b' (11#1) [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/XOR16b.vhd:40]
+INFO: [Synth 8-3491] module 'NOT16b' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/NOT16b.vhd:34' bound to instance 'inst_NOT' of component 'NOT16b' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ALU.vhd:150]
+INFO: [Synth 8-638] synthesizing module 'NOT16b' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/NOT16b.vhd:39]
+INFO: [Synth 8-256] done synthesizing module 'NOT16b' (12#1) [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/NOT16b.vhd:39]
+INFO: [Synth 8-3491] module 'ShiftL16b' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ShiftL16b.vhd:34' bound to instance 'inst_sh16bL' of component 'ShiftL16b' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ALU.vhd:155]
+INFO: [Synth 8-638] synthesizing module 'ShiftL16b' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ShiftL16b.vhd:40]
+INFO: [Synth 8-256] done synthesizing module 'ShiftL16b' (13#1) [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ShiftL16b.vhd:40]
+INFO: [Synth 8-3491] module 'ShiftR16b' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ShiftR16b.vhd:34' bound to instance 'inst_sh16bR' of component 'ShiftR16b' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ALU.vhd:161]
+INFO: [Synth 8-638] synthesizing module 'ShiftR16b' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ShiftR16b.vhd:39]
+INFO: [Synth 8-256] done synthesizing module 'ShiftR16b' (14#1) [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ShiftR16b.vhd:39]
+INFO: [Synth 8-256] done synthesizing module 'ALU' (15#1) [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ALU.vhd:17]
+INFO: [Synth 8-3491] module 'ROM' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ROM.vhd:88' bound to instance 'inst_ROM' of component 'ROM' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Basys3.vhd:343]
+INFO: [Synth 8-638] synthesizing module 'ROM' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ROM.vhd:95]
+INFO: [Synth 8-256] done synthesizing module 'ROM' (16#1) [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ROM.vhd:95]
+INFO: [Synth 8-3491] module 'CU' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/CU.vhd:34' bound to instance 'inst_CU' of component 'CU' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Basys3.vhd:348]
+INFO: [Synth 8-638] synthesizing module 'CU' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/CU.vhd:54]
+INFO: [Synth 8-256] done synthesizing module 'CU' (17#1) [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/CU.vhd:54]
+INFO: [Synth 8-3491] module 'PC' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/PC.vhd:5' bound to instance 'inst_PC' of component 'PC' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Basys3.vhd:367]
+INFO: [Synth 8-638] synthesizing module 'PC' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/PC.vhd:12]
+INFO: [Synth 8-256] done synthesizing module 'PC' (18#1) [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/PC.vhd:12]
+INFO: [Synth 8-3491] module 'RAM' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/RAM.vhd:6' bound to instance 'inst_RAM' of component 'RAM' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Basys3.vhd:374]
+INFO: [Synth 8-638] synthesizing module 'RAM' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/RAM.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'RAM' (19#1) [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/RAM.vhd:16]
+INFO: [Synth 8-3491] module 'ADD16b' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ADD16b.vhd:34' bound to instance 'inst_adder' of component 'ADD16b' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Basys3.vhd:382]
+INFO: [Synth 8-3491] module 'Reg' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Reg.vhd:5' bound to instance 'inst_regA' of component 'Reg' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Basys3.vhd:389]
+INFO: [Synth 8-638] synthesizing module 'Reg' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Reg.vhd:14]
+INFO: [Synth 8-256] done synthesizing module 'Reg' (20#1) [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Reg.vhd:14]
+INFO: [Synth 8-3491] module 'Reg' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Reg.vhd:5' bound to instance 'inst_regB' of component 'Reg' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Basys3.vhd:397]
+INFO: [Synth 8-3491] module 'Reg' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Reg.vhd:5' bound to instance 'inst_SP' of component 'Reg' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Basys3.vhd:406]
+INFO: [Synth 8-3491] module 'Reg' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Reg.vhd:5' bound to instance 'inst_regDis' of component 'Reg' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Basys3.vhd:415]
+INFO: [Synth 8-3491] module 'Reg' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Reg.vhd:5' bound to instance 'inst_regLed' of component 'Reg' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Basys3.vhd:424]
+INFO: [Synth 8-3491] module 'reg_3b' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/reg_3b.vhd:5' bound to instance 'inst_statusReg' of component 'Reg_3b' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Basys3.vhd:433]
+INFO: [Synth 8-638] synthesizing module 'reg_3b' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/reg_3b.vhd:14]
+INFO: [Synth 8-256] done synthesizing module 'reg_3b' (21#1) [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/reg_3b.vhd:14]
+INFO: [Synth 8-3491] module 'MUX_2b' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/MUX.vhd:34' bound to instance 'inst_MUXDataIn' of component 'MUX_2b' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Basys3.vhd:444]
+INFO: [Synth 8-638] synthesizing module 'MUX_2b' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/MUX.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'MUX_2b' (22#1) [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/MUX.vhd:43]
+INFO: [Synth 8-3491] module 'MUX_2b_12d' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/MUX_2b_12d.vhd:34' bound to instance 'inst_MUXPC' of component 'MUX_2b_12d' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Basys3.vhd:453]
+INFO: [Synth 8-638] synthesizing module 'MUX_2b_12d' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/MUX_2b_12d.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'MUX_2b_12d' (23#1) [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/MUX_2b_12d.vhd:43]
+INFO: [Synth 8-3491] module 'MUX_2b_12d' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/MUX_2b_12d.vhd:34' bound to instance 'inst_MUXSP' of component 'MUX_2b_12d' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Basys3.vhd:461]
+INFO: [Synth 8-3491] module 'MUX_2b' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/MUX.vhd:34' bound to instance 'inst_MUXa' of component 'MUX_2b' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Basys3.vhd:480]
+INFO: [Synth 8-3491] module 'MUX_2b' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/MUX.vhd:34' bound to instance 'inst_MUXb' of component 'MUX_2b' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Basys3.vhd:489]
+INFO: [Synth 8-3491] module 'MUX_3b' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/MUX_3b.vhd:34' bound to instance 'inst_MUXIO' of component 'MUX_3b' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Basys3.vhd:497]
+INFO: [Synth 8-638] synthesizing module 'MUX_3b' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/MUX_3b.vhd:47]
+INFO: [Synth 8-256] done synthesizing module 'MUX_3b' (24#1) [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/MUX_3b.vhd:47]
+INFO: [Synth 8-3491] module 'Decoder' declared at 'C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Decoder.vhd:5' bound to instance 'inst_Decoder' of component 'Decoder' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Basys3.vhd:512]
+INFO: [Synth 8-638] synthesizing module 'Decoder' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Decoder.vhd:11]
+INFO: [Synth 8-256] done synthesizing module 'Decoder' (25#1) [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Decoder.vhd:11]
+WARNING: [Synth 8-3848] Net Spc in module/entity Basys3 does not have driver. [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Basys3.vhd:251]
+WARNING: [Synth 8-3848] Net Sdin in module/entity Basys3 does not have driver. [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Basys3.vhd:259]
+INFO: [Synth 8-256] done synthesizing module 'Basys3' (26#1) [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Basys3.vhd:28]
+WARNING: [Synth 8-3331] design Basys3 has unconnected port led[12]
+WARNING: [Synth 8-3331] design Basys3 has unconnected port led[11]
+WARNING: [Synth 8-3331] design Basys3 has unconnected port led[10]
+WARNING: [Synth 8-3331] design Basys3 has unconnected port led[9]
+WARNING: [Synth 8-3331] design Basys3 has unconnected port led[8]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 280.020 ; gain = 102.121
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+WARNING: [Synth 8-3295] tying undriven pin inst_adder:word2[15] to constant 0 [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Basys3.vhd:382]
+WARNING: [Synth 8-3295] tying undriven pin inst_adder:word2[14] to constant 0 [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Basys3.vhd:382]
+WARNING: [Synth 8-3295] tying undriven pin inst_adder:word2[13] to constant 0 [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Basys3.vhd:382]
+WARNING: [Synth 8-3295] tying undriven pin inst_adder:word2[12] to constant 0 [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Basys3.vhd:382]
+WARNING: [Synth 8-3295] tying undriven pin inst_MUXDataIn:mSelect[1] to constant 0 [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Basys3.vhd:444]
+WARNING: [Synth 8-3295] tying undriven pin inst_MUXPC:mSelect[1] to constant 0 [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Basys3.vhd:453]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 280.020 ; gain = 102.121
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/constrs_1/new/Basys3.xdc]
+Finished Parsing XDC File [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/constrs_1/new/Basys3.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 579.477 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 579.477 ; gain = 401.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 579.477 ; gain = 401.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 579.477 ; gain = 401.578
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "Z" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iJEQ" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iJNE" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iJGT" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iJGE" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iJLT" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iJLE" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iJCR" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-327] inferring latch for variable 'dout_reg' [C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Decoder.vhd:15]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 579.477 ; gain = 401.578
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 1     
++---XORs : 
+	   2 Input     16 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 101   
++---Registers : 
+	                7 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   4 Input     27 Bit        Muxes := 1     
+	 101 Input     18 Bit        Muxes := 1     
+	   4 Input     16 Bit        Muxes := 3     
+	   4 Input     12 Bit        Muxes := 2     
+	  16 Input      8 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 2     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 22    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module Clock_Divider 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   4 Input     27 Bit        Muxes := 1     
+Module Debouncer 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 5     
++---Registers : 
+	                5 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 5     
+Module Timer 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 1     
++---Registers : 
+	                7 Bit    Registers := 1     
+Module Led_Driver 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	                2 Bit    Registers := 1     
++---Muxes : 
+	  16 Input      8 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 2     
+Module HA 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
+Module XOR16b 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input     16 Bit         XORs := 1     
+Module ALU 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module CU 
+Detailed RTL Component Info : 
++---Muxes : 
+	 101 Input     18 Bit        Muxes := 1     
+Module Reg 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 2     
+Module reg_3b 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	                3 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module MUX_2b 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input     16 Bit        Muxes := 1     
+Module MUX_2b_12d 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input     12 Bit        Muxes := 1     
+Module Decoder 
+Detailed RTL Component Info : 
++---Muxes : 
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 120 (col length:60)
+BRAMs: 150 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 579.477 ; gain = 401.578
+---------------------------------------------------------------------------------
+Start Cross Boundary Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "inst_ALU/Z" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "inst_CU/iJNE" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "inst_CU/iJGT" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "inst_CU/iJGE" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "inst_CU/iJLT" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "inst_CU/iJLE" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "inst_CU/iJCR" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "inst_CU/iJEQ" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-3331] design Basys3 has unconnected port led[12]
+WARNING: [Synth 8-3331] design Basys3 has unconnected port led[11]
+WARNING: [Synth 8-3331] design Basys3 has unconnected port led[10]
+WARNING: [Synth 8-3331] design Basys3 has unconnected port led[9]
+WARNING: [Synth 8-3331] design Basys3 has unconnected port led[8]
+WARNING: [Synth 8-3331] design Basys3 has unconnected port led[7]
+WARNING: [Synth 8-3917] design Basys3 has port seg[7] driven by constant 1
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 579.477 ; gain = 401.578
+---------------------------------------------------------------------------------
+Finished Parallel Reinference  : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 579.477 ; gain = 401.578
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++------------+------------+---------------+----------------+
+|Module Name | RTL Object | Depth x Width | Implemented As | 
++------------+------------+---------------+----------------+
+|ROM         | rom        | 4096x33       | LUT            | 
+|ROM         | rom        | 4096x33       | LUT            | 
++------------+------------+---------------+----------------+
+
+
+Distributed RAM: 
++------------+---------------------+-----------+----------------------+-------------------+-------------------+
+|Module Name | RTL Object          | Inference | Size (Depth x Width) | Primitives        | Hierarchical Name | 
++------------+---------------------+-----------+----------------------+-------------------+-------------------+
+|Basys3      | inst_RAM/memory_reg | Implied   | 4 K x 16             | RAM256X1S x 256   | Basys3/ram__2     | 
++------------+---------------------+-----------+----------------------+-------------------+-------------------+
+
+Note: The table shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once. "Hierarchical Name" reflects the Distributed RAM name as it appears in the hierarchical module and only part of it is displayed.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (\inst_Decoder/dout_reg[3] ) is unused and will be removed from module Basys3.
+WARNING: [Synth 8-3332] Sequential element (\inst_Decoder/dout_reg[1] ) is unused and will be removed from module Basys3.
+WARNING: [Synth 8-3332] Sequential element (\inst_Decoder/dout_reg[0] ) is unused and will be removed from module Basys3.
+WARNING: [Synth 8-3332] Sequential element (\inst_SP/reg_reg[12] ) is unused and will be removed from module Basys3.
+WARNING: [Synth 8-3332] Sequential element (\inst_SP/reg_reg[13] ) is unused and will be removed from module Basys3.
+WARNING: [Synth 8-3332] Sequential element (\inst_SP/reg_reg[14] ) is unused and will be removed from module Basys3.
+WARNING: [Synth 8-3332] Sequential element (\inst_SP/reg_reg[15] ) is unused and will be removed from module Basys3.
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 579.477 ; gain = 401.578
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 579.477 ; gain = 401.578
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 579.477 ; gain = 401.578
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:39 ; elapsed = 00:00:43 . Memory (MB): peak = 579.477 ; gain = 401.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:43 . Memory (MB): peak = 579.477 ; gain = 401.578
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------

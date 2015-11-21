@@ -97,15 +97,15 @@ with sel select
 
 with sel select
 co <= iCo when "000",
-      iiCo when "110",
+--      iiCo when "110",
       '0' when others;
 
 --Cero
-with iCo select
-    Z <= iZ when '0',
-         '0' when others;
+--with iCo select
+--    Z <= iZ when '0',
+--         '0' when others;
 with iRes select
-    iZ <= '1' when "0000000000000000",
+    Z <= '1' when "0000000000000000",
          '0' when others;
 --Negativo
 with iRes(15) select

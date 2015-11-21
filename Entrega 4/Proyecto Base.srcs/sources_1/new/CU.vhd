@@ -134,8 +134,8 @@ cNE <= not Z     when (iJNE = '1') else '0'; --OK
 cLT <= (N)       when (iJLT = '1') else '0'; --OK
 cGE <= not N     when (iJGE = '1') else '0'; --OK
 cCR <= (C)       when (iJCR = '1') else '0'; --OK
-cGT <= (Z or N)  when (iJGT = '1') else '0'; --OK
-cLE <= (Z nor N) when (iJLE = '1') else '0'; --OK
+cGT <= ((not Z) and (not N))  when (iJGT = '1') else '0'; --OK
+cLE <= (Z or N) when (iJLE = '1') else '0'; --OK
 
 jmpBits(0) <= cEQ;
 jmpBits(1) <= cNE;
@@ -261,6 +261,10 @@ naturalSigs <=  "000000000000000000" when "0000000", --NOP
                 "001000000000000000" when "1101011", --DEC SP
                 "010000000000000000" when "1101100", --INC SP
                 "000000000101010000" when "1101110", --INC B
+                "100000000010010000" when "1101111", --OUT A,B
+                "100010000010100000" when "1110000", --OUT A,(B)
+                "100000000010100000" when "1110001", --OUT A,(Dir)
+                "100000000010110000" when "1110010", --OUT A,Lit
                 "000000001000010000" when "1111110", --MOV A,B
                 "000000000000000000" when others;
 
