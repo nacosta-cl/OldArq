@@ -26,6 +26,7 @@ read_vhdl -library xil_defaultlib {
   {C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/OR16b.vhd}
   {C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/NOT16b.vhd}
   {C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/AND16b.vhd}
+  {C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ALU.vhd}
   {C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/imports/new/Timer.vhd}
   {C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ROM.vhd}
   {C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/reg_3b.vhd}
@@ -40,7 +41,6 @@ read_vhdl -library xil_defaultlib {
   {C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/imports/new/Debouncer.vhd}
   {C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/CU.vhd}
   {C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/imports/new/Clock_Divider.vhd}
-  {C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/ALU.vhd}
   {C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Basys3.vhd}
 }
 read_xdc {{C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/constrs_1/new/Basys3.xdc}}

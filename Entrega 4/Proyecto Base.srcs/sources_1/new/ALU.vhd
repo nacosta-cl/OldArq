@@ -96,8 +96,10 @@ with sel select
             "0000000000000000" when others;
 
 with sel select
-co <= iCo when "000",
---      iiCo when "110",
+co <= ci when "000",
+      ci when "001",
+      numA(15) when "110",
+      numA(0) when "111",
       '0' when others;
 
 --Cero
@@ -108,10 +110,11 @@ with iRes select
     Z <= '1' when "0000000000000000",
          '0' when others;
 --Negativo
-with iRes(15) select
-    N <= '1' when '1',
-         '0' when others;
-            
+
+--N <= '1' when ((sel = "001") and (numB > numA)) else '0';
+N <= ci and not(iCo);
+
+
 res <= iRes;
 --Operadores modulares
 inst_ADD: ADD16b port map
