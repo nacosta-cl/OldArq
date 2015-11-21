@@ -42,14 +42,12 @@ proc step_failed { step } {
   close $ch
 }
 
-set_msg_config -id {Common-41} -limit 4294967295
 set_msg_config -id {HDL 9-1061} -limit 100000
 set_msg_config -id {HDL 9-1654} -limit 100000
 
 start_step write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
-  set_param xicom.use_bs_reader 1
   debug::add_scope template.lib 1
   open_checkpoint Basys3_routed.dcp
   set_property webtalk.parent_dir {C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.cache/wt} [current_project]
