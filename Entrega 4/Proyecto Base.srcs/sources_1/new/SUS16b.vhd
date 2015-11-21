@@ -34,7 +34,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity SUS16b is
     Port ( rWord1 : in STD_LOGIC_VECTOR (15 downto 0);
            rWord2 : in STD_LOGIC_VECTOR (15 downto 0);
-           rest : out STD_LOGIC_VECTOR (15 downto 0));
+           rest : out STD_LOGIC_VECTOR (15 downto 0);
+           rCout : out STD_LOGIC);
 end SUS16b;
 
 architecture Behavioral of SUS16b is
@@ -54,6 +55,7 @@ ADD: ADD16b port map(
         word1 => rWord1,
         word2 => not(rWord2),
         sCin => '1',
+        sCout => rCout,
         sSum => rest
     );
 

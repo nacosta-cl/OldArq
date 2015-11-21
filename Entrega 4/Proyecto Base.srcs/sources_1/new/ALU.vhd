@@ -28,7 +28,8 @@ component ADD16b
 component SUS16b 
     Port (  rWord1 : in STD_LOGIC_VECTOR (15 downto 0);
             rWord2 : in STD_LOGIC_VECTOR (15 downto 0);
-            rest : out STD_LOGIC_VECTOR (15 downto 0)
+            rest : out STD_LOGIC_VECTOR (15 downto 0);
+            rCout : out STD_LOGIC
     );
     end component;    
 
@@ -78,8 +79,8 @@ signal opR6 : STD_LOGIC_VECTOR (15 downto 0);
 signal opR7 : STD_LOGIC_VECTOR (15 downto 0);
 
 --Resultado interno
-signal iCo : STD_LOGIC;
-signal iiCo : STD_LOGIC;
+signal iCo : STD_LOGIC; #carry suma
+signal iiCo : STD_LOGIC; #carry resta
 signal iZ : STD_LOGIC;
 signal iRes : STD_LOGIC_VECTOR (15 downto 0);
 begin
@@ -96,8 +97,8 @@ with sel select
             "0000000000000000" when others;
 
 with sel select
-co <= ci when "000",
-      ci when "001",
+co <= iCo when "000",
+      iiCo when "001",
       numA(15) when "110",
       numA(0) when "111",
       '0' when others;
@@ -111,8 +112,8 @@ with iRes select
          '0' when others;
 --Negativo
 
---N <= '1' when ((sel = "001") and (numB > numA)) else '0';
-N <= ci and not(iCo);
+N <= '1' when ((sel = "001") and (numB > numA)) else '0';
+--N <= ci and not(iiCo);
 
 
 res <= iRes;
@@ -129,6 +130,7 @@ inst_SUS: SUS16b port map
 (
     rWord1 => numA,
     rWord2 => numB,
+    rCout => iiCo,
     rest => opR1
 );
 
@@ -158,8 +160,7 @@ inst_NOT: NOT16b port map
 inst_sh16bL: ShiftL16b port map
 (
     inShiftL => numA,
-    outShiftL => opR6,
-    co => iiCo
+    outShiftL => opR6
 );
 inst_sh16bR: ShiftR16b port map
 (
