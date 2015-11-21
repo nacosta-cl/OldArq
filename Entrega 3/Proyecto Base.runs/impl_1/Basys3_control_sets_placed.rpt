@@ -1,7 +1,7 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2015.2 (win64) Build 1266856 Fri Jun 26 16:35:25 MDT 2015
-| Date         : Wed Nov 18 22:49:01 2015
+| Date         : Thu Nov 19 00:07:07 2015
 | Host         : Jorge-PC running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file Basys3_control_sets_placed.rpt
 | Design       : Basys3
@@ -55,19 +55,19 @@ Table of Contents
 |  clock_BUFG    | inst_PC/load          |                                                        |                4 |             16 |
 |  clk_IBUF_BUFG |                       | inst_Led_Driver/eqOp                                   |                7 |             27 |
 |  clk_IBUF_BUFG |                       | inst_Clock_Divider/clock_divide_counter_reg[0]_i_1_n_2 |                7 |             27 |
-|  clock_BUFG    | inst_PC/pc_reg[3]_9   |                                                        |               16 |             64 |
 |  clock_BUFG    | inst_PC/pc_reg[3]_8   |                                                        |               16 |             64 |
-|  clock_BUFG    | inst_PC/pc_reg[3]_5   |                                                        |               16 |             64 |
+|  clock_BUFG    | inst_PC/pc_reg[3]_9   |                                                        |               16 |             64 |
 |  clock_BUFG    | inst_PC/pc_reg[3]_6   |                                                        |               16 |             64 |
+|  clock_BUFG    | inst_PC/pc_reg[3]_5   |                                                        |               16 |             64 |
 |  clock_BUFG    | inst_PC/pc_reg[3]_4   |                                                        |               16 |             64 |
-|  clock_BUFG    | inst_PC/pc_reg[3]_3   |                                                        |               16 |             64 |
 |  clock_BUFG    | inst_PC/pc_reg[3]_2   |                                                        |               16 |             64 |
-|  clock_BUFG    | inst_PC/pc_reg[3]_15  |                                                        |               16 |             64 |
+|  clock_BUFG    | inst_PC/pc_reg[3]_3   |                                                        |               16 |             64 |
 |  clock_BUFG    | inst_PC/pc_reg[3]_16  |                                                        |               16 |             64 |
-|  clock_BUFG    | inst_PC/pc_reg[3]_14  |                                                        |               16 |             64 |
+|  clock_BUFG    | inst_PC/pc_reg[3]_15  |                                                        |               16 |             64 |
 |  clock_BUFG    | inst_PC/pc_reg[3]_13  |                                                        |               16 |             64 |
-|  clock_BUFG    | inst_PC/pc_reg[3]_11  |                                                        |               16 |             64 |
+|  clock_BUFG    | inst_PC/pc_reg[3]_14  |                                                        |               16 |             64 |
 |  clock_BUFG    | inst_PC/pc_reg[3]_12  |                                                        |               16 |             64 |
+|  clock_BUFG    | inst_PC/pc_reg[3]_11  |                                                        |               16 |             64 |
 |  clock_BUFG    | inst_PC/pc_reg[3]_10  |                                                        |               16 |             64 |
 |  clock_BUFG    | inst_PC/pc_reg[3]_1   |                                                        |               16 |             64 |
 |  clock_BUFG    | inst_PC/pc_reg[3]_0   |                                                        |               16 |             64 |
