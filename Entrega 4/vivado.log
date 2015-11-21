@@ -19,3 +19,5 @@ open_project: Time (s): cpu = 00:00:18 ; elapsed = 00:00:08 . Memory (MB): peak 
 add_files -norecurse {{C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.srcs/sources_1/new/Decoder.vhd}}
 update_compile_order -fileset sources_1
 update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Sat Nov 21 00:02:59 2015...
