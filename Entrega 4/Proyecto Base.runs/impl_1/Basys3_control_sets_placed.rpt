@@ -1,7 +1,7 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2015.2 (win64) Build 1266856 Fri Jun 26 16:35:25 MDT 2015
-| Date         : Sat Nov 21 06:07:36 2015
+| Date         : Sat Nov 21 06:51:52 2015
 | Host         : Jorge-PC running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file Basys3_control_sets_placed.rpt
 | Design       : Basys3
@@ -23,7 +23,7 @@ Table of Contents
 |                               Status                              | Count |
 +-------------------------------------------------------------------+-------+
 | Number of unique control sets                                     |    32 |
-| Minimum Number of register sites lost to control set restrictions |    15 |
+| Minimum Number of register sites lost to control set restrictions |    22 |
 +-------------------------------------------------------------------+-------+
 
 
@@ -33,7 +33,7 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              24 |           13 |
+| No           | No                    | No                     |              25 |           14 |
 | No           | No                    | Yes                    |               0 |            0 |
 | No           | Yes                   | No                     |             141 |           36 |
 | Yes          | No                    | No                     |              60 |           15 |
@@ -50,8 +50,7 @@ Table of Contents
 +----------------+------------------------------+--------------------------------------------------------+------------------+----------------+
 |  clk_IBUF_BUFG |                              | inst_Timer/eqOp                                        |                2 |              7 |
 |  clk_IBUF_BUFG |                              |                                                        |                7 |              8 |
-|  clock_BUFG    | inst_PC/reg_reg[11]_2        |                                                        |                3 |             12 |
-|  clock_BUFG    |                              |                                                        |                6 |             16 |
+|  clock_BUFG    | inst_PC/reg_reg[11]_1        |                                                        |                3 |             12 |
 |  clock_BUFG    | inst_PC/load                 |                                                        |                4 |             16 |
 |  clock_BUFG    | inst_PC/reg_reg[15]_1        |                                                        |                4 |             16 |
 |  clk_IBUF_BUFG |                              | inst_Debouncer/sig_cntrs_ary[4][0]_i_1_n_0             |                4 |             16 |
@@ -62,6 +61,7 @@ Table of Contents
 |  clk_IBUF_BUFG | inst_Timer/utimer[0]_i_1_n_0 | inst_Timer/mtimer[0]_i_1_n_0                           |                4 |             16 |
 |  clk_IBUF_BUFG | inst_Timer/mtimer[0]_i_1_n_0 |                                                        |                4 |             16 |
 |  clk_IBUF_BUFG | inst_Timer/eqOp              | inst_Timer/utimer[0]_i_1_n_0                           |                4 |             16 |
+|  clock_BUFG    |                              |                                                        |                7 |             17 |
 |  clk_IBUF_BUFG |                              | inst_Led_Driver/eqOp                                   |                7 |             27 |
 |  clk_IBUF_BUFG |                              | inst_Clock_Divider/clock_divide_counter_reg[0]_i_1_n_2 |                7 |             27 |
 |  clock_BUFG    | inst_PC/pc_reg[3]_7          |                                                        |               16 |             64 |
