@@ -91,7 +91,7 @@ lista = {
     'OR A,(B)' : '0100000',
     'OR (Dir)' : '0100001',
     'NOT A' : '0100010',
-    'NOT B,A' : '0100011 ',
+    'NOT B,A' : '0100011',
     '0' : '0100100 ',
     '0' : '0100101 ',
     '0' : '0100110 ',
@@ -143,7 +143,7 @@ lista = {
     'NOT (Dir),A' : '1010100',
     'NOT (B),A' : '1010101',
     'AND B,(Dir)' : '1010110',
-    'MOV (B),Lit' : '1010111',
+    '0' : '1010111',
     'ADD B,(B)' : '1011000',
     '0' : '1011001',
     'SUB B,(B)' : '1011010',
@@ -167,10 +167,10 @@ lista = {
     'INC SP' : '1101100',
     '0' : '1101101',
     'INC B' : '1101110',
-    '0' : '1101111',
-    '0' : '1110000',
-    '0' : '1110001',
-    '0' : '1110010',
+    'OUT A,B' : '1101111',
+    'OUT A,(B)' : '1110000',
+    'OUT A,(Dir)' : '1110001',
+    'OUT A,Lit' : '1110010',
     '0' : '1110011',
     '0' : '1110100',
     '0' : '1110101',
@@ -487,7 +487,10 @@ def ins_generica(ins):
                 except:
                     if(tipoPalabra(dercoma)!=1):
                         retorna = str(nombre)+" "+str(izqcoma)+",Lit"
-                        dercoma = str(transformarBin(dercoma))
+                        if(esint(str(transformarBin(dercoma)[:-1]))):
+                            dercoma = str(transformarBin(dercoma))
+                        else:
+                            dercoma = str(transformarBin(str(variables[dercoma[1:-1]+"0"])))
                     else:
                         retorna = str(nombre)+" "+str(izqcoma)+","+str(dercoma)
                         izqcoma = " "+str(izqcoma)
@@ -729,16 +732,17 @@ def Leer_Archivo(Archivo,label):
                                     for i in palabra[1][1:-1]:
                                         #print(ord(i)) #ord transforma a ascii
                                         #auxiliar.append(i)
-                                        auxiliar.append(str(ord(i)))
+                                        auxiliar.append(sumBin(str(ord(i))+"d")+"b")
                                     auxiliar.append('0')
                                     vector[1] = (auxiliar)
                                 else:
                                     #vector[1].append(str(palabra[1][1:-1]))
-                                    vector[1].append(str(ord(palabra[1][1:-1])))
+                                    vector[1].append(sumBin(str(ord(palabra[1][1:-1]))+"d")+"b")
                             else:
                                 vector[1].append(palabra[1])
 
                             label[LabelName].append(vector)
+
                         else:
                              vector[1].append(palabra[0])
                     else:
