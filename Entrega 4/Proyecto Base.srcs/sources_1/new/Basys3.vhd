@@ -183,6 +183,14 @@ component ADD16b Port
        sCout : out STD_LOGIC
 );
 end component;
+
+component Decoder Port 
+(
+       loadOut : in std_logic;
+       din : in std_logic_vector(1 downto 0);
+       dout : out std_logic_vector(3 downto 0)
+);
+end component;
 --Fin de componentes
 
 --Inicio de señales
@@ -193,9 +201,7 @@ signal timer_ms        : std_logic_vector(15 downto 0);
 signal timer_us        : std_logic_vector(15 downto 0);
 
 --Decoder
-signal decoder1   : STD_LOGIC;
-signal decoder2   : STD_LOGIC;
-signal decoder3   : STD_LOGIC;
+signal decoder   : STD_LOGIC_VECTOR (3 downto 0);
 
 --ALU
 signal ALUnumA      : STD_LOGIC_VECTOR (15 downto 0);
@@ -502,6 +508,14 @@ inst_MUXIO: MUX_3b port map(
         mSelect => lit(2 downto 0),
         muxOut  => IOlit
     );
+    
+-- Decoder
+inst_Decoder: Decoder port map(
+        loadOut =>
+        din     =>
+        dout    =>
+    );
+   
 --Fin de instancias
 --Conexiones internas
 
