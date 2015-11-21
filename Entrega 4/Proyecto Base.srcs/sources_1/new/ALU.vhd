@@ -79,8 +79,8 @@ signal opR6 : STD_LOGIC_VECTOR (15 downto 0);
 signal opR7 : STD_LOGIC_VECTOR (15 downto 0);
 
 --Resultado interno
-signal iCo : STD_LOGIC; #carry suma
-signal iiCo : STD_LOGIC; #carry resta
+signal iCo : STD_LOGIC; --carry suma
+signal iiCo : STD_LOGIC; --carry resta
 signal iZ : STD_LOGIC;
 signal iRes : STD_LOGIC_VECTOR (15 downto 0);
 begin

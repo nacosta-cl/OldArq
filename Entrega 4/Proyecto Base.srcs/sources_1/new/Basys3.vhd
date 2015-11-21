@@ -302,7 +302,7 @@ begin
 
 inst_Clock_Divider: Clock_Divider port map( -- No Tocar - Intancia de Clock_Divider.
     clk         => clk,  -- No Tocar - Entrada del clock completo (100Mhz).
-    speed       => "00", -- Selector de velocidad: "00" full, "01" fast, "10" normal y "11" slow. 
+    speed       => "01", -- Selector de velocidad: "00" full, "01" fast, "10" normal y "11" slow. 
     clock       => clock -- No Tocar - Salida del clock reducido: 50Mhz, 8hz, 2hz y 0.5hz.
     );
 
