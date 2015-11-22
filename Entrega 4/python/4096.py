@@ -706,12 +706,12 @@ def Leer_Archivo(Archivo,label):
                 Linea_anterior = Lineas[i-1]# linea anterior a la liena en la que vamos
                 Espacios_linea_actual = contador(Linea_actual) #espacios o tabulaciones de la linea actual
                 Linea_actual = Linea_actual.strip()
-                if(len(Linea_actual.split(" ")) >= 2):
-                    Linea_actual = Linea_actual.split(" ")[0]+" "+" ".join(Linea_actual.split(" ")[1:])
-                else:
-                    Linea_actual = Linea_actual.split(" ")[0]+" "+"".join(Linea_actual.split(" ")[1:])
+                #if(len(Linea_actual.split(" ")) >= 2):
+                #    Linea_actual = Linea_actual.split(" ")[0]+" "+" ".join(Linea_actual.split(" ")[1:])
+                #else:
+                Linea_actual = Linea_actual.split(" ")[0]+" "+"".join(Linea_actual.split(" ")[1:])
                 Linea_actual = Linea_actual.replace('\r',' ') #Porsiacaso
-                #Linea_actual = Linea_actual.replace(' ','\t')
+                Linea_actual = Linea_actual.replace(' ','\t')
                 Linea_actual = Linea_actual.replace('\t',' ',1)
                 Linea_actual = Linea_actual.replace('\t','') # la dejamos con un solo espacio MOV A,B
 
@@ -722,9 +722,8 @@ def Leer_Archivo(Archivo,label):
                     LabelName = orden_labels[contador_label]
                     if LabelName == "DATA":
                         palabra = Linea_actual.split(" ")
-                        palabra = [palabra[0], " ".join(palabra[1:])]
-                        palabra[1] = palabra[1].strip()
-
+                        #palabra = [palabra[0], " ".join(palabra[1:])]
+                        #palabra[1] = palabra[1].strip()
 
                         if len(palabra[1]) > 0:
                             vector = []
@@ -732,7 +731,7 @@ def Leer_Archivo(Archivo,label):
                             vector.append([])
 
                             if palabra[1][0] == str("'") or palabra[1][0] == str('"'):
-                                #print(palabra[1][0])
+                                #print(palabra)
                                 if len(palabra[1][1:-1])>1:
                                     auxiliar = []
                                     for i in palabra[1][1:-1]:
