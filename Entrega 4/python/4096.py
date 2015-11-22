@@ -474,10 +474,10 @@ def ins_generica(ins):
                 else:
                     if(izqcoma != "A" and izqcoma != "B"):
                         retorna = str(nombre)+" Lit,"+str(dercoma)
-                        izqcoma = str(variables[str(izqcoma)+str(0)])
+                        izqcoma = str(transformarBin(str(variables[str(izqcoma)+str(0)])))
                     elif(dercoma != "A" and dercoma != "B"):
                         retorna = str(nombre)+" "+str(izqcoma)+",Lit"
-                        dercoma = str(variables[str(dercoma)+str(0)])
+                        dercoma = str(transformarBin(str(variables[str(dercoma)+str(0)])))
                     else:
                         retorna = str(nombre)+" "+str(izqcoma)+","+str(dercoma)
             elif(instr_binario(valor)=="variable izq"): #tipo MOV (c),A
@@ -706,9 +706,12 @@ def Leer_Archivo(Archivo,label):
                 Linea_anterior = Lineas[i-1]# linea anterior a la liena en la que vamos
                 Espacios_linea_actual = contador(Linea_actual) #espacios o tabulaciones de la linea actual
                 Linea_actual = Linea_actual.strip()
-                Linea_actual = Linea_actual.split(" ")[0]+" "+"".join(Linea_actual.split(" ")[1:])
+                if(len(Linea_actual.split(" ")) >= 2):
+                    Linea_actual = Linea_actual.split(" ")[0]+" "+" ".join(Linea_actual.split(" ")[1:])
+                else:
+                    Linea_actual = Linea_actual.split(" ")[0]+" "+"".join(Linea_actual.split(" ")[1:])
                 Linea_actual = Linea_actual.replace('\r',' ') #Porsiacaso
-                Linea_actual = Linea_actual.replace(' ','\t')
+                #Linea_actual = Linea_actual.replace(' ','\t')
                 Linea_actual = Linea_actual.replace('\t',' ',1)
                 Linea_actual = Linea_actual.replace('\t','') # la dejamos con un solo espacio MOV A,B
 
@@ -719,6 +722,8 @@ def Leer_Archivo(Archivo,label):
                     LabelName = orden_labels[contador_label]
                     if LabelName == "DATA":
                         palabra = Linea_actual.split(" ")
+                        palabra = [palabra[0], " ".join(palabra[1:])]
+                        palabra[1] = palabra[1].strip()
 
 
                         if len(palabra[1]) > 0:
@@ -734,7 +739,7 @@ def Leer_Archivo(Archivo,label):
                                         #print(ord(i)) #ord transforma a ascii
                                         #auxiliar.append(i)
                                         auxiliar.append(sumBin(str(ord(i))+"d")+"b")
-                                    auxiliar.append('0')
+                                    auxiliar.append('0b')
                                     vector[1] = (auxiliar)
                                 else:
                                     #vector[1].append(str(palabra[1][1:-1]))
@@ -744,6 +749,8 @@ def Leer_Archivo(Archivo,label):
 
 
                             label[LabelName].append(vector)
+                            #print(LabelName)
+                            #print(vector)
 
                         else:
 
@@ -819,9 +826,9 @@ def Leer_Archivo(Archivo,label):
     #print(label)
     archivo.close()
 
-#root.fileopenname = filedialog.askopenfilename(initialdir = "./",title = "Escoge input")
-#Leer_Archivo(root.fileopenname,label)
-Leer_Archivo('test.txt',label)
+root.fileopenname = filedialog.askopenfilename(initialdir = "./",title = "Escoge input")
+Leer_Archivo(root.fileopenname,label)
+#Leer_Archivo('test.txt',label)
 
 
 
@@ -831,9 +838,9 @@ dataFinalBin(instrucciones2) #transforma instrucciones a bin y agrega en lista l
 
 rellenaLista(listaInsBin,4096) #rellena la lista listaInsBin con 4096 elementos
 
-#root.filesavename = filedialog.asksaveasfilename(initialdir = "./", title = "Escoge output")
-#outputTXT(root.filesavename)
-outputTXT('output.txt')
+root.filesavename = filedialog.asksaveasfilename(initialdir = "./", title = "Escoge output")
+outputTXT(root.filesavename)
+#outputTXT('output.txt')
 
 
 
