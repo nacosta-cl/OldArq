@@ -1,7 +1,7 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2015.2 (win64) Build 1266856 Fri Jun 26 16:35:25 MDT 2015
-| Date         : Sat Nov 21 19:05:44 2015
+| Date         : Sun Nov 22 08:28:51 2015
 | Host         : Jorge-PC running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file Basys3_control_sets_placed.rpt
 | Design       : Basys3
@@ -22,8 +22,8 @@ Table of Contents
 +-------------------------------------------------------------------+-------+
 |                               Status                              | Count |
 +-------------------------------------------------------------------+-------+
-| Number of unique control sets                                     |    32 |
-| Minimum Number of register sites lost to control set restrictions |    22 |
+| Number of unique control sets                                     |    34 |
+| Minimum Number of register sites lost to control set restrictions |    15 |
 +-------------------------------------------------------------------+-------+
 
 
@@ -33,10 +33,10 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              25 |           14 |
+| No           | No                    | No                     |              40 |           26 |
 | No           | No                    | Yes                    |               0 |            0 |
 | No           | Yes                   | No                     |             141 |           36 |
-| Yes          | No                    | No                     |              60 |           15 |
+| Yes          | No                    | No                     |              92 |           23 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |              32 |            8 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
@@ -49,37 +49,39 @@ Table of Contents
 |  Clock Signal  |         Enable Signal        |                    Set/Reset Signal                    | Slice Load Count | Bel Load Count |
 +----------------+------------------------------+--------------------------------------------------------+------------------+----------------+
 |  clk_IBUF_BUFG |                              | inst_Timer/eqOp                                        |                2 |              7 |
-|  clk_IBUF_BUFG |                              |                                                        |                7 |              8 |
-|  clock_BUFG    | inst_PC/reg_reg[11]_1        |                                                        |                3 |             12 |
-|  clock_BUFG    | inst_PC/load                 |                                                        |                4 |             16 |
-|  clock_BUFG    | inst_PC/reg_reg[15]_1        |                                                        |                4 |             16 |
+|  clk_IBUF_BUFG |                              |                                                        |                8 |              8 |
+|  clock_BUFG    | inst_PC/reg_reg[11]_3        |                                                        |                3 |             12 |
+|  clock_BUFG    | inst_PC/reg_reg[0]_14        |                                                        |                4 |             16 |
 |  clk_IBUF_BUFG |                              | inst_Debouncer/sig_cntrs_ary[4][0]_i_1_n_0             |                4 |             16 |
 |  clk_IBUF_BUFG |                              | inst_Debouncer/sig_cntrs_ary[3][0]_i_1_n_0             |                4 |             16 |
 |  clk_IBUF_BUFG |                              | inst_Debouncer/sig_cntrs_ary[2][0]_i_1_n_0             |                4 |             16 |
 |  clk_IBUF_BUFG |                              | inst_Debouncer/sig_cntrs_ary[1][0]_i_1_n_0             |                4 |             16 |
 |  clk_IBUF_BUFG |                              | inst_Debouncer/sig_cntrs_ary[0][0]_i_1_n_0             |                4 |             16 |
-|  clk_IBUF_BUFG | inst_Timer/utimer[0]_i_1_n_0 | inst_Timer/mtimer[0]_i_1_n_0                           |                4 |             16 |
+|  clock_BUFG    | inst_PC/reg_reg[0]_13        |                                                        |                4 |             16 |
 |  clk_IBUF_BUFG | inst_Timer/mtimer[0]_i_1_n_0 |                                                        |                4 |             16 |
 |  clk_IBUF_BUFG | inst_Timer/eqOp              | inst_Timer/utimer[0]_i_1_n_0                           |                4 |             16 |
-|  clock_BUFG    |                              |                                                        |                7 |             17 |
+|  clk_IBUF_BUFG | inst_Timer/utimer[0]_i_1_n_0 | inst_Timer/mtimer[0]_i_1_n_0                           |                4 |             16 |
+|  clock_BUFG    | inst_PC/load                 |                                                        |                4 |             16 |
+|  clock_BUFG    | inst_PC/reg_reg[15]_4        |                                                        |                4 |             16 |
 |  clk_IBUF_BUFG |                              | inst_Led_Driver/eqOp                                   |                7 |             27 |
 |  clk_IBUF_BUFG |                              | inst_Clock_Divider/clock_divide_counter_reg[0]_i_1_n_2 |                7 |             27 |
-|  clock_BUFG    | inst_PC/pc_reg[3]_7          |                                                        |               16 |             64 |
-|  clock_BUFG    | inst_PC/pc_reg[3]_6          |                                                        |               16 |             64 |
-|  clock_BUFG    | inst_PC/pc_reg[3]_5          |                                                        |               16 |             64 |
-|  clock_BUFG    | inst_PC/pc_reg[3]_4          |                                                        |               16 |             64 |
-|  clock_BUFG    | inst_PC/pc_reg[3]_3          |                                                        |               16 |             64 |
-|  clock_BUFG    | inst_PC/pc_reg[3]_2          |                                                        |               16 |             64 |
-|  clock_BUFG    | inst_PC/pc_reg[3]_18         |                                                        |               16 |             64 |
-|  clock_BUFG    | inst_PC/pc_reg[3]_17         |                                                        |               16 |             64 |
-|  clock_BUFG    | inst_PC/pc_reg[3]_16         |                                                        |               16 |             64 |
-|  clock_BUFG    | inst_PC/pc_reg[3]_15         |                                                        |               16 |             64 |
-|  clock_BUFG    | inst_PC/pc_reg[3]_14         |                                                        |               16 |             64 |
-|  clock_BUFG    | inst_PC/pc_reg[3]_13         |                                                        |               16 |             64 |
-|  clock_BUFG    | inst_PC/pc_reg[3]_12         |                                                        |               16 |             64 |
-|  clock_BUFG    | inst_PC/pc_reg[3]_11         |                                                        |               16 |             64 |
-|  clock_BUFG    | inst_PC/pc_reg[3]_1          |                                                        |               16 |             64 |
-|  clock_BUFG    | inst_PC/pc_reg[3]_0          |                                                        |               16 |             64 |
+|  clock_BUFG    |                              |                                                        |               18 |             32 |
+|  clock_BUFG    | inst_PC/reg_reg_0__s_net_1   |                                                        |               16 |             64 |
+|  clock_BUFG    | inst_PC/reg_reg[0]_9         |                                                        |               16 |             64 |
+|  clock_BUFG    | inst_PC/reg_reg[0]_2         |                                                        |               16 |             64 |
+|  clock_BUFG    | inst_PC/reg_reg[0]_19        |                                                        |               16 |             64 |
+|  clock_BUFG    | inst_PC/reg_reg[0]_18        |                                                        |               16 |             64 |
+|  clock_BUFG    | inst_PC/reg_reg[0]_17        |                                                        |               16 |             64 |
+|  clock_BUFG    | inst_PC/reg_reg[0]_16        |                                                        |               16 |             64 |
+|  clock_BUFG    | inst_PC/reg_reg[0]_15        |                                                        |               16 |             64 |
+|  clock_BUFG    | inst_PC/reg_reg[0]_7         |                                                        |               16 |             64 |
+|  clock_BUFG    | inst_PC/reg_reg[0]_3         |                                                        |               16 |             64 |
+|  clock_BUFG    | inst_PC/reg_reg[0]_12        |                                                        |               16 |             64 |
+|  clock_BUFG    | inst_PC/reg_reg[0]_11        |                                                        |               16 |             64 |
+|  clock_BUFG    | inst_PC/reg_reg[0]_10        |                                                        |               16 |             64 |
+|  clock_BUFG    | inst_PC/reg_reg[0]_1         |                                                        |               16 |             64 |
+|  clock_BUFG    | inst_PC/reg_reg[0]_0         |                                                        |               16 |             64 |
+|  clock_BUFG    | inst_PC/reg_reg[0]_8         |                                                        |               16 |             64 |
 +----------------+------------------------------+--------------------------------------------------------+------------------+----------------+
 
 

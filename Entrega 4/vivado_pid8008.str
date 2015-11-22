@@ -1,0 +1,158 @@
+/*
+
+Vivado v2015.2 (64-bit)
+SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+Process ID: 8008
+
+Current time: 	11/22/15 2:18:28 AM ART
+Time zone: 	Argentine Time (America/Buenos_Aires)
+
+OS: Windows 8
+Version: 6.2
+Architecture: amd64
+Available processors (cores): 4
+
+Screen size: 1366x768
+Screen resolution (DPI): 96
+Available screens: 1
+Default font: family=Tahoma,name=Tahoma,style=plain,size=11
+
+Java version: 	1.8.0_25 64-bit
+Java home: 	C:/Xilinx/Vivado/2015.2/tps/win64/jre
+
+User name: 	Jorge
+User directory: C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4
+User country: 	ES
+User language: 	es
+User locale: 	es_ES
+
+Vivado preferences path: C:/Users/Jorge/AppData/Roaming/Xilinx/Vivado/2015.2/vivado.ini
+Vivado layouts directory: C:/Users/Jorge/AppData/Roaming/Xilinx/Vivado/2015.2/layouts/application
+
+GUI allocated memory:	185 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 390 MB
+
+*/
+
+// TclEventType: START_GUI
+// HColorUtils.generateUniqueColorPalette (num colors: 56) elapsed time: 1.3s
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// cp:P (cl:JFrame):  Open Project : addNotify
+// Opening Vivado Project: C:\Users\Jorge\Desktop\ArquiProyectos\Entrega 4\Proyecto Base.xpr. Version: Vivado v2015.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: MSGMGR_MOVEMSG
+// Tcl Message: open_project {C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.xpr} 
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// [GUI Memory]: 40 MB (+39507kb) [00:00:07]
+// [Engine Memory]: 367 MB (+233212kb) [00:00:07]
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project {C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.xpr} 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 48 MB (+6171kb) [00:00:09]
+// [Engine Memory]: 402 MB (+17439kb) [00:00:09]
+// [GUI Memory]: 54 MB (+3427kb) [00:00:10]
+// [Engine Memory]: 438 MB (+17050kb) [00:00:10]
+// [Engine Memory]: 465 MB (+5284kb) [00:00:12]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2015.2/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 474 MB. GUI used memory: 31 MB. Current time: 11/22/15 2:18:34 AM ART
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Project name: Proyecto Base; location: C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4; part: xc7a35tcpg236-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:23 ; elapsed = 00:00:10 . Memory (MB): peak = 737.512 ; gain = 187.559 
+dismissDialog("Open Project"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// PAPropertyPanels.initPanels (Basys3.vhd) elapsed time: 0.2s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd)]", 1, true); // A:k (H:JPanel, cl:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd), inst_Clock_Divider - Clock_Divider - Behavioral (Clock_Divider.vhd)]", 2, false, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click
+// [GUI Memory]: 59 MB (+2758kb) [00:00:25]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd), inst_ROM - ROM - Behavioral (ROM.vhd)]", 7, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Basys3 - Behavioral (Basys3.vhd), inst_ROM - ROM - Behavioral (ROM.vhd)]", 7, false, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click
+// Elapsed time: 11 seconds
+selectCodeEditor("ROM.vhd", 481, 163); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ROM.vhd", 481, 163, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+typeControlKey((HResource) null, "ROM.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectButton(PAResourceCommand.PACommandNames_RUN_SYNTHESIS, "run_synthesis"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// aR:ah (cl:JFrame): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a:JButton (JPanel:JComponent, aR:ah)
+// cp:P (cl:JFrame):  Save Constraints : addNotify
+// cp:P (cl:JFrame):  Resetting Runs : addNotify
+dismissDialog("Save Project"); // aR:ah (cl:JFrame)
+// TclEventType: RUN_MODIFY
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: RUN_RESET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: RUN_RESET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// cp:P (cl:JFrame):  Starting Design Runs : addNotify
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Tcl Message: launch_runs synth_1 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sun Nov 22 02:19:03 2015] Launched synth_1... Run output will be captured here: C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.runs/synth_1/runme.log 
+// [GUI Memory]: 68 MB (+5832kb) [00:00:43]
+dismissDialog("Starting Design Runs"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// [GUI Memory]: 71 MB (+65kb) [00:01:04]
+// TclEventType: RUN_COMPLETED
+// Q:ap (cl:JFrame): Synthesis Completed: addNotify
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// cp:P (cl:JFrame):  Starting Design Runs : addNotify
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 
+// Tcl Message: [Sun Nov 22 02:20:47 2015] Launched impl_1... Run output will be captured here: C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.runs/impl_1/runme.log 
+// Elapsed time: 104 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, Q:ap)
+dismissDialog("Starting Design Runs"); // cp:P (cl:JFrame)
+// [Engine Memory]: 492 MB (+3546kb) [00:02:28]
+// TclEventType: RUN_STEP_COMPLETED
+// HMemoryUtils.trashcanNow. Engine heap size: 502 MB. GUI used memory: 36 MB. Current time: 11/22/15 2:21:45 AM ART
+// TclEventType: RUN_COMPLETED
+// Elapsed time: 118 seconds
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream 
+// Tcl Message: [Sun Nov 22 02:22:47 2015] Launched impl_1... Run output will be captured here: C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.runs/impl_1/runme.log 
+// TclEventType: RUN_COMPLETED
+// Q:ap (cl:JFrame): Bitstream Generation Completed: addNotify
+// Elapsed time: 55 seconds
+selectRadioButton(PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER, "Open Hardware Manager"); // a:JRadioButton (JPanel:JComponent, Q:ap)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// TclEventType: LOAD_FEATURE
+// TclEventType: HW_SESSION_OPEN
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, Q:ap)
+// Tcl Message: open_hw 
+dismissDialog("Bitstream Generation Completed"); // Q:ap (cl:JFrame)
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // i:l (JPanel:JComponent, cl:JFrame)
+selectMenu(PAResourceOtoP.ProgramDebugTab_OPEN_RECENTLY_OPENED_TARGET, "Recent Targets"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenuItem((HResource) null, "localhost:3121,xilinx_tcf/Digilent/210183637323A,PARAM.FREQUENCY:15000000"); // ab:JMenuItem (JPopupMenu:JComponent, cl:JFrame)
+// cp:P (cl:JFrame):  Open Hardware Target : addNotify
+// Tcl Message: connect_hw_server -url localhost:3121 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 
+// Elapsed time: 48 seconds
+selectButton(RDIResource.ProgressDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, cp:P)
+// Tcl Message: INFO: [Common 17-41] Interrupt caught. Command should exit soon. 

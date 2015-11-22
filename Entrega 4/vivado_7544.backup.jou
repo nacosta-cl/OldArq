@@ -1,0 +1,20 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Sun Nov 22 02:18:15 2015
+# Process ID: 8008
+# Log file: C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/vivado.log
+# Journal file: C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/Jorge/Desktop/ArquiProyectos/Entrega 4/Proyecto Base.xpr}
+reset_run synth_1
+launch_runs synth_1
+wait_on_run synth_1
+launch_runs impl_1
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+open_hw
+connect_hw_server -url localhost:3121
