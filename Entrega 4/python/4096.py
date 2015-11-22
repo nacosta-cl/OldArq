@@ -722,6 +722,8 @@ def Leer_Archivo(Archivo,label):
                     LabelName = orden_labels[contador_label]
                     if LabelName == "DATA":
                         palabra = Linea_actual.split(" ")
+                        palabra[1] = palabra[1].replace("$"," ")
+                        palabra[1] = palabra[1].replace("%",":")
                         #palabra = [palabra[0], " ".join(palabra[1:])]
                         #palabra[1] = palabra[1].strip()
 
@@ -756,9 +758,10 @@ def Leer_Archivo(Archivo,label):
                              vector[1].append(palabra[0])
 
                     else:
-
                         try: #Cambia los INC por ADD, DEC por SUB || TRY por si aparece "nop"
                             lSpit = Linea_actual.split(" ")
+                            lSpit[1] = lSpit[1].replace("$"," ")
+                            lSpit[1] = lSpit[1].replace("%",":")
                             if(',' in lSpit[1]):
                                 variable = lSpit[1].split(",", 1) #por si el char es ","
                                 if((variable[1][0]=="'" and variable[1][-1]=="'") or (variable[1][0]=='"' and variable[1][-1]=='"')):
@@ -793,6 +796,8 @@ def Leer_Archivo(Archivo,label):
 
                     try: #Cambia los INC por ADD, DEC por SUB || TRY por si aparece "nop"
                         lSpit = Linea_actual.split(" ")
+                        lSpit[1] = lSpit[1].replace("$"," ")
+                        lSpit[1] = lSpit[1].replace("%",":")
                         if(',' in lSpit[1]):
                             variable = lSpit[1].split(",", 1) #por si el char es ","
                             if((variable[1][0]=="'" and variable[1][-1]=="'") or (variable[1][0]=='"' and variable[1][-1]=='"')):
@@ -825,9 +830,9 @@ def Leer_Archivo(Archivo,label):
     #print(label)
     archivo.close()
 
-#root.fileopenname = filedialog.askopenfilename(initialdir = "./",title = "Escoge input")
-#Leer_Archivo(root.fileopenname,label)
-Leer_Archivo('/Users/benjamin/Dropbox/Grupo 11/juego.txt',label)
+root.fileopenname = filedialog.askopenfilename(initialdir = "./",title = "Escoge input")
+Leer_Archivo(root.fileopenname,label)
+#Leer_Archivo('/Users/benjamin/Dropbox/Grupo 11/juego.txt',label)
 
 
 
@@ -837,9 +842,9 @@ dataFinalBin(instrucciones2) #transforma instrucciones a bin y agrega en lista l
 
 rellenaLista(listaInsBin,4096) #rellena la lista listaInsBin con 4096 elementos
 
-#root.filesavename = filedialog.asksaveasfilename(initialdir = "./", title = "Escoge output")
-#outputTXT(root.filesavename)
-outputTXT('/Users/benjamin/Dropbox/Grupo 11/output.txt')
+root.filesavename = filedialog.asksaveasfilename(initialdir = "./", title = "Escoge output")
+outputTXT(root.filesavename)
+#outputTXT('/Users/benjamin/Dropbox/Grupo 11/output.txt')
 
 
 
