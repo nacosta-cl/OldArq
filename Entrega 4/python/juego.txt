@@ -1,0 +1,1181 @@
+DATA:
+
+
+/// MENSAJES
+cleaning "$Cleaning$Up..."
+nombrep1 "Nombre$P1"// mensaje inicial jugador1
+nombrep2 "Nombre$P2"// mensaje inicial jugador1
+ingresa "$Ingresa"
+limpia "$Limpia"
+adivina "$Adivina"
+gana "$Gana"
+pierde "$Pierde"
+continuar "continuar?"
+
+ganadorString1 "Game"
+ganadorString2 "Over"
+
+/////
+
+jugador1 "AAAA"  //nombre jugador1
+jugador2 "BBBB"  // nombre jugador2
+
+puntosp1 110000b  	// puntos p1 (cero ascii)
+puntosp2 110000b		// puntos p2
+
+vidasp1 1111111111111111b  // 16 vidas cada 1 es una vida, 1 para que se encienda el led 0 apagado
+vidasp2 1111111111111111b //
+
+codigop1 0000000000000000b  // numero ingresado j1
+codigop2 0000000000000000b  // numero ingresado j2
+///
+
+contadorp1 0 //cursor nombrep1
+contadorp2 0 //cursor nombrep2
+
+
+
+CODE:
+
+	start:
+		MOV B,2
+		CALL lcd_init
+
+		JMP nombre1
+
+	reset:
+	 MOV A,0b
+	 MOV (contadorp1),A //reset cursor
+	 MOV (contadorp2),A
+
+	 MOV A,110000b
+	 MOV (puntosp1),A //reset puntos
+	 MOV (puntosp2),A
+
+	 MOV A,1111111111111111b //reset vidas
+	 MOV (vidasp1),A
+	 MOV (vidasp2),A
+
+	 MOV A,0000000000000000b //reset codigos
+	 MOV (codigop1),A
+	 MOV (codigop2),A
+
+	nombre1:
+	 CALL lcd_clear
+
+	 CALL lcd_go_start_line_a
+	 MOV A, cleaning
+	 CALL lcd_string
+
+	 CALL lcd_clear
+
+	 CALL lcd_go_start_line_a
+	 MOV A, nombrep1
+	 CALL lcd_string
+
+	 CALL lcd_go_start_line_b
+	 MOV A,jugador1
+	 CALL lcd_string
+
+	// principio
+	MOV A,4
+	cursorNombre1:
+	 PUSH B
+	 MOV B,(contadorp1)
+	 CMP A,B
+	 JEQ endCursorNombre1
+	 POP B
+	 CALL lcd_shl_c //muevo cursor izquierda
+	 DEC A
+	 JMP cursorNombre1
+
+	endCursorNombre1:
+	 POP B
+
+    loopButtonNombre1:
+     CALL std_button_wait // | 1b - btn_centro | 10b - btn_arriba | 100b - btn_izq | 1000b - btn_der | 10000b - btn_abajo |
+     CMP A,1b
+     JEQ nombre2
+     CMP A,10b
+     JEQ BTNizquierdaNombre1
+     CMP A,100b
+     JEQ BTNabajoNombre1
+     CMP A,1000b
+     JEQ BTNarribaNombre1
+     CMP A,10000b
+     JEQ BTNderechaNombre1
+     JMP loopButtonNombre1
+
+	BTNizquierdaNombre1:
+	 MOV A,(contadorp1)
+	 CMP A,0
+	 JLE loopButtonNombre1
+	 DEC A
+	 CALL lcd_shl_c //Mueve izquierda
+	 MOV (contadorp1),A
+	 JMP loopButtonNombre1
+
+	BTNderechaNombre1:
+	 MOV A,(contadorp1)
+	 CMP A,3
+	 JGE loopButtonNombre1
+	 INC A
+	 CALL lcd_shr_c //Mueve derecha
+	 MOV (contadorp1),A
+	 JMP loopButtonNombre1
+
+	BTNabajoNombre1:
+	 PUSH B
+	 MOV B,jugador1
+	 MOV A,(contadorp1)
+	 ADD B,A
+	 MOV A,(B)
+	 DEC A
+	 MOV (B),A
+	 POP B
+	 JMP nombre1
+
+	BTNarribaNombre1:
+	 PUSH B
+	 MOV B,jugador1
+	 MOV A,(contadorp1)
+	 ADD B,A
+	 MOV A,(B)
+	 INC A
+	 MOV (B),A
+	 POP B
+	 JMP nombre1
+
+	nombre2:
+	 CALL lcd_clear
+
+	 CALL lcd_go_start_line_a
+	 MOV A, nombrep2
+	 CALL lcd_string
+
+	 CALL lcd_go_start_line_b
+	 MOV A,jugador2
+	 CALL lcd_string
+
+	// cursor
+	MOV A,4
+	cursorNombre2:
+	 PUSH B
+	 MOV B,(contadorp2)
+	 CMP A,B
+	 JEQ endCursorNombre2
+	 POP B
+	 CALL lcd_shl_c //muevo cursor izquierda
+	 DEC A
+	 JMP cursorNombre2
+
+	endCursorNombre2:
+	 POP B
+
+    loopButtonNombre2:
+     CALL std_button_wait // | 1b - btn_centro | 10b - btn_arriba | 100b - btn_izq | 1000b - btn_der | 10000b - btn_abajo |
+     CMP A,1b
+     JEQ ingresaP1
+     CMP A,10b
+     JEQ BTNizquierdaNombre2
+     CMP A,100b
+     JEQ BTNabajoNombre2
+     CMP A,1000b
+     JEQ BTNarribaNombre2
+     CMP A,10000b
+     JEQ BTNderechaNombre2
+     JMP loopButtonNombre2
+
+	BTNizquierdaNombre2:
+	 MOV A,(contadorp2)
+	 CMP A,0
+	 JLE loopButtonNombre2
+	 DEC A
+	 CALL lcd_shl_c //Mueve izquierda
+	 MOV (contadorp2),A
+	 JMP loopButtonNombre2
+
+	BTNderechaNombre2:
+	 MOV A,(contadorp2)
+	 CMP A,3
+	 JGE loopButtonNombre2
+	 INC A
+	 CALL lcd_shr_c //Mueve derecha
+	 MOV (contadorp2),A
+	 JMP loopButtonNombre2
+
+	BTNabajoNombre2:
+	 PUSH B
+	 MOV B,jugador2
+	 MOV A,(contadorp2)
+	 ADD B,A
+	 MOV A,(B)
+	 DEC A
+	 MOV (B),A
+	 POP B
+	 JMP nombre2
+
+	BTNarribaNombre2:
+	 PUSH B
+	 MOV B,jugador2
+	 MOV A,(contadorp2)
+	 ADD B,A
+	 MOV A,(B)
+	 INC A
+	 MOV (B),A
+	 POP B
+	 JMP nombre2
+
+
+
+	ingresaP1:
+	 CALL lcd_clear
+
+	 CALL lcd_go_start_line_a
+	 MOV A, jugador1
+	 CALL lcd_string
+	 MOV A,"%"
+	 CALL lcd_char
+	 MOV A,"$"
+	 CALL lcd_char
+	 MOV A,(puntosp1)
+	 CALL lcd_char
+	 MOV A,"$"
+	 CALL lcd_char
+	 MOV A, jugador2
+	 CALL lcd_string
+	 MOV A,"%"
+	 CALL lcd_char
+	 MOV A,"$"
+	 CALL lcd_char
+	 MOV A,(puntosp2)
+	 CALL lcd_char
+
+	 CALL lcd_go_start_line_b
+	 MOV A, jugador1
+	 CALL lcd_string
+	 MOV A, ingresa
+	 CALL lcd_string
+
+	CALL escondeCursor //esconde cursor
+
+    loopButtonEstrategia1:
+     CALL std_button_wait // | 1b - btn_centro | 10b - btn_arriba | 100b - btn_izq | 1000b - btn_der | 10000b - btn_abajo |
+     CMP A,1b
+     JEQ guardaEstrategiaP1
+     JMP loopButtonEstrategia1
+
+    guardaEstrategiaP1:
+     IN A,0
+     MOV (codigop1),A
+
+	limpiaP1:
+	 CALL lcd_clear
+
+	 CALL lcd_go_start_line_a
+	 MOV A, jugador1
+	 CALL lcd_string
+	 MOV A,"%"
+	 CALL lcd_char
+	 MOV A,"$"
+	 CALL lcd_char
+	 MOV A,(puntosp1)
+	 CALL lcd_char
+	 MOV A,"$"
+	 CALL lcd_char
+	 MOV A, jugador2
+	 CALL lcd_string
+	 MOV A,"%"
+	 CALL lcd_char
+	 MOV A,"$"
+	 CALL lcd_char
+	 MOV A,(puntosp2)
+	 CALL lcd_char
+
+	 CALL lcd_go_start_line_b
+	 MOV A, jugador1
+	 CALL lcd_string
+	 MOV A, limpia
+	 CALL lcd_string
+
+	 CALL escondeCursor //esconde cursor
+
+    loopButtonLimpia1:
+     CALL std_button_wait // | 1b - btn_centro | 10b - btn_arriba | 100b - btn_izq | 1000b - btn_der | 10000b - btn_abajo |
+     CMP A,1b
+     JEQ adivina2
+     JMP loopButtonEstrategia1
+
+    adivina2:
+	 CALL lcd_clear
+
+	 CALL lcd_go_start_line_a
+	 MOV A, jugador1
+	 CALL lcd_string
+	 MOV A,"%"
+	 CALL lcd_char
+	 MOV A,"$"
+	 CALL lcd_char
+	 MOV A,(puntosp1)
+	 CALL lcd_char
+	 MOV A,"$"
+	 CALL lcd_char
+	 MOV A, jugador2
+	 CALL lcd_string
+	 MOV A,"%"
+	 CALL lcd_char
+	 MOV A,"$"
+	 CALL lcd_char
+	 MOV A,(puntosp2)
+	 CALL lcd_char
+
+	 CALL lcd_go_start_line_b
+	 MOV A, jugador2
+	 CALL lcd_string
+	 MOV A, adivina
+	 CALL lcd_string
+
+	 CALL escondeCursor //esconde cursor
+
+	 MOV A,(vidasp2)
+	 OUT A,1
+
+	loopButtonAdivina2:
+     CALL std_button_wait // | 1b - btn_centro | 10b - btn_arriba | 100b - btn_izq | 1000b - btn_der | 10000b - btn_abajo |
+     CMP A,1b
+     JEQ XORadivina2
+     CMP A,10b
+     JEQ ANDadivina2
+     CMP A,100b
+     JEQ ADDadivina2
+     CMP A,1000b
+     JEQ SUBadivina2
+     CMP A,10000b
+     JEQ ORadivina2
+     JMP loopButtonAdivina2
+
+    XORadivina2:
+     IN A,0
+     PUSH B
+     MOV B,(codigop1)
+     XOR A,B
+     POP B
+     CALL carries //retorna en A cantidad de unos. Ingresa A, retorna A modificado
+     OUT A,0
+     JMP checkAlt2
+
+    ANDadivina2:
+     IN A,0
+     PUSH B
+     MOV B,(codigop1)
+     AND A,B
+     POP B
+     CALL carries //retorna en A cantidad de unos. Ingresa A, retorna A modificado
+     OUT A,0
+     JMP checkAlt2
+
+    ADDadivina2:
+     IN A,0
+     PUSH B
+     MOV B,(codigop1)
+     ADD A,B
+     POP B
+     CALL carries //retorna en A cantidad de unos. Ingresa A, retorna A modificado
+     OUT A,0
+     JMP checkAlt2
+
+    SUBadivina2:
+     IN A,0
+     PUSH B
+     MOV B,(codigop1)
+     SUB A,B
+     POP B
+     CALL carries //retorna en A cantidad de unos. Ingresa A, retorna A modificado
+     OUT A,0
+     JMP checkAlt2
+
+	ORadivina2:
+     IN A,0
+     PUSH B
+     MOV B,(codigop1)
+     OR A,B
+     POP B
+     CALL carries //retorna en A cantidad de unos. Ingresa A, retorna A modificado
+     OUT A,0
+     JMP checkAlt2
+
+    checkAlt2:
+     IN A,0
+     CMP A,(codigop1)
+     JEQ gana2
+     JMP pierdeVida2
+
+    pierdeVida2:
+     MOV A,(vidasp2)
+     SHL A
+     MOV (vidasp2),A
+     CMP A,0
+     JNE adivina2
+     JMP pierdeJuego2
+
+    gana2:
+     INC (puntosp2)
+     MOV A,1111111111111111b
+     MOV (vidasp2),A
+     JMP ganaMensaje2
+
+    pierdeJuego2:
+     INC (puntosp1)
+     MOV A,1111111111111111b
+     MOV (vidasp2),A
+     JMP pierdeMensaje2
+
+    ganaMensaje2:
+	 CALL lcd_clear
+
+	 CALL lcd_go_start_line_a
+	 MOV A, jugador1
+	 CALL lcd_string
+	 MOV A,"%"
+	 CALL lcd_char
+	 MOV A,"$"
+	 CALL lcd_char
+	 MOV A,(puntosp1)
+	 CALL lcd_char
+	 MOV A,"$"
+	 CALL lcd_char
+	 MOV A, jugador2
+	 CALL lcd_string
+	 MOV A,"%"
+	 CALL lcd_char
+	 MOV A,"$"
+	 CALL lcd_char
+	 MOV A,(puntosp2)
+	 CALL lcd_char
+
+	 CALL lcd_go_start_line_b
+	 MOV A, jugador2
+	 CALL lcd_string
+	 MOV A, gana
+	 CALL lcd_string
+
+	 CALL escondeCursor //esconde cursor
+
+	 MOV A,(vidasp2)
+	 OUT A,1
+
+	 CALL std_button_wait
+	 JMP continuar2
+
+    pierdeMensaje2:
+	 CALL lcd_clear
+
+	 CALL lcd_go_start_line_a
+	 MOV A, jugador1
+	 CALL lcd_string
+	 MOV A,"%"
+	 CALL lcd_char
+	 MOV A,"$"
+	 CALL lcd_char
+	 MOV A,(puntosp1)
+	 CALL lcd_char
+	 MOV A,"$"
+	 CALL lcd_char
+	 MOV A, jugador2
+	 CALL lcd_string
+	 MOV A,"%"
+	 CALL lcd_char
+	 MOV A,"$"
+	 CALL lcd_char
+	 MOV A,(puntosp2)
+	 CALL lcd_char
+
+	 CALL lcd_go_start_line_b
+	 MOV A, jugador2
+	 CALL lcd_string
+	 MOV A, pierde
+	 CALL lcd_string
+
+	 CALL escondeCursor //esconde cursor
+
+	 MOV A,0000000000000000b
+	 OUT A,1
+
+	 CALL std_button_wait
+	 JMP continuar2
+
+	continuar2:
+	 CALL lcd_clear
+
+	 CALL lcd_go_start_line_a
+	 MOV A, jugador1
+	 CALL lcd_string
+	 MOV A,"%"
+	 CALL lcd_char
+	 MOV A,"$"
+	 CALL lcd_char
+	 MOV A,(puntosp1)
+	 CALL lcd_char
+	 MOV A,"$"
+	 CALL lcd_char
+	 MOV A, jugador2
+	 CALL lcd_string
+	 MOV A,"%"
+	 CALL lcd_char
+	 MOV A,"$"
+	 CALL lcd_char
+	 MOV A,(puntosp2)
+	 CALL lcd_char
+
+	 CALL lcd_go_start_line_b
+	 MOV A, continuar
+	 CALL lcd_string
+
+	 CALL escondeCursor //esconde cursor
+
+	 PUSH B
+	 MOV A,(puntosp2)
+	 MOV B,57
+	 CMP A,B
+	 JEQ ganador
+	 POP B
+
+     CALL std_button_wait // | 1b - btn_centro | 10b - btn_arriba | 100b - btn_izq | 1000b - btn_der | 10000b - btn_abajo |
+     CMP A,1b
+     JEQ ingresaP2
+     JMP reset
+
+	ingresaP2:
+	 CALL lcd_clear
+
+	 CALL lcd_go_start_line_a
+	 MOV A, jugador1
+	 CALL lcd_string
+	 MOV A,"%"
+	 CALL lcd_char
+	 MOV A,"$"
+	 CALL lcd_char
+	 MOV A,(puntosp1)
+	 CALL lcd_char
+	 MOV A,"$"
+	 CALL lcd_char
+	 MOV A, jugador2
+	 CALL lcd_string
+	 MOV A,"%"
+	 CALL lcd_char
+	 MOV A,"$"
+	 CALL lcd_char
+	 MOV A,(puntosp2)
+	 CALL lcd_char
+
+	 CALL lcd_go_start_line_b
+	 MOV A, jugador2
+	 CALL lcd_string
+	 MOV A, ingresa
+	 CALL lcd_string
+
+	CALL escondeCursor //esconde cursor
+
+    loopButtonEstrategia2:
+     CALL std_button_wait // | 1b - btn_centro | 10b - btn_arriba | 100b - btn_izq | 1000b - btn_der | 10000b - btn_abajo |
+     CMP A,1b
+     JEQ guardaEstrategiaP2
+     JMP loopButtonEstrategia2
+
+    guardaEstrategiaP2:
+     IN A,0
+     MOV (codigop2),A
+
+	limpiaP2:
+	 CALL lcd_clear
+
+	 CALL lcd_go_start_line_a
+	 MOV A, jugador1
+	 CALL lcd_string
+	 MOV A,"%"
+	 CALL lcd_char
+	 MOV A,"$"
+	 CALL lcd_char
+	 MOV A,(puntosp1)
+	 CALL lcd_char
+	 MOV A,"$"
+	 CALL lcd_char
+	 MOV A, jugador2
+	 CALL lcd_string
+	 MOV A,"%"
+	 CALL lcd_char
+	 MOV A,"$"
+	 CALL lcd_char
+	 MOV A,(puntosp2)
+	 CALL lcd_char
+
+	 CALL lcd_go_start_line_b
+	 MOV A, jugador2
+	 CALL lcd_string
+	 MOV A, limpia
+	 CALL lcd_string
+
+	 CALL escondeCursor //esconde cursor
+
+    loopButtonLimpia2:
+     CALL std_button_wait // | 1b - btn_centro | 10b - btn_arriba | 100b - btn_izq | 1000b - btn_der | 10000b - btn_abajo |
+     CMP A,1b
+     JEQ adivina1
+     JMP loopButtonEstrategia2
+
+    adivina1:
+	 CALL lcd_clear
+
+	 CALL lcd_go_start_line_a
+	 MOV A, jugador1
+	 CALL lcd_string
+	 MOV A,"%"
+	 CALL lcd_char
+	 MOV A,"$"
+	 CALL lcd_char
+	 MOV A,(puntosp1)
+	 CALL lcd_char
+	 MOV A,"$"
+	 CALL lcd_char
+	 MOV A, jugador2
+	 CALL lcd_string
+	 MOV A,"%"
+	 CALL lcd_char
+	 MOV A,"$"
+	 CALL lcd_char
+	 MOV A,(puntosp2)
+	 CALL lcd_char
+
+	 CALL lcd_go_start_line_b
+	 MOV A, jugador1
+	 CALL lcd_string
+	 MOV A, adivina
+	 CALL lcd_string
+
+	 CALL escondeCursor //esconde cursor
+
+	 MOV A,(vidasp1)
+	 OUT A,1
+
+	loopButtonAdivina1:
+     CALL std_button_wait // | 1b - btn_centro | 10b - btn_arriba | 100b - btn_izq | 1000b - btn_der | 10000b - btn_abajo |
+     CMP A,1b
+     JEQ XORadivina1
+     CMP A,10b
+     JEQ ANDadivina1
+     CMP A,100b
+     JEQ ADDadivina1
+     CMP A,1000b
+     JEQ SUBadivina1
+     CMP A,10000b
+     JEQ ORadivina1
+     JMP loopButtonAdivina1
+
+    XORadivina1:
+     IN A,0
+     PUSH B
+     MOV B,(codigop2)
+     XOR A,B
+     POP B
+     CALL carries //retorna en A cantidad de unos. Ingresa A, retorna A modificado
+     OUT A,0
+     JMP checkAlt1
+
+    ANDadivina1:
+     IN A,0
+     PUSH B
+     MOV B,(codigop2)
+     AND A,B
+     POP B
+     CALL carries //retorna en A cantidad de unos. Ingresa A, retorna A modificado
+     OUT A,0
+     JMP checkAlt1
+
+    ADDadivina1:
+     IN A,0
+     PUSH B
+     MOV B,(codigop2)
+     ADD A,B
+     POP B
+     CALL carries //retorna en A cantidad de unos. Ingresa A, retorna A modificado
+     OUT A,0
+     JMP checkAlt1
+
+    SUBadivina1:
+     IN A,0
+     PUSH B
+     MOV B,(codigop2)
+     SUB A,B
+     POP B
+     CALL carries //retorna en A cantidad de unos. Ingresa A, retorna A modificado
+     OUT A,0
+     JMP checkAlt1
+
+	ORadivina1:
+     IN A,0
+     PUSH B
+     MOV B,(codigop2)
+     OR A,B
+     POP B
+     CALL carries //retorna en A cantidad de unos. Ingresa A, retorna A modificado
+     OUT A,0
+     JMP checkAlt1
+
+    checkAlt1:
+     IN A,0
+     CMP A,(codigop2)
+     JEQ gana1
+     JMP pierdeVida1
+
+    pierdeVida1:
+     MOV A,(vidasp1)
+     SHL A
+     MOV (vidasp1),A
+     CMP A,0
+     JNE adivina1
+     JMP pierdeJuego1
+
+    gana1:
+     INC (puntosp1)
+     MOV A,1111111111111111b
+     MOV (vidasp1),A
+     JMP ganaMensaje1
+
+    pierdeJuego1:
+     INC (puntosp2)
+     MOV A,1111111111111111b
+     MOV (vidasp1),A
+     JMP pierdeMensaje1
+
+    ganaMensaje1:
+	 CALL lcd_clear
+
+	 CALL lcd_go_start_line_a
+	 MOV A, jugador1
+	 CALL lcd_string
+	 MOV A,"%"
+	 CALL lcd_char
+	 MOV A,"$"
+	 CALL lcd_char
+	 MOV A,(puntosp1)
+	 CALL lcd_char
+	 MOV A,"$"
+	 CALL lcd_char
+	 MOV A, jugador2
+	 CALL lcd_string
+	 MOV A,"%"
+	 CALL lcd_char
+	 MOV A,"$"
+	 CALL lcd_char
+	 MOV A,(puntosp2)
+	 CALL lcd_char
+
+	 CALL lcd_go_start_line_b
+	 MOV A, jugador1
+	 CALL lcd_string
+	 MOV A, gana
+	 CALL lcd_string
+
+	 CALL escondeCursor //esconde cursor
+
+	 MOV A,(vidasp1)
+	 OUT A,1
+
+	 CALL std_button_wait
+	 JMP continuar1
+
+    pierdeMensaje1:
+	 CALL lcd_clear
+
+	 CALL lcd_go_start_line_a
+	 MOV A, jugador1
+	 CALL lcd_string
+	 MOV A,"%"
+	 CALL lcd_char
+	 MOV A,"$"
+	 CALL lcd_char
+	 MOV A,(puntosp1)
+	 CALL lcd_char
+	 MOV A,"$"
+	 CALL lcd_char
+	 MOV A, jugador2
+	 CALL lcd_string
+	 MOV A,"%"
+	 CALL lcd_char
+	 MOV A,"$"
+	 CALL lcd_char
+	 MOV A,(puntosp2)
+	 CALL lcd_char
+
+	 CALL lcd_go_start_line_b
+	 MOV A, jugador1
+	 CALL lcd_string
+	 MOV A, pierde
+	 CALL lcd_string
+
+	 CALL escondeCursor //esconde cursor
+
+	 MOV A,0000000000000000b
+	 OUT A,1
+
+	 CALL std_button_wait
+	 JMP continuar1
+
+	continuar1:
+	 CALL lcd_clear
+
+	 CALL lcd_go_start_line_a
+	 MOV A, jugador1
+	 CALL lcd_string
+	 MOV A,"%"
+	 CALL lcd_char
+	 MOV A,"$"
+	 CALL lcd_char
+	 MOV A,(puntosp1)
+	 CALL lcd_char
+	 MOV A,"$"
+	 CALL lcd_char
+	 MOV A, jugador2
+	 CALL lcd_string
+	 MOV A,"%"
+	 CALL lcd_char
+	 MOV A,"$"
+	 CALL lcd_char
+	 MOV A,(puntosp2)
+	 CALL lcd_char
+
+	 CALL lcd_go_start_line_b
+	 MOV A, continuar
+	 CALL lcd_string
+
+	 CALL escondeCursor //esconde cursor
+
+	 PUSH B
+	 MOV A,(puntosp1)
+	 MOV B,57
+	 CMP A,B
+	 JGE ganador
+	 POP B
+
+     CALL std_button_wait // | 1b - btn_centro | 10b - btn_arriba | 100b - btn_izq | 1000b - btn_der | 10000b - btn_abajo |
+     CMP A,1b
+     JEQ adivina2
+     JMP reset
+
+	ganador:
+	 POP B
+	 CALL lcd_clear
+
+	 CALL lcd_go_start_line_a
+	 MOV A, ganadorString1
+	 CALL lcd_string
+
+	 CALL lcd_go_start_line_b
+	 MOV A, ganadorString2
+	 CALL lcd_string
+
+	 CALL escondeCursor //esconde cursor
+
+     CALL std_button_wait // | 1b - btn_centro | 10b - btn_arriba | 100b - btn_izq | 1000b - btn_der | 10000b - btn_abajo |
+     JMP reset
+
+    end:
+     JMP end
+		
+
+
+
+    carries: //retorna en A cantidad de unos. Ingresa A, retorna A modificado
+    PUSH B
+    MOV B,0 //lleva contador de unos
+     carry:
+      CMP A,0
+      JEQ done
+      SHR A
+      JCR suma
+      JMP carry
+
+	 suma:
+	  INC B
+	  JMP carry
+
+	 done:
+	  MOV A,B
+	  POP B
+	  RET
+
+	escondeCursor:
+	 MOV A,0
+	 cursor:
+	  CALL lcd_shl_c //muevo cursor izquierda
+	  INC A
+	  CMP A,20
+	  JNE cursor
+	  RET
+
+
+/////////////////Libreria std/////////////////////////////////////////////
+									//
+std_reg_swap:			// * en A, * en B			//
+  XOR A,B			// Diferencia en A			//
+  XOR B,A			// A en B				//
+  XOR A,B			// B en A				//
+  RET				// Retorno B en A y A en B		//
+									//
+/////////////////Libreria button /////////////////////////////////////////
+									//
+									//
+std_button_wait:		// * en A, * en B			//
+ PUSH B				// Guarda B				//
+ IN A,1				// Estado Actual			//
+ std_button_wait_press_loop:						//
+ IN B,1				// Nuevo Estado				//
+ CMP A,B			// Si !=				//
+ JEQ std_button_wait_press_loop // Continuar				//
+ XOR B,A			// Bits Cambiados			//
+ std_button_wait_release_lp:						//
+ IN A,1				// Nuevo Estado				//
+ AND A,B			// Bits A�n Cambiados			//
+ CMP A,0			// SI == 0				//
+ JNE std_button_wait_release_lp	// Continuar				//
+ MOV A,B			// Bits Cambiados a A			//
+ POP B				// Recupera B				//
+ RET				// Retorno en A				//
+									//
+//////////////////Libraria wait {std}/////////////////////////////////////
+									//
+wait_absolute_s_ms:		// Seg en A, Mseg en B			//
+ PUSH B				// Guarda Mseg				//
+ wait_absolute_s:		// Algo de Magia			//
+  IN B,2			//					//
+  CMP A,B			//					//
+  JGT wait_absolute_s		//					//
+ POP B				//					//
+ JMP wait_absolute_s_sanity	//					//
+ wait_absolute_ms_loop:		//					//
+  MOV B,A			//					//
+  POP A				//					//
+  wait_absolute_s_sanity:	//					//
+   PUSH B			//					//
+   IN B,2			//					//
+   CMP A,B			//					//
+   JNE wait_absolute_ms_end	//					//
+   POP B			//					//
+  PUSH A			//					//
+  MOV A,B			//					//
+  IN B,3			//					//
+  CMP A,B			//					//
+  JGT wait_absolute_ms_loop	//					//
+  MOV B,A			//					//
+  POP A				//					//
+  RET				//					//
+ wait_absolute_ms_end:		//					//
+ POP B				// Recupera Mseg			//
+RET				// Void					//
+									//
+wait_absolute_fixed_ms_us:	// Mseg en A, Useg en B			//
+ PUSH A				// Guarda Mseg				//
+ JMP wait_absolute_ms_sanity	// Algo de Magia			//
+ wait_absolute_us_loop:		//					//
+  MOV B,A			//					//
+  POP A				//					//
+  wait_absolute_ms_sanity:	//					//
+   PUSH B			//					//
+   IN B,3			//					//
+   CMP A,B			//					//
+   JNE wait_absolute_us_end	//					//
+   POP B			//					//
+  PUSH A			//					//
+  MOV A,B			//					//
+  IN B,4			//					//
+  CMP A,B			//					//
+  JGT wait_absolute_us_loop	//					//
+  MOV B,A			//					//
+  POP A				//					//
+  POP A				//					//
+  RET				//					//
+ wait_absolute_us_end:		//					//
+ POP B				// Recupera Los Useg			//
+ POP A				// Recupera los Mseg			//
+RET				// Void					//
+									//
+wait_ms:			// Mseg en A, * en B			//
+ PUSH A				// Guarda los Mseg			//
+ PUSH B				// Guarda B				//
+ IN B,3				// Mseg Actual				//
+ ADD A,B			// Mas Mseg Delay			//
+ IN B,2				// Seg Actual				//
+ wait_ms_divide_loop:							//
+  CMP A,1000			// Si Mseg < 1000			//
+  JLT wait_ms_divide_end	// Terminar divisi�n			//
+  SUB A,1000			// Mseg - 1000				//
+  INC B				// Seg ++				//
+  JMP wait_ms_divide_loop	// Continuar divisi�n			//
+ wait_ms_divide_end:							//
+ CALL std_reg_swap		// Intercambiar Registros		//
+ CALL wait_absolute_s_ms	// Espera Absoluta Seg Mseg		//
+ POP B				// Recupera B				//
+ POP A				// Recupera los Mseg			//
+RET				// Void					//
+									//
+									//
+wait_us:			// Useg en A, * en B			//
+ PUSH A				// Guarda los Useg			//
+ PUSH B				// Guarda B				//
+									//
+ IN B,4				// Useg Actual				//
+ ADD A,B			// Mas Useg Delay			//
+ INC A				// Arreglar Useg			//
+ MOV B,0			// Delta Mseg	= 0			//
+ wait_us_divide_loop:							//
+  CMP A,1000			// Si Useg < 1000			//
+  JLT wait_us_divide_end	// Terminar divisi�n			//
+  SUB A,1000			// Useg - 1000				//
+  INC B				// Delta Mseg ++			//
+  JMP wait_us_divide_loop	// Continuar divisi�n			//
+ wait_us_divide_end:							//
+ CMP A,0			// Si Useg == 0				//
+ JEQ wait_us_no_fix		// No Restaurar				//
+ DEC A				// Restaurar Useg			//
+ wait_us_no_fix:							//
+ PUSH A				// Guarda USeg				//
+ PUSH B				// Guarda Delta Mseg			//
+ IN A,3				// Mseg Actual				//
+ ADD B,A			// Mseg Actual + Delta Mseg		//
+ POP A				// Recupera Delta Mseg			//
+ CALL wait_ms			// Espera Relativa Delta Mseg		//
+ MOV A,B			// Mseg					//
+ CMP A,1000			// Si Mseg < 1000			//
+ JLT wait_us_ms_no_fix		// Saltar Fix				//
+ SUB A,1000			// Mseg = Mseg - 1000			//
+ wait_us_ms_no_fix:							//
+ POP B				// Recupera Useg			//
+ CALL wait_absolute_fixed_ms_us	// Espera Absoluta Mseg	Useg		//
+ POP B				// Recupera B				//
+ POP A				// Recupera los Useg			//
+RET				// Void					//
+									//
+//////////////////Libreria lcd {wait}/////////////////////////////////////
+									//
+lcd_cmd:			// Comando en A, Puerto en B		//
+ PUSH A				// Guarda el Comando			//
+ OUT A,B			// Comando al Puerto			//
+ MOV A,39			// > 39us				//
+ CALL wait_us			// Comand Delay				//
+ POP A 				// Recupera el Comando			//
+RET				// Void					//
+									//
+lcd_char:			// Char	en A, Puerto en B		//
+ PUSH A				// Guarda el Char			//
+ OR A,200h			// Agrega se�al para escribir		//
+ CALL lcd_cmd			// Comando al Puerto			//
+ POP A 				// Recupera el Char			//
+RET				// Void					//
+									//
+lcd_clear:			// *	en A, Puerto en B		//
+ PUSH A				// Guarda A		 		//
+ MOV A,01h 			// 01h					//
+ CALL lcd_cmd			// Comando al Puerto			//
+ MOV A,1530			// > 1.53ms				//
+ CALL wait_us			// Comand Delay				//
+ POP A				// Recupera A				//
+RET				// Void					//
+									//
+lcd_home:			// *	en A, Puerto en B		//
+ PUSH A				// Guarda A				//
+ MOV A,02h   			// 02h					//
+ CALL lcd_cmd			// Comando al Puerto			//
+ MOV A,1530			// > 1.53ms				//
+ CALL wait_us			// Comand Delay				//
+ POP A				// Recupera A				//
+RET				// Void					//
+									//
+lcd_go_start_line_a:		// *	en A, Puerto en B		//
+ PUSH A				// Guarda A				//
+ MOV A,0			// Address 0				//
+ CALL lcd_address_line_a	// Cambiar a Address en linea A		//
+ POP A				// Recupera A				//
+RET				// Void					//
+									//
+lcd_go_start_line_b:		// *	en A, Puerto en B	        //
+ PUSH A				// Guarda A				//
+ MOV A,0			// Address 0				//
+ CALL lcd_address_line_b	// Cambiar a Address en linea B		//
+ POP A				// Recupera A				//
+RET				// Void					//
+									//
+lcd_address_line_a:		// *	en A, Puerto en B		//
+ PUSH A				// Guarda A				//
+ OR A,80h 		 	// Base 00h				//
+ CALL lcd_cmd			// Comando al Puerto			//
+ POP A				// Recupera A				//
+RET				// Void					//
+									//
+lcd_address_line_b:		// *	en A, Puerto en B		//
+ PUSH A				// Guarda A				//
+ OR A,C0h 		 	// Base 40h				//
+ CALL lcd_cmd			// Comando al Puerto			//
+ POP A				// Recupera A				//
+RET				// Void					//
+									//
+lcd_shl:			// *	en A, Puerto en B		//
+ PUSH A				// Guarda A				//
+ MOV A,18h			// 18h					//
+ CALL lcd_cmd			// Comando al Puerto			//
+ POP A				// Recupera A				//
+RET				// Void					//
+									//
+lcd_shr:			// *	en A, Puerto en B		//
+ PUSH A				// Guarda A				//
+ MOV A,1Ch			// 1Ch					//
+ CALL lcd_cmd			// Comando al Puerto			//
+ POP A				// Recupera A				//
+RET				// Void					//
+									//
+lcd_shl_c:			// *	en A, Puerto en B		//
+ PUSH A				// Guarda A				//
+ MOV A,10h			// 10h					//
+ CALL lcd_cmd			// Comando al Puerto			//
+ POP A				// Recupera A				//
+RET				// Void					//
+									//
+lcd_shr_c:			// *	en A, Puerto en B		//
+ PUSH A				// Guarda A				//
+ MOV A,14h			// 14h					//
+ CALL lcd_cmd			// Comando al Puerto			//
+ POP A				// Recupera A				//
+RET				// Void					//
+									//
+lcd_string: 			// Puntero en A, puerto en B		//
+ PUSH A				// Guarda el puntero			//
+ PUSH B				// Guarda el puerto			//
+ MOV B,A			// Posiciona el puntero			//
+ MOV A,(B)			// Obtiene el Char			//
+ POP B				// Recupera el Puerto			//
+ CMP A,0			// Si Char == 0				//
+ JEQ lcd_string_end		// Termina				//
+ CALL lcd_char			// Escribe				//
+ POP A				// Recupera el puntero			//
+ INC A				// Incrementa el puntero		//
+ JMP lcd_string			// Next					//
+ lcd_string_end:							//
+ POP A				// Recupera el ultimo puntero		//
+RET				// Retorna el puntero final en A	//
+									//
+lcd_init:			// *	en A, Puerto en B		//
+ PUSH A				// Guarda A				//
+ MOV A,30d			// > 30ms 				//
+ CALL wait_ms			// PwrOn Delay				//
+ MOV A,111100b			// { Lines, Display, Font }		//
+ CALL lcd_cmd  			// Function Set				//
+ MOV A,001111b			// { Display, Cursor, Blink }		//
+ CALL lcd_cmd 			// Display Ctrl Set			//
+ CALL lcd_clear			// Display Clear			//
+ MOV A,000110b			// { Mode, Shift }			//
+ CALL lcd_cmd 			// Entry Mode Set			//
+ CALL lcd_home			// Return Home				//
+ POP A				// Recupera A				//
+RET				// Void					//
+									//
+//////////////////////////////////////////////////////////////////////////
+
