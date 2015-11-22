@@ -826,9 +826,9 @@ def Leer_Archivo(Archivo,label):
     #print(label)
     archivo.close()
 
-root.fileopenname = filedialog.askopenfilename(initialdir = "./",title = "Escoge input")
-Leer_Archivo(root.fileopenname,label)
-#Leer_Archivo('test.txt',label)
+#root.fileopenname = filedialog.askopenfilename(initialdir = "./",title = "Escoge input")
+#Leer_Archivo(root.fileopenname,label)
+Leer_Archivo('/Users/benjamin/Dropbox/Grupo 11/juego.txt',label)
 
 
 
@@ -838,9 +838,9 @@ dataFinalBin(instrucciones2) #transforma instrucciones a bin y agrega en lista l
 
 rellenaLista(listaInsBin,4096) #rellena la lista listaInsBin con 4096 elementos
 
-root.filesavename = filedialog.asksaveasfilename(initialdir = "./", title = "Escoge output")
-outputTXT(root.filesavename)
-#outputTXT('output.txt')
+#root.filesavename = filedialog.asksaveasfilename(initialdir = "./", title = "Escoge output")
+#outputTXT(root.filesavename)
+outputTXT('/Users/benjamin/Dropbox/Grupo 11/output.txt')
 
 
 
